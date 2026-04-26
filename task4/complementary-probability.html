@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вероятность противоположного события</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📊 Вероятность противоположного события</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Противоположное событие</strong> — событие, которое происходит тогда и только тогда, когда не происходит данное событие.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>A</code> — событие<br>
+        <code>Ā (или A̅)</code> — противоположное событие<br>
+        <code>P(A)</code> — вероятность события A<br>
+        <code>P(Ā)</code> — вероятность противоположного события
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Примеры противоположных событий:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>A</strong> — «выпала решка», <strong>Ā</strong> — «выпал орёл»</li>
+            <li><strong>A</strong> — «извлекли красный шар», <strong>Ā</strong> — «извлекли не красный шар»</li>
+            <li><strong>A</strong> — «стрелок попал», <strong>Ā</strong> — «стрелок промахнулся»</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Противоположные события</h3>
+        <svg width="450" height="320" viewBox="0 0 450 320">
+            <circle cx="225" cy="160" r="130" fill="#f0f7ff" stroke="#4361EE" stroke-width="3"/>
+            <circle cx="225" cy="160" r="70" fill="#d4edda" stroke="#27AE60" stroke-width="3"/>
+            <text x="225" y="165" font-size="24" font-weight="bold" fill="#27AE60">A</text>
+            <text x="300" y="120" font-size="20" fill="#FF6B6B">Ā</text>
+            <text x="225" y="40" font-size="22" font-weight="bold">Все исходы</text>
+            <text x="225" y="305" font-size="18">P(A) + P(Ā) = 1</text>
+            <line x1="160" y1="160" x2="225" y2="160" stroke="#27AE60" stroke-width="2"/>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Событие A и противоположное Ā</strong><br>
+            Вместе они образуют полное пространство исходов
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Вероятность противоположного события:</div>
+        $$ P(\bar{A}) = 1 - P(A) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Сумма вероятностей противоположных событий:</div>
+        $$ P(A) + P(\bar{A}) = 1 $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Выражение вероятности события:</div>
+        $$ P(A) = 1 - P(\bar{A}) $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Вероятность того, что стрелок попадёт в мишень, равна 0.8. Найдите вероятность того, что стрелок промахнётся.</p>
+        
+        <div class="diagram">
+            <svg width="450" height="320" viewBox="0 0 450 320">
+                <circle cx="225" cy="160" r="130" fill="#f0f7ff" stroke="#4361EE" stroke-width="3"/>
+                <circle cx="225" cy="160" r="90" fill="#d4edda" stroke="#27AE60" stroke-width="3"/>
+                <text x="225" y="165" font-size="28" font-weight="bold" fill="#27AE60">0.8</text>
+                <text x="300" y="120" font-size="24" fill="#FF6B6B">0.2</text>
+                <text x="225" y="40" font-size="22" font-weight="bold">Все исходы: 1</text>
+                <text x="225" y="305" font-size="18">Попадание / Промах</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">Пусть A — событие «стрелок попал в мишень».</p>
+        <p style="margin: 10px 0;">Тогда Ā — событие «стрелок промахнулся».</p>
+        
+        <div class="step"><strong>P(A) = 0.8</strong></div>
+        <div class="step"><strong>P(Ā) = 1 − P(A) = 1 − 0.8 = 0.2</strong></div>
+        
+        <div class="answer">Ответ: 0.2</div>
+    </div>
+    
+    <h2>🎬 Видео-разбор</h2>
+    <a href="#" class="video-link" target="_blank">Смотреть видео на YouTube</a>
+</body>
+</html>

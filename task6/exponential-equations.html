@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Показательные уравнения</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Показательные уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Показательное уравнение</strong> — уравнение, в котором переменная содержится в показателе степени.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные понятия:</strong><br>
+        <code>a^x</code> — показательная функция<br>
+        <code>a > 0, a ≠ 1</code> — основание степени<br>
+        <code>x</code> — показатель степени (переменная)
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы решения:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Уравнивание оснований</strong> — приведение к одному основанию</li>
+            <li><strong>Замена переменной</strong> — введение новой переменной</li>
+            <li><strong>Вынесение общего множителя</strong> — за скобки</li>
+            <li><strong>Логарифмирование</strong> — для сложных случаев</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Простейшее показательное уравнение:</div>
+        $$ a^x = b \quad \Rightarrow \quad x = \log_a b $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где a > 0, a ≠ 1, b > 0</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Уравнивание оснований:</div>
+        $$ a^{f(x)} = a^{g(x)} \quad \Leftrightarrow \quad f(x) = g(x) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Свойства степеней:</div>
+        $$ a^{m+n} = a^m \cdot a^n $$
+        $$ a^{m-n} = \frac{a^m}{a^n} $$
+        $$ (a^m)^n = a^{mn} $$
+        $$ a^{-n} = \frac{1}{a^n} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Решите уравнение: 2^(x+1) + 2^x = 24</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Вынесем общий множитель 2^x за скобки:</p>
+        <div class="step"><strong>2^x · 2 + 2^x = 24</strong></div>
+        <div class="step"><strong>2^x(2 + 1) = 24</strong></div>
+        <div class="step"><strong>2^x · 3 = 24</strong></div>
+        
+        <p style="margin: 10px 0;">2. Разделим обе части на 3:</p>
+        <div class="step"><strong>2^x = 8</strong></div>
+        
+        <p style="margin: 10px 0;">3. Представим 8 как степень двойки:</p>
+        <div class="step"><strong>2^x = 2³</strong></div>
+        
+        <p style="margin: 10px 0;">4. Приравняем показатели:</p>
+        <div class="step"><strong>x = 3</strong></div>
+        
+        <div class="answer">Ответ: 3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Линейные, квадратные, кубические уравнения</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Линейные, квадратные, кубические уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Алгебраические уравнения</strong> — уравнения вида P(x) = 0, где P(x) — многочлен.</p>
+    
+    <div class="notation">
+        <strong>🔹 Виды уравнений:</strong><br>
+        <code>Линейное:</code> ax + b = 0<br>
+        <code>Квадратное:</code> ax² + bx + c = 0<br>
+        <code>Кубическое:</code> ax³ + bx² + cx + d = 0
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы решения:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Линейные:</strong> перенос слагаемых, деление на коэффициент</li>
+            <li><strong>Квадратные:</strong> дискриминант, теорема Виета, выделение полного квадрата</li>
+            <li><strong>Кубические:</strong> разложение на множители, подбор корня, схема Горнера</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Линейное уравнение:</div>
+        $$ ax + b = 0 \quad \Rightarrow \quad x = -\frac{b}{a} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Квадратное уравнение (через дискриминант):</div>
+        $$ ax^2 + bx + c = 0 $$
+        $$ D = b^2 - 4ac $$
+        $$ x_{1,2} = \frac{-b \pm \sqrt{D}}{2a} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Теорема Виета (для x² + px + q = 0):</div>
+        $$ x_1 + x_2 = -p, \quad x_1 \cdot x_2 = q $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Разложение квадратного трёхчлена:</div>
+        $$ ax^2 + bx + c = a(x - x_1)(x - x_2) $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Решите уравнение: x² − 5x + 6 = 0</p>
+        
+        <div class="diagram">
+            <svg width="450" height="320" viewBox="0 0 450 320">
+                <line x1="50" y1="280" x2="420" y2="280" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="200" y1="300" x2="200" y2="30" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrow)"/>
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                    </marker>
+                </defs>
+                <path d="M 80,280 Q 200,80 320,280" fill="none" stroke="#4361EE" stroke-width="3"/>
+                <circle cx="140" cy="280" r="5" fill="#FF6B6B"/>
+                <circle cx="260" cy="280" r="5" fill="#FF6B6B"/>
+                <text x="425" y="285" font-size="18" font-weight="bold">x</text>
+                <text x="195" y="25" font-size="18" font-weight="bold">y</text>
+                <text x="135" y="300" font-size="18" font-weight="bold">2</text>
+                <text x="255" y="300" font-size="18" font-weight="bold">3</text>
+                <text x="200" y="100" font-size="20" fill="#4361EE">y = x² − 5x + 6</text>
+                <text x="225" y="315" font-size="16">Корни: x₁ = 2, x₂ = 3</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;"><strong>Способ 1 (через дискриминант):</strong></p>
+        <div class="step"><strong>D = (−5)² − 4 · 1 · 6 = 25 − 24 = 1</strong></div>
+        <div class="step"><strong>x₁ = (5 + 1)/2 = 3</strong></div>
+        <div class="step"><strong>x₂ = (5 − 1)/2 = 2</strong></div>
+        
+        <p style="margin: 10px 0;"><strong>Способ 2 (теорема Виета):</strong></p>
+        <div class="step"><strong>Ищем два числа с суммой 5 и произведением 6</strong></div>
+        <div class="step"><strong>x₁ = 2, x₂ = 3</strong></div>
+        
+        <div class="answer">Ответ: 2; 3</div>
+    </div>
+</body>
+</html>

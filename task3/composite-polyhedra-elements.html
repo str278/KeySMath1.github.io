@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Элементы составных многогранников</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Элементы составных многогранников</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Составной многогранник</strong> — многогранник, составленный из нескольких простых многогранников (призм, пирамид и т.д.).</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные элементы:</strong><br>
+        <code>Грань</code> — многоугольник, ограничивающий многогранник<br>
+        <code>Ребро</code> — отрезок, соединяющий две вершины<br>
+        <code>Вершина</code> — точка пересечения рёбер<br>
+        <code>Диагональ</code> — отрезок, соединяющий две вершины, не принадлежащие одной грани
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Виды составных многогранников:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Составная призма</strong> — несколько призм, имеющих общую грань</li>
+            <li><strong>Усечённая пирамида</strong> — пирамида, у которой отсечена верхняя часть</li>
+            <li><strong>Комбинация тел</strong> — призма и пирамида, цилиндр и конус и т.д.</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Составной многогранник</h3>
+        <svg width="450" height="400" viewBox="0 0 450 400">
+            <!-- Нижняя призма -->
+            <polygon points="120,320 200,350 330,320 250,290" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+            <polygon points="120,220 200,250 330,220 250,190" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="120" y1="320" x2="120" y2="220" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="200" y1="350" x2="200" y2="250" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="330" y1="320" x2="330" y2="220" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="250" y1="290" x2="250" y2="190" stroke="#1A2B4D" stroke-width="2.5"/>
+            
+            <!-- Верхняя пирамида -->
+            <polygon points="120,220 200,250 330,220 250,190" fill="none" stroke="#27AE60" stroke-width="2.5"/>
+            <line x1="120" y1="220" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+            <line x1="200" y1="250" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+            <line x1="330" y1="220" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+            <line x1="250" y1="190" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+            
+            <!-- Подписи -->
+            <text x="105" y="340" font-size="18" font-weight="bold">A</text>
+            <text x="200" y="370" font-size="18" font-weight="bold">B</text>
+            <text x="335" y="340" font-size="18" font-weight="bold">C</text>
+            <text x="225" y="75" font-size="18" font-weight="bold" fill="#27AE60">S</text>
+            
+            <text x="150" y="280" font-size="16" fill="#1A2B4D">призма</text>
+            <text x="230" y="150" font-size="16" fill="#27AE60">пирамида</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Составной многогранник:</strong><br>
+            нижняя часть — призма, верхняя — пирамида
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Число граней составного многогранника:</div>
+        $$ G = G_1 + G_2 - 2 $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где G₁ и G₂ — число граней частей, 2 — общие грани (основания)</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Число рёбер:</div>
+        $$ R = R_1 + R_2 - R_{общ} $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где R_общ — число общих рёбер</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Число вершин:</div>
+        $$ V = V_1 + V_2 - V_{общ} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Теорема Эйлера:</div>
+        $$ V - R + G = 2 $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Составной многогранник состоит из четырёхугольной призмы и четырёхугольной пирамиды, имеющих общее основание. Найдите число граней многогранника.</p>
+        
+        <div class="diagram">
+            <svg width="450" height="400" viewBox="0 0 450 400">
+                <polygon points="120,320 200,350 330,320 250,290" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+                <polygon points="120,220 200,250 330,220 250,190" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="120" y1="320" x2="120" y2="220" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="200" y1="350" x2="200" y2="250" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="330" y1="320" x2="330" y2="220" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="250" y1="290" x2="250" y2="190" stroke="#1A2B4D" stroke-width="2.5"/>
+                <polygon points="120,220 200,250 330,220 250,190" fill="none" stroke="#27AE60" stroke-width="2.5"/>
+                <line x1="120" y1="220" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+                <line x1="200" y1="250" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+                <line x1="330" y1="220" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+                <line x1="250" y1="190" x2="225" y2="80" stroke="#27AE60" stroke-width="2.5"/>
+                <text x="105" y="340" font-size="18" font-weight="bold">A</text>
+                <text x="200" y="370" font-size="18" font-weight="bold">B</text>
+                <text x="335" y="340" font-size="18" font-weight="bold">C</text>
+                <text x="225" y="75" font-size="18" font-weight="bold" fill="#27AE60">S</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Четырёхугольная призма имеет:</p>
+        <div class="step"><strong>G₁ = 6 граней (4 боковых + 2 основания)</strong></div>
+        
+        <p style="margin: 10px 0;">2. Четырёхугольная пирамида имеет:</p>
+        <div class="step"><strong>G₂ = 5 граней (4 боковых + 1 основание)</strong></div>
+        
+        <p style="margin: 10px 0;">3. Общее основание не считаем дважды:</p>
+        <div class="step"><strong>G = G₁ + G₂ − 2 = 6 + 5 − 2 = 9</strong></div>
+        
+        <div class="answer">Ответ: 9</div>
+    </div>
+</body>
+</html>

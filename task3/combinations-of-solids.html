@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комбинации тел</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Комбинации тел</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Комбинации тел</strong> — геометрические тела, вписанные или описанные около других тел.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные комбинации:</strong><br>
+        <code>Призма, вписанная в цилиндр</code><br>
+        <code>Цилиндр, вписанный в призму</code><br>
+        <code>Пирамида, вписанная в конус</code><br>
+        <code>Конус, вписанный в пирамиду</code><br>
+        <code>Шар, вписанный в тело</code><br>
+        <code>Тело, вписанное в шар</code>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные свойства:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Призма в цилиндре:</strong> основание призмы вписано в основание цилиндра</li>
+            <li><strong>Цилиндр в призме:</strong> основание цилиндра вписано в основание призмы</li>
+            <li><strong>Пирамида в конусе:</strong> основание пирамиды вписано в основание конуса</li>
+            <li><strong>Шар в теле:</strong> шар касается всех граней или поверхностей</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Шар, вписанный в куб</h3>
+        <svg width="400" height="420" viewBox="0 0 400 420">
+            <!-- Куб -->
+            <polygon points="150,320 220,350 350,320 280,290" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+            <polygon points="150,120 220,150 350,120 280,90" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="150" y1="320" x2="150" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="220" y1="350" x2="220" y2="150" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="350" y1="320" x2="350" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="280" y1="290" x2="280" y2="90" stroke="#1A2B4D" stroke-width="2.5"/>
+            
+            <!-- Шар (круг) -->
+            <circle cx="250" cy="210" r="80" fill="none" stroke="#4361EE" stroke-width="2.5" stroke-dasharray="5,3"/>
+            
+            <!-- Радиус -->
+            <line x1="250" y1="210" x2="330" y2="210" stroke="#FF6B6B" stroke-width="2"/>
+            
+            <!-- Подписи -->
+            <text x="255" y="205" font-size="16" fill="#4361EE">O</text>
+            <text x="285" y="205" font-size="18" font-weight="bold" fill="#FF6B6B">R</text>
+            <text x="190" y="365" font-size="16" fill="#1A2B4D">a</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Шар вписан в куб</strong><br>
+            Диаметр шара равен стороне куба: <strong>D = a</strong>
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Шар, вписанный в куб (сторона a):</div>
+        $$ R = \frac{a}{2}, \quad D = a $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Куб, вписанный в шар (радиус R):</div>
+        $$ a = \frac{2R}{\sqrt{3}}, \quad d = 2R $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где d — диагональ куба</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Цилиндр, вписанный в куб (сторона a):</div>
+        $$ R = \frac{a}{2}, \quad H = a $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Конус, вписанный в куб (сторона a):</div>
+        $$ R = \frac{a}{2}, \quad H = a $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Шар вписан в куб. Найдите отношение объёма шара к объёму куба.</p>
+        
+        <div class="diagram">
+            <svg width="400" height="420" viewBox="0 0 400 420">
+                <polygon points="150,320 220,350 350,320 280,290" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+                <polygon points="150,120 220,150 350,120 280,90" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="150" y1="320" x2="150" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="220" y1="350" x2="220" y2="150" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="350" y1="320" x2="350" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="280" y1="290" x2="280" y2="90" stroke="#1A2B4D" stroke-width="2.5"/>
+                <circle cx="250" cy="210" r="80" fill="none" stroke="#4361EE" stroke-width="2.5" stroke-dasharray="5,3"/>
+                <line x1="250" y1="210" x2="330" y2="210" stroke="#FF6B6B" stroke-width="2"/>
+                <text x="255" y="205" font-size="16" fill="#4361EE">O</text>
+                <text x="285" y="205" font-size="18" font-weight="bold" fill="#FF6B6B">R</text>
+                <text x="190" y="365" font-size="16" fill="#1A2B4D">a</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Пусть сторона куба равна a. Тогда радиус шара:</p>
+        <div class="step"><strong>R = a/2</strong></div>
+        
+        <p style="margin: 10px 0;">2. Найдём объёмы:</p>
+        <div class="step"><strong>V_куба = a³</strong></div>
+        <div class="step"><strong>V_шара = (4/3)πR³ = (4/3)π(a/2)³ = (4/3)π(a³/8) = (πa³)/6</strong></div>
+        
+        <p style="margin: 10px 0;">3. Найдём отношение:</p>
+        <div class="step"><strong>V_шара / V_куба = (πa³/6) / a³ = π/6</strong></div>
+        
+        <div class="answer">Ответ: π/6</div>
+    </div>
+</body>
+</html>

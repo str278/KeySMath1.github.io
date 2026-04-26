@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иррациональные уравнения</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Иррациональные уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Иррациональное уравнение</strong> — уравнение, содержащее переменную под знаком корня.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные понятия:</strong><br>
+        <code>ОДЗ</code> — подкоренное выражение ≥ 0<br>
+        <code>Возведение в степень</code> — основной метод решения<br>
+        <code>Проверка</code> — обязательный этап
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Алгоритм решения:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Найти ОДЗ (подкоренное выражение ≥ 0)</li>
+            <li>Возвести обе части в степень (обычно в квадрат)</li>
+            <li>Решить полученное уравнение</li>
+            <li>Проверить корни подстановкой в исходное уравнение</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Простейшее иррациональное уравнение:</div>
+        $$ \sqrt{f(x)} = a \quad \Leftrightarrow \quad \begin{cases} f(x) = a^2 \\ a \geq 0 \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Уравнение вида √f(x) = √g(x):</div>
+        $$ \sqrt{f(x)} = \sqrt{g(x)} \quad \Leftrightarrow \quad \begin{cases} f(x) = g(x) \\ f(x) \geq 0 \text{ или } g(x) \geq 0 \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Уравнение вида √f(x) = g(x):</div>
+        $$ \sqrt{f(x)} = g(x) \quad \Leftrightarrow \quad \begin{cases} f(x) = g^2(x) \\ g(x) \geq 0 \end{cases} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Решите уравнение: √(x + 3) = x − 3</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x + 3 ≥ 0 ⇒ x ≥ −3</strong></div>
+        <div class="step"><strong>x − 3 ≥ 0 ⇒ x ≥ 3</strong></div>
+        <div class="step"><strong>ОДЗ: x ≥ 3</strong></div>
+        
+        <p style="margin: 10px 0;">2. Возведём обе части в квадрат:</p>
+        <div class="step"><strong>x + 3 = (x − 3)²</strong></div>
+        <div class="step"><strong>x + 3 = x² − 6x + 9</strong></div>
+        <div class="step"><strong>x² − 7x + 6 = 0</strong></div>
+        
+        <p style="margin: 10px 0;">3. Решим квадратное уравнение:</p>
+        <div class="step"><strong>D = 49 − 24 = 25</strong></div>
+        <div class="step"><strong>x₁ = (7 + 5)/2 = 6</strong></div>
+        <div class="step"><strong>x₂ = (7 − 5)/2 = 1</strong></div>
+        
+        <p style="margin: 10px 0;">4. Проверка на ОДЗ и подстановка:</p>
+        <div class="step"><strong>x = 6: √(6 + 3) = √9 = 3, 6 − 3 = 3 ✓</strong></div>
+        <div class="step"><strong>x = 1: не входит в ОДЗ (1 < 3) ✗</strong></div>
+        
+        <div class="answer">Ответ: 6</div>
+    </div>
+</body>
+</html>

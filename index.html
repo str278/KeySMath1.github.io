@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeySMath | Профильная математика ЕГЭ 2026</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style> .progress-percentage {
+    display: none;
+}
+:root {
+  --primary: #1A2B4D;
+  --accent: #4361EE;
+  --accent-hover: #3A56D4;
+  --warning: #FF6B6B;
+  --success: #27AE60;
+  --light-bg: #F8F9FA;
+  --text: #333333;
+  --border: #E0E0E0;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: #f5f7fa;
+}
+.page { display: none; padding: 20px 0; }
+.page.active { display: block; }
+.header {
+  background: var(--gradient-1);
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: 700; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+.logo span { color: #ffd700; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+.nav-links a.active { background: rgba(255,255,255,0.3); }
+h1, h2, h3 { margin-bottom: 1rem; color: var(--primary); }
+p { margin-bottom: 1rem; }
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin: 10px 0;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+}
+.dropdown { position: relative; display: inline-block; }
+.dropdown-btn {
+  padding: 12px 24px;
+  background: var(--gradient-2);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 280px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.dropdown-content a {
+  color: var(--text);
+  padding: 16px 24px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+}
+.dropdown-content a:hover {
+  background-color: #f8f9fa;
+  color: var(--accent);
+  border-left-color: var(--accent);
+  padding-left: 28px;
+}
+.dropdown.show .dropdown-content { display: block; animation: slideDown 0.3s ease; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card-header {
+  background: var(--gradient-1);
+  color: white;
+  padding: 18px 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.card-body { padding: 25px; }
+.practice-question {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid var(--accent);
+  transition: all 0.3s;
+}
+.practice-question:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.question-number {
+  display: inline-block;
+  background: var(--gradient-1);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+}
+.question-text { font-size: 1.15rem; margin: 15px 0; line-height: 1.6; font-weight: 500; }
+.answer-input {
+  width: 180px;
+  padding: 10px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 12px 0;
+  transition: all 0.3s;
+}
+.answer-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1); }
+.timer-container {
+  position: fixed;
+  top: 90px;
+  right: 25px;
+  background: white;
+  border-radius: 15px;
+  padding: 18px 22px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 190px;
+  display: none;
+  border: 3px solid var(--accent);
+  animation: slideIn 0.5s ease;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.timer-display {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+.footer {
+  background: var(--gradient-1);
+  color: white;
+  padding: 45px 0 22px;
+  margin-top: 55px;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+  margin-bottom: 32px;
+}
+.footer-section h3 {
+  color: white;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 10px;
+  font-size: 1.25rem;
+}
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: #ffd700;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 11px; }
+.footer-links a { color: rgba(255,255,255,0.92); text-decoration: none; transition: all 0.3s; display: inline-block; }
+.footer-links a:hover { color: #ffd700; transform: translateX(4px); }
+.copyright {
+  text-align: center;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255,255,255,0.82);
+  font-size: 0.93rem;
+}
+.progress-tracker {
+  background: white;
+  border-radius: 15px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin: 28px 0;
+}
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.progress-bar {
+  height: 14px;
+  background: linear-gradient(90deg, #e0e0e0 0%, #f0f0f0 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 23px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gradient-3);
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.7s ease;
+  box-shadow: 0 2px 8px rgba(79, 172, 254, 0.4);
+}
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 16px;
+}
+.topic {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 11px 17px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.topic:hover { background: #e9ecef; transform: translateX(4px); }
+.topic input { margin-right: 11px; transform: scale(1.25); cursor: pointer; }
+.topic label { cursor: pointer; font-weight: 500; }
+.result-section {
+  text-align: center;
+  padding: 45px;
+  border-radius: 18px;
+  margin-top: 35px;
+  display: none;
+  background: white;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.score {
+  font-size: 4.8rem;
+  font-weight: 800;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 23px 0;
+  line-height: 1;
+}
+.answers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+.answers-table th, .answers-table td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.answers-table th { background: var(--gradient-1); color: white; font-weight: 700; }
+.answers-table tr:last-child td { border-bottom: none; }
+.answers-table tr:hover { background: #f8f9fa; }
+.part-title {
+  font-size: 1.9rem;
+  margin: 38px 0 23px;
+  color: var(--primary);
+  font-weight: 700;
+  padding-bottom: 13px;
+  border-bottom: 4px solid var(--accent);
+}
+.task-list { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 18px; }
+.task-btn {
+  padding: 13px 22px;
+  background: white;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 15px;
+}
+.task-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(67, 97, 238, 0.3);
+}
+.topic-list { display: flex; flex-direction: column; gap: 17px; margin: 33px 0; }
+.topic-btn {
+  padding: 20px 28px;
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+  font-size: 1.13rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+.topic-btn:hover {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+  transform: translateX(7px);
+  box-shadow: 0 5px 18px rgba(67, 97, 238, 0.2);
+}
+.theme-content { max-width: 900px; margin: 0 auto; }
+.theme-title { text-align: center; margin: 38px 0; color: var(--primary); font-size: 2.4rem; }
+.theme-description {
+  background-color: white;
+  border-radius: 10px;
+  padding: 33px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 18px 0;
+  line-height: 1.75;
+}
+.back-button {
+  display: inline-block;
+  margin: 23px 0;
+  padding: 13px 26px;
+  background: white;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.back-button:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(67, 97, 238, 0.3);
+}
+.hero-section {
+  background: var(--gradient-1);
+  color: white;
+  padding: 75px 0;
+  text-align: center;
+  margin-bottom: 48px;
+  border-radius: 0 0 48px 48px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+}
+.hero-section h1 {
+  color: white;
+  font-size: 2.9rem;
+  margin-bottom: 18px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.18);
+  line-height: 1.2;
+}
+.hero-section p {
+  font-size: 1.28rem;
+  max-width: 680px;
+  margin: 0 auto 28px;
+  opacity: 0.96;
+  line-height: 1.5;
+}
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  gap: 23px;
+  margin: 48px 0;
+}
+.stat-card {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-7px); }
+.stat-number {
+  font-size: 2.9rem;
+  font-weight: 800;
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 9px;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 1.08rem;
+  color: #666;
+  font-weight: 600;
+}
+.theory-part {
+  background: white;
+  padding: 33px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 33px;
+}
+.variant-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.variant-info h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+.level-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-left: 12px;
+}
+.level-badge.basic { background: #27AE60; }
+.level-badge.medium { background: #FFA500; }
+.level-badge.advanced { background: #FF6B6B; }
+
+/* SVG Styles */
+.task-svg-container {
+  margin: 20px 0;
+  text-align: center;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 2px dashed var(--border);
+}
+.task-svg-container svg {
+  max-width: 100%;
+  height: auto;
+}
+.task-svg-container text {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  fill: #333;
+  font-weight: 600;
+}
+.task-svg-container line, 
+.task-svg-container path, 
+.task-svg-container circle, 
+.task-svg-container polygon,
+.task-svg-container rect {
+  stroke: var(--primary);
+  fill: none;
+  stroke-width: 2;
+}
+.task-svg-container .dashed {
+  stroke-dasharray: 4 4;
+}
+.task-svg-container .accent-stroke {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+.task-svg-container .fill-light {
+  fill: rgba(67, 97, 238, 0.1);
+}
+
+@media (max-width: 768px) {
+  .timer-container { top: 85px; right: 14px; min-width: 155px; padding: 14px 17px; }
+  .timer-display { font-size: 1.45rem; }
+  .nav-links { display: none; }
+  .score { font-size: 3.4rem; }
+  .hero-section h1 { font-size: 1.95rem; }
+  .hero-section p { font-size: 1.12rem; }
+  .stat-number { font-size: 2.4rem; }
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">KeyS<span>Math</span></div>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active" data-page="home">🏠 Главная</a></li>
+        <li><a href="#" class="nav-link" data-page="theory">📚 Теория</a></li>
+        <li><a href="#" class="nav-link" data-page="traps">⚠️ Ловушки</a></li>
+        <li><a href="#" class="nav-link" data-page="about">ℹ️ О проекте</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="timer-container" id="timerContainer">
+  <div class="timer-display" id="timerDisplay">03:55:00</div>
+</div>
+
+<main class="container">
+  <!-- ГЛАВНАЯ СТРАНИЦА -->
+  <div id="home" class="page active">
+    <div class="hero-section">
+      <h1>🎯 Профильная математика ЕГЭ 2026</h1>
+      <p>Набери 80+ баллов без стресса! Интерактивная подготовка с реальными вариантами, теорией и разбором ловушек</p>
+      <div class="dropdown" id="startDropdown">
+        <button class="dropdown-btn" id="startBtn">🚀 Начать подготовку</button>
+        <div class="dropdown-content">
+          <a href="#" class="level-basic" data-level="basic">📚 Базовый уровень (60-75 баллов)</a>
+          <a href="#" class="level-medium" data-level="medium">📖 Средний уровень (75-85 баллов)</a>
+          <a href="#" class="level-advanced" data-level="advanced">🎓 Продвинутый уровень (85-100 баллов)</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">19</div>
+        <div class="stat-label">Заданий в экзамене</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">32</div>
+        <div class="stat-label">Макс. первичных баллов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3ч 55м</div>
+        <div class="stat-label">Время на экзамен</div>
+      </div>
+    </div>    
+        <span class="progress-percentage">
+        </span>
+      </div>
+     
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+       
+
+      
+      </div>
+    </div>
+  </div>
+
+  <!-- ТЕОРИЯ -->
+  <div id="theory" class="page">
+    <h2 style="margin: 38px 0; text-align: center; font-size: 2.4rem;">📖 Теория по заданиям ЕГЭ</h2>
+    <div class="theory-part">
+      <h3 class="part-title">Часть 1: Задания 1-12 (базовый уровень)</h3>
+      <div class="task-list" id="taskListPart1"></div>
+    </div>
+    <div class="theory-part">
+      <h3 class="part-title">Часть 2: Задания 13-19 (повышенный уровень)</h3>
+      <div class="task-list" id="taskListPart2"></div>
+    </div>
+  </div>
+
+  <!-- СПИСОК ТЕМ ЗАДАНИЯ -->
+  <div id="theory-tasks" class="page">
+    <h2 id="task-title" style="text-align: center; margin: 38px 0; font-size: 2.15rem;"></h2>
+    <div class="topic-list" id="topics-container"></div>
+  </div>
+
+  <!-- КОНТЕНТ ТЕМЫ -->
+  <div id="theory-theme" class="page">
+    <h2 id="theme-title" style="text-align: center; margin: 38px 0; font-size: 2.15rem;"></h2>
+    <div class="theme-description" id="theme-content"></div>
+  </div>
+
+  <!-- ПРАКТИКА -->
+  <div id="practice" class="page">
+    <div class="variant-info" id="variantInfo" style="display: none;">
+      <h3>📝 Вариант ЕГЭ <span id="variantNumber">—</span></h3>
+      <p>Уровень сложности: <span class="level-badge" id="levelBadge">—</span></p>
+    </div>
+    <div id="part1" class="section">
+      <h2 class="part-title">Часть 1: Задания 1-12</h2>
+      <p style="margin-bottom: 28px; color: #666;">Введите ответы на задания. Ответы записывайте без пробелов и дополнительных символов.</p>
+    </div>
+    <div style="text-align: center; margin: 48px 0;">
+      <button class="btn" id="submitAnswers" style="font-size: 1.18rem; padding: 16px 48px;">✅ Завершить тест</button>
+    </div>
+    <div class="result-section" id="resultSection">
+      <h3 style="font-size: 2.15rem; margin-bottom: 23px;">📊 Результаты теста</h3>
+      <table class="answers-table">
+        <thead><tr><th>№</th><th>Ваш ответ</th><th>Правильно</th><th>Балл</th></tr></thead>
+        <tbody id="resultsTableBody"></tbody>
+      </table>
+      <div class="score" id="finalScore">0</div>
+      <p id="finalResultText" style="font-size: 1.38rem; margin: 23px 0; font-weight: 600;"></p>
+      <p id="convertedScore" style="font-size: 1.55rem; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"></p>
+      <button class="btn" onclick="resetPractice()" style="margin-top: 33px; font-size: 1.15rem;">🔄 Пройти ещё раз</button>
+    </div>
+  </div>
+
+  <!-- ЛОВУШКИ ЕГЭ -->
+  <div id="traps" class="page">
+    <h2 style="margin: 38px 0; text-align: center; font-size: 2.4rem;">⚠️ Типичные ловушки ЕГЭ 2026</h2>
+    <div class="card">
+      <div class="card-header" style="background-color: var(--warning);">🚫 Потерянные корни</div>
+      <div class="card-body">
+        <p>При решении уравнений вида \( \frac{f(x)}{g(x)} = 0 \) не забывайте проверять ОДЗ.</p>
+        <p><strong>Пример:</strong> В уравнении \( \frac{x^2-4}{x-2} = 0 \) корень \( x = 2 \) не подходит, так как знаменатель обращается в ноль.</p>
+        <p><strong>Как избежать:</strong> Всегда проверяйте, чтобы знаменатель не равнялся нулю!</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background-color: var(--warning);">🚫 Посторонние корни</div>
+      <div class="card-body">
+        <p>При возведении в чётную степень могут появиться посторонние корни. Всегда делайте проверку!</p>
+        <p><strong>Пример:</strong> Уравнение \( \sqrt{x} = -2 \) не имеет корней, но после возведения в квадрат получается x = 4.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- О ПРОЕКТЕ -->
+  <div id="about" class="page">
+    <h2 style="margin: 38px 0; text-align: center; font-size: 2.4rem;">ℹ️ О проекте KeySMath</h2>
+    <div class="card">
+      <div class="card-header">🎯 Наша цель</div>
+      <div class="card-body">
+        <p>Помочь школьникам подготовиться к профильному ЕГЭ по математике 2026 года с помощью интерактивного тренажёра с реальными вариантами и подробными разборами.</p>
+        <p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>KeyS<span>Math</span></h3>
+        <p>Ваш надёжный помощник в подготовке к профильному ЕГЭ по математике 2026.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Навигация</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="nav-link" data-page="home">🏠 Главная</a></li>
+          <li><a href="#" class="nav-link" data-page="theory">📚 Теория</a></li>
+          <li><a href="#" class="nav-link" data-page="traps">⚠️ Ловушки ЕГЭ</a></li>
+          <li><a href="#" class="nav-link" data-page="about">ℹ️ О проекте</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 KeySMath | Подготовка к ЕГЭ по математике</div>
+  </div>
+</footer>
+
+<script>
+// === МАППИНГ ТЕМ (Задание → Список тем) ===
+const topicsMap = {
+  '1': [
+    { name: 'Решение прямоугольного треугольника', slug: 'rectangular-triangle' },
+    { name: 'Решение равнобедренного треугольника', slug: 'isosceles-triangle' },
+    { name: 'Треугольники общего вида', slug: 'triangles-general' },
+    { name: 'Параллелограммы', slug: 'parallelograms' },
+    { name: 'Трапеция', slug: 'trapezoid' },
+    { name: 'Центральные и вписанные углы', slug: 'central-inscribed-angles' },
+    { name: 'Касательная, хорда, секущая', slug: 'tangent-chord-secant' },
+    { name: 'Вписанные окружности', slug: 'inscribed-circles' },
+    { name: 'Описанные окружности', slug: 'circumscribed-circles' }
+  ],
+  '2': [
+    { name: 'Действия с векторами на плоскости', slug: 'vector-operations-plane' },
+    { name: 'Скалярное произведение векторов', slug: 'dot-product' },
+    { name: 'Нахождение длины и угла между векторами', slug: 'vector-length-angle' }
+  ],
+  '3': [
+    { name: 'Прямоугольный параллелепипед', slug: 'rectangular-parallelepiped' },
+    { name: 'Призма', slug: 'prism' },
+    { name: 'Пирамида', slug: 'pyramid' },
+    { name: 'Цилиндр', slug: 'cylinder' },
+    { name: 'Конус', slug: 'cone' },
+    { name: 'Шар', slug: 'sphere' },
+    { name: 'Комбинации тел', slug: 'combinations-of-solids' }
+  ],
+  '4': [
+    { name: 'Классическое определение вероятности', slug: 'classical-probability' },
+    { name: 'Вероятность суммы несовместных событий', slug: 'probability-mutually-exclusive' }
+  ],
+  '5': [
+    { name: 'Умножение вероятностей', slug: 'probability-multiplication' },
+    { name: 'Вероятность хотя бы одного события', slug: 'probability-at-least-one' }
+  ],
+  '6': [
+    { name: 'Линейные, квадратные, кубические уравнения', slug: 'linear-quadratic-cubic-equations' },
+    { name: 'Рациональные уравнения', slug: 'rational-equations' },
+    { name: 'Иррациональные уравнения', slug: 'irrational-equations' },
+    { name: 'Показательные уравнения', slug: 'exponential-equations' },
+    { name: 'Логарифмические уравнения', slug: 'logarithmic-equations' },
+    { name: 'Тригонометрические уравнения', slug: 'trigonometric-equations' }
+  ],
+  '7': [
+    { name: 'Преобразования числовых рациональных выражений', slug: 'numeric-rational-transformations' },
+    { name: 'Вычисление степенных выражений', slug: 'power-expressions-evaluation' },
+    { name: 'Действия со степенями', slug: 'operations-with-powers' },
+    { name: 'Преобразования иррациональных выражений', slug: 'numeric-irrational-transformations' },
+    { name: 'Преобразования логарифмических выражений', slug: 'numeric-logarithmic-transformations' },
+    { name: 'Вычисление тригонометрических выражений', slug: 'trigonometric-evaluation' }
+  ],
+  '8': [
+    { name: 'Физический смысл производной', slug: 'derivative-physical-meaning' },
+    { name: 'Геометрический смысл производной', slug: 'derivative-geometric-tangent' },
+    { name: 'Применение производной', slug: 'derivative-function-analysis' },
+    { name: 'Первообразная', slug: 'antiderivative' }
+  ],
+  '9': [
+    { name: 'Линейные уравнения и неравенства', slug: 'linear-equations-inequalities' },
+    { name: 'Квадратные неравенства', slug: 'quadratic-power-equations-inequalities' },
+    { name: 'Рациональные неравенства', slug: 'rational-equations-inequalities' },
+    { name: 'Иррациональные неравенства', slug: 'irrational-equations-inequalities' },
+    { name: 'Показательные неравенства', slug: 'exponential-equations-inequalities' },
+    { name: 'Логарифмические неравенства', slug: 'logarithmic-equations-inequalities' }
+  ],
+  '10': [
+    { name: 'Задачи на проценты', slug: 'percent-alloy-mixture-problems' },
+    { name: 'Задачи на движение по прямой', slug: 'straight-line-motion-problems' },
+    { name: 'Задачи на движение по окружности', slug: 'circular-motion-problems' },
+    { name: 'Задачи на движение по воде', slug: 'water-motion-problems' },
+    { name: 'Задачи на работу', slug: 'work-rate-problems' },
+    { name: 'Задачи на прогрессии', slug: 'progression-problems' }
+  ],
+  '11': [
+    { name: 'Линейные функции', slug: 'linear-functions' },
+    { name: 'Параболы', slug: 'parabolas' },
+    { name: 'Гиперболы', slug: 'hyperbolas' },
+    { name: 'Функции с корнями', slug: 'root-functions' },
+    { name: 'Показательные и логарифмические функции', slug: 'exponential-logarithmic-functions' },
+    { name: 'Тригонометрические функции', slug: 'trigonometric-functions' }
+  ],
+  '12': [
+    { name: 'Исследование функций без производной', slug: 'function-analysis-no-derivative' },
+    { name: 'Исследование степенных функций', slug: 'power-irrational-function-analysis' },
+    { name: 'Исследование частных', slug: 'quotient-function-analysis' },
+    { name: 'Исследование произведений', slug: 'product-function-analysis' },
+    { name: 'Исследование показательных функций', slug: 'exponential-logarithmic-function-analysis' },
+    { name: 'Исследование тригонометрических функций', slug: 'trigonometric-function-analysis' }
+  ],
+  '13': [
+    { name: 'Показательные уравнения', slug: 'exponential-equations' },
+    { name: 'Рациональные уравнения', slug: 'rational-equations' },
+    { name: 'Иррациональные уравнения', slug: 'irrational-equations' },
+    { name: 'Логарифмические уравнения', slug: 'logarithmic-equations' },
+    { name: 'Тригонометрические уравнения, сводимые к квадратным', slug: 'trigonometric-quadratic' },
+    { name: 'Тригонометрические уравнения, сводимые к однородным', slug: 'trigonometric-homogeneous' },
+    { name: 'Тригонометрические уравнения, разложение на множители', slug: 'trigonometric-factorization' },
+    { name: 'Тригонометрические уравнения, исследование ОДЗ', slug: 'trigonometric-domain' },
+    { name: 'Тригонометрические уравнения, разные задачи', slug: 'trigonometric-miscellaneous' },
+    { name: 'Тригонометрия и иррациональности', slug: 'trigonometric-irrational' },
+    { name: 'Тригонометрия и логарифмы', slug: 'trigonometric-logarithmic' },
+    { name: 'Тригонометрия и показательные выражения', slug: 'trigonometric-exponential' },
+    { name: 'Другие уравнения смешанного типа', slug: 'mixed-equations' }
+  ],
+  '14': [
+    { name: 'Расстояние между прямыми и плоскостями', slug: 'distance-lines-planes' },
+    { name: 'Расстояние между точками, от точки до прямой', slug: 'distance-points-line' },
+    { name: 'Расстояние от точки до плоскости', slug: 'distance-point-plane' },
+    { name: 'Сечения пирамид', slug: 'pyramid-sections' },
+    { name: 'Сечения призм', slug: 'prism-sections' },
+    { name: 'Сечения параллелепипедов', slug: 'parallelepiped-sections' },
+    { name: 'Угол между плоскостями', slug: 'angle-between-planes' },
+    { name: 'Угол между плоскостями граней многогранника', slug: 'angle-polyhedron-faces' },
+    { name: 'Угол между прямой и плоскостью', slug: 'angle-line-plane' },
+    { name: 'Угол между скрещивающимися прямыми', slug: 'angle-skew-lines' },
+    { name: 'Объёмы многогранников', slug: 'polyhedron-volumes' },
+    { name: 'Сечения круглых тел', slug: 'round-bodies-sections' },
+    { name: 'Круглые тела: цилиндр, конус, шар', slug: 'round-bodies' },
+    { name: 'Комбинации фигур', slug: 'combinations-figures' }
+  ],
+  '15': [
+    { name: 'Неравенства, содержащие радикалы', slug: 'radical-inequalities' },
+    { name: 'Рациональные неравенства', slug: 'rational-inequalities' },
+    { name: 'Показательные неравенства', slug: 'exponential-inequalities' },
+    { name: 'Неравенства рациональные относительно показательной функции', slug: 'exponential-rational-inequalities' },
+    { name: 'Логарифмические неравенства первой и второй степени', slug: 'logarithmic-inequalities-basic' },
+    { name: 'Неравенства рациональные относительно логарифмической функции', slug: 'logarithmic-rational-inequalities' },
+    { name: 'Неравенства с логарифмами по переменному основанию', slug: 'logarithmic-variable-base' },
+    { name: 'Неравенства с логарифмами по переменному основанию, применение рационализации', slug: 'logarithmic-rationalization' },
+    { name: 'Логарифмические неравенства, разные задачи', slug: 'logarithmic-miscellaneous' },
+    { name: 'Показательные выражения и иррациональности', slug: 'exponential-irrational' },
+    { name: 'Логарифмы и показательные выражения', slug: 'logarithmic-exponential' },
+    { name: 'Логарифмы и иррациональности', slug: 'logarithmic-irrational' },
+    { name: 'Неравенства с тригонометрией', slug: 'trigonometric-inequalities' },
+    { name: 'Неравенства с модулем', slug: 'absolute-value-inequalities' },
+    { name: 'Другие неравенства смешанного типа', slug: 'mixed-inequalities' }
+  ],
+  '16': [
+    { name: 'Вклады', slug: 'deposits' },
+    { name: 'Кредиты', slug: 'credits' },
+    { name: 'Задачи на оптимальный выбор', slug: 'optimal-choice' },
+    { name: 'Разные задачи', slug: 'miscellaneous-problems' }
+  ],
+  '17': [
+    { name: 'Треугольники и их свойства', slug: 'triangles-properties' },
+    { name: 'Четырехугольники и их свойства', slug: 'quadrilaterals-properties' },
+    { name: 'Окружности и системы окружностей', slug: 'circles-systems' },
+    { name: 'Вписанные окружности и треугольники', slug: 'inscribed-circles-triangles' },
+    { name: 'Описанные окружности и треугольники', slug: 'circumscribed-circles-triangles' },
+    { name: 'Окружности и треугольники, разные задачи', slug: 'circles-triangles-misc' },
+    { name: 'Вписанные окружности и четырехугольники', slug: 'inscribed-circles-quadrilaterals' },
+    { name: 'Описанные окружности и четырехугольники', slug: 'circumscribed-circles-quadrilaterals' },
+    { name: 'Окружности и четырехугольники, разные задачи', slug: 'circles-quadrilaterals-misc' },
+    { name: 'Разные задачи о многоугольниках', slug: 'polygons-misc' }
+  ],
+  '18': [
+    { name: 'Уравнения с параметром', slug: 'parameter-equations' },
+    { name: 'Уравнения с параметром, содержащие модуль', slug: 'parameter-equations-absolute' },
+    { name: 'Уравнения с параметром, содержащие радикалы', slug: 'parameter-equations-radicals' },
+    { name: 'Неравенства с параметром', slug: 'parameter-inequalities' },
+    { name: 'Системы с параметром', slug: 'parameter-systems' },
+    { name: 'Расположение корней квадратного трехчлена', slug: 'quadratic-roots-location' },
+    { name: 'Использование симметрий', slug: 'symmetry-method' },
+    { name: 'Использование монотонности, оценок', slug: 'monotonicity-estimates' },
+    { name: 'Аналитическое решение уравнений и неравенств', slug: 'analytical-equations-inequalities' },
+    { name: 'Аналитическое решение систем', slug: 'analytical-systems' },
+    { name: 'Координаты (х, а)', slug: 'coordinates-x-a' },
+    { name: 'Уравнение окружности', slug: 'circle-equation' },
+    { name: 'Расстояние между точками', slug: 'distance-points' },
+    { name: 'Функции, зависящие от параметра', slug: 'parameter-functions' }
+  ],
+  '19': [
+    { name: 'Числа и их свойства', slug: 'numbers-properties' },
+    { name: 'Числовые наборы на карточках и досках', slug: 'number-sets-cards' },
+    { name: 'Последовательности и прогрессии', slug: 'sequences-progressions' },
+    { name: 'Сюжетные задачи: кино, театр, мотки верёвки', slug: 'story-problems' }
+  ]
+};
+
+// === SVG ГРАФИКА С КОНКРЕТНЫМИ ЗНАЧЕНИЯМИ ===
+const svgs = {
+  // Треугольник с конкретными сторонами и углами
+  triangle1: `<svg viewBox="0 0 220 180" width="220" height="180">
+    <defs><marker id="arrow1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#333" /></marker></defs>
+    <polygon points="30,150 190,150 90,30" stroke="#1A2B4D" stroke-width="2.5" fill="rgba(67, 97, 238, 0.1)"/>
+    <line x1="30" y1="150" x2="190" y2="150" stroke="#1A2B4D" stroke-width="2"/>
+    <line x1="190" y1="150" x2="90" y2="30" stroke="#1A2B4D" stroke-width="2"/>
+    <line x1="90" y1="30" x2="30" y2="150" stroke="#1A2B4D" stroke-width="2"/>
+    <text x="105" y="168" font-size="14" fill="#333">AB = 8</text>
+    <text x="15" y="100" font-size="14" fill="#333">AC = 6</text>
+    <text x="145" y="85" font-size="14" fill="#333">BC</text>
+    <text x="100" y="145" font-size="16" fill="#4361EE" font-weight="bold">60°</text>
+    <circle cx="30" cy="150" r="3" fill="#333"/>
+    <circle cx="190" cy="150" r="3" fill="#333"/>
+    <circle cx="90" cy="30" r="3" fill="#333"/>
+    <text x="20" y="145" font-size="13" font-weight="bold">A</text>
+    <text x="195" y="145" font-size="13" font-weight="bold">B</text>
+    <text x="85" y="22" font-size="13" font-weight="bold">C</text>
+  </svg>`,
+  
+  // Векторы с координатами
+  vectors: `<svg viewBox="0 0 220 180" width="220" height="180">
+    <defs><marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#333" /></marker></defs>
+    <line x1="30" y1="160" x2="200" y2="160" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <line x1="30" y1="160" x2="30" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <text x="205" y="165" font-size="12">x</text>
+    <text x="25" y="15" font-size="12">y</text>
+    <line x1="30" y1="160" x2="150" y2="80" stroke="#4361EE" stroke-width="3" marker-end="url(#arrow2)"/>
+    <text x="155" y="75" font-size="14" fill="#4361EE" font-weight="bold">a⃗</text>
+    <text x="140" y="110" font-size="11" fill="#666">(2; -3)</text>
+    <line x1="30" y1="160" x2="90" y2="100" stroke="#f5576c" stroke-width="3" marker-end="url(#arrow2)"/>
+    <text x="95" y="95" font-size="14" fill="#f5576c" font-weight="bold">b⃗</text>
+    <text x="80" y="130" font-size="11" fill="#666">(4; 1)</text>
+    <text x="25" y="175" font-size="11">O</text>
+  </svg>`,
+  
+  // Куб с размерами
+  cube: `<svg viewBox="0 0 220 220" width="220" height="220">
+    <polygon points="70,50 170,50 200,80 100,80" stroke="#1A2B4D" stroke-width="2" fill="none"/>
+    <polygon points="70,50 70,150 170,150 170,50" stroke="#1A2B4D" stroke-width="2" fill="none"/>
+    <polygon points="170,50 200,80 200,180 170,150" stroke="#1A2B4D" stroke-width="2" fill="none"/>
+    <polygon points="70,150 100,180 200,180 170,150" stroke="#1A2B4D" stroke-width="2" fill="none"/>
+    <line x1="70" y1="50" x2="100" y2="80" class="dashed" stroke="#666"/>
+    <line x1="70" y1="150" x2="100" y2="180" class="dashed" stroke="#666"/>
+    <line x1="100" y1="80" x2="100" y2="180" class="dashed" stroke="#666"/>
+    <text x="55" y="45" font-size="13" font-weight="bold">A</text>
+    <text x="175" y="45" font-size="13" font-weight="bold">B</text>
+    <text x="205" y="75" font-size="13" font-weight="bold">C</text>
+    <text x="85" y="75" font-size="13" font-weight="bold">D</text>
+    <text x="175" y="145" font-size="13" font-weight="bold">E</text>
+    <text x="205" y="175" font-size="13" font-weight="bold">F</text>
+    <text x="105" y="175" font-size="13" font-weight="bold">H</text>
+    <text x="55" y="145" font-size="13" font-weight="bold">G</text>
+    <text x="115" y="115" font-size="14" fill="#4361EE" font-weight="bold">a = 4</text>
+  </svg>`,
+  
+  // График функции с касательной
+  graph: `<svg viewBox="0 0 220 180" width="220" height="180">
+    <line x1="30" y1="160" x2="210" y2="160" stroke="#333" stroke-width="1.5"/>
+    <line x1="50" y1="170" x2="50" y2="20" stroke="#333" stroke-width="1.5"/>
+    <text x="215" y="165" font-size="11">x</text>
+    <text x="45" y="15" font-size="11">y</text>
+    <path d="M 30 120 Q 70 160 110 110 T 190 100" fill="none" stroke="#4361EE" stroke-width="2.5"/>
+    <line x1="50" y1="140" x2="170" y2="60" stroke="#f5576c" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <circle cx="110" cy="110" r="5" fill="#f5576c" stroke="#333" stroke-width="1.5"/>
+    <text x="115" y="105" font-size="12" font-weight="bold">x₀</text>
+    <text x="45" y="175" font-size="10">0</text>
+    <text x="15" y="125" font-size="11">y=f(x)</text>
+  </svg>`,
+  
+  // Параллелограмм
+  parallelogram: `<svg viewBox="0 0 220 160" width="220" height="160">
+    <polygon points="40,120 180,120 200,50 60,50" stroke="#1A2B4D" stroke-width="2.5" fill="rgba(67, 97, 238, 0.1)"/>
+    <text x="30" y="115" font-size="13" font-weight="bold">A</text>
+    <text x="185" y="115" font-size="13" font-weight="bold">B</text>
+    <text x="205" y="45" font-size="13" font-weight="bold">C</text>
+    <text x="50" y="45" font-size="13" font-weight="bold">D</text>
+    <text x="105" y="138" font-size="13">AB = 8</text>
+    <text x="15" y="85" font-size="13">AD = 5</text>
+    <text x="120" y="80" font-size="14" fill="#4361EE" font-weight="bold">∠A = 60°</text>
+  </svg>`
+};
+
+// === БАЗА ВАРИАНТОВ ЕГЭ 2026 (С ИСПРАВЛЕННЫМИ БАЛЛАМИ) ===
+const egeVariants = {
+  basic: [
+    {
+      id: 1,
+      name: "Вариант 1 (Базовый)",
+      tasks: [
+        { num: 1, text: 'В треугольнике ABC (см. рис.) известно, что AB = 8, AC = 6, угол A равен 60°. Найдите площадь треугольника.', svg: svgs.triangle1, answer: '24', points: 1 },
+        { num: 2, text: 'Найдите скалярное произведение векторов a(2; -3) и b(4; 1) (см. рис.).', svg: svgs.vectors, answer: '5', points: 1 },
+        { num: 3, text: 'Объем куба (см. рис.) равен 64. Найдите площадь его поверхности.', svg: svgs.cube, answer: '96', points: 1 },
+        { num: 4, text: 'В сборнике билетов по биологии всего 25 билетов. В 2 из них встречается вопрос по грибоводству. Найдите вероятность того, что в случайно выбранном билете не достанется вопроса по грибоводству.', answer: '0.92', points: 1 },
+        { num: 5, text: 'Найдите корень уравнения: log₃(5x - 3) = 3.', answer: '6', points: 1 },
+        { num: 6, text: 'Найдите значение выражения: 2^(0.2) × 5^(1.2).', answer: '10', points: 1 },
+        { num: 7, text: 'На рисунке изображен график функции y=f(x) и касательная к нему в точке x₀. Найдите значение производной f\'(x₀).', svg: svgs.graph, answer: '-1', points: 1 },
+        { num: 8, text: 'Найдите объем многогранника, изображенного на рисунке (все двугранные углы прямые).', svg: svgs.cube, answer: '12', points: 1 },
+        { num: 9, text: 'Два мотоциклиста стартуют одновременно из диаметрально противоположных точек круговой трассы длиной 14 км. Через сколько минут они поравняются, если скорость одного на 21 км/ч больше?', answer: '20', points: 1 },
+        { num: 10, text: 'Найдите точку максимума функции: y = (x + 5)² × e^(4 - x).', answer: '-3', points: 1 },
+        { num: 11, text: 'На рисунке изображён график функции f(x) = a·sin(x) + b. Найдите значение коэффициента a.', svg: svgs.graph, answer: '3', points: 1 },
+        { num: 12, text: 'Найдите наибольшее значение функции: y = x³ - 3x² + 2 на отрезке [-1; 3].', answer: '2', points: 1 },
+        { num: 13, text: 'а) Решите уравнение: 2sin²(x) + cos(x) - 1 = 0.<br>б) Найдите все корни, принадлежащие отрезку [0; 2π].', answer: '±π/3+2πk; π/3,5π/3,π', points: 2 },
+        { num: 14, text: 'В правильной четырёхугольной пирамиде SABCD сторона основания равна 4, а боковое ребро 6. Найдите угол между плоскостью, проходящей через середины рёбер SA и SB перпендикулярно основанию, и плоскостью грани SBC.', svg: svgs.cube, answer: 'arctan(√2)', points: 3 },
+        { num: 15, text: 'Решите неравенство: log₂(x² - 3x + 2) ≤ 1.', answer: '[0;1)∪(2;3]', points: 2 },
+        { num: 16, text: 'Вкладчик открыл счёт в банке, внеся 100 000 рублей. Ежемесячно начисляется 2%. Сколько месяцев должно пройти, чтобы на счёте оказалось не менее 150 000 рублей?', answer: '21', points: 2 },
+        { num: 17, text: 'В треугольнике ABC: AB = 5, BC = 7, AC = 8. Биссектриса угла B пересекает AC в точке D. Найдите длину биссектрисы BD.', svg: svgs.triangle1, answer: '35/6', points: 3 },
+        { num: 18, text: 'Найдите все значения параметра a, при которых уравнение x² + (a+2)x + a + 1 = 0 имеет два различных корня, сумма квадратов которых равна 10.', answer: '-5;1', points: 4 },
+        { num: 19, text: 'а) Может ли сумма трёх попарно различных натуральных чисел быть равна их произведению?<br>б) Может ли сумма четырёх попарно различных натуральных чисел быть равна их произведению?', answer: 'да(1,2,3);нет', points: 4 }
+      ]
+    }
+  ],
+  medium: [
+    {
+      id: 2,
+      name: "Вариант 2 (Средний)",
+      tasks: [
+        { num: 1, text: 'В треугольнике ABC: AC = BC = 10, AB = 12. Найдите тангенс внешнего угла при вершине A.', svg: svgs.triangle1, answer: '-1.33', points: 1 },
+        { num: 2, text: 'Найдите модуль вектора a(3; 4) - b(1; 2).', svg: svgs.vectors, answer: '2.83', points: 1 },
+        { num: 3, text: 'В цилиндрический сосуд налито 2000 см³ воды. Уровень достигает 12 см. После погружения детали уровень поднялся на 9 см. Найдите объем детали.', svg: svgs.cube, answer: '1500', points: 1 },
+        { num: 4, text: 'Вероятность того, что батарейка бракованная, равна 0.06. Найдите вероятность того, что обе батарейки из упаковки исправны.', answer: '0.88', points: 1 },
+        { num: 5, text: 'Найдите корень уравнения: 3^(2x-1) = 27.', answer: '2', points: 1 },
+        { num: 6, text: 'Найдите значение выражения: log₃(27) + log₅(125).', answer: '6', points: 1 },
+        { num: 7, text: 'Найдите точку максимума функции: y = x³ − 12x.', svg: svgs.graph, answer: '-2', points: 1 },
+        { num: 8, text: 'Решите уравнение: sin(2x) = √3/2. Укажите наименьший положительный корень (в градусах).', answer: '30', points: 1 },
+        { num: 9, text: 'Найдите площадь треугольника со сторонами 5, 6 и 7.', answer: '14.7', points: 1 },
+        { num: 10, text: 'Найдите наименьшее значение функции: y = x + 16/x на промежутке (0; +∞).', answer: '8', points: 1 },
+        { num: 11, text: 'Решите неравенство: 2^(x+1) > 8.', answer: '(2;+∞)', points: 1 },
+        { num: 12, text: 'Найдите угол между векторами a(1; 0) и b(1; 1) в градусах.', svg: svgs.vectors, answer: '45', points: 1 },
+        { num: 13, text: 'а) Решите уравнение: 3^(2x) - 10·3^x + 9 = 0.<br>б) Укажите корни, принадлежащие отрезку [0; 2].', answer: '0;2', points: 2 },
+        { num: 14, text: 'В правильной треугольной призме ABCA₁B₁C₁ сторона основания равна 2, высота призмы равна √3. Найдите угол между прямыми AB₁ и BC₁.', svg: svgs.cube, answer: '90', points: 3 },
+        { num: 15, text: 'Решите неравенство: (x² - 4)/(x - 1) ≥ 0.', answer: '[-2;1)∪[2;+∞)', points: 2 },
+        { num: 16, text: 'Предприятие производит товар, себестоимость 500 руб. При цене x руб. спрос q = 1000 - 2x. Найдите цену x для максимальной прибыли.', answer: '500', points: 2 },
+        { num: 17, text: 'Окружность вписана в равнобедренную трапецию с основаниями 10 и 40. Найдите радиус окружности.', svg: svgs.parallelogram, answer: '10', points: 3 },
+        { num: 18, text: 'Найдите все значения параметра a, при которых система {x² + y² = a², |x| + |y| = 2} имеет ровно два решения.', answer: '±2', points: 4 },
+        { num: 19, text: 'На доске написано 100 натуральных чисел. Сумма любых 50 из них больше суммы остальных 50. Докажите, что есть число больше 50.', answer: 'доказательство', points: 4 }
+      ]
+    }
+  ],
+  advanced: [
+    {
+      id: 3,
+      name: "Вариант 3 (Продвинутый)",
+      tasks: [
+        { num: 1, text: 'В правильной четырехугольной пирамиде сторона основания равна 6, боковое ребро 5. Найдите высоту пирамиды.', svg: svgs.cube, answer: '2.65', points: 1 },
+        { num: 2, text: 'Найдите все значения параметра a, при которых уравнение x² + ax + 1 = 0 имеет два различных корня.', answer: '(-∞;-2)∪(2;+∞)', points: 1 },
+        { num: 3, text: 'Решите систему: x² + y² = 25, x + y = 7. Укажите сумму всех значений x.', answer: '7', points: 1 },
+        { num: 4, text: 'Найдите площадь фигуры, ограниченной линиями: y = x², y = 4.', answer: '10.67', points: 1 },
+        { num: 5, text: 'Найдите производную функции y = ln(x² + 1) в точке x = 1.', answer: '1', points: 1 },
+        { num: 6, text: 'Решите неравенство: log₂(x² − 3x + 2) < 1.', answer: '(1;2)', points: 1 },
+        { num: 7, text: 'Найдите объем тела, полученного вращением прямоугольника 3×4 вокруг большей стороны.', svg: svgs.cube, answer: '113.1', points: 1 },
+        { num: 8, text: 'Найдите сумму бесконечно убывающей геометрической прогрессии: 1, 1/3, 1/9, ...', answer: '1.5', points: 1 },
+        { num: 9, text: 'Решите уравнение: √(x+3) + √(x-1) = 4.', answer: '3.25', points: 1 },
+        { num: 10, text: 'Найдите угол между плоскостями в правильной треугольной призме (в градусах).', svg: svgs.cube, answer: '90', points: 1 },
+        { num: 11, text: 'Исследуйте функцию y = x⁴ − 4x³ на монотонность. Укажите точку минимума.', svg: svgs.graph, answer: '3', points: 1 },
+        { num: 12, text: 'Найдите количество целых решений неравенства: |x - 3| < 5.', answer: '9', points: 1 },
+        { num: 13, text: 'а) Решите: cos(2x) + 3sin(x) - 2 = 0.<br>б) Найдите корни на [-π; π].', answer: 'π/6+2πk,5π/6+2πn', points: 2 },
+        { num: 14, text: 'В кубе ABCDA₁B₁C₁D₁ найдите угол между плоскостями A₁BD и B₁D₁C.', svg: svgs.cube, answer: 'arccos(1/3)', points: 3 },
+        { num: 15, text: 'Решите неравенство: 4^x - 3·2^x + 2 ≤ 0.', answer: '[0;1]', points: 2 },
+        { num: 16, text: 'Кредит 1 000 000 руб. на 5 лет под 10% годовых. Найдите переплату при равных ежегодных платежах.', answer: '263797', points: 2 },
+        { num: 17, text: 'В треугольнике ABC: AB = 10, AC = 15, BC = 20. Биссектриса AL. Найдите длину AL.', svg: svgs.triangle1, answer: '6√6', points: 3 },
+        { num: 18, text: 'Найдите все a, при которых |x - a| + |x + a| = 4 имеет ровно одно решение.', answer: '±2', points: 4 },
+        { num: 19, text: 'Даны 2023 натуральных числа. Сумма любых 1012 больше суммы остальных. Докажите, что есть число больше 1012.', answer: 'доказательство', points: 4 }
+      ]
+    }
+  ]
+};
+
+// === ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ===
+let currentTaskNumber = null;
+let currentVariant = null;
+let currentLevel = null;
+let timer;
+let timeLeft = 14100;
+let isRunning = false;
+
+// === НАВИГАЦИЯ ===
+const navLinks = document.querySelectorAll('.nav-link');
+const pages = document.querySelectorAll('.page');
+const timerContainer = document.getElementById('timerContainer');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    navLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    const targetPage = this.getAttribute('data-page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(targetPage).classList.add('active');
+    if (targetPage === 'practice') {
+      timerContainer.style.display = 'block';
+      startTimer();
+    } else {
+      timerContainer.style.display = 'none';
+    }
+    window.scrollTo(0, 0);
+  });
+});
+
+// === DROPDOWN ===
+const startDropdown = document.getElementById('startDropdown');
+const startBtn = document.getElementById('startBtn');
+let dropdownTimeout;
+
+startBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  startDropdown.classList.add('show');
+  dropdownTimeout = setTimeout(() => {
+    startDropdown.classList.remove('show');
+  }, 8000);
+});
+
+document.addEventListener('click', function(e) {
+  if (!startDropdown.contains(e.target)) {
+    startDropdown.classList.remove('show');
+    clearTimeout(dropdownTimeout);
+  }
+});
+
+// === ВЫБОР УРОВНЯ ===
+document.querySelectorAll('.level-basic, .level-medium, .level-advanced').forEach(button => {
+  button.addEventListener('click', e => {
+    e.preventDefault();
+    const level = button.getAttribute('data-level');
+    currentLevel = level;
+    const variants = egeVariants[level];
+    currentVariant = variants[0];
+    
+    pages.forEach(p => p.classList.remove('active'));
+    document.getElementById('practice').classList.add('active');
+    document.getElementById('variantInfo').style.display = 'block';
+    document.getElementById('variantNumber').textContent = currentVariant.id;
+    
+    const badge = document.getElementById('levelBadge');
+    const levelNames = { basic: 'Базовый', medium: 'Средний', advanced: 'Продвинутый' };
+    badge.textContent = levelNames[level];
+    badge.className = 'level-badge ' + level;
+    
+    generateVariantTasks(currentVariant.tasks);
+    timerContainer.style.display = 'block';
+    resetTimer();
+    startTimer();
+    startDropdown.classList.remove('show');
+    clearTimeout(dropdownTimeout);
+    window.scrollTo(0, 0);
+  });
+});
+
+// === СБРОС ТАЙМЕРА ===
+function resetTimer() {
+  clearInterval(timer);
+  isRunning = false;
+  timeLeft = 14100;
+  localStorage.setItem('egeTimer', timeLeft);
+}
+
+// === ГЕНЕРАЦИЯ ЗАДАНИЙ С SVG ===
+function generateVariantTasks(tasks) {
+  const part1 = document.getElementById('part1');
+  let html = '<div class="practice-questions">';
+  
+  tasks.forEach(task => {
+    let svgHtml = task.svg ? `<div class="task-svg-container">${task.svg}</div>` : '';
+    html += `<div class="practice-question">
+      <span class="question-number">${task.num}</span>
+      <p class="question-text">${task.text}</p>
+      ${svgHtml}
+      <input type="text" class="answer-input" id="answer${task.num}" placeholder="Ваш ответ">
+    </div>`;
+  });
+  
+  html += '</div>';
+  part1.innerHTML = html;
+}
+
+async function loadThemeContent(taskNumber, themeSlug) {
+  const filePath = `tasks/task${taskNumber}/${themeSlug}.html`;
+  console.log('📂 Загрузка файла:', filePath); // <-- Добавлено
+  
+  try {
+    const response = await fetch(filePath);
+    console.log('📥 Ответ сервера:', response.status); // <-- Добавлено
+    
+    if (!response.ok) throw new Error('Файл не найден');
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const bodyContent = doc.body.innerHTML;
+    return bodyContent.trim() ? bodyContent : html;
+  } catch (error) {
+    console.error('❌ Ошибка загрузки:', error); // <-- Улучшено
+    console.warn(`⚠️ Не удалось загрузить ${filePath}`);
+    return `<div style="color:#666; text-align:center; padding:30px; border:2px dashed #ccc; border-radius:10px;">
+      📝 Контент для темы ещё не добавлен.<br><br>
+      <strong>Создайте файл:</strong><br>
+      <code style="background:#f5f5f5; padding:5px 10px; border-radius:4px;">${filePath}</code>
+    </div>`;
+  }
+}
+
+// === ПОКАЗАТЬ СПИСОК ТЕМ ===
+function showTask(taskNumber) {
+  currentTaskNumber = taskNumber;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('theory-tasks').classList.add('active');
+  document.getElementById('task-title').textContent = `Задание ${taskNumber}`;
+  
+  const container = document.getElementById('topics-container');
+  container.innerHTML = '';
+  
+  const topics = getTopicsForTask(taskNumber);
+  topics.forEach(topic => {
+    const btn = document.createElement('button');
+    btn.className = 'topic-btn';
+    btn.textContent = topic.name;
+    btn.onclick = () => showTheme(topic.name, topic.slug, taskNumber);
+    container.appendChild(btn);
+  });
+  
+  addBackButtonToTasks();
+  window.scrollTo(0, 0);
+}
+
+function getTopicsForTask(taskNumber) {
+  return topicsMap[taskNumber] || [{ name: 'Тема в разработке', slug: 'coming-soon' }];
+}
+
+// === ПОКАЗАТЬ КОНТЕНТ ТЕМЫ ===
+async function showTheme(themeName, themeSlug, taskNumber) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('theory-theme').classList.add('active');
+  document.getElementById('theme-title').textContent = themeName;
+  
+  const contentDiv = document.getElementById('theme-content');
+  contentDiv.innerHTML = '<div style="text-align:center; padding:40px;">🔄 Загрузка...</div>';
+  
+  const html = await loadThemeContent(taskNumber, themeSlug);
+  contentDiv.innerHTML = html;
+  
+  if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+    MathJax.typesetPromise();
+  }
+  
+  addBackButtonToTheme(taskNumber);
+  window.scrollTo(0, 0);
+}
+
+// === КНОПКИ "НАЗАД" ===
+function addBackButtonToTheme(taskNumber) {
+  const id = 'back-to-tasks';
+  let btn = document.getElementById(id);
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = id;
+    btn.className = 'back-button';
+    btn.textContent = '← Вернуться к темам задания';
+    document.getElementById('theory-theme').insertBefore(btn, document.getElementById('theme-title'));
+  }
+  btn.onclick = () => {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('theory-tasks').classList.add('active');
+    if (currentTaskNumber) {
+      document.getElementById('task-title').textContent = `Задание ${currentTaskNumber}`;
+      const container = document.getElementById('topics-container');
+      container.innerHTML = '';
+      getTopicsForTask(currentTaskNumber).forEach(topic => {
+        const btn = document.createElement('button');
+        btn.className = 'topic-btn';
+        btn.textContent = topic.name;
+        btn.onclick = () => showTheme(topic.name, topic.slug, currentTaskNumber);
+        container.appendChild(btn);
+      });
+    }
+  };
+}
+
+function addBackButtonToTasks() {
+  const id = 'back-to-theory';
+  let btn = document.getElementById(id);
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = id;
+    btn.className = 'back-button';
+    btn.textContent = '← Вернуться к списку заданий';
+    const container = document.getElementById('topics-container');
+    container.parentNode.insertBefore(btn, container);
+  }
+  btn.onclick = backToTheory;
+}
+
+function backToTheory() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('theory').classList.add('active');
+  currentTaskNumber = null;
+}
+
+function backToTasks() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('theory-tasks').classList.add('active');
+  if (currentTaskNumber) {
+    document.getElementById('task-title').textContent = `Задание ${currentTaskNumber}`;
+  }
+}
+
+// === ТАЙМЕР ===
+function updateTimer() {
+  const h = Math.floor(timeLeft / 3600);
+  const m = Math.floor((timeLeft % 3600) / 60);
+  const s = timeLeft % 60;
+  document.getElementById('timerDisplay').textContent =
+    `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+}
+
+function startTimer() {
+  if (isRunning) return;
+  isRunning = true;
+  if (localStorage.getItem('egeTimer')) {
+    timeLeft = parseInt(localStorage.getItem('egeTimer'));
+  }
+  updateTimer();
+  timer = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;
+      localStorage.setItem('egeTimer', timeLeft);
+      updateTimer();
+    } else {
+      clearInterval(timer);
+      isRunning = false;
+      alert('⏰ Время вышло! Тест будет завершён автоматически.');
+      checkAnswers();
+    }
+  }, 1000);
+}
+
+// === ПРОВЕРКА ОТВЕТОВ (ИСПРАВЛЕННАЯ СИСТЕМА БАЛЛОВ) ===
+function checkAnswers() {
+  clearInterval(timer);
+  isRunning = false;
+  timerContainer.style.display = 'none';
+  
+  const resultsTableBody = document.getElementById('resultsTableBody');
+  resultsTableBody.innerHTML = '';
+  
+  let totalPrimaryScore = 0;
+  
+  if (!currentVariant) return;
+  
+  currentVariant.tasks.forEach(task => {
+    const input = document.getElementById(`answer${task.num}`);
+    const userAns = input ? input.value.trim().toLowerCase() : '';
+    const correctAns = task.answer.toLowerCase();
+    
+    let isCorrect = false;
+    if (userAns === correctAns) isCorrect = true;
+    else if (userAns.replace(/\s/g, '') === correctAns.replace(/\s/g, '')) isCorrect = true;
+    
+    // Получаем баллы за задание из data
+    const taskPoints = task.points || 1;
+    if (isCorrect) {
+      totalPrimaryScore += taskPoints;
+    }
+    
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${task.num}</td>
+      <td>${userAns || '—'}</td>
+      <td>${task.answer}</td>
+      <td style="font-weight:700; color:${isCorrect ? 'var(--success)' : 'var(--warning)'}">
+        ${isCorrect ? taskPoints : 0}/${taskPoints}
+      </td>
+    `;
+    resultsTableBody.appendChild(row);
+  });
+  
+  // ТАБЛИЦА ПЕРЕВОДА ПЕРВИЧНЫХ БАЛЛОВ В ТЕСТОВЫЕ (ЕГЭ 2026)
+  const conversionTable = {
+    0: 0, 1: 6, 2: 11, 3: 17, 4: 22, 5: 27, 6: 33, 7: 39, 8: 44, 9: 50,
+    10: 56, 11: 62, 12: 68, 13: 70, 14: 72, 15: 74, 16: 76, 17: 78,
+    18: 80, 19: 82, 20: 84, 21: 86, 22: 88, 23: 90, 24: 92, 25: 94,
+    26: 95, 27: 96, 28: 97, 29: 98, 30: 99, 31: 100, 32: 100
+  };
+  
+  const hundredScore = conversionTable[totalPrimaryScore] || 0;
+  
+  document.getElementById('finalScore').textContent = totalPrimaryScore;
+  document.getElementById('finalResultText').textContent = `Вы набрали ${totalPrimaryScore} первичных баллов из 32`;
+  document.getElementById('convertedScore').textContent = `Перевод в 100-балльную систему: ${hundredScore} баллов`;
+  
+  document.getElementById('resultSection').style.display = 'block';
+  document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetPractice() {
+  document.querySelectorAll('.answer-input').forEach(inp => inp.value = '');
+  document.getElementById('resultSection').style.display = 'none';
+  document.getElementById('variantInfo').style.display = 'none';
+  clearInterval(timer);
+  timeLeft = 14100;
+  localStorage.setItem('egeTimer', timeLeft);
+  isRunning = false;
+  currentVariant = null;
+  currentLevel = null;
+  window.scrollTo(0, 0);
+}
+
+document.getElementById('submitAnswers').addEventListener('click', checkAnswers);
+
+// === ПРОГРЕСС ===
+const checkboxes = document.querySelectorAll('.topic-checkbox');
+checkboxes.forEach(cb => {
+  if (localStorage.getItem(`topic_${cb.getAttribute('data-topic')}`) === 'true') {
+    cb.checked = true;
+  }
+  cb.addEventListener('change', () => {
+    localStorage.setItem(`topic_${cb.getAttribute('data-topic')}`, cb.checked);
+    updateProgress();
+  });
+});
+
+function updateProgress() {
+  const total = checkboxes.length;
+  const completed = document.querySelectorAll('.topic-checkbox:checked').length;
+  const percentage = Math.round((completed / total) * 100);
+  document.querySelector('.progress-percentage').textContent = `${percentage}%`;
+  document.getElementById('progressFill').style.width = `${percentage}%`;
+}
+
+updateProgress();
+
+// === ГЕНЕРАЦИЯ СПИСКОВ ЗАДАНИЙ В ТЕОРИИ ===
+function generateTheoryTaskLists() {
+  const part1List = document.getElementById('taskListPart1');
+  const part2List = document.getElementById('taskListPart2');
+  
+  for (let i = 1; i <= 12; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'task-btn';
+    btn.textContent = `Задание ${i}`;
+    btn.onclick = () => showTask(i.toString());
+    part1List.appendChild(btn);
+  }
+  
+  for (let i = 13; i <= 19; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'task-btn';
+    btn.textContent = `Задание ${i}`;
+    btn.onclick = () => showTask(i.toString());
+    part2List.appendChild(btn);
+  }
+}
+
+// === ИНИЦИАЛИЗАЦИЯ ===
+document.addEventListener('DOMContentLoaded', () => {
+  generateTheoryTaskLists();
+  if (localStorage.getItem('egeTimer')) {
+    timeLeft = parseInt(localStorage.getItem('egeTimer'));
+    updateTimer();
+  }
+  console.log('✅ KeySMath загружен. Готов к работе!');
+});
+</script>
+</body>
+</html>

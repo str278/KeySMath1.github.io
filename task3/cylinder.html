@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цилиндр</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Цилиндр</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Цилиндр</strong> — тело вращения, образованное вращением прямоугольника вокруг одной из его сторон.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>R</code> — радиус основания<br>
+        <code>H</code> — высота цилиндра<br>
+        <code>V</code> — объём цилиндра<br>
+        <code>S_бок</code> — площадь боковой поверхности<br>
+        <code>S_полн</code> — площадь полной поверхности
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Свойства:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Основания цилиндра — равные круги</li>
+            <li>Образующие цилиндра параллельны и равны</li>
+            <li>Осевой сечение цилиндра — прямоугольник</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Прямой круговой цилиндр</h3>
+        <svg width="400" height="420" viewBox="0 0 400 420">
+            <!-- Нижнее основание (эллипс) -->
+            <ellipse cx="200" cy="350" rx="120" ry="40" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+            
+            <!-- Верхнее основание (эллипс) -->
+            <ellipse cx="200" cy="120" rx="120" ry="40" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+            
+            <!-- Боковые образующие -->
+            <line x1="80" y1="350" x2="80" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+            <line x1="320" y1="350" x2="320" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+            
+            <!-- Радиус -->
+            <line x1="200" y1="350" x2="320" y2="350" stroke="#4361EE" stroke-width="2"/>
+            
+            <!-- Высота -->
+            <line x1="340" y1="350" x2="340" y2="120" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,3"/>
+            <line x1="335" y1="350" x2="345" y2="350" stroke="#FF6B6B" stroke-width="2"/>
+            <line x1="335" y1="120" x2="345" y2="120" stroke="#FF6B6B" stroke-width="2"/>
+            
+            <!-- Подписи -->
+            <text x="200" y="365" font-size="18" font-weight="bold">O</text>
+            <text x="200" y="135" font-size="18" font-weight="bold">O₁</text>
+            <text x="250" y="365" font-size="20" font-weight="bold" fill="#4361EE">R</text>
+            <text x="345" y="240" font-size="20" font-weight="bold" fill="#FF6B6B">H</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>R</strong> — радиус основания<br>
+            <strong>H</strong> — высота цилиндра
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Объём цилиндра:</div>
+        $$ V = \pi R^2 H $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Площадь боковой поверхности:</div>
+        $$ S_{бок} = 2\pi RH $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Площадь полной поверхности:</div>
+        $$ S_{полн} = 2\pi R(R + H) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Площадь основания:</div>
+        $$ S_{осн} = \pi R^2 $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Радиус основания цилиндра равен 3, высота равна 5. Найдите объём цилиндра.</p>
+        
+        <div class="diagram">
+            <svg width="400" height="420" viewBox="0 0 400 420">
+                <ellipse cx="200" cy="350" rx="120" ry="40" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+                <ellipse cx="200" cy="120" rx="120" ry="40" fill="none" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="80" y1="350" x2="80" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="320" y1="350" x2="320" y2="120" stroke="#1A2B4D" stroke-width="2.5"/>
+                <line x1="200" y1="350" x2="320" y2="350" stroke="#4361EE" stroke-width="2"/>
+                <line x1="340" y1="350" x2="340" y2="120" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="200" y="365" font-size="18" font-weight="bold">O</text>
+                <text x="200" y="135" font-size="18" font-weight="bold">O₁</text>
+                <text x="250" y="365" font-size="18" font-weight="bold" fill="#4361EE">3</text>
+                <text x="345" y="240" font-size="18" font-weight="bold" fill="#FF6B6B">5</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">По формуле объёма цилиндра:</p>
+        <div class="step"><strong>V = πR²H = π · 3² · 5 = π · 9 · 5 = 45π</strong></div>
+        
+        <div class="answer">Ответ: 45π</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умножение вероятностей</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📊 Умножение вероятностей</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Произведение событий</strong> — событие, состоящее в совместном наступлении двух или более событий.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>A · B (или A ∩ B)</code> — произведение событий (A и B)<br>
+        <code>P(A · B)</code> — вероятность того, что произойдут и A, и B<br>
+        <code>P(B|A)</code> — условная вероятность B при условии A
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Независимые события:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>События называются <strong>независимыми</strong>, если наступление одного не влияет на вероятность наступления другого</li>
+            <li>Пример: два бросания монеты, два выстрела стрелка</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Произведение событий</h3>
+        <svg width="450" height="320" viewBox="0 0 450 320">
+            <rect x="50" y="80" width="350" height="180" fill="#f0f7ff" stroke="#4361EE" stroke-width="3" rx="10"/>
+            <circle cx="180" cy="170" r="70" fill="#d4edda" stroke="#27AE60" stroke-width="3"/>
+            <circle cx="270" cy="170" r="70" fill="#ffe5d4" stroke="#FF6B6B" stroke-width="3"/>
+            <ellipse cx="225" cy="170" rx="25" ry="50" fill="#fff3cd" stroke="#FFC107" stroke-width="3"/>
+            <text x="140" y="180" font-size="24" font-weight="bold" fill="#27AE60">A</text>
+            <text x="310" y="180" font-size="24" font-weight="bold" fill="#FF6B6B">B</text>
+            <text x="225" y="175" font-size="18" font-weight="bold" fill="#FFC107">A∩B</text>
+            <text x="225" y="300" font-size="18">P(A · B) = P(A) · P(B)</text>
+            <text x="225" y="50" font-size="20" font-weight="bold">Все исходы</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Пересечение событий A и B</strong><br>
+            Область, где происходят оба события одновременно
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Вероятность произведения независимых событий:</div>
+        $$ P(A \cdot B) = P(A) \cdot P(B) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Для нескольких независимых событий:</div>
+        $$ P(A_1 \cdot A_2 \cdot ... \cdot A_n) = P(A_1) \cdot P(A_2) \cdot ... \cdot P(A_n) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Условная вероятность (для зависимых событий):</div>
+        $$ P(A \cdot B) = P(A) \cdot P(B|A) $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Вероятность попадания стрелка в мишень при одном выстреле равна 0.8. Найдите вероятность того, что при двух выстрелах стрелок попадёт оба раза.</p>
+        
+        <div class="diagram">
+            <svg width="450" height="320" viewBox="0 0 450 320">
+                <rect x="50" y="80" width="150" height="180" fill="#d4edda" stroke="#27AE60" stroke-width="3" rx="10"/>
+                <rect x="250" y="80" width="150" height="180" fill="#ffe5d4" stroke="#FF6B6B" stroke-width="3" rx="10"/>
+                <text x="125" y="180" font-size="28" font-weight="bold" fill="#27AE60">0.8</text>
+                <text x="325" y="180" font-size="28" font-weight="bold" fill="#FF6B6B">0.8</text>
+                <text x="125" y="280" font-size="18">1-й выстрел</text>
+                <text x="325" y="280" font-size="18">2-й выстрел</text>
+                <text x="225" y="50" font-size="20" font-weight="bold">Независимые события</text>
+                <text x="225" y="315" font-size="16">P = 0.8 × 0.8 = 0.64</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">Пусть A — событие «попадание при первом выстреле», B — «попадание при втором выстреле».</p>
+        <p style="margin: 10px 0;">Эти события независимы (результат первого выстрела не влияет на второй).</p>
+        
+        <div class="step"><strong>P(A) = 0.8</strong></div>
+        <div class="step"><strong>P(B) = 0.8</strong></div>
+        <div class="step"><strong>P(A · B) = P(A) · P(B) = 0.8 · 0.8 = 0.64</strong></div>
+        
+        <div class="answer">Ответ: 0.64</div>
+    </div>
+</body>
+</html>

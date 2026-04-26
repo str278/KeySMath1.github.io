@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на несколько испытаний</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📊 Задачи на несколько испытаний</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Несколько испытаний</strong> — серия независимых экспериментов, в каждом из которых может произойти событие с определённой вероятностью.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>n</code> — число испытаний<br>
+        <code>p</code> — вероятность успеха в одном испытании<br>
+        <code>q = 1 − p</code> — вероятность неудачи<br>
+        <code>k</code> — число успехов
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Типичные задачи:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>«Найти вероятность ровно k успехов»</li>
+            <li>«Найти вероятность хотя бы одного успеха»</li>
+            <li>«Найти вероятность всех успехов»</li>
+            <li>«Найти вероятность ни одного успеха»</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Дерево вероятностей</h3>
+        <svg width="450" height="380" viewBox="0 0 450 380">
+            <line x1="50" y1="190" x2="150" y2="120" stroke="#27AE60" stroke-width="2"/>
+            <line x1="50" y1="190" x2="150" y2="260" stroke="#FF6B6B" stroke-width="2"/>
+            <line x1="150" y1="120" x2="250" y2="70" stroke="#27AE60" stroke-width="2"/>
+            <line x1="150" y1="120" x2="250" y2="170" stroke="#FF6B6B" stroke-width="2"/>
+            <line x1="150" y1="260" x2="250" y2="210" stroke="#27AE60" stroke-width="2"/>
+            <line x1="150" y1="260" x2="250" y2="310" stroke="#FF6B6B" stroke-width="2"/>
+            <circle cx="50" cy="190" r="5" fill="#4361EE"/>
+            <circle cx="150" cy="120" r="5" fill="#4361EE"/>
+            <circle cx="150" cy="260" r="5" fill="#4361EE"/>
+            <circle cx="250" cy="70" r="5" fill="#4361EE"/>
+            <circle cx="250" cy="170" r="5" fill="#4361EE"/>
+            <circle cx="250" cy="210" r="5" fill="#4361EE"/>
+            <circle cx="250" cy="310" r="5" fill="#4361EE"/>
+            <text x="30" y="195" font-size="16" font-weight="bold">Старт</text>
+            <text x="155" y="110" font-size="14" fill="#27AE60">p</text>
+            <text x="155" y="275" font-size="14" fill="#FF6B6B">q</text>
+            <text x="255" y="65" font-size="14" fill="#27AE60">p·p</text>
+            <text x="255" y="185" font-size="14" fill="#FF6B6B">p·q</text>
+            <text x="255" y="225" font-size="14" fill="#27AE60">q·p</text>
+            <text x="255" y="325" font-size="14" fill="#FF6B6B">q·q</text>
+            <text x="225" y="370" font-size="16">2 испытания</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Дерево вероятностей</strong> для двух испытаний<br>
+            Каждый путь — возможный исход серии
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Вероятность всех успехов (n раз):</div>
+        $$ P_n = p^n $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Вероятность всех неудач (n раз):</div>
+        $$ P_0 = q^n = (1-p)^n $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Вероятность хотя бы одного успеха:</div>
+        $$ P_{\geq 1} = 1 - q^n = 1 - (1-p)^n $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Формула Бернулли (ровно k успехов):</div>
+        $$ P_n(k) = C_n^k \cdot p^k \cdot q^{n-k} $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где C_n^k — число сочетаний из n по k</p>
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Вероятность попадания стрелка в мишень при одном выстреле равна 0.6. Стрелок делает 3 выстрела. Найдите вероятность того, что он попадёт ровно 2 раза.</p>
+        
+        <div class="diagram">
+            <svg width="450" height="380" viewBox="0 0 450 380">
+                <line x1="50" y1="190" x2="130" y2="100" stroke="#27AE60" stroke-width="2"/>
+                <line x1="50" y1="190" x2="130" y2="280" stroke="#FF6B6B" stroke-width="2"/>
+                <line x1="130" y1="100" x2="210" y2="50" stroke="#27AE60" stroke-width="2"/>
+                <line x1="130" y1="100" x2="210" y2="150" stroke="#FF6B6B" stroke-width="2"/>
+                <line x1="130" y1="280" x2="210" y2="230" stroke="#27AE60" stroke-width="2"/>
+                <line x1="130" y1="280" x2="210" y2="330" stroke="#FF6B6B" stroke-width="2"/>
+                <line x1="210" y1="50" x2="290" y2="30" stroke="#27AE60" stroke-width="2"/>
+                <line x1="210" y1="50" x2="290" y2="70" stroke="#FF6B6B" stroke-width="2"/>
+                <line x1="210" y1="150" x2="290" y2="130" stroke="#27AE60" stroke-width="2"/>
+                <line x1="210" y1="150" x2="290" y2="170" stroke="#FF6B6B" stroke-width="2"/>
+                <line x1="210" y1="230" x2="290" y2="210" stroke="#27AE60" stroke-width="2"/>
+                <line x1="210" y1="230" x2="290" y2="250" stroke="#FF6B6B" stroke-width="2"/>
+                <line x1="210" y1="330" x2="290" y2="310" stroke="#27AE60" stroke-width="2"/>
+                <line x1="210" y1="330" x2="290" y2="350" stroke="#FF6B6B" stroke-width="2"/>
+                <text x="225" y="375" font-size="16">3 выстрела</text>
+                <text x="300" y="30" font-size="12" fill="#27AE60">0.6³</text>
+                <text x="300" y="75" font-size="12" fill="#FF6B6B">0.6²·0.4</text>
+                <text x="300" y="135" font-size="12" fill="#27AE60">0.6²·0.4</text>
+                <text x="300" y="175" font-size="12" fill="#FF6B6B">0.6·0.4²</text>
+                <text x="300" y="215" font-size="12" fill="#27AE60">0.6²·0.4</text>
+                <text x="300" y="255" font-size="12" fill="#FF6B6B">0.6·0.4²</text>
+                <text x="300" y="315" font-size="12" fill="#FF6B6B">0.6·0.4²</text>
+                <text x="300" y="355" font-size="12" fill="#FF6B6B">0.4³</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">Используем формулу Бернулли:</p>
+        
+        <div class="step"><strong>p = 0.6, q = 0.4, n = 3, k = 2</strong></div>
+        <div class="step"><strong>C₃² = 3</strong></div>
+        <div class="step"><strong>P₃(2) = 3 · (0.6)² · (0.4)¹</strong></div>
+        <div class="step"><strong>P₃(2) = 3 · 0.36 · 0.4 = 0.432</strong></div>
+        
+        <div class="answer">Ответ: 0.432</div>
+    </div>
+</body>
+</html>

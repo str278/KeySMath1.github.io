@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Действия с векторами на плоскости</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Действия с векторами на плоскости</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Вектор</strong> — направленный отрезок, имеющий длину и направление. Обозначается стрелкой над буквой: <code>a⃗</code> или жирным шрифтом: <code>**a**</code>.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>a⃗(x; y)</code> — вектор с координатами x и y<br>
+        <code>|a⃗|</code> — длина (модуль) вектора<br>
+        <code>AB⃗</code> — вектор с началом в точке A и концом в точке B<br>
+        <code>0⃗</code> — нулевой вектор
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные понятия:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Коллинеарные векторы</strong> — лежат на параллельных прямых</li>
+            <li><strong>Сонаправленные векторы</strong> — коллинеарные и направлены одинаково</li>
+            <li><strong>Равные векторы</strong> — сонаправлены и равны по длине</li>
+            <li><strong>Противоположные векторы</strong> — сонаправлены противоположно и равны по длине</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Вектор на координатной плоскости</h3>
+        <svg width="450" height="380" viewBox="0 0 450 380">
+            <line x1="50" y1="340" x2="420" y2="340" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="50" y1="340" x2="50" y2="30" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                </marker>
+            </defs>
+            <text x="425" y="345" font-size="18" font-weight="bold">x</text>
+            <text x="45" y="25" font-size="18" font-weight="bold">y</text>
+            <circle cx="50" cy="340" r="4" fill="#1A2B4D"/>
+            <text x="40" y="360" font-size="20" font-weight="bold">O</text>
+            <line x1="50" y1="340" x2="280" y2="140" stroke="#4361EE" stroke-width="3" marker-end="url(#arrowhead)"/>
+            <circle cx="280" cy="140" r="5" fill="#4361EE"/>
+            <text x="285" y="135" font-size="24" font-weight="bold" fill="#4361EE">B</text>
+            <line x1="280" y1="140" x2="280" y2="340" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,3"/>
+            <line x1="50" y1="340" x2="280" y2="340" stroke="#27AE60" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="150" y="360" font-size="20" font-weight="bold" fill="#27AE60">x</text>
+            <text x="290" y="250" font-size="20" font-weight="bold" fill="#FF6B6B">y</text>
+            <text x="140" y="220" font-size="22" font-weight="bold" fill="#4361EE">a⃗</text>
+            <text x="100" y="250" font-size="18" fill="#4361EE">(x; y)</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Вектор a⃗ = OB⃗</strong> имеет координаты <strong>(x; y)</strong><br>
+            x — проекция на ось Ox, y — проекция на ось Oy
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Координаты вектора по точкам:</div>
+        $$ \vec{AB}(x_2 - x_1; y_2 - y_1) $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где A(x₁; y₁) — начало, B(x₂; y₂) — конец</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Длина вектора:</div>
+        $$ |\vec{a}| = \sqrt{x^2 + y^2} $$
+        $$ |\vec{AB}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Сложение векторов:</div>
+        $$ \vec{a} + \vec{b} = (x_1 + x_2; y_1 + y_2) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Умножение на число:</div>
+        $$ k \cdot \vec{a} = (kx; ky) $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Даны точки A(2; 3) и B(7; 8). Найдите координаты вектора AB⃗ и его длину.</p>
+        
+        <div class="diagram">
+            <svg width="450" height="380" viewBox="0 0 450 380">
+                <line x1="50" y1="340" x2="420" y2="340" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <line x1="50" y1="340" x2="50" y2="30" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <defs>
+                    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                    </marker>
+                </defs>
+                <text x="425" y="345" font-size="18" font-weight="bold">x</text>
+                <text x="45" y="25" font-size="18" font-weight="bold">y</text>
+                <circle cx="110" cy="280" r="5" fill="#1A2B4D"/>
+                <circle cx="310" cy="100" r="5" fill="#4361EE"/>
+                <text x="100" y="300" font-size="24" font-weight="bold">A</text>
+                <text x="315" y="95" font-size="24" font-weight="bold" fill="#4361EE">B</text>
+                <line x1="110" y1="280" x2="310" y2="100" stroke="#4361EE" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                <text x="100" y="360" font-size="16">2</text>
+                <text x="300" y="360" font-size="16">7</text>
+                <text x="30" y="285" font-size="16">3</text>
+                <text x="30" y="105" font-size="16">8</text>
+                <text x="180" y="180" font-size="20" font-weight="bold" fill="#4361EE">AB⃗</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём координаты вектора:</p>
+        <div class="step"><strong>AB⃗(7 − 2; 8 − 3) = AB⃗(5; 5)</strong></div>
+        
+        <p style="margin: 10px 0;">2. Найдём длину вектора:</p>
+        <div class="step"><strong>|AB⃗| = √(5² + 5²) = √(25 + 25) = √50 = 5√2</strong></div>
+        
+        <div class="answer">Ответ: (5; 5), 5√2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скалярное произведение векторов</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Скалярное произведение векторов</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Скалярное произведение</strong> — число, равное произведению длин векторов на косинус угла между ними.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>a⃗ · b⃗</code> — скалярное произведение векторов<br>
+        <code>φ</code> — угол между векторами<br>
+        <code>|a⃗|, |b⃗|</code> — длины векторов
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Свойства:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Скалярное произведение равно 0, если векторы перпендикулярны</li>
+            <li>Скалярное произведение положительно, если угол острый</li>
+            <li>Скалярное произведение отрицательно, если угол тупой</li>
+            <li>a⃗ · a⃗ = |a⃗|²</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Скалярное произведение векторов</h3>
+        <svg width="450" height="380" viewBox="0 0 450 380">
+            <line x1="50" y1="340" x2="420" y2="340" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="50" y1="340" x2="50" y2="30" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                </marker>
+            </defs>
+            <text x="425" y="345" font-size="18" font-weight="bold">x</text>
+            <text x="45" y="25" font-size="18" font-weight="bold">y</text>
+            <circle cx="50" cy="340" r="4" fill="#1A2B4D"/>
+            <text x="40" y="360" font-size="20" font-weight="bold">O</text>
+            <line x1="50" y1="340" x2="280" y2="180" stroke="#4361EE" stroke-width="3" marker-end="url(#arrowhead)"/>
+            <line x1="50" y1="340" x2="350" y2="220" stroke="#27AE60" stroke-width="3" marker-end="url(#arrowhead)"/>
+            <circle cx="280" cy="180" r="5" fill="#4361EE"/>
+            <circle cx="350" cy="220" r="5" fill="#27AE60"/>
+            <text x="285" y="170" font-size="24" font-weight="bold" fill="#4361EE">a⃗</text>
+            <text x="355" y="210" font-size="24" font-weight="bold" fill="#27AE60">b⃗</text>
+            <path d="M 90 320 A 40 40 0 0 1 110 300" stroke="#FF6B6B" stroke-width="2" fill="none"/>
+            <text x="100" y="295" font-size="20" font-weight="bold" fill="#FF6B6B">φ</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>Скалярное произведение:</strong> a⃗ · b⃗ = |a⃗| · |b⃗| · cos φ
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Скалярное произведение через координаты:</div>
+        $$ \vec{a} \cdot \vec{b} = x_1 x_2 + y_1 y_2 $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">где a⃗(x₁; y₁), b⃗(x₂; y₂)</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Скалярное произведение через угол:</div>
+        $$ \vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos\varphi $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Косинус угла между векторами:</div>
+        $$ \cos\varphi = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Квадрат длины вектора:</div>
+        $$ |\vec{a}|^2 = \vec{a} \cdot \vec{a} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Даны векторы a⃗(4; 3) и b⃗(2; −1). Найдите скалярное произведение.</p>
+        
+        <div class="diagram">
+            <svg width="450" height="380" viewBox="0 0 450 380">
+                <line x1="50" y1="340" x2="420" y2="340" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <line x1="50" y1="340" x2="50" y2="30" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <defs>
+                    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                    </marker>
+                </defs>
+                <text x="425" y="345" font-size="18" font-weight="bold">x</text>
+                <text x="45" y="25" font-size="18" font-weight="bold">y</text>
+                <circle cx="50" cy="340" r="4" fill="#1A2B4D"/>
+                <text x="40" y="360" font-size="20" font-weight="bold">O</text>
+                <line x1="50" y1="340" x2="210" y2="220" stroke="#4361EE" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                <line x1="50" y1="340" x2="290" y2="300" stroke="#27AE60" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                <circle cx="210" cy="220" r="5" fill="#4361EE"/>
+                <circle cx="290" cy="300" r="5" fill="#27AE60"/>
+                <text x="215" y="210" font-size="20" font-weight="bold" fill="#4361EE">a⃗</text>
+                <text x="295" y="290" font-size="20" font-weight="bold" fill="#27AE60">b⃗</text>
+                <text x="180" y="360" font-size="14">(4; 3)</text>
+                <text x="270" y="320" font-size="14">(2; −1)</text>
+            </svg>
+        </div>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">По формуле скалярного произведения через координаты:</p>
+        <div class="step"><strong>a⃗ · b⃗ = 4 · 2 + 3 · (−1) = 8 − 3 = 5</strong></div>
+        
+        <div class="answer">Ответ: 5</div>
+    </div>
+</body>
+</html>
