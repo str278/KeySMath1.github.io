@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрический смысл производной</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Геометрический смысл производной</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Геометрический смысл производной</strong> — производная функции в точке равна угловому коэффициенту касательной к графику функции в этой точке.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>k</code> — угловой коэффициент касательной<br>
+        <code>α</code> — угол наклона касательной<br>
+        <code>k = tan α = f'(x₀)</code>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Уравнение касательной:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>y = f(x₀) + f'(x₀)(x − x₀)</li>
+            <li>где (x₀; f(x₀)) — точка касания</li>
+            <li>f'(x₀) — угловой коэффициент</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Касательная к графику функции</h3>
+        <svg width="450" height="350" viewBox="0 0 450 350">
+            <!-- Оси координат -->
+            <line x1="50" y1="300" x2="420" y2="300" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="50" y1="300" x2="50" y2="30" stroke="#1A2B4D" stroke-width="2" marker-end="url(#arrow)"/>
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                </marker>
+            </defs>
+            <text x="425" y="305" font-size="18" font-weight="bold">x</text>
+            <text x="45" y="25" font-size="18" font-weight="bold">y</text>
+            
+            <!-- График функции (парабола) -->
+            <path d="M 80,280 Q 200,80 350,250" fill="none" stroke="#4361EE" stroke-width="3"/>
+            
+            <!-- Точка касания -->
+            <circle cx="200" cy="150" r="5" fill="#FF6B6B"/>
+            <text x="205" y="145" font-size="18" font-weight="bold" fill="#FF6B6B">A</text>
+            
+            <!-- Касательная -->
+            <line x1="100" y1="220" x2="300" y2="80" stroke="#27AE60" stroke-width="2.5" stroke-dasharray="5,3"/>
+            
+            <!-- Угол -->
+            <path d="M 220 150 A 20 20 0 0 1 235 140" stroke="#FF6B6B" stroke-width="2" fill="none"/>
+            <text x="230" y="135" font-size="16" fill="#FF6B6B">α</text>
+            
+            <!-- Подписи -->
+            <text x="200" y="320" font-size="16" font-weight="bold">x₀</text>
+            <text x="15" y="155" font-size="16" font-weight="bold">f(x₀)</text>
+            <text x="310" y="75" font-size="16" fill="#27AE60">Касательная</text>
+        </svg>
+        <p style="margin-top: 15px; font-style: italic; color: #666;">
+            <strong>f'(x₀) = k = tan α</strong><br>
+            Производная равна тангенсу угла наклона касательной
+        </p>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Угловой коэффициент касательной:</div>
+        $$ k = f'(x_0) = \tan\alpha $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Уравнение касательной:</div>
+        $$ y = f(x_0) + f'(x_0)(x - x_0) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Условие параллельности:</div>
+        $$ \text{Касательные параллельны} \Leftrightarrow f'(x_1) = f'(x_2) $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Условие перпендикулярности:</div>
+        $$ \text{Касательные перпендикулярны} \Leftrightarrow f'(x_1) \cdot f'(x_2) = -1 $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Напишите уравнение касательной к графику функции f(x) = x² в точке x₀ = 2</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём значение функции в точке:</p>
+        <div class="step"><strong>f(2) = 2² = 4</strong></div>
+        
+        <p style="margin: 10px 0;">2. Найдём производную:</p>
+        <div class="step"><strong>f'(x) = 2x</strong></div>
+        <div class="step"><strong>f'(2) = 2 · 2 = 4</strong></div>
+        
+        <p style="margin: 10px 0;">3. Составим уравнение касательной:</p>
+        <div class="step"><strong>y = 4 + 4(x − 2)</strong></div>
+        <div class="step"><strong>y = 4 + 4x − 8</strong></div>
+        <div class="step"><strong>y = 4x − 4</strong></div>
+        
+        <div class="answer">Ответ: y = 4x − 4</div>
+    </div>
+</body>
+</html>

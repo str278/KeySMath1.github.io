@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угол между скрещивающимися прямыми - Задание 14 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>📐 Угол между скрещивающимися прямыми</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Скрещивающиеся прямые</strong> — прямые, которые не лежат в одной плоскости и не пересекаются.</p>
+    
+    <div class="property">
+        <strong>🔹 Определение угла:</strong>
+        <p style="margin-top: 10px;">Угол между скрещивающимися прямыми — это угол между параллельными им прямыми, проходящими через одну точку.</p>
+    </div>
+    
+    <h2>📐 Основные методы</h2>
+    
+    <div class="formula">
+        <strong>1. Метод параллельного переноса:</strong><br><br>
+        Переносим одну из прямых параллельно себе до пересечения с другой.
+    </div>
+    
+    <div class="formula">
+        <strong>2. Векторный метод:</strong><br><br>
+        $$ \cos\alpha = \frac{|\vec{a} \cdot \vec{b}|}{|\vec{a}| \cdot |\vec{b}|} $$
+        <p style="margin-top: 10px;">где a и b — направляющие векторы прямых</p>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> В кубе ABCDA₁B₁C₁D₁ найдите угол между прямыми AB₁ и BC₁.</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Прямые AB₁ и BC₁ — скрещивающиеся.</p>
+        
+        <p style="margin: 10px 0;">2. Перенесём BC₁ параллельно себе в точку A:</p>
+        <div class="step"><strong>BC₁ || AD₁</strong></div>
+        
+        <p style="margin: 10px 0;">3. Теперь найдём угол между AB₁ и AD₁:</p>
+        <div class="step"><strong>AB₁ = AD₁ = a√2 (диагонали граней)</strong></div>
+        <div class="step"><strong>B₁D₁ = a√2 (диагональ грани)</strong></div>
+        
+        <p style="margin: 10px 0;">4. Треугольник AB₁D₁ — равносторонний:</p>
+        <div class="step"><strong>∠B₁AD₁ = 60°</strong></div>
+        
+        <div class="answer">Ответ: 60°</div>
+    </div>
+</html>

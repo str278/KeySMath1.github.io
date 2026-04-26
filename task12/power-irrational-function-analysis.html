@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследование степенных и иррациональных функций</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Исследование степенных и иррациональных функций</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Степенные функции</strong> — функции вида y = xⁿ. <strong>Иррациональные функции</strong> — функции, содержащие переменную под знаком корня.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>y = xⁿ</code> — степенная функция<br>
+        <code>y = ⁿ√x</code> — корень n-й степени<br>
+        <code>ОДЗ</code> — область допустимых значений
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Особенности исследования:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Важно учитывать ОДЗ (подкоренное выражение ≥ 0 для чётных корней)</li>
+            <li>Производная корня: (√x)' = 1/(2√x)</li>
+            <li>При исследовании на отрезке проверять концы отрезка и точки, где производная = 0</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Производная степенной функции:</div>
+        $$ (x^n)' = n x^{n-1} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Производная корня:</div>
+        $$ (\sqrt{x})' = \frac{1}{2\sqrt{x}} $$
+        $$ (\sqrt[n]{x})' = \frac{1}{n} x^{\frac{1}{n}-1} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Производная сложной функции с корнем:</div>
+        $$ (\sqrt{f(x)})' = \frac{f'(x)}{2\sqrt{f(x)}} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите наибольшее значение функции y = √(−x² + 4x + 5) на отрезке [−1; 3].</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>−x² + 4x + 5 ≥ 0</strong></div>
+        <div class="step"><strong>x² − 4x − 5 ≤ 0</strong></div>
+        <div class="step"><strong>(x − 5)(x + 1) ≤ 0</strong></div>
+        <div class="step"><strong>x ∈ [−1; 5]</strong></div>
+        
+        <p style="margin: 10px 0;">2. Найдём производную:</p>
+        <div class="step"><strong>y' = (−2x + 4)/(2√(−x² + 4x + 5))</strong></div>
+        
+        <p style="margin: 10px 0;">3. Критические точки (y' = 0):</p>
+        <div class="step"><strong>−2x + 4 = 0</strong></div>
+        <div class="step"><strong>x = 2</strong></div>
+        
+        <p style="margin: 10px 0;">4. Вычислим значения на концах и в критической точке:</p>
+        <div class="step"><strong>y(−1) = √(−1 − 4 + 5) = 0</strong></div>
+        <div class="step"><strong>y(2) = √(−4 + 8 + 5) = √9 = 3</strong></div>
+        <div class="step"><strong>y(3) = √(−9 + 12 + 5) = √8 ≈ 2.83</strong></div>
+        
+        <div class="answer">Ответ: 3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тригонометрия и логарифмы - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>📊 Тригонометрия и логарифмы</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Уравнения, содержащие тригонометрические и логарифмические функции</strong> — сложные уравнения, требующие одновременного применения свойств обеих функций.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> Необходимо учитывать ограничения обеих функций:
+        <ul style="margin-top: 10px;">
+            <li>ОДЗ для логарифма: выражение > 0</li>
+            <li>Основание логарифма > 0 и ≠ 1</li>
+            <li>Ограничения тригонометрических функций</li>
+        </ul>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Замена переменной</li>
+            <li>Логарифмирование обеих частей</li>
+            <li>Использование свойств логарифмов</li>
+            <li>Тщательная проверка ОДЗ</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Уравнение вида log<sub>a</sub>(f(x)) = g(x):</strong><br><br>
+        $$ \log_a(f(x)) = g(x) $$
+        $$ f(x) = a^{g(x)} $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> f(x) > 0, a > 0, a ≠ 1</p>
+    </div>
+    
+    <div class="formula">
+        <strong>2. Уравнение вида log<sub>a</sub>(sin x) = b:</strong><br><br>
+        $$ \log_a(\sin x) = b $$
+        $$ \sin x = a^b $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> 0 < sin x ≤ 1, a > 0, a ≠ 1</p>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: log₂(sin x) = −1</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>sin x > 0</strong></div>
+        <div class="step"><strong>x ∈ (2πn; π + 2πn)</strong></div>
+        
+        <p style="margin: 10px 0;">2. Потенцируем:</p>
+        <div class="step"><strong>sin x = 2⁻¹</strong></div>
+        <div class="step"><strong>sin x = 0.5</strong></div>
+        
+        <p style="margin: 10px 0;">3. Решаем:</p>
+        <div class="step"><strong>x = (−1)ⁿ·π/6 + πn</strong></div>
+        
+        <p style="margin: 10px 0;">4. Отбор по ОДЗ (sin x > 0):</p>
+        <div class="step"><strong>x = π/6 + 2πn</strong></div>
+        <div class="step"><strong>x = 5π/6 + 2πn</strong></div>
+        
+        <div class="answer">Ответ: π/6 + 2πn; 5π/6 + 2πn, n ∈ Z</div>
+    </div>
+</html>

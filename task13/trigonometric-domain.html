@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тригонометрические уравнения, исследование ОДЗ - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Тригонометрические уравнения, исследование ОДЗ</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Исследование ОДЗ</strong> (области допустимых значений) — важнейший этап решения тригонометрических уравнений, особенно когда присутствуют дроби, корни или логарифмы.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> Всегда проверяйте:
+        <ul style="margin-top: 10px;">
+            <li>Знаменатель ≠ 0</li>
+            <li>Выражение под корнем ≥ 0</li>
+            <li>Выражение под логарифмом > 0</li>
+            <li>tg x и ctg x определены</li>
+        </ul>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Ограничения тригонометрических функций:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>tg x</strong> определён при x ≠ π/2 + πn</li>
+            <li><strong>ctg x</strong> определён при x ≠ πn</li>
+            <li><strong>arcsin x</strong> определён при x ∈ [−1; 1]</li>
+            <li><strong>arccos x</strong> определён при x ∈ [−1; 1]</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные ограничения</h2>
+    
+    <div class="formula">
+        <strong>1. Тангенс и котангенс:</strong><br><br>
+        $$ \tan x \text{ определён при } x \neq \frac{\pi}{2} + \pi n, \quad n \in \mathbb{Z} $$
+        $$ \cot x \text{ определён при } x \neq \pi n, \quad n \in \mathbb{Z} $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Обратные тригонометрические функции:</strong><br><br>
+        $$ \arcsin x, \arccos x \text{ определены при } x \in [-1; 1] $$
+    </div>
+    
+    <div class="formula">
+        <strong>3. Дроби:</strong><br><br>
+        $$ \frac{f(x)}{g(x)} \text{ определено при } g(x) \neq 0 $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: tg x = 1</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x ≠ π/2 + πn, n ∈ Z</strong></div>
+        
+        <p style="margin: 10px 0;">2. Решим уравнение:</p>
+        <div class="step"><strong>x = arctg(1) + πn</strong></div>
+        <div class="step"><strong>x = π/4 + πn, n ∈ Z</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка по ОДЗ: π/4 + πn ≠ π/2 + πk ✓</p>
+        
+        <div class="answer">Ответ: π/4 + πn, n ∈ Z</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Решите уравнение: (sin x − 0.5)/cos x = 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>cos x ≠ 0</strong></div>
+        <div class="step"><strong>x ≠ π/2 + πn</strong></div>
+        
+        <p style="margin: 10px 0;">2. Дробь равна 0, когда числитель = 0:</p>
+        <div class="step"><strong>sin x − 0.5 = 0</strong></div>
+        <div class="step"><strong>sin x = 0.5</strong></div>
+        <div class="step"><strong>x = (−1)ⁿ·π/6 + πn</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка по ОДЗ: cos((−1)ⁿ·π/6 + πn) ≠ 0 ✓</p>
+        
+        <div class="answer">Ответ: (−1)ⁿ·π/6 + πn, n ∈ Z</div>
+    </div>
+</html>

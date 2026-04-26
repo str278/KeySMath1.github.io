@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логарифмы и иррациональности - Задание 15 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>📊√ Логарифмы и иррациональности</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Неравенства, содержащие одновременно логарифмические и иррациональные выражения</strong> — требуют тщательного учёта ОДЗ и применения методов решения обоих типов неравенств.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> Необходимо учитывать:
+        <ul style="margin-top: 10px;">
+            <li>ОДЗ для логарифма: выражение > 0</li>
+            <li>ОДЗ для корня: выражение ≥ 0</li>
+            <li>Основание логарифма > 0 и ≠ 1</li>
+        </ul>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Поэтапное нахождение ОДЗ</li>
+            <li>Замена переменной</li>
+            <li>Возведение в степень с учётом ОДЗ</li>
+            <li>Метод интервалов</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Общий вид:</strong><br><br>
+        $$ \log_a f(x) \bowtie \sqrt{g(x)} $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> f(x) > 0, g(x) ≥ 0, a > 0, a ≠ 1</p>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите неравенство: log₂x ≥ √x</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x > 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Рассмотрим функцию f(x) = log₂x − √x</p>
+        
+        <p style="margin: 10px 0;">3. Проверим значения:</p>
+        <div class="step"><strong>При x = 1: log₂1 = 0, √1 = 1 ⇒ 0 < 1 ✗</strong></div>
+        <div class="step"><strong>При x = 4: log₂4 = 2, √4 = 2 ⇒ 2 = 2 ✓</strong></div>
+        <div class="step"><strong>При x = 16: log₂16 = 4, √16 = 4 ⇒ 4 = 4 ✓</strong></div>
+        
+        <p style="margin: 10px 0;">4. Графически или методом оценки находим:</p>
+        <div class="step"><strong>x ∈ [4; 16]</strong></div>
+        
+        <div class="answer">Ответ: [4; 16]</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на движение по воде</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>🚤 Задачи на движение по воде</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Движение по воде</strong> — движение судов с учётом течения реки.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>v_собст</code> — собственная скорость судна<br>
+        <code>v_теч</code> — скорость течения<br>
+        <code>v_по</code> — скорость по течению<br>
+        <code>v_против</code> — скорость против течения
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные формулы:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>По течению: v_по = v_собст + v_теч</li>
+            <li>Против течения: v_против = v_собст − v_теч</li>
+            <li>Плот движется со скоростью течения</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Скорость по течению:</div>
+        $$ v_{по} = v_{собст} + v_{теч} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Скорость против течения:</div>
+        $$ v_{против} = v_{собст} - v_{теч} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Собственная скорость:</div>
+        $$ v_{собст} = \frac{v_{по} + v_{против}}{2} $$
+        $$ v_{теч} = \frac{v_{по} - v_{против}}{2} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Теплоход проходит расстояние между пристанями по течению за 4 часа, а против течения — за 6 часов. За сколько часов проплывёт это расстояние плот?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Пусть S — расстояние, v — собственная скорость, u — скорость течения:</p>
+        <div class="step"><strong>S = (v + u) · 4</strong></div>
+        <div class="step"><strong>S = (v − u) · 6</strong></div>
+        
+        <p style="margin: 10px 0;">2. Приравняем:</p>
+        <div class="step"><strong>4(v + u) = 6(v − u)</strong></div>
+        <div class="step"><strong>4v + 4u = 6v − 6u</strong></div>
+        <div class="step"><strong>10u = 2v ⇒ v = 5u</strong></div>
+        
+        <p style="margin: 10px 0;">3. Найдём S:</p>
+        <div class="step"><strong>S = (5u + u) · 4 = 24u</strong></div>
+        
+        <p style="margin: 10px 0;">4. Время плота:</p>
+        <div class="step"><strong>t = S/u = 24u/u = 24 часа</strong></div>
+        
+        <div class="answer">Ответ: 24</div>
+    </div>
+</body>
+</html>

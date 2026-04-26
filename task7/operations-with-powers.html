@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Действия со степенями</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Действия со степенями</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Степень</strong> — выражение вида a^n, где a — основание степени, n — показатель степени.</p>
+    
+    <div class="notation">
+        <strong>🔹 Обозначения:</strong><br>
+        <code>a^n</code> — a в степени n<br>
+        <code>a</code> — основание<br>
+        <code>n</code> — показатель степени
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные свойства:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>При умножении степеней с одинаковым основанием показатели складываются</li>
+            <li>При делении степеней с одинаковым основанием показатели вычитаются</li>
+            <li>При возведении степени в степень показатели перемножаются</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Умножение степеней:</div>
+        $$ a^m \cdot a^n = a^{m+n} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Деление степеней:</div>
+        $$ \frac{a^m}{a^n} = a^{m-n} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Возведение степени в степень:</div>
+        $$ (a^m)^n = a^{mn} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">4. Степень произведения:</div>
+        $$ (ab)^n = a^n \cdot b^n $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">5. Степень частного:</div>
+        $$ \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">6. Отрицательная степень:</div>
+        $$ a^{-n} = \frac{1}{a^n} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">7. Нулевая степень:</div>
+        $$ a^0 = 1 \quad (a \neq 0) $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите значение выражения: (2³ · 2⁴) / 2⁵</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Упростим числитель (умножение степеней):</p>
+        <div class="step"><strong>2³ · 2⁴ = 2^(3+4) = 2⁷</strong></div>
+        
+        <p style="margin: 10px 0;">2. Выполним деление:</p>
+        <div class="step"><strong>2⁷ / 2⁵ = 2^(7−5) = 2²</strong></div>
+        
+        <p style="margin: 10px 0;">3. Вычислим:</p>
+        <div class="step"><strong>2² = 4</strong></div>
+        
+        <div class="answer">Ответ: 4</div>
+    </div>
+    
+    <h2>🎬 Видео-разбор</h2>
+    <a href="#" class="video-link" target="_blank">Смотреть видео на YouTube</a>
+</body>
+</html>

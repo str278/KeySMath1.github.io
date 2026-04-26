@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тригонометрия и иррациональности - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>√ Тригонометрия и иррациональности</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Тригонометрические уравнения с иррациональностями</strong> — уравнения, содержащие тригонометрические функции под знаком корня или корни из тригонометрических функций.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> При решении таких уравнений необходимо:
+        <ul style="margin-top: 10px;">
+            <li>Учитывать ОДЗ: выражение под корнем ≥ 0</li>
+            <li>Помнить, что |sin x| ≤ 1, |cos x| ≤ 1</li>
+            <li>Проверять найденные корни подстановкой</li>
+        </ul>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Возведение в квадрат с последующей проверкой</li>
+            <li>Замена переменной</li>
+            <li>Использование основного тригонометрического тождества</li>
+            <li>Оценка области значений</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Уравнение вида √f(x) = g(x):</strong><br><br>
+        $$ \sqrt{f(x)} = g(x) $$
+        $$ \begin{cases} f(x) = g^2(x) \\ g(x) \geq 0 \\ f(x) \geq 0 \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Уравнение вида √(sin x) = a:</strong><br><br>
+        $$ \sqrt{\sin x} = a \quad (a \geq 0) $$
+        $$ \begin{cases} \sin x = a^2 \\ 0 \leq a^2 \leq 1 \end{cases} $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: √(1 − cos x) = sin x</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>1 − cos x ≥ 0 (всегда верно, т.к. cos x ≤ 1)</strong></div>
+        <div class="step"><strong>sin x ≥ 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Возведём в квадрат:</p>
+        <div class="step"><strong>1 − cos x = sin²x</strong></div>
+        <div class="step"><strong>1 − cos x = 1 − cos²x</strong></div>
+        <div class="step"><strong>cos²x − cos x = 0</strong></div>
+        <div class="step"><strong>cos x(cos x − 1) = 0</strong></div>
+        
+        <p style="margin: 10px 0;">3. Решаем:</p>
+        <div class="step"><strong>cos x = 0 ⇒ x = π/2 + πn</strong></div>
+        <div class="step"><strong>cos x = 1 ⇒ x = 2πn</strong></div>
+        
+        <p style="margin: 10px 0;">4. Проверка по ОДЗ (sin x ≥ 0):</p>
+        <div class="step"><strong>x = π/2 + 2πn: sin(π/2) = 1 ≥ 0 ✓</strong></div>
+        <div class="step"><strong>x = 2πn: sin(0) = 0 ≥ 0 ✓</strong></div>
+        
+        <div class="answer">Ответ: π/2 + 2πn; 2πn, n ∈ Z</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рациональные уравнения - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>📊 Рациональные уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Рациональное уравнение</strong> — уравнение вида P(x)/Q(x) = 0, где P(x) и Q(x) — многочлены.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> Знаменатель не должен быть равен нулю. 
+        Всегда проверяйте ОДЗ: Q(x) ≠ 0
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Алгоритм решения:</strong>
+        <ol style="margin-top: 10px; padding-left: 25px;">
+            <li>Найти ОДЗ: Q(x) ≠ 0</li>
+            <li>Приравнять числитель к нулю: P(x) = 0</li>
+            <li>Решить уравнение P(x) = 0</li>
+            <li>Исключить корни, обращающие знаменатель в ноль</li>
+        </ol>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Уравнение вида P(x)/Q(x) = 0:</strong><br><br>
+        $$ \frac{P(x)}{Q(x)} = 0 $$
+        $$ \begin{cases} P(x) = 0 \\ Q(x) \neq 0 \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Уравнение вида P(x)/Q(x) = R(x)/S(x):</strong><br><br>
+        $$ \frac{P(x)}{Q(x)} = \frac{R(x)}{S(x)} $$
+        $$ P(x) \cdot S(x) = Q(x) \cdot R(x) $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> Q(x) ≠ 0, S(x) ≠ 0</p>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: (x² − 4)/(x − 2) = 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x − 2 ≠ 0 ⇒ x ≠ 2</strong></div>
+        
+        <p style="margin: 10px 0;">2. Приравняем числитель к нулю:</p>
+        <div class="step"><strong>x² − 4 = 0</strong></div>
+        <div class="step"><strong>(x−2)(x+2) = 0</strong></div>
+        <div class="step"><strong>x = 2 или x = −2</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка по ОДЗ:</p>
+        <div class="step"><strong>x = 2 — не подходит (знаменатель = 0)</strong></div>
+        <div class="step"><strong>x = −2 — подходит ✓</strong></div>
+        
+        <div class="answer">Ответ: −2</div>
+    </div>
+</body>
+</html>

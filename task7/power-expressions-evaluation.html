@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вычисление степенных выражений</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Вычисление степенных выражений</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Степенные выражения</strong> — выражения, содержащие степени с числовыми или буквенными показателями.</p>
+    
+    <div class="notation">
+        <strong>🔹 Типы выражений:</strong><br>
+        <code>Числовые</code> — все основания и показатели числа<br>
+        <code>Буквенные</code> — содержат переменные<br>
+        <code>Смешанные</code> — комбинация чисел и переменных
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Методы вычисления:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Приведение к одному основанию</li>
+            <li>Применение свойств степеней</li>
+            <li>Вынесение общего множителя</li>
+            <li>Группировка слагаемых</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Степень с дробным показателем:</div>
+        $$ a^{m/n} = \sqrt[n]{a^m} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Степень с отрицательным показателем:</div>
+        $$ a^{-n} = \frac{1}{a^n} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Корень из степени:</div>
+        $$ \sqrt[n]{a^m} = a^{m/n} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите значение выражения: 8^(2/3) · 4^(−1/2)</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Упростим первое слагаемое:</p>
+        <div class="step"><strong>8^(2/3) = (2³)^(2/3) = 2^(3·2/3) = 2² = 4</strong></div>
+        
+        <p style="margin: 10px 0;">2. Упростим второе слагаемое:</p>
+        <div class="step"><strong>4^(−1/2) = (2²)^(−1/2) = 2^(2·(−1/2)) = 2^(−1) = 1/2</strong></div>
+        
+        <p style="margin: 10px 0;">3. Перемножим:</p>
+        <div class="step"><strong>4 · (1/2) = 2</strong></div>
+        
+        <div class="answer">Ответ: 2</div>
+    </div>
+    
+    <h2>🎬 Видео-разбор</h2>
+    <a href="#" class="video-link" target="_blank">Смотреть видео на YouTube</a>
+</body>
+</html>

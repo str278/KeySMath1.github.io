@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логарифмы и показательные выражения - Задание 15 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>📊📈 Логарифмы и показательные выражения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Неравенства, содержащие одновременно логарифмические и показательные функции</strong> — сложные неравенства, требующие применения свойств обеих функций.</p>
+    
+    <div class="property">
+        <strong>🔹 Основные методы:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Логарифмирование обеих частей</li>
+            <li>Замена переменной</li>
+            <li>Использование основного логарифмического тождества</li>
+            <li>Оценка функций</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Основное логарифмическое тождество:</strong><br><br>
+        $$ a^{\log_a x} = x $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Логарифмирование показательного неравенства:</strong><br><br>
+        $$ a^{f(x)} \bowtie b $$
+        $$ \log_a (a^{f(x)}) \bowtie \log_a b $$
+        $$ f(x) \bowtie \log_a b $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите неравенство: 2<sup>x</sup> &gt; 8</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Прологарифмируем обе части по основанию 2:</p>
+        <div class="step"><strong>log₂(2<sup>x</sup>) &gt; log₂8</strong></div>
+        
+        <p style="margin: 10px 0;">2. Упростим:</p>
+        <div class="step"><strong>x &gt; 3</strong></div>
+        
+        <div class="answer">Ответ: (3; +∞)</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Решите неравенство: log₂x &gt; 3</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x > 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Потенцируем (основание 2 > 1, знак сохраняется):</p>
+        <div class="step"><strong>x &gt; 2³</strong></div>
+        <div class="step"><strong>x &gt; 8</strong></div>
+        
+        <div class="answer">Ответ: (8; +∞)</div>
+    </div>
+</body>
+</html>

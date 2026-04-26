@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расстояние между точками и от точки до прямой - Задание 14 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>📏 Расстояние в пространстве</h1>
+    
+    <div class="card">
+        <h2>📚 Что такое расстояние?</h2>
+        <p>В стереометрии (14 задание ЕГЭ) под «расстоянием» мы почти всегда ищем длину перпендикуляра.</p>
+        
+        <ul>
+            <li><strong>Между точками:</strong> Длина отрезка, соединяющего их.</li>
+            <li><strong>От точки до прямой:</strong> Длина перпендикуляра, опущенного из точки на эту прямую.</li>
+        </ul>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Линия -->
+                <line x1="50" y1="150" x2="350" y2="150" stroke="#1a202c" stroke-width="3"/>
+                <text x="360" y="155" font-size="14" fill="#1a202c" font-weight="bold">Прямая l</text>
+                
+                <!-- Точка -->
+                <circle cx="200" cy="50" r="5" fill="#e53e3e"/>
+                <text x="210" y="45" font-size="14" fill="#e53e3e" font-weight="bold">Точка P</text>
+                
+                <!-- Перпендикуляр -->
+                <line x1="200" y1="50" x2="200" y2="150" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,5"/>
+                <rect x="190" y="140" width="10" height="10" fill="none" stroke="#e53e3e" stroke-width="1.5"/>
+                
+                <text x="215" y="100" font-size="14" fill="#e53e3e" font-weight="bold">d (расстояние)</text>
+            </svg>
+            <div class="caption">Рис. 1. Расстояние от точки до прямой — это длина перпендикуляра</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🔧 Как находить расстояние на ЕГЭ?</h2>
+        <p>Есть два основных способа, которые работают в 90% задач.</p>
+        
+        <h3>Способ 1: Метод площадей (Геометрический)</h3>
+        <p>Если нужно найти расстояние от точки до прямой, попробуйте достроить треугольник.</p>
+        <div class="formula-box">
+            <strong>Формула:</strong> Площадь = 0.5 × Основание × Высота.<br>
+            Отсюда: <strong>Высота (расстояние) = (2 × Площадь) / Основание</strong>.
+        </div>
+        <p><em>Идея:</em> Вычислите площадь треугольника двумя способами (через катеты и через гипотенузу), приравняйте и найдите высоту.</p>
+
+        <h3>Способ 2: Метод объёмов (Для сложных случаев)</h3>
+        <p>Если перпендикуляр сложно увидеть глазом, используем объём пирамиды (тетраэдра).</p>
+        <div class="formula-box">
+            <strong>Формула:</strong> V = (1/3) × S_основания × h.<br>
+            Отсюда: <strong>h (расстояние) = (3 × V) / S_основания</strong>.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Расстояние в Кубе</h2>
+        <p><strong>Условие:</strong> В кубе ABCDA₁B₁C₁D₁ с ребром 1 найдите расстояние от вершины B до диагонали A₁C₁.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 420 300" width="420" height="300">
+                <!-- Куб каркас -->
+                <polygon points="100,240 300,240 300,60 100,60" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <polygon points="300,240 360,200 360,20 300,60" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <polygon points="100,60 300,60 360,20 160,20" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <polygon points="60,280 100,240 100,60 60,100" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <line x1="60" y1="280" x2="260" y2="280" stroke="#2d3748" stroke-width="2"/>
+                <line x1="260" y1="280" x2="360" y2="200" stroke="#2d3748" stroke-width="2"/>
+                <line x1="60" y1="280" x2="60" y2="100" stroke="#2d3748" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="60" y1="280" x2="160" y2="200" stroke="#2d3748" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="160" y1="200" x2="360" y2="200" stroke="#2d3748" stroke-width="2"/>
+                <line x1="160" y1="200" x2="160" y2="20" stroke="#2d3748" stroke-width="2"/>
+                
+                <!-- Диагональ A1C1 -->
+                <line x1="100" y1="60" x2="360" y2="20" stroke="#3182ce" stroke-width="3"/>
+                <text x="220" y="30" font-size="13" fill="#3182ce" font-weight="bold">Диагональ A₁C₁</text>
+                
+                <!-- Точка B -->
+                <circle cx="100" cy="240" r="4" fill="#e53e3e"/>
+                <text x="85" y="260" font-size="14" fill="#e53e3e" font-weight="bold">B</text>
+                
+                <!-- Перпендикуляр BH -->
+                <line x1="100" y1="240" x2="230" y2="40" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,3"/>
+                <text x="150" y="160" font-size="13" fill="#e53e3e" font-weight="bold">h = ?</text>
+                
+                <!-- Подписи вершин -->
+                <text x="105" y="55" font-size="12" font-weight="bold">A₁</text>
+                <text x="365" y="15" font-size="12" font-weight="bold">C₁</text>
+                <text x="365" y="215" font-size="12" font-weight="bold">C</text>
+                
+                <text x="190" y="290" font-size="12" fill="#4a5568">Ребро куба = 1</text>
+            </svg>
+            <div class="caption">Рис. 2. Нужно найти длину перпендикуляра из точки B на прямую A₁C₁</div>
+        </div>
+
+        <p><strong>Решение (через площадь треугольника):</strong></p>
+        <div class="step">1. Рассмотрим треугольник BA₁C₁. Нам нужно найти высоту BH, опущенную на сторону A₁C₁.</div>
+        <div class="step">2. Найдем стороны этого треугольника. BA₁ и BC₁ — диагонали граней куба. Их длина равна √2. Сторона A₁C₁ — диагональ верхнего основания, тоже √2.</div>
+        <div class="step">3. Треугольник равносторонний со стороной √2.</div>
+        <div class="step">4. Высота в равностороннем треугольнике вычисляется по формуле: h = (a × √3) / 2.</div>
+        <div class="step">5. Подставляем сторону a = √2: h = (√2 × √3) / 2 = √6 / 2.</div>
+        
+        <div class="answer">Ответ: √6 / 2</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Расстояние в Пирамиде (Метод объёмов)</h2>
+        <p><strong>Условие:</strong> В правильной четырёхугольной пирамиде SABCD сторона основания равна 6, высота равна 4. Найдите расстояние от центра основания O до бокового ребра SC.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 280" width="400" height="280">
+                <!-- Основание -->
+                <polygon points="80,240 320,240 350,200 110,200" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+                <!-- Боковые грани -->
+                <line x1="80" y1="240" x2="200" y2="60" stroke="#2d3748" stroke-width="2"/>
+                <line x1="320" y1="240" x2="200" y2="60" stroke="#2d3748" stroke-width="2"/>
+                <line x1="350" y1="200" x2="200" y2="60" stroke="#2d3748" stroke-width="2"/>
+                <line x1="110" y1="200" x2="200" y2="60" stroke="#2d3748" stroke-width="2" stroke-dasharray="5,4"/>
+                
+                <!-- Высота -->
+                <line x1="200" y1="60" x2="200" y2="220" stroke="#38a169" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="200" cy="220" r="3" fill="#38a169"/>
+                <text x="210" y="235" font-size="12" fill="#38a169" font-weight="bold">O</text>
+                
+                <!-- Ребро SC -->
+                <line x1="350" y1="200" x2="200" y2="60" stroke="#1a202c" stroke-width="2.5"/>
+                <text x="360" y="130" font-size="12" font-weight="bold">C</text>
+                <text x="205" y="50" font-size="12" font-weight="bold">S</text>
+                
+                <!-- Расстояние (перпендикуляр) -->
+                <line x1="200" y1="220" x2="260" y2="140" stroke="#e53e3e" stroke-width="2.5"/>
+                <rect x="250" y="145" width="10" height="10" fill="none" stroke="#e53e3e" stroke-width="1.5" transform="rotate(40 255 150)"/>
+                <text x="235" y="175" font-size="12" fill="#e53e3e" font-weight="bold">h = ?</text>
+                
+                <text x="190" y="270" font-size="12" fill="#4a5568">Сторона = 6, Высота = 4</text>
+            </svg>
+            <div class="caption">Рис. 3. Расстояние от центра O до ребра SC — это перпендикуляр</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Заметим, что искомое расстояние — это высота прямоугольного треугольника SOC, опущенная из вершины прямого угла O на гипотенузу SC.</div>
+        <div class="step">2. Найдем катеты. OC — половина диагонали основания. Диагональ квадрата со стороной 6 равна 6√2, значит OC = 3√2. Высота SO = 4.</div>
+        <div class="step">3. Найдем гипотенузу SC по теореме Пифагора: SC = √(4² + (3√2)²) = √(16 + 18) = √34.</div>
+        <div class="step">4. Используем формулу площади: S = 0.5 × Катет1 × Катет2 = 0.5 × Гипотенуза × Высота.</div>
+        <div class="step">5. 4 × 3√2 = √34 × h. Отсюда h = (12√2) / √34. Упрощаем: h = (12√2) / √34 = 12 / √17.</div>
+        
+        <div class="answer">Ответ: 12 / √17</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Советы для экзамена</h2>
+        <ul>
+            <li>Если видите куб или правильную пирамиду, ищите равнобедренные или равносторонние треугольники — в них перпендикуляры строятся легче всего (в медиану).</li>
+            <li><strong>Метод объёмов</strong> — ваше спасение, если не можете построить перпендикуляр. Просто посчитайте объём тетраэдра тремя разными способами.</li>
+            <li>Не забывайте, что расстояние между <em>скрещивающимися</em> прямыми часто сводится к расстоянию от точки до прямой или от точки до плоскости.</li>
+            <li>В ответе избавляйтесь от иррациональности в знаменателе, если это требуется (хотя в ЕГЭ 2026 часто принимают и с корнем внизу).</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на движение по прямой</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>🚗 Задачи на движение по прямой</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Задачи на движение</strong> — текстовые задачи, связанные с равномерным движением тел.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные величины:</strong><br>
+        <code>S</code> — расстояние (путь)<br>
+        <code>v</code> — скорость<br>
+        <code>t</code> — время
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные типы задач:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Движение навстречу:</strong> v_сближения = v₁ + v₂</li>
+            <li><strong>Движение вдогонку:</strong> v_сближения = v₁ − v₂ (v₁ > v₂)</li>
+            <li><strong>Движение в противоположных направлениях:</strong> v_удаления = v₁ + v₂</li>
+        </ul>
+    </div>
+    
+    <div class="diagram">
+        <h3 style="margin-top: 0; color: #1A2B4D;">Движение навстречу друг другу</h3>
+        <svg width="450" height="250" viewBox="0 0 450 250">
+            <line x1="50" y1="200" x2="420" y2="200" stroke="#1A2B4D" stroke-width="3"/>
+            <circle cx="80" cy="200" r="20" fill="#4361EE"/>
+            <circle cx="390" cy="200" r="20" fill="#27AE60"/>
+            <text x="70" y="207" font-size="16" font-weight="bold" fill="white">A</text>
+            <text x="380" y="207" font-size="16" font-weight="bold" fill="white">B</text>
+            <line x1="100" y1="200" x2="180" y2="200" stroke="#4361EE" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="370" y1="200" x2="290" y2="200" stroke="#27AE60" stroke-width="2" marker-end="url(#arrow)"/>
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#1A2B4D"/>
+                </marker>
+            </defs>
+            <text x="130" y="190" font-size="14" fill="#4361EE">v₁</text>
+            <text x="320" y="190" font-size="14" fill="#27AE60">v₂</text>
+            <text x="215" y="230" font-size="16" font-weight="bold">S</text>
+            <text x="215" y="245" font-size="14">S = (v₁ + v₂) · t</text>
+        </svg>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Основная формула движения:</div>
+        $$ S = v \cdot t $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Движение навстречу:</div>
+        $$ S = (v_1 + v_2) \cdot t $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Движение вдогонку:</div>
+        $$ S = (v_1 - v_2) \cdot t \quad (v_1 > v_2) $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Из двух городов, расстояние между которыми 300 км, одновременно навстречу друг другу выехали два автомобиля. Скорость первого 60 км/ч, второго — 90 км/ч. Через сколько часов они встретятся?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём скорость сближения:</p>
+        <div class="step"><strong>v_сбл = 60 + 90 = 150 км/ч</strong></div>
+        
+        <p style="margin: 10px 0;">2. Найдём время до встречи:</p>
+        <div class="step"><strong>t = S / v_сбл = 300 / 150 = 2 часа</strong></div>
+        
+        <div class="answer">Ответ: 2</div>
+    </div>
+</body>
+</html>

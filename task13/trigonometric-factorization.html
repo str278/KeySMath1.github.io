@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тригонометрические уравнения, разложение на множители - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>✖️ Тригонометрические уравнения, разложение на множители</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Метод разложения на множители</strong> — один из основных методов решения тригонометрических уравнений. Уравнение приводится к виду f(x)·g(x) = 0.</p>
+    
+    <div class="property">
+        <strong>🔹 Алгоритм решения:</strong>
+        <ol style="margin-top: 10px; padding-left: 25px;">
+            <li>Преобразовать уравнение к виду f(x)·g(x) = 0</li>
+            <li>Решить уравнения f(x) = 0 и g(x) = 0 отдельно</li>
+            <li>Объединить все найденные решения</li>
+        </ol>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные приёмы разложения:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Вынесение общего множителя за скобки</li>
+            <li>Группировка слагаемых</li>
+            <li>Применение формул сокращённого умножения</li>
+            <li>Использование тригонометрических формул</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Уравнение вида f(x)·g(x) = 0:</strong><br><br>
+        $$ f(x) \cdot g(x) = 0 $$
+        $$ \Leftrightarrow \begin{cases} f(x) = 0 \\ \text{или} \\ g(x) = 0 \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Формулы для разложения:</strong><br><br>
+        $$ \sin 2x = 2\sin x\cos x $$
+        $$ \cos 2x = \cos^2 x - \sin^2 x $$
+        $$ \sin x - \sin y = 2\sin\frac{x-y}{2}\cos\frac{x+y}{2} $$
+        $$ \cos x - \cos y = -2\sin\frac{x-y}{2}\sin\frac{x+y}{2} $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: sin x · (2cos x − 1) = 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Уравнение уже разложено на множители. Решаем каждое:</p>
+        
+        <p style="margin: 10px 0;">2. Первый множитель:</p>
+        <div class="step"><strong>sin x = 0</strong></div>
+        <div class="step"><strong>x = πn, n ∈ Z</strong></div>
+        
+        <p style="margin: 10px 0;">3. Второй множитель:</p>
+        <div class="step"><strong>2cos x − 1 = 0</strong></div>
+        <div class="step"><strong>cos x = 0.5</strong></div>
+        <div class="step"><strong>x = ±π/3 + 2πn, n ∈ Z</strong></div>
+        
+        <div class="answer">Ответ: πn; ±π/3 + 2πn, n ∈ Z</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Решите уравнение: sin 2x − sin x = 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Применим формулу sin 2x = 2sin x·cos x:</p>
+        <div class="step"><strong>2sin x·cos x − sin x = 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Вынесем sin x за скобки:</p>
+        <div class="step"><strong>sin x(2cos x − 1) = 0</strong></div>
+        
+        <p style="margin: 10px 0;">3. Решаем каждое уравнение:</p>
+        <div class="step"><strong>sin x = 0 ⇒ x = πn</strong></div>
+        <div class="step"><strong>2cos x − 1 = 0 ⇒ cos x = 0.5 ⇒ x = ±π/3 + 2πn</strong></div>
+        
+        <div class="answer">Ответ: πn; ±π/3 + 2πn, n ∈ Z</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 3:</strong> Решите уравнение: cos 2x − cos x = 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Применим формулу разности косинусов:</p>
+        <div class="step"><strong>cos 2x − cos x = −2sin((2x+x)/2)·sin((2x−x)/2)</strong></div>
+        <div class="step"><strong>= −2sin(3x/2)·sin(x/2) = 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Решаем каждое уравнение:</p>
+        <div class="step"><strong>sin(3x/2) = 0 ⇒ 3x/2 = πn ⇒ x = 2πn/3</strong></div>
+        <div class="step"><strong>sin(x/2) = 0 ⇒ x/2 = πn ⇒ x = 2πn</strong></div>
+        
+        <div class="answer">Ответ: 2πn/3; 2πn, n ∈ Z</div>
+    </div>
+</html>

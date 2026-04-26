@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объёмы многогранников - Задание 14 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>📊 Объёмы многогранников</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Объём многогранника</strong> — количественная характеристика пространства, занимаемого телом.</p>
+    
+    <div class="property">
+        <strong>🔹 Основные формулы объёмов:</strong>
+    </div>
+    
+    <h2>📐 Формулы объёмов</h2>
+    
+    <div class="formula">
+        <strong>1. Призма:</strong><br><br>
+        $$ V = S_{осн} \cdot H $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Пирамида:</strong><br><br>
+        $$ V = \frac{1}{3} S_{осн} \cdot H $$
+    </div>
+    
+    <div class="formula">
+        <strong>3. Прямоугольный параллелепипед:</strong><br><br>
+        $$ V = abc $$
+        где a, b, c — измерения
+    </div>
+    
+    <div class="formula">
+        <strong>4. Куб:</strong><br><br>
+        $$ V = a^3 $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Найдите объём правильной четырёхугольной пирамиды со стороной основания 6 и высотой 8.</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Площадь основания (квадрат):</p>
+        <div class="step"><strong>Sосн = 6² = 36</strong></div>
+        
+        <p style="margin: 10px 0;">2. Объём пирамиды:</p>
+        <div class="step"><strong>V = (1/3) · Sосн · H</strong></div>
+        <div class="step"><strong>V = (1/3) · 36 · 8 = 96</strong></div>
+        
+        <div class="answer">Ответ: 96</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Объём треугольной пирамиды равен 24. Найдите объём пирамиды, подобной данной с коэффициентом подобия 2.</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Отношение объёмов подобных тел равно кубу коэффициента подобия:</p>
+        <div class="step"><strong>V₂/V₁ = k³</strong></div>
+        <div class="step"><strong>V₂ = V₁ · k³ = 24 · 2³ = 24 · 8 = 192</strong></div>
+        
+        <div class="answer">Ответ: 192</div>
+    </div>
+</body>
+</html>

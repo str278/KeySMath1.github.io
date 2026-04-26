@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смешанные неравенства - Задание 15 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .warning { background: #fff5f5; border-left: 4px solid #fc8181; padding: 15px; margin: 15px 0; border-radius: 6px; }
+        .method-box { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🔀 Смешанные неравенства</h1>
+    
+    <div class="card">
+        <h2>📚 Что такое смешанные неравенства?</h2>
+        <p>Это неравенства, в которых <strong>комбинируются разные типы функций</strong>: показательные, логарифмические, тригонометрические, с модулем и т.д.</p>
+        
+        <div class="method-box">
+            <strong>💡 Основная идея:</strong><br>
+            Разбить сложное неравенство на более простые системы или совокупности, используя свойства функций и метод интервалов.
+        </div>
+
+        <h3>Типичные комбинации:</h3>
+        <ul>
+            <li>Логарифм + модуль: log₂|x-1| > 2</li>
+            <li>Показательная + тригонометрия: 2^sin(x) ≤ 1</li>
+            <li>Корень + логарифм: √(x-2) < log₃(x)</li>
+            <li>Модуль + дробь: |x-1|/(x+2) ≥ 1</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🔧 Общий алгоритм решения</h2>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 500 280" width="500" height="280">
+                <!-- Блок-схема -->
+                <rect x="150" y="20" width="200" height="50" fill="#ebf8ff" stroke="#3182ce" stroke-width="2" rx="8"/>
+                <text x="250" y="50" font-size="14" fill="#1a365d" font-weight="bold" text-anchor="middle">1. Найти ОДЗ</text>
+                
+                <line x1="250" y1="70" x2="250" y2="90" stroke="#4a5568" stroke-width="2"/>
+                <polygon points="250,90 245,80 255,80" fill="#4a5568"/>
+                
+                <rect x="150" y="90" width="200" height="50" fill="#fefcbf" stroke="#d69e2e" stroke-width="2" rx="8"/>
+                <text x="250" y="120" font-size="14" fill="#744210" font-weight="bold" text-anchor="middle">2. Разбить на случаи</text>
+                
+                <line x1="250" y1="140" x2="250" y2="160" stroke="#4a5568" stroke-width="2"/>
+                <polygon points="250,160 245,150 255,150" fill="#4a5568"/>
+                
+                <rect x="150" y="160" width="200" height="50" fill="#c6f6d5" stroke="#48bb78" stroke-width="2" rx="8"/>
+                <text x="250" y="190" font-size="14" fill="#22543d" font-weight="bold" text-anchor="middle">3. Решить каждое</text>
+                
+                <line x1="250" y1="210" x2="250" y2="230" stroke="#4a5568" stroke-width="2"/>
+                <polygon points="250,230 245,220 255,220" fill="#4a5568"/>
+                
+                <rect x="150" y="230" width="200" height="50" fill="#fed7d7" stroke="#f56565" stroke-width="2" rx="8"/>
+                <text x="250" y="260" font-size="14" fill="#742a2a" font-weight="bold" text-anchor="middle">4. Объединить решения</text>
+            </svg>
+            <div class="caption">Рис. 1. Алгоритм решения смешанных неравенств</div>
+        </div>
+
+        <ol>
+            <li><strong>Найдите область допустимых значений (ОДЗ)</strong> — учтите ограничения всех функций</li>
+            <li><strong>Разбейте на случаи</strong> — по знакам выражений под модулем, по периодам тригонометрии и т.д.</li>
+            <li><strong>Решите каждое неравенство отдельно</strong> — используя соответствующие методы</li>
+            <li><strong>Объедините решения</strong> — с учетом ОДЗ</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Логарифм + Модуль</h2>
+        <p><strong>Условие:</strong> Решите неравенство log₂|x - 3| < 2</p>
+        
+        <p><strong>Решение:</strong></p>
+        
+        <h3>Шаг 1. Находим ОДЗ</h3>
+        <div class="step">Под логарифмом должно быть положительно: |x - 3| > 0</div>
+        <div class="step">Это значит: x - 3 ≠ 0 ⟺ x ≠ 3</div>
+        
+        <h3>Шаг 2. Раскрываем логарифм</h3>
+        <div class="step">log₂|x - 3| < 2 ⟺ |x - 3| < 2²</div>
+        <div class="step">|x - 3| < 4</div>
+        
+        <h3>Шаг 3. Решаем неравенство с модулем</h3>
+        <div class="step">-4 < x - 3 < 4</div>
+        <div class="step">Прибавляем 3: -1 < x < 7</div>
+        
+        <h3>Шаг 4. Учитываем ОДЗ</h3>
+        <div class="step">x ∈ (-1; 7), но x ≠ 3</div>
+        <div class="step">Ответ: x ∈ (-1; 3) ∪ (3; 7)</div>
+        
+        <div class="answer">Ответ: (-1; 3) ∪ (3; 7)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Показательная + Тригонометрия</h2>
+        <p><strong>Условие:</strong> Решите неравенство 2^sin(x) ≤ 1 на промежутке [0; 2π]</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 500 200" width="500" height="200">
+                <!-- Ось X -->
+                <line x1="50" y1="150" x2="450" y2="150" stroke="#1a202c" stroke-width="2"/>
+                <polygon points="450,150 440,145 440,155" fill="#1a202c"/>
+                <text x="460" y="155" font-size="12">x</text>
+                
+                <!-- Ось Y -->
+                <line x1="50" y1="180" x2="50" y2="20" stroke="#1a202c" stroke-width="2"/>
+                <polygon points="50,20 45,30 55,30" fill="#1a202c"/>
+                <text x="55" y="15" font-size="12">y</text>
+                
+                <!-- Синусоида -->
+                <path d="M 50 100 Q 100 50 150 100 T 250 100 T 350 100 T 450 100" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                
+                <!-- Линия y=0 -->
+                <line x1="50" y1="100" x2="450" y2="100" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="5,3"/>
+                <text x="460" y="105" font-size="11" fill="#48bb78">y=0</text>
+                
+                <!-- Точки пересечения -->
+                <circle cx="50" cy="100" r="3" fill="#1a202c"/>
+                <circle cx="250" cy="100" r="3" fill="#1a202c"/>
+                <circle cx="450" cy="100" r="3" fill="#1a202c"/>
+                
+                <text x="50" y="170" font-size="11" text-anchor="middle">0</text>
+                <text x="250" y="170" font-size="11" text-anchor="middle">π</text>
+                <text x="450" y="170" font-size="11" text-anchor="middle">2π</text>
+                
+                <text x="250" y="190" font-size="12" fill="#4a5568" text-anchor="middle">sin(x) ≤ 0 на [π; 2π]</text>
+            </svg>
+            <div class="caption">Рис. 2. График sin(x) — решение там, где синус отрицателен</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        
+        <h3>Шаг 1. Анализируем показательную функцию</h3>
+        <div class="step">2^sin(x) ≤ 1</div>
+        <div class="step">Так как 2 > 1, функция возрастает</div>
+        <div class="step">Значит: sin(x) ≤ 0 (потому что 2⁰ = 1)</div>
+        
+        <h3>Шаг 2. Решаем тригонометрическое неравенство</h3>
+        <div class="step">sin(x) ≤ 0 на промежутке [0; 2π]</div>
+        <div class="step">Синус отрицателен в 3-й и 4-й четвертях</div>
+        <div class="step">x ∈ [π; 2π]</div>
+        
+        <div class="answer">Ответ: [π; 2π]</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Корень + Логарифм (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Решите неравенство √(x - 1) < log₂(x)</p>
+        
+        <p><strong>Решение:</strong></p>
+        
+        <h3>Шаг 1. Находим ОДЗ</h3>
+        <div class="step">Под корнем: x - 1 ≥ 0 ⟺ x ≥ 1</div>
+        <div class="step">Под логарифмом: x > 0</div>
+        <div class="step">Общее ОДЗ: x ≥ 1</div>
+        
+        <h3>Шаг 2. Анализируем поведение функций</h3>
+        <div class="step">При x = 1: √(1-1) = 0, log₂(1) = 0. Равенство!</div>
+        <div class="step">При x = 2: √(2-1) = 1, log₂(2) = 1. Снова равенство!</div>
+        <div class="step">При x = 4: √(4-1) = √3 ≈ 1.73, log₂(4) = 2</div>
+        
+        <h3>Шаг 3. Сравниваем скорости роста</h3>
+        <div class="step">На промежутке (1; 2): корень растет быстрее логарифма</div>
+        <div class="step">На промежутке (2; +∞): логарифм догоняет корень</div>
+        <div class="step">Проверяем x = 5: √4 = 2, log₂(5) ≈ 2.32 — логарифм больше!</div>
+        
+        <h3>Шаг 4. Делаем вывод</h3>
+        <div class="step">√(x - 1) < log₂(x) при x > 2</div>
+        <div class="step">Проверяем: при x = 3: √2 ≈ 1.41, log₂(3) ≈ 1.58 ✓</div>
+        
+        <div class="answer">Ответ: (2; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 4: Модуль + Дробь</h2>
+        <p><strong>Условие:</strong> Решите неравенство |x - 2|/(x + 1) ≥ 1</p>
+        
+        <p><strong>Решение:</strong></p>
+        
+        <h3>Шаг 1. Находим ОДЗ</h3>
+        <div class="step">Знаменатель не равен нулю: x + 1 ≠ 0 ⟺ x ≠ -1</div>
+        
+        <h3>Шаг 2. Переносим всё в одну сторону</h3>
+        <div class="step">|x - 2|/(x + 1) - 1 ≥ 0</div>
+        <div class="step">(|x - 2| - (x + 1))/(x + 1) ≥ 0</div>
+        
+        <h3>Шаг 3. Разбираем случаи для модуля</h3>
+        
+        <h4>Случай 1: x ≥ 2</h4>
+        <div class="step">|x - 2| = x - 2</div>
+        <div class="step">(x - 2 - x - 1)/(x + 1) ≥ 0</div>
+        <div class="step">-3/(x + 1) ≥ 0</div>
+        <div class="step">Дробь положительна, когда знаменатель отрицателен: x + 1 < 0</div>
+        <div class="step">x < -1, но это противоречит условию x ≥ 2</div>
+        <div class="step">Решений нет</div>
+        
+        <h4>Случай 2: x < 2</h4>
+        <div class="step">|x - 2| = -(x - 2) = 2 - x</div>
+        <div class="step">(2 - x - x - 1)/(x + 1) ≥ 0</div>
+        <div class="step">(1 - 2x)/(x + 1) ≥ 0</div>
+        <div class="step">Метод интервалов: критические точки x = -1 и x = 0.5</div>
+        <div class="step">Расставляем знаки: (+) на (-∞; -1), (-) на (-1; 0.5], (+) на [0.5; 2)</div>
+        <div class="step">Нам нужно ≥ 0: x ∈ (-∞; -1) ∪ [0.5; 2)</div>
+        
+        <div class="step"><strong>Объединяем с ОДЗ:</strong> x ∈ (-∞; -1) ∪ [0.5; 2)</div>
+        
+        <div class="answer">Ответ: (-∞; -1) ∪ [0.5; 2)</div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ Важные моменты:</strong>
+        <ul>
+            <li>Всегда начинайте с нахождения ОДЗ — это сэкономит время и избежит ошибок</li>
+            <li>Проверяйте граничные точки — они часто дают равенство</li>
+            <li>Если не получается аналитически — постройте график или проверьте несколько точек</li>
+            <li>Не забывайте про знак знаменателя при работе с дробями</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Если видите сложное смешанное неравенство — не паникуйте, разбейте его на части</li>
+            <li>Часто достаточно проверить несколько характерных точек</li>
+            <li>Запоминайте стандартные значения: log₂(2) = 1, log₂(4) = 2, sin(π/6) = 0.5 и т.д.</li>
+            <li>Если в ответе получается «красивое» число — скорее всего, вы решили правильно</li>
+            <li>Всегда делайте проверку подстановкой хотя бы одной точки из ответа</li>
+        </ul>
+    </div>
+</body>
+</html>

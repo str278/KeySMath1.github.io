@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комбинированные задачи с функциями</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>🎯 Комбинированные задачи с функциями</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Комбинированные задачи</strong> — задачи, требующие применения знаний о нескольких типах функций одновременно: нахождение точек пересечения, преобразования графиков, решение систем.</p>
+    
+    <div class="property">
+        <strong>🔹 Основные типы задач:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Нахождение точек пересечения графиков</li>
+            <li>Преобразования графиков (сдвиги, растяжения)</li>
+            <li>Решение систем уравнений графическим методом</li>
+            <li>Определение параметров по графику</li>
+            <li>Сложные композиции функций</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные методы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Точки пересечения графиков:</div>
+        $$ f(x) = g(x) $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">Решаем уравнение для нахождения абсцисс точек пересечения</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Преобразования графиков:</div>
+        $$ y = f(x - a) + b $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">Сдвиг на a вправо и на b вверх</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Растяжение/сжатие:</div>
+        $$ y = kf(x) $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">Растяжение в k раз по вертикали (при k > 1)</p>
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите точки пересечения графиков функций y = x² и y = 2x + 3.</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Приравняем функции:</p>
+        <div class="step"><strong>x² = 2x + 3</strong></div>
+        <div class="step"><strong>x² − 2x − 3 = 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Решим квадратное уравнение:</p>
+        <div class="step"><strong>D = 4 + 12 = 16</strong></div>
+        <div class="step"><strong>x₁ = (2 + 4)/2 = 3</strong></div>
+        <div class="step"><strong>x₂ = (2 − 4)/2 = −1</strong></div>
+        
+        <p style="margin: 10px 0;">3. Найдём ординаты:</p>
+        <div class="step"><strong>y₁ = 3² = 9</strong></div>
+        <div class="step"><strong>y₂ = (−1)² = 1</strong></div>
+        
+        <div class="answer">Ответ: (3; 9) и (−1; 1)</div>
+    </div>
+</html>

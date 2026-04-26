@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Буквенные логарифмические выражения</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Буквенные логарифмические выражения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Буквенные логарифмические выражения</strong> — выражения, содержащие логарифмы от буквенных выражений.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные понятия:</strong><br>
+        <code>log_a(f(x))</code> — логарифм от функции<br>
+        <code>ОДЗ</code> — f(x) > 0, a > 0, a ≠ 1<br>
+        <code>Свойства логарифмов</code>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Методы преобразования:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Применение свойств логарифмов</li>
+            <li>Переход к другому основанию</li>
+            <li>Логарифмирование и потенцирование</li>
+            <li>Упрощение сложных выражений</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Свойства логарифмов:</div>
+        $$ \log_a(xy) = \log_a x + \log_a y $$
+        $$ \log_a\left(\frac{x}{y}\right) = \log_a x - \log_a y $$
+        $$ \log_a(x^n) = n \log_a x $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Формула перехода:</div>
+        $$ \log_a b = \frac{\log_c b}{\log_c a} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Основное тождество:</div>
+        $$ a^{\log_a x} = x $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Упростите выражение: log_a(x²) − log_a(x) при x > 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Применим свойство логарифма степени:</p>
+        <div class="step"><strong>log_a(x²) = 2·log_a(x)</strong></div>
+        
+        <p style="margin: 10px 0;">2. Подставим и упростим:</p>
+        <div class="step"><strong>2·log_a(x) − log_a(x) = log_a(x)</strong></div>
+        
+        <div class="answer">Ответ: log_a(x)</div>
+    </div>
+    
+    <h2>🎬 Видео-разбор</h2>
+    <a href="#" class="video-link" target="_blank">Смотреть видео на YouTube</a>
+</body>
+</html>

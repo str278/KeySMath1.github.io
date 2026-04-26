@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иррациональные уравнения - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Иррациональные уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Иррациональное уравнение</strong> — уравнение, содержащее переменную под знаком корня.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> При возведении в чётную степень могут появиться посторонние корни. 
+        <strong>Всегда делайте проверку!</strong>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы решения:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Возведение обеих частей в степень</li>
+            <li>Замена переменной</li>
+            <li>Проверка ОДЗ (область допустимых значений)</li>
+            <li>Проверка найденных корней</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Уравнение вида √f(x) = a:</strong><br><br>
+        $$ \sqrt{f(x)} = a \quad (a \geq 0) $$
+        $$ f(x) = a^2 $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> f(x) ≥ 0</p>
+    </div>
+    
+    <div class="formula">
+        <strong>2. Уравнение вида √f(x) = √g(x):</strong><br><br>
+        $$ \sqrt{f(x)} = \sqrt{g(x)} $$
+        $$ f(x) = g(x) $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> f(x) ≥ 0, g(x) ≥ 0</p>
+    </div>
+    
+    <div class="formula">
+        <strong>3. Уравнение вида √f(x) = g(x):</strong><br><br>
+        $$ \sqrt{f(x)} = g(x) $$
+        $$ \begin{cases} f(x) = g^2(x) \\ g(x) \geq 0 \end{cases} $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: √(x+3) = 4</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x + 3 ≥ 0 ⇒ x ≥ −3</strong></div>
+        
+        <p style="margin: 10px 0;">2. Возведём обе части в квадрат:</p>
+        <div class="step"><strong>(√(x+3))² = 4²</strong></div>
+        <div class="step"><strong>x + 3 = 16</strong></div>
+        <div class="step"><strong>x = 13</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка: 13 ≥ −3 ✓</p>
+        
+        <div class="answer">Ответ: 13</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Решите уравнение: √(x+3) + √(x-1) = 4</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x + 3 ≥ 0 ⇒ x ≥ −3</strong></div>
+        <div class="step"><strong>x − 1 ≥ 0 ⇒ x ≥ 1</strong></div>
+        <div class="step"><strong>Общее: x ≥ 1</strong></div>
+        
+        <p style="margin: 10px 0;">2. Перенесём один корень:</p>
+        <div class="step"><strong>√(x+3) = 4 − √(x-1)</strong></div>
+        
+        <p style="margin: 10px 0;">3. Возведём в квадрат:</p>
+        <div class="step"><strong>x + 3 = 16 − 8√(x-1) + (x-1)</strong></div>
+        <div class="step"><strong>x + 3 = 15 + x − 8√(x-1)</strong></div>
+        <div class="step"><strong>8√(x-1) = 12</strong></div>
+        <div class="step"><strong>√(x-1) = 1.5</strong></div>
+        
+        <p style="margin: 10px 0;">4. Ещё раз возведём в квадрат:</p>
+        <div class="step"><strong>x − 1 = 2.25</strong></div>
+        <div class="step"><strong>x = 3.25</strong></div>
+        
+        <p style="margin: 10px 0;">5. Проверка: 3.25 ≥ 1 ✓</p>
+        
+        <div class="answer">Ответ: 3.25</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 3:</strong> Решите уравнение: √(2x+5) = x+1</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>2x + 5 ≥ 0 ⇒ x ≥ −2.5</strong></div>
+        <div class="step"><strong>x + 1 ≥ 0 ⇒ x ≥ −1</strong></div>
+        <div class="step"><strong>Общее: x ≥ −1</strong></div>
+        
+        <p style="margin: 10px 0;">2. Возведём в квадрат:</p>
+        <div class="step"><strong>2x + 5 = (x+1)²</strong></div>
+        <div class="step"><strong>2x + 5 = x² + 2x + 1</strong></div>
+        <div class="step"><strong>x² = 4</strong></div>
+        <div class="step"><strong>x = ±2</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка по ОДЗ (x ≥ −1):</p>
+        <div class="step"><strong>x = 2 подходит ✓</strong></div>
+        <div class="step"><strong>x = −2 не подходит ✗</strong></div>
+        
+        <div class="answer">Ответ: 2</div>
+    </div>
+</body>
+</html>

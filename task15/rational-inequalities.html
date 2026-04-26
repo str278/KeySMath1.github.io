@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рациональные неравенства - Задание 15 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>📊 Рациональные неравенства</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Рациональное неравенство</strong> — неравенство вида P(x)/Q(x) ⋛ 0, где P(x) и Q(x) — многочлены.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> Знаменатель не должен быть равен нулю. 
+        Метод интервалов — основной метод решения.
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Алгоритм решения (метод интервалов):</strong>
+        <ol style="margin-top: 10px; padding-left: 25px;">
+            <li>Привести к виду P(x)/Q(x) ⋛ 0</li>
+            <li>Разложить числитель и знаменатель на множители</li>
+            <li>Найти нули числителя и знаменателя</li>
+            <li>Отметить точки на числовой прямой</li>
+            <li>Определить знаки на интервалах</li>
+            <li>Выбрать нужные интервалы</li>
+        </ol>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Неравенство вида P(x)/Q(x) &gt; 0:</strong><br><br>
+        $$ \frac{P(x)}{Q(x)} > 0 $$
+        $$ \Leftrightarrow \begin{cases} P(x) > 0 \\ Q(x) > 0 \end{cases} \text{ или } \begin{cases} P(x) < 0 \\ Q(x) < 0 \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Неравенство вида P(x)/Q(x) ≥ 0:</strong><br><br>
+        $$ \frac{P(x)}{Q(x)} \geq 0 $$
+        $$ \Leftrightarrow \begin{cases} P(x) \geq 0 \\ Q(x) > 0 \end{cases} \text{ или } \begin{cases} P(x) \leq 0 \\ Q(x) < 0 \end{cases} $$
+        <p style="margin-top: 10px;"><strong>Важно:</strong> Q(x) ≠ 0</p>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите неравенство: (x − 2)/(x + 3) &gt; 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём нули числителя и знаменателя:</p>
+        <div class="step"><strong>x − 2 = 0 ⇒ x = 2</strong></div>
+        <div class="step"><strong>x + 3 = 0 ⇒ x = −3</strong></div>
+        
+        <p style="margin: 10px 0;">2. Отметим на числовой прямой:</p>
+        <div class="step"><strong>−3 и 2 делят прямую на 3 интервала</strong></div>
+        
+        <p style="margin: 10px 0;">3. Определим знаки:</p>
+        <div class="step"><strong>(−∞; −3): (+)/(−) = −</strong></div>
+        <div class="step"><strong>(−3; 2): (−)/(+) = −</strong></div>
+        <div class="step"><strong>(2; +∞): (+)/(+) = +</strong></div>
+        
+        <p style="margin: 10px 0;">4. Выбираем интервалы, где дробь положительна:</p>
+        <div class="step"><strong>x ∈ (−∞; −3) ∪ (2; +∞)</strong></div>
+        
+        <div class="answer">Ответ: (−∞; −3) ∪ (2; +∞)</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Решите неравенство: (x² − 4)/(x − 1) ≥ 0</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Разложим числитель:</p>
+        <div class="step"><strong>x² − 4 = (x−2)(x+2)</strong></div>
+        
+        <p style="margin: 10px 0;">2. Неравенство принимает вид:</p>
+        <div class="step"><strong>(x−2)(x+2)/(x−1) ≥ 0</strong></div>
+        
+        <p style="margin: 10px 0;">3. Найдём нули:</p>
+        <div class="step"><strong>x = −2, x = 2 (числитель)</strong></div>
+        <div class="step"><strong>x = 1 (знаменатель)</strong></div>
+        
+        <p style="margin: 10px 0;">4. Метод интервалов:</p>
+        <div class="step"><strong>x ∈ [−2; 1) ∪ [2; +∞)</strong></div>
+        
+        <div class="answer">Ответ: [−2; 1) ∪ [2; +∞)</div>
+    </div>
+</body>
+</html>

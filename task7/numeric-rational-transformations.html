@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Числовые рациональные выражения</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📐 Числовые рациональные выражения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Числовые рациональные выражения</strong> — выражения, составленные из чисел с помощью арифметических операций.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные операции:</strong><br>
+        <code>Сложение и вычитание</code><br>
+        <code>Умножение и деление</code><br>
+        <code>Возведение в степень</code><br>
+        <code>Извлечение корня</code>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Порядок действий:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Действия в скобках</li>
+            <li>Возведение в степень и извлечение корня</li>
+            <li>Умножение и деление (слева направо)</li>
+            <li>Сложение и вычитание (слева направо)</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Формулы сокращённого умножения:</div>
+        $$ (a + b)^2 = a^2 + 2ab + b^2 $$
+        $$ (a - b)^2 = a^2 - 2ab + b^2 $$
+        $$ (a + b)(a - b) = a^2 - b^2 $$
+        $$ (a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 $$
+        $$ (a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3 $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Свойства корней:</div>
+        $$ \sqrt{ab} = \sqrt{a} \cdot \sqrt{b} $$
+        $$ \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} $$
+        $$ (\sqrt{a})^2 = a $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите значение выражения: (√18 − √8)²</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Упростим корни:</p>
+        <div class="step"><strong>√18 = √(9·2) = 3√2</strong></div>
+        <div class="step"><strong>√8 = √(4·2) = 2√2</strong></div>
+        
+        <p style="margin: 10px 0;">2. Вычтем:</p>
+        <div class="step"><strong>3√2 − 2√2 = √2</strong></div>
+        
+        <p style="margin: 10px 0;">3. Возведём в квадрат:</p>
+        <div class="step"><strong>(√2)² = 2</strong></div>
+        
+        <div class="answer">Ответ: 2</div>
+    </div>
+    
+    <h2>🎬 Видео-разбор</h2>
+    <a href="#" class="video-link" target="_blank">Смотреть видео на YouTube</a>
+</body>
+</html>

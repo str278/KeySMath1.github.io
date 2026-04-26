@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследование частного функций</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>➗ Исследование частного функций</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Частное функций</strong> — функция вида y = f(x)/g(x). При исследовании важно правильно найти производную частного и учесть ОДЗ.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные понятия:</strong><br>
+        <code>y = f(x)/g(x)</code> — частное двух функций<br>
+        <code>(u/v)' = (u'v − uv')/v²</code> — правило частного<br>
+        <code>g(x) ≠ 0</code> — условие ОДЗ
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Особенности исследования:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Производная частного: (f/g)' = (f'g − fg')/g²</li>
+            <li>Обязательно учитывать ОДЗ: g(x) ≠ 0</li>
+            <li>Приравнивать числитель производной к нулю: f'g − fg' = 0</li>
+            <li>Проверять точки разрыва функции</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Производная частного:</div>
+        $$ \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g^2(x)} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Частные случаи:</div>
+        $$ \left(\frac{1}{g(x)}\right)' = -\frac{g'(x)}{g^2(x)} $$
+        $$ \left(\frac{f(x)}{x}\right)' = \frac{f'(x) \cdot x - f(x)}{x^2} $$
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Условие экстремума:</div>
+        $$ f'(x)g(x) - f(x)g'(x) = 0 $$
+        $$ \frac{f'(x)}{f(x)} = \frac{g'(x)}{g(x)} \quad \text{(если f(x) ≠ 0, g(x) ≠ 0)} $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите точку минимума функции y = (x² + 144)/x на промежутке (0; +∞).</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём производную:</p>
+        <div class="step"><strong>y' = ((x² + 144)' · x − (x² + 144) · x')/x²</strong></div>
+        <div class="step"><strong>y' = (2x · x − (x² + 144) · 1)/x²</strong></div>
+        <div class="step"><strong>y' = (2x² − x² − 144)/x²</strong></div>
+        <div class="step"><strong>y' = (x² − 144)/x²</strong></div>
+        
+        <p style="margin: 10px 0;">2. Найдём критические точки (y' = 0):</p>
+        <div class="step"><strong>x² − 144 = 0</strong></div>
+        <div class="step"><strong>x² = 144</strong></div>
+        <div class="step"><strong>x = 12 или x = −12</strong></div>
+        <div class="step"><strong>x = 12 (т.к. x > 0)</strong></div>
+        
+        <p style="margin: 10px 0;">3. Определим знак производной:</p>
+        <div class="step"><strong>При 0 < x < 12: y' < 0 (функция убывает)</strong></div>
+        <div class="step"><strong>При x > 12: y' > 0 (функция возрастает)</strong></div>
+        
+        <p style="margin: 10px 0;">4. Вывод:</p>
+        <div class="step"><strong>x = 12 — точка минимума</strong></div>
+        
+        <div class="answer">Ответ: 12</div>
+    </div>
+</body>
+</html>

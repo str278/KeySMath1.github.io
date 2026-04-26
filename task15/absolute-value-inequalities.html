@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Неравенства с модулем - Задание 15 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .warning { background: #fff5f5; border-left: 4px solid #fc8181; padding: 15px; margin: 15px 0; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h1>📐 Неравенства с модулем</h1>
+    
+    <div class="card">
+        <h2>📚 Что такое модуль?</h2>
+        <p><strong>Модуль числа</strong> — это расстояние от этого числа до нуля на числовой прямой. Модуль всегда неотрицателен.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 500 150" width="500" height="150">
+                <!-- Числовая прямая -->
+                <line x1="50" y1="75" x2="450" y2="75" stroke="#1a202c" stroke-width="3"/>
+                <polygon points="450,75 440,70 440,80" fill="#1a202c"/>
+                
+                <!-- Точки -->
+                <circle cx="150" cy="75" r="4" fill="#e53e3e"/>
+                <text x="145" y="95" font-size="14" fill="#e53e3e" font-weight="bold">-3</text>
+                
+                <circle cx="250" cy="75" r="4" fill="#1a202c"/>
+                <text x="245" y="95" font-size="14" font-weight="bold">0</text>
+                
+                <circle cx="350" cy="75" r="4" fill="#3182ce"/>
+                <text x="345" y="95" font-size="14" fill="#3182ce" font-weight="bold">3</text>
+                
+                <!-- Расстояния -->
+                <path d="M 150 60 Q 200 40 250 60" fill="none" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <path d="M 250 60 Q 300 40 350 60" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                
+                <text x="185" y="35" font-size="12" fill="#e53e3e">|-3| = 3</text>
+                <text x="285" y="35" font-size="12" fill="#3182ce">|3| = 3</text>
+                
+                <text x="200" y="120" font-size="14" fill="#4a5568">Одинаковое расстояние до нуля!</text>
+            </svg>
+            <div class="caption">Рис. 1. Модуль — это расстояние до нуля (всегда положительно)</div>
+        </div>
+
+        <div class="formula-box">
+            <strong>Определение:</strong><br>
+            |x| = x, если x ≥ 0<br>
+            |x| = -x, если x < 0
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🔧 Основные типы неравенств с модулем</h2>
+        
+        <h3>Тип 1: |x| < a (меньше числа)</h3>
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 120" width="400" height="120">
+                <line x1="50" y1="60" x2="350" y2="60" stroke="#1a202c" stroke-width="2"/>
+                <circle cx="150" cy="60" r="3" fill="#1a202c"/><text x="145" y="80" font-size="12">-a</text>
+                <circle cx="250" cy="60" r="3" fill="#1a202c"/><text x="245" y="80" font-size="12">a</text>
+                <line x1="150" y1="45" x2="250" y2="45" stroke="#48bb78" stroke-width="4"/>
+                <text x="170" y="40" font-size="12" fill="#48bb78">Решение: -a < x < a</text>
+            </svg>
+            <div class="caption">Рис. 2. Решение неравенства |x| < a</div>
+        </div>
+        <div class="formula-box">
+            |x| < a ⟺ -a < x < a (при a > 0)
+        </div>
+
+        <h3>Тип 2: |x| > a (больше числа)</h3>
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 120" width="400" height="120">
+                <line x1="50" y1="60" x2="350" y2="60" stroke="#1a202c" stroke-width="2"/>
+                <circle cx="120" cy="60" r="3" fill="#1a202c"/><text x="115" y="80" font-size="12">-a</text>
+                <circle cx="280" cy="60" r="3" fill="#1a202c"/><text x="275" y="80" font-size="12">a</text>
+                <line x1="50" y1="45" x2="120" y2="45" stroke="#e53e3e" stroke-width="4"/>
+                <line x1="280" y1="45" x2="350" y2="45" stroke="#e53e3e" stroke-width="4"/>
+                <text x="130" y="40" font-size="12" fill="#e53e3e">Решение: x < -a или x > a</text>
+            </svg>
+            <div class="caption">Рис. 3. Решение неравенства |x| > a</div>
+        </div>
+        <div class="formula-box">
+            |x| > a ⟺ x < -a или x > a (при a > 0)
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Простое неравенство</h2>
+        <p><strong>Условие:</strong> Решите неравенство |2x - 3| < 5</p>
+        
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Применяем правило для |...| < a: -5 < 2x - 3 < 5</div>
+        <div class="step">2. Прибавляем 3 ко всем частям: -5 + 3 < 2x < 5 + 3</div>
+        <div class="step">3. Упрощаем: -2 < 2x < 8</div>
+        <div class="step">4. Делим на 2: -1 < x < 4</div>
+        
+        <div class="answer">Ответ: x ∈ (-1; 4)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Неравенство с двумя модулями</h2>
+        <p><strong>Условие:</strong> Решите неравенство |x - 1| + |x - 3| < 4</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 500 180" width="500" height="180">
+                <!-- Числовая прямая -->
+                <line x1="50" y1="90" x2="450" y2="90" stroke="#1a202c" stroke-width="2"/>
+                
+                <!-- Точки разбиения -->
+                <circle cx="150" cy="90" r="4" fill="#e53e3e"/>
+                <text x="145" y="110" font-size="13" fill="#e53e3e" font-weight="bold">1</text>
+                <line x1="150" y1="30" x2="150" y2="90" stroke="#e53e3e" stroke-width="1" stroke-dasharray="3,3"/>
+                <text x="130" y="25" font-size="11" fill="#e53e3e">x = 1</text>
+                
+                <circle cx="250" cy="90" r="4" fill="#3182ce"/>
+                <text x="245" y="110" font-size="13" fill="#3182ce" font-weight="bold">3</text>
+                <line x1="250" y1="30" x2="250" y2="90" stroke="#3182ce" stroke-width="1" stroke-dasharray="3,3"/>
+                <text x="230" y="25" font-size="11" fill="#3182ce">x = 3</text>
+                
+                <!-- Интервалы -->
+                <text x="70" y="130" font-size="12" fill="#4a5568">I: x < 1</text>
+                <text x="180" y="130" font-size="12" fill="#4a5568">II: 1 ≤ x < 3</text>
+                <text x="300" y="130" font-size="12" fill="#4a5568">III: x ≥ 3</text>
+                
+                <text x="150" y="160" font-size="12" fill="#1a202c" font-weight="bold">Метод интервалов</text>
+            </svg>
+            <div class="caption">Рис. 4. Разбиение числовой прямой на интервалы</div>
+        </div>
+
+        <p><strong>Решение (метод интервалов):</strong></p>
+        
+        <h3>Случай 1: x < 1</h3>
+        <div class="step">Оба выражения под модулем отрицательны: -(x-1) - (x-3) < 4</div>
+        <div class="step">-x + 1 - x + 3 < 4 ⟺ -2x + 4 < 4 ⟺ -2x < 0 ⟺ x > 0</div>
+        <div class="step">Пересекаем с условием x < 1: получаем x ∈ (0; 1)</div>
+        
+        <h3>Случай 2: 1 ≤ x < 3</h3>
+        <div class="step">Первое положительно, второе отрицательно: (x-1) - (x-3) < 4</div>
+        <div class="step">x - 1 - x + 3 < 4 ⟺ 2 < 4 (всегда верно!)</div>
+        <div class="step">Значит, весь интервал подходит: x ∈ [1; 3)</div>
+        
+        <h3>Случай 3: x ≥ 3</h3>
+        <div class="step">Оба положительны: (x-1) + (x-3) < 4</div>
+        <div class="step">2x - 4 < 4 ⟺ 2x < 8 ⟺ x < 4</div>
+        <div class="step">Пересекаем с x ≥ 3: получаем x ∈ [3; 4)</div>
+        
+        <div class="step"><strong>Объединяем все решения:</strong> (0; 1) ∪ [1; 3) ∪ [3; 4) = (0; 4)</div>
+        
+        <div class="answer">Ответ: x ∈ (0; 4)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Сложное неравенство (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Решите неравенство |x² - 4| ≤ x + 2</p>
+        
+        <p><strong>Решение:</strong></p>
+        
+        <h3>Шаг 1. Находим точки, где выражение под модулем равно нулю</h3>
+        <div class="step">x² - 4 = 0 ⟺ x² = 4 ⟺ x = -2 или x = 2</div>
+        <div class="step">Эти точки разбивают числовую прямую на три интервала</div>
+        
+        <h3>Шаг 2. Рассматриваем случай x < -2 или x > 2</h3>
+        <div class="step">Здесь x² - 4 > 0, значит |x² - 4| = x² - 4</div>
+        <div class="step">Неравенство: x² - 4 ≤ x + 2 ⟺ x² - x - 6 ≤ 0</div>
+        <div class="step">Корни: x = -2 и x = 3. Решение: x ∈ [-2; 3]</div>
+        <div class="step">Пересекаем с условием (x < -2 или x > 2): получаем x ∈ (2; 3]</div>
+        
+        <h3>Шаг 3. Рассматриваем случай -2 ≤ x ≤ 2</h3>
+        <div class="step">Здесь x² - 4 ≤ 0, значит |x² - 4| = -(x² - 4) = 4 - x²</div>
+        <div class="step">Неравенство: 4 - x² ≤ x + 2 ⟺ -x² - x + 2 ≤ 0 ⟺ x² + x - 2 ≥ 0</div>
+        <div class="step">Корни: x = -2 и x = 1. Решение: x ∈ (-∞; -2] ∪ [1; +∞)</div>
+        <div class="step">Пересекаем с условием -2 ≤ x ≤ 2: получаем x = -2 или x ∈ [1; 2]</div>
+        
+        <div class="step"><strong>Объединяем:</strong> {-2} ∪ [1; 2] ∪ (2; 3] = {-2} ∪ [1; 3]</div>
+        
+        <div class="answer">Ответ: x ∈ {-2} ∪ [1; 3]</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Алгоритм решения неравенств с модулем</h2>
+        <ol>
+            <li><strong>Найдите критические точки</strong> — где выражения под модулем равны нулю</li>
+            <li><strong>Разбейте числовую прямую</strong> на интервалы этими точками</li>
+            <li><strong>На каждом интервале</strong> раскройте модули (учитывая знак)</li>
+            <li><strong>Решите неравенство</strong> на каждом интервале</li>
+            <li><strong>Пересеките решение</strong> с условием интервала</li>
+            <li><strong>Объедините все решения</strong> из всех интервалов</li>
+        </ol>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ Важные моменты:</strong>
+        <ul>
+            <li>Всегда проверяйте ОДЗ (область допустимых значений)</li>
+            <li>Не забывайте пересекать решение с условием интервала!</li>
+            <li>Если модуль больше отрицательного числа — неравенство верно всегда</li>
+            <li>Если модуль меньше отрицательного числа — решений нет</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Метод интервалов — самый надёжный способ решения сложных неравенств с модулем</li>
+            <li>Всегда делайте проверку граничных точек</li>
+            <li>Если видите |f(x)| < g(x), сразу пишите двойное неравенство: -g(x) < f(x) < g(x)</li>
+            <li>Для |f(x)| > g(x) используйте совокупность: f(x) < -g(x) или f(x) > g(x)</li>
+            <li>В ответе записывайте в виде промежутков или объединения точек и промежутков</li>
+        </ul>
+    </div>
+</body>
+</html>

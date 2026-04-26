@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логарифмические уравнения - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>📊 Логарифмические уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Логарифмическое уравнение</strong> — уравнение, в котором переменная содержится под знаком логарифма.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> Всегда проверяйте ОДЗ: выражение под логарифмом должно быть > 0, 
+        основание логарифма > 0 и ≠ 1.
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Основные методы решения:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Приведение к одному основанию</li>
+            <li>Потенцирование (переход от логарифмов к показателям)</li>
+            <li>Замена переменной</li>
+            <li>Использование свойств логарифмов</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Определение логарифма:</strong><br><br>
+        $$ \log_a b = c \Leftrightarrow a^c = b $$
+        <p style="margin-top: 10px;"><strong>ОДЗ:</strong> a > 0, a ≠ 1, b > 0</p>
+    </div>
+    
+    <div class="formula">
+        <strong>2. Основное логарифмическое тождество:</strong><br><br>
+        $$ a^{\log_a b} = b $$
+    </div>
+    
+    <div class="formula">
+        <strong>3. Свойства логарифмов:</strong><br><br>
+        $$ \log_a (xy) = \log_a x + \log_a y $$
+        $$ \log_a \left(\frac{x}{y}\right) = \log_a x - \log_a y $$
+        $$ \log_a (x^p) = p \log_a x $$
+        $$ \log_a a = 1, \quad \log_a 1 = 0 $$
+    </div>
+    
+    <div class="formula">
+        <strong>4. Формула перехода к новому основанию:</strong><br><br>
+        $$ \log_a b = \frac{\log_c b}{\log_c a} $$
+    </div>
+    
+    <div class="formula">
+        <strong>5. Уравнение вида log<sub>a</sub> f(x) = b:</strong><br><br>
+        $$ \log_a f(x) = b $$
+        $$ f(x) = a^b $$
+    </div>
+    
+    <div class="formula">
+        <strong>6. Уравнение вида log<sub>a</sub> f(x) = log<sub>a</sub> g(x):</strong><br><br>
+        $$ \log_a f(x) = \log_a g(x) $$
+        $$ \begin{cases} f(x) = g(x) \\ f(x) > 0 \\ g(x) > 0 \end{cases} $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: log₂(x + 3) = 3</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x + 3 > 0 ⇒ x > −3</strong></div>
+        
+        <p style="margin: 10px 0;">2. Потенцируем (перейдём от логарифма):</p>
+        <div class="step"><strong>x + 3 = 2³</strong></div>
+        <div class="step"><strong>x + 3 = 8</strong></div>
+        <div class="step"><strong>x = 5</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка: 5 > −3 ✓</p>
+        
+        <div class="answer">Ответ: 5</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Решите уравнение: log₃(27) + log₅(125)</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём каждое слагаемое:</p>
+        <div class="step"><strong>log₃(27) = log₃(3³) = 3</strong></div>
+        <div class="step"><strong>log₅(125) = log₅(5³) = 3</strong></div>
+        
+        <p style="margin: 10px 0;">2. Сложим:</p>
+        <div class="step"><strong>3 + 3 = 6</strong></div>
+        
+        <div class="answer">Ответ: 6</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 3:</strong> Решите уравнение: log₂(x² − 3x + 2) = 1</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x² − 3x + 2 > 0</strong></div>
+        <div class="step"><strong>(x−1)(x−2) > 0</strong></div>
+        <div class="step"><strong>x ∈ (−∞; 1) ∪ (2; +∞)</strong></div>
+        
+        <p style="margin: 10px 0;">2. Потенцируем:</p>
+        <div class="step"><strong>x² − 3x + 2 = 2¹</strong></div>
+        <div class="step"><strong>x² − 3x + 2 = 2</strong></div>
+        <div class="step"><strong>x² − 3x = 0</strong></div>
+        <div class="step"><strong>x(x − 3) = 0</strong></div>
+        <div class="step"><strong>x = 0 или x = 3</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка по ОДЗ:</p>
+        <div class="step"><strong>x = 0 ∈ (−∞; 1) ✓</strong></div>
+        <div class="step"><strong>x = 3 ∈ (2; +∞) ✓</strong></div>
+        
+        <div class="answer">Ответ: 0; 3</div>
+    </div>
+</body>
+</html>

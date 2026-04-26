@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угол между плоскостями - Задание 14 ЕГЭ</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>📐 Угол между плоскостями</h1>
+    
+    <div class="card">
+        <h2>📚 Что такое угол между плоскостями?</h2>
+        <p>Когда две плоскости пересекаются, между ними образуется <strong>двугранный угол</strong>. Чтобы его измерить, строят <strong>линейный угол</strong>: выбирают точку на линии пересечения, проводят в каждой плоскости перпендикуляр к этой линии, и угол между перпендикулярами будет искомым.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Плоскость 1 -->
+                <polygon points="50,180 350,180 380,100 80,100" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+                <!-- Плоскость 2 -->
+                <polygon points="50,180 350,180 320,40 20,40" fill="#fefcbf" stroke="#d69e2e" stroke-width="2" opacity="0.9"/>
+                <!-- Линия пересечения -->
+                <line x1="50" y1="180" x2="350" y2="180" stroke="#1a202c" stroke-width="3"/>
+                <text x="190" y="205" font-size="14" fill="#1a202c" font-weight="bold">Линия пересечения</text>
+                
+                <!-- Перпендикуляр 1 -->
+                <line x1="200" y1="180" x2="200" y2="100" stroke="#e53e3e" stroke-width="2.5"/>
+                <polygon points="195,105 200,90 205,105" fill="#e53e3e"/>
+                <text x="210" y="140" font-size="13" fill="#e53e3e" font-weight="bold">Перпендикуляр 1</text>
+                
+                <!-- Перпендикуляр 2 -->
+                <line x1="200" y1="180" x2="160" y2="110" stroke="#38a169" stroke-width="2.5"/>
+                <polygon points="165,115 155,105 168,108" fill="#38a169"/>
+                <text x="105" y="115" font-size="13" fill="#38a169" font-weight="bold">Перпендикуляр 2</text>
+                
+                <!-- Угол -->
+                <path d="M 185 170 Q 175 150 165 140" fill="none" stroke="#1a202c" stroke-width="2"/>
+                <text x="145" y="155" font-size="14" fill="#1a202c" font-weight="bold">α</text>
+            </svg>
+            <div class="caption">Рис. 1. Построение линейного угла между двумя пересекающимися плоскостями</div>
+        </div>
+
+        <p>Угол между плоскостями всегда лежит в диапазоне от <span class="highlight">0° до 90°</span>. Если плоскости параллельны — угол 0°. Если перпендикулярны — 90°.</p>
+    </div>
+
+    <div class="card">
+        <h2>🔧 Как находить угол на ЕГЭ?</h2>
+        <p>В задании 14 обычно используют один из трёх подходов:</p>
+        <ul>
+            <li><strong>Геометрический:</strong> строят перпендикуляры к линии пересечения и находят угол в треугольнике.</li>
+            <li><strong>Через нормали:</strong> находят векторы, перпендикулярные каждой плоскости, и вычисляют угол между ними.</li>
+            <li><strong>Метод проекций:</strong> если известна площадь фигуры и её проекции, угол находится через отношение площадей.</li>
+        </ul>
+
+        <div class="formula-box">
+            <strong>Формула через нормали (простыми словами):</strong><br>
+            Косинус угла равен модулю скалярного произведения двух нормалей, делённому на произведение их длин.<br>
+            <em>На практике: перемножаем соответствующие координаты, складываем, берём модуль, делим на произведение длин векторов.</em>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Куб</h2>
+        <p><strong>Условие:</strong> В кубе ABCDA₁B₁C₁D₁ найдите угол между плоскостями A₁BD и B₁D₁C. Ребро куба равно 1.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 420 300" width="420" height="300">
+                <!-- Куб каркас -->
+                <polygon points="100,240 300,240 300,60 100,60" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <polygon points="300,240 360,200 360,20 300,60" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <polygon points="100,60 300,60 360,20 160,20" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <polygon points="60,280 100,240 100,60 60,100" fill="none" stroke="#2d3748" stroke-width="2"/>
+                <line x1="60" y1="280" x2="260" y2="280" stroke="#2d3748" stroke-width="2"/>
+                <line x1="260" y1="280" x2="360" y2="200" stroke="#2d3748" stroke-width="2"/>
+                <line x1="60" y1="280" x2="60" y2="100" stroke="#2d3748" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="60" y1="280" x2="160" y2="200" stroke="#2d3748" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="160" y1="200" x2="360" y2="200" stroke="#2d3748" stroke-width="2"/>
+                <line x1="160" y1="200" x2="160" y2="20" stroke="#2d3748" stroke-width="2"/>
+                
+                <!-- Плоскость A1BD (красная) -->
+                <polygon points="100,60 100,240 300,240" fill="rgba(229, 62, 62, 0.2)" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="6,4"/>
+                <text x="180" y="210" font-size="13" fill="#e53e3e" font-weight="bold">A₁BD</text>
+                
+                <!-- Плоскость B1D1C (синяя) -->
+                <polygon points="300,60 160,20 60,280" fill="rgba(49, 130, 206, 0.2)" stroke="#3182ce" stroke-width="2.5" stroke-dasharray="6,4"/>
+                <text x="140" y="160" font-size="13" fill="#3182ce" font-weight="bold">B₁D₁C</text>
+                
+                <!-- Точки -->
+                <circle cx="100" cy="60" r="3" fill="#1a202c"/><text x="105" y="55" font-size="13" font-weight="bold">A₁</text>
+                <circle cx="100" cy="240" r="3" fill="#1a202c"/><text x="105" y="255" font-size="13" font-weight="bold">B</text>
+                <circle cx="300" cy="240" r="3" fill="#1a202c"/><text x="305" y="255" font-size="13" font-weight="bold">D</text>
+                <circle cx="300" cy="60" r="3" fill="#1a202c"/><text x="305" y="55" font-size="13" font-weight="bold">C₁</text>
+                <circle cx="160" cy="20" r="3" fill="#1a202c"/><text x="165" y="15" font-size="13" font-weight="bold">D₁</text>
+                <circle cx="60" cy="280" r="3" fill="#1a202c"/><text x="45" y="295" font-size="13" font-weight="bold">A</text>
+                
+                <text x="190" y="290" font-size="12" fill="#4a5568">Ребро = 1</text>
+            </svg>
+            <div class="caption">Рис. 2. Куб с выделенными плоскостями A₁BD и B₁D₁C</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Вводим систему координат. Начало в точке A. Оси идут вдоль рёбер куба.</div>
+        <div class="step">2. Находим нормали к плоскостям. Для A₁BD нормаль равна (1, 1, 1). Для B₁D₁C нормаль равна (-1, -1, -1).</div>
+        <div class="step">3. Считаем скалярное произведение: 1·(-1) + 1·(-1) + 1·(-1) = -3. Модуль равен 3.</div>
+        <div class="step">4. Длины нормалей: корень из 3 у каждой. Произведение длин = 3.</div>
+        <div class="step">5. Косинус угла = 3 / 3 = 1. Угол = арккосинус от 1/3.</div>
+        
+        <div class="answer">Ответ: arccos(1/3)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Правильная пирамида</h2>
+        <p><strong>Условие:</strong> В правильной четырёхугольной пирамиде SABCD сторона основания равна 4, боковое ребро равно 6. Найдите угол между гранью SAB и основанием.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 280" width="400" height="280">
+                <!-- Основание -->
+                <polygon points="80,240 320,240 350,200 110,200" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+                <!-- Боковые грани -->
+                <line x1="80" y1="240" x2="200" y2="60" stroke="#2d3748" stroke-width="2"/>
+                <line x1="320" y1="240" x2="200" y2="60" stroke="#2d3748" stroke-width="2"/>
+                <line x1="350" y1="200" x2="200" y2="60" stroke="#2d3748" stroke-width="2"/>
+                <line x1="110" y1="200" x2="200" y2="60" stroke="#2d3748" stroke-width="2" stroke-dasharray="5,4"/>
+                
+                <!-- Высота -->
+                <line x1="200" y1="60" x2="200" y2="220" stroke="#38a169" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="200" cy="220" r="3" fill="#38a169"/>
+                <text x="205" y="235" font-size="12" fill="#38a169" font-weight="bold">O</text>
+                
+                <!-- Апофема и проекция -->
+                <line x1="200" y1="220" x2="200" y2="240" stroke="#d69e2e" stroke-width="2"/>
+                <line x1="200" y1="60" x2="200" y2="240" stroke="#e53e3e" stroke-width="2.5"/>
+                <circle cx="200" cy="240" r="3" fill="#e53e3e"/>
+                <text x="205" y="255" font-size="12" fill="#e53e3e" font-weight="bold">K</text>
+                
+                <!-- Угол -->
+                <path d="M 185 210 Q 190 190 200 180" fill="none" stroke="#1a202c" stroke-width="2"/>
+                <text x="175" y="195" font-size="14" fill="#1a202c" font-weight="bold">α</text>
+                
+                <!-- Подписи -->
+                <text x="180" y="270" font-size="12" fill="#4a5568">AB = 4, SA = 6</text>
+                <text x="205" y="140" font-size="12" fill="#e53e3e" font-weight="bold">SK</text>
+                <text x="205" y="230" font-size="12" fill="#d69e2e" font-weight="bold">OK</text>
+                <text x="205" y="100" font-size="12" fill="#38a169" font-weight="bold">SO</text>
+            </svg>
+            <div class="caption">Рис. 3. Пирамида с построенным линейным углом α между гранью и основанием</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Проводим высоту пирамиды SO. Из центра основания O опускаем перпендикуляр OK на сторону AB.</div>
+        <div class="step">2. По теореме о трёх перпендикулярах SK тоже перпендикулярен AB. Значит, угол SKO — искомый.</div>
+        <div class="step">3. OK равен половине стороны основания: 2. Диагональ основания = 4√2, половина = 2√2.</div>
+        <div class="step">4. Из треугольника SOA находим высоту SO = корень из (36 - 8) = 2√7.</div>
+        <div class="step">5. Тангенс угла α = SO / OK = 2√7 / 2 = √7.</div>
+        
+        <div class="answer">Ответ: arctan(√7)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Треугольная призма</h2>
+        <p><strong>Условие:</strong> В правильной треугольной призме ABCA₁B₁C₁ сторона основания равна 2, высота равна √3. Найдите угол между плоскостями AB₁C₁ и A₁BC.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 260" width="400" height="260">
+                <!-- Нижнее основание -->
+                <polygon points="60,220 340,220 200,160" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+                <!-- Верхнее основание -->
+                <polygon points="60,80 340,80 200,20" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+                <!-- Боковые рёбра -->
+                <line x1="60" y1="220" x2="60" y2="80" stroke="#2d3748" stroke-width="2"/>
+                <line x1="340" y1="220" x2="340" y2="80" stroke="#2d3748" stroke-width="2"/>
+                <line x1="200" y1="160" x2="200" y2="20" stroke="#2d3748" stroke-width="2"/>
+                
+                <!-- Плоскость AB1C1 (красная) -->
+                <polygon points="60,220 340,80 200,20" fill="rgba(229, 62, 62, 0.2)" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="6,4"/>
+                <text x="180" y="150" font-size="13" fill="#e53e3e" font-weight="bold">AB₁C₁</text>
+                
+                <!-- Плоскость A1BC (синяя) -->
+                <polygon points="60,80 340,220 200,160" fill="rgba(49, 130, 206, 0.2)" stroke="#3182ce" stroke-width="2.5" stroke-dasharray="6,4"/>
+                <text x="180" y="190" font-size="13" fill="#3182ce" font-weight="bold">A₁BC</text>
+                
+                <!-- Точки -->
+                <circle cx="60" cy="220" r="3" fill="#1a202c"/><text x="45" y="235" font-size="12" font-weight="bold">A</text>
+                <circle cx="340" cy="220" r="3" fill="#1a202c"/><text x="345" y="235" font-size="12" font-weight="bold">B</text>
+                <circle cx="200" cy="160" r="3" fill="#1a202c"/><text x="205" y="155" font-size="12" font-weight="bold">C</text>
+                <circle cx="60" cy="80" r="3" fill="#1a202c"/><text x="45" y="75" font-size="12" font-weight="bold">A₁</text>
+                <circle cx="340" cy="80" r="3" fill="#1a202c"/><text x="345" y="75" font-size="12" font-weight="bold">B₁</text>
+                <circle cx="200" cy="20" r="3" fill="#1a202c"/><text x="205" y="15" font-size="12" font-weight="bold">C₁</text>
+                
+                <text x="190" y="250" font-size="12" fill="#4a5568">AB = 2, высота = √3</text>
+            </svg>
+            <div class="caption">Рис. 4. Призма с пересекающимися плоскостями AB₁C₁ и A₁BC</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Вводим координаты. A(0,0,0), B(2,0,0), C(1,√3,0). Верхние точки имеют z = √3.</div>
+        <div class="step">2. Находим нормаль к AB₁C₁: векторы AB₁(2,0,√3) и AC₁(1,√3,√3). Их векторное произведение даёт (-3, -√3, 2√3).</div>
+        <div class="step">3. Находим нормаль к A₁BC: векторы A₁B(2,0,-√3) и A₁C(1,√3,-√3). Векторное произведение даёт (3, √3, 2√3).</div>
+        <div class="step">4. Скалярное произведение нормалей: (-3)·3 + (-√3)·√3 + (2√3)·(2√3) = -9 - 3 + 12 = 0.</div>
+        <div class="step">5. Если скалярное произведение равно нулю, векторы перпендикулярны. Значит, плоскости перпендикулярны.</div>
+        
+        <div class="answer">Ответ: 90°</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Советы для экзамена</h2>
+        <ul>
+            <li>Всегда начинайте с чертежа. Отмечайте линию пересечения и перпендикуляры.</li>
+            <li>Координатный метод спасает, когда сложно увидеть геометрию. Главное — аккуратно считать векторное произведение.</li>
+            <li>Проверяйте ответ: угол между плоскостями не может быть тупым. Если косинус отрицательный, берите модуль.</li>
+            <li>В бланке пишите ответ в виде аркфункции или градусов, как требуется в условии.</li>
+        </ul>
+    </div>
+</body>
+</html>

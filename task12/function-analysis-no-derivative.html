@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследование функций без производной</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .formula-title { font-weight: bold; color: #1A2B4D; margin-bottom: 10px; font-size: 1.1rem; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .diagram { text-align: center; margin: 25px 0; padding: 20px; background: white; border-radius: 8px; border: 2px dashed #4361EE; }
+        .diagram svg { max-width: 100%; height: auto; }
+        .notation { background: #e7f3ff; padding: 15px; border-radius: 6px; margin: 15px 0; }
+        code { background: #f5f5f5; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; }
+    </style>
+</head>
+<body>
+    <h1>📊 Исследование функций без производной</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Исследование без производной</strong> — нахождение наибольшего/наименьшего значения функции с использованием свойств функций, оценок и неравенств.</p>
+    
+    <div class="notation">
+        <strong>🔹 Основные методы:</strong><br>
+        <code>Метод оценок</code> — использование известных неравенств<br>
+        <code>Метод замены переменной</code> — сведение к более простой функции<br>
+        <code>Свойства монотонности</code> — использование возрастания/убывания<br>
+        <code>Неравенство Коши</code> — для сумм и произведений
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Полезные неравенства:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Неравенство Коши:</strong> (a + b)/2 ≥ √(ab) для a, b ≥ 0</li>
+            <li><strong>Неравенство между средними:</strong> √((a² + b²)/2) ≥ (a + b)/2 ≥ √(ab)</li>
+            <li><strong>Модуль:</strong> |a| ≥ a, |a| ≥ −a</li>
+            <li><strong>Квадрат:</strong> a² ≥ 0 для любого a</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные методы</h2>
+    
+    <div class="formula">
+        <div class="formula-title">1. Метод выделения полного квадрата:</div>
+        $$ ax^2 + bx + c = a\left(x + \frac{b}{2a}\right)^2 + \left(c - \frac{b^2}{4a}\right) $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">Наименьшее значение: c − b²/(4a) при a > 0</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">2. Неравенство Коши для двух чисел:</div>
+        $$ \frac{a + b}{2} \geq \sqrt{ab}, \quad a, b \geq 0 $$
+        <p style="margin-top: 10px; font-size: 0.95rem;">Равенство достигается при a = b</p>
+    </div>
+    
+    <div class="formula">
+        <div class="formula-title">3. Оценка суммы:</div>
+        $$ a + \frac{1}{a} \geq 2, \quad a > 0 $$
+    </div>
+    
+    <h2>💡 Пример решения (ЕГЭ)</h2>
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Условие:</strong> Найдите наименьшее значение функции y = x + 4/x на промежутке (0; +∞).</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Применим неравенство Коши:</p>
+        <div class="step"><strong>x + 4/x ≥ 2√(x · 4/x) = 2√4 = 4</strong></div>
+        
+        <p style="margin: 10px 0;">2. Равенство достигается при:</p>
+        <div class="step"><strong>x = 4/x</strong></div>
+        <div class="step"><strong>x² = 4</strong></div>
+        <div class="step"><strong>x = 2 (т.к. x > 0)</strong></div>
+        
+        <p style="margin: 10px 0;">3. Проверка:</p>
+        <div class="step"><strong>y(2) = 2 + 4/2 = 2 + 2 = 4</strong></div>
+        
+        <div class="answer">Ответ: 4</div>
+    </div>
+</html>

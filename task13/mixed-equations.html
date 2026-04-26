@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смешанные уравнения - Задание 13 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+        .warning { background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🔀 Смешанные уравнения</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Смешанные уравнения</strong> — уравнения, содержащие комбинацию различных типов функций: показательных, логарифмических, тригонометрических, иррациональных и рациональных.</p>
+    
+    <div class="warning">
+        <strong>⚠️ Важно!</strong> При решении смешанных уравнений:
+        <ul style="margin-top: 10px;">
+            <li>Тщательно находите ОДЗ для всех функций</li>
+            <li>Используйте свойства каждой функции</li>
+            <li>Проверяйте найденные корни подстановкой</li>
+            <li>Применяйте метод оценок</li>
+        </ul>
+    </div>
+    
+    <div class="property">
+        <strong>🔹 Стратегия решения:</strong>
+        <ol style="margin-top: 10px; padding-left: 25px;">
+            <li>Найти ОДЗ для всех функций в уравнении</li>
+            <li>Проанализировать структуру уравнения</li>
+            <li>Выбрать подходящий метод (замена, оценка, логарифмирование)</li>
+            <li>Решить полученное уравнение</li>
+            <li>Проверить корни на соответствие ОДЗ</li>
+        </ol>
+    </div>
+    
+    <h2>📐 Основные методы</h2>
+    
+    <div class="formula">
+        <strong>1. Метод оценки:</strong><br><br>
+        <p>Если уравнение имеет вид f(x) = g(x), где:</p>
+        <ul style="margin-top: 10px;">
+            <li>f(x) ≥ a для всех x из ОДЗ</li>
+            <li>g(x) ≤ a для всех x из ОДЗ</li>
+        </ul>
+        <p>то уравнение равносильно системе:</p>
+        $$ \begin{cases} f(x) = a \\ g(x) = a \end{cases} $$
+    </div>
+    
+    <div class="formula">
+        <strong>2. Метод замены переменной:</strong><br><br>
+        <p>Если уравнение содержит повторяющиеся выражения, сделать замену:</p>
+        $$ t = \text{повторяющееся выражение} $$
+        <p>Решить уравнение относительно t, затем вернуться к x</p>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Решите уравнение: 2<sup>x</sup> + log₂x = 1</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Найдём ОДЗ:</p>
+        <div class="step"><strong>x > 0</strong></div>
+        
+        <p style="margin: 10px 0;">2. Оценим функции:</p>
+        <div class="step"><strong>2<sup>x</sup> > 0 при всех x</strong></div>
+        <div class="step"><strong>log₂x может быть любым</strong></div>
+        
+        <p style="margin: 10px 0;">3. Подбором находим решение:</p>
+        <div class="step"><strong>При x = 0.5:</strong></div>
+        <div class="step"><strong>2<sup>0.5</sup> + log₂(0.5) = √2 + (−1) ≈ 1.41 − 1 ≈ 0.41 ≠ 1</strong></div>
+        <div class="step"><strong>При x = 1:</strong></div>
+        <div class="step"><strong>2¹ + log₂1 = 2 + 0 = 2 ≠ 1</strong></div>
+        
+        <p style="margin: 10px 0;">4. Графический или численный метод:</p>
+        <div class="step"><strong>Уравнение имеет единственное решение x ≈ 0.64</strong></div>
+        
+        <div class="answer">Ответ: x ≈ 0.64</div>
+    </div>
+</body>
+</html>
