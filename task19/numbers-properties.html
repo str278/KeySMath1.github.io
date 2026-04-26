@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Числа и их свойства | KeySMath</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1A2B4D;
+            border-bottom: 3px solid #4361EE;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4361EE;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .theory {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4361EE;
+            margin: 20px 0;
+        }
+        .example {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FFA500;
+            margin: 20px 0;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #e6ffe6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27AE60;
+            margin: 20px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B6B;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .step {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>🔢 Числа и их свойства (Задание 19)</h1>
+
+        <div class="theory">
+            <h2>📚 Основные понятия</h2>
+            <p>В задании 19 часто проверяются знания о делимости целых чисел. Основные определения:</p>
+            
+            <ul>
+                <li><strong>Делимость:</strong> Число <em>a</em> делится на число <em>b</em> (обозначается <em>a</em> ⋮ <em>b</em>), если существует целое <em>k</em> такое, что <em>a = b · k</em>.</li>
+                
+                <li><strong>Деление с остатком:</strong> <em>a = bq + r</em>, где 0 ≤ r < b.</li>
+                
+                <li><strong>НОД (Наибольший общий делитель):</strong> Наибольшее число, на которое делятся оба числа.</li>
+                
+                <li><strong>НОК (Наименьшее общее кратное):</strong> Наименьшее число, которое делится на оба числа.</li>
+                
+                <li><strong>Взаимно простые числа:</strong> Числа, у которых НОД равен 1.</li>
+            </ul>
+
+            <div class="formula">
+                <strong>Важное свойство:</strong><br>
+                a · b = НОД(a, b) · НОК(a, b)
+            </div>
+        </div>
+
+        <h2>🎯 Типичные методы решения</h2>
+
+        <div class="example">
+            <div class="example-title">Метод 1: Разложение на множители</div>
+            <p>Если дано уравнение вида <em>xy + ax + by = c</em>, пытаемся сгруппировать слагаемые, чтобы получить произведение скобок.</p>
+            
+            <div class="formula">
+                xy + ax + by + ab = c + ab ⇒ (x + b)(y + a) = c + ab
+            </div>
+            
+            <p>Затем перебираем все делители числа <em>c + ab</em>.</p>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Метод 2: Использование остатков</div>
+            <p>Анализ остатков при делении на 3, 4, 5 и т.д. помогает доказать невозможность равенства или найти свойства чисел.</p>
+            <p><strong>Например:</strong> квадрат целого числа при делении на 3 может давать остаток только 0 или 1.</p>
+        </div>
+
+        <h2>📝 Примеры решения</h2>
+
+        <div class="example">
+            <div class="example-title">Пример 1. Уравнение в целых числах</div>
+            <p>Найдите все пары целых чисел (x, y), удовлетворяющие уравнению:</p>
+            
+            <div class="formula">
+                xy + 3x − 2y = 10
+            </div>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Группировка:</strong></div>
+                <p>Вынесем x за скобки в первых двух слагаемых:</p>
+                <div class="formula">
+                    x(y + 3) − 2y = 10
+                </div>
+                <p>Чтобы выделить общий множитель (y+3), добавим и вычтем 2·3 = 6:</p>
+                <div class="formula">
+                    x(y + 3) − 2(y + 3) + 6 = 10
+                </div>
+                <div class="formula">
+                    (x − 2)(y + 3) = 4
+                </div>
+
+                <div class="step">2. <strong>Перебор делителей:</strong></div>
+                <p>Так как x и y целые, то (x−2) и (y+3) — целые делители числа 4.</p>
+                <p>Делители 4: ±1, ±2, ±4.</p>
+                
+                <p>Составим все возможные пары множителей, произведение которых равно 4:</p>
+                <ol>
+                    <li>x − 2 = 1, y + 3 = 4 ⇒ x = 3, y = 1</li>
+                    <li>x − 2 = 4, y + 3 = 1 ⇒ x = 6, y = −2</li>
+                    <li>x − 2 = 2, y + 3 = 2 ⇒ x = 4, y = −1</li>
+                    <li>x − 2 = −1, y + 3 = −4 ⇒ x = 1, y = −7</li>
+                    <li>x − 2 = −4, y + 3 = −1 ⇒ x = −2, y = −4</li>
+                    <li>x − 2 = −2, y + 3 = −2 ⇒ x = 0, y = −5</li>
+                </ol>
+
+                <p><strong>Ответ:</strong> (3; 1), (6; −2), (4; −1), (1; −7), (−2; −4), (0; −5)</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 2. Доказательство делимости</div>
+            <p>Докажите, что для любого натурального n число n³ − n делится на 6.</p>
+
+            <div class="solution">
+                <strong>Доказательство:</strong>
+
+                <div class="step">1. <strong>Разложим выражение на множители:</strong></div>
+                <div class="formula">
+                    n³ − n = n(n² − 1) = n(n − 1)(n + 1)
+                </div>
+                <p>Получили произведение трех последовательных натуральных чисел: (n−1), n, (n+1).</p>
+
+                <div class="step">2. <strong>Анализ делимости:</strong></div>
+                <p>Среди любых двух последовательных чисел одно обязательно четное (делится на 2).</p>
+                <p>Среди любых трех последовательных чисел одно обязательно делится на 3.</p>
+
+                <div class="step">3. <strong>Вывод:</strong></div>
+                <p>Так как произведение делится и на 2, и на 3, и эти числа взаимно просты, то произведение делится на 2·3 = 6.</p>
+                <p><strong>Что и требовалось доказать.</strong></p>
+            </div>
+        </div>
+
+        <div class="important">
+            <strong>⚠️ Типичные ошибки:</strong><br>
+            • Забывают отрицательные делители при переборе вариантов.<br>
+            • Не проверяют, являются ли найденные x и y целыми числами.<br>
+            • Путают понятия "делится" и "делит" (a делится на b значит a/b целое).<br>
+            • Забывают, что 1 не является простым числом.
+        </div>
+
+        <div class="theory">
+            <h2>📋 Что важно помнить для ЕГЭ</h2>
+            <ul>
+                <li>В задании 19 часто просят найти <strong>наибольшее</strong> или <strong>наименьшее</strong> значение.</li>
+                <li>Внимательно читайте условие: числа могут быть <strong>натуральными</strong> (1, 2, 3...) или <strong>целыми</strong> (..., −2, −1, 0, 1, 2...).</li>
+                <li>Используйте оценку ("оценку сверху/снизу"), чтобы показать, что других решений нет.</li>
+                <li>Примеры в пункте (б) часто строятся методом подбора, начиная с простых чисел.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

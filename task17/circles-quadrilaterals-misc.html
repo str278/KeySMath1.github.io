@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Окружности и четырехугольники - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>⭕ Окружности и четырехугольники</h1>
+    
+    <div class="card">
+        <h2>📚 Основные свойства</h2>
+        <p>В этом разделе мы рассмотрим задачи, где <strong>окружности взаимодействуют с четырехугольниками</strong>: вписанные и описанные окружности, касательные, хорды.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Четырехугольник можно вписать в окружность тогда и только тогда, когда:</strong><br>
+            Сумма противоположных углов равна 180°<br>
+            ∠A + ∠C = ∠B + ∠D = 180°
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 В четырехугольник можно вписать окружность тогда и только тогда, когда:</strong><br>
+            Суммы противоположных сторон равны<br>
+            AB + CD = BC + AD
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Вписанный четырехугольник -->
+                <circle cx="120" cy="110" r="90" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                <polygon points="120,20 200,80 180,180 60,160" fill="none" stroke="#1a202c" stroke-width="2"/>
+                <text x="120" y="15" font-size="13" font-weight="bold">A</text>
+                <text x="205" y="85" font-size="13" font-weight="bold">B</text>
+                <text x="185" y="195" font-size="13" font-weight="bold">C</text>
+                <text x="45" y="165" font-size="13" font-weight="bold">D</text>
+                <text x="75" y="80" font-size="12" fill="#4a5568">∠A + ∠C = 180°</text>
+                
+                <!-- Описанный четырехугольник -->
+                <circle cx="340" cy="110" r="70" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <polygon points="340,30 410,90 380,180 270,150" fill="none" stroke="#1a202c" stroke-width="2"/>
+                <text x="340" y="25" font-size="13" font-weight="bold">A</text>
+                <text x="415" y="95" font-size="13" font-weight="bold">B</text>
+                <text x="385" y="195" font-size="13" font-weight="bold">C</text>
+                <text x="255" y="155" font-size="13" font-weight="bold">D</text>
+                <text x="290" y="70" font-size="11" fill="#4a5568">AB + CD =</text>
+                <text x="290" y="85" font-size="11" fill="#4a5568">BC + AD</text>
+                
+                <text x="120" y="210" font-size="12" fill="#4a5568" text-anchor="middle">Вписанный</text>
+                <text x="340" y="210" font-size="12" fill="#4a5568" text-anchor="middle">Описанный</text>
+            </svg>
+            <div class="caption">Рис. 1. Вписанный и описанный четырехугольники</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Вписанный четырехугольник</h2>
+        <p><strong>Условие:</strong> Четырехугольник ABCD вписан в окружность. Угол A равен 58°. Найдите угол C.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 280" width="350" height="280">
+                <!-- Окружность -->
+                <circle cx="175" cy="140" r="120" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Четырехугольник -->
+                <polygon points="175,25 280,110 240,245 90,220" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Углы -->
+                <path d="M 160 50 Q 175 40 190 50" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="165" y="38" font-size="13" fill="#e53e3e" font-weight="bold">58°</text>
+                
+                <path d="M 220 220 Q 240 230 235 250" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="230" y="240" font-size="13" fill="#e53e3e" font-weight="bold">?</text>
+                
+                <!-- Точки -->
+                <circle cx="175" cy="25" r="4" fill="#1a202c"/>
+                <text x="175" y="20" font-size="13" font-weight="bold" text-anchor="middle">A</text>
+                
+                <circle cx="280" cy="110" r="4" fill="#1a202c"/>
+                <text x="290" y="115" font-size="13" font-weight="bold">B</text>
+                
+                <circle cx="240" cy="245" r="4" fill="#1a202c"/>
+                <text x="245" y="260" font-size="13" font-weight="bold">C</text>
+                
+                <circle cx="90" cy="220" r="4" fill="#1a202c"/>
+                <text x="70" y="225" font-size="13" font-weight="bold">D</text>
+                
+                <text x="175" y="275" font-size="12" fill="#4a5568" text-anchor="middle">∠A + ∠C = 180°</text>
+            </svg>
+            <div class="caption">Рис. 2. Вписанный четырехугольник ABCD</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. По свойству вписанного четырехугольника: сумма противоположных углов равна 180°</div>
+        <div class="step">2. ∠A + ∠C = 180°</div>
+        <div class="step">3. 58° + ∠C = 180°</div>
+        <div class="step">4. ∠C = 180° - 58° = 122°</div>
+        
+        <div class="answer">Ответ: 122°</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Описанный четырехугольник</h2>
+        <p><strong>Условие:</strong> В четырехугольник ABCD вписана окружность. AB = 11, BC = 13, CD = 15. Найдите сторону AD.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 280" width="380" height="280">
+                <!-- Окружность -->
+                <circle cx="190" cy="140" r="80" fill="none" stroke="#3182ce" stroke-width="2"/>
+                
+                <!-- Четырехугольник -->
+                <polygon points="190,50 310,110 280,230 80,200" fill="none" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Стороны с подписями -->
+                <text x="245" y="75" font-size="11" fill="#4a5568">AB = 11</text>
+                <text x="300" y="175" font-size="11" fill="#4a5568">BC = 13</text>
+                <text x="175" y="245" font-size="11" fill="#4a5568">CD = 15</text>
+                <text x="85" y="140" font-size="11" fill="#4a5568">AD = ?</text>
+                
+                <!-- Точки -->
+                <circle cx="190" cy="50" r="4" fill="#1a202c"/>
+                <text x="190" y="45" font-size="13" font-weight="bold" text-anchor="middle">A</text>
+                
+                <circle cx="310" cy="110" r="4" fill="#1a202c"/>
+                <text x="320" y="115" font-size="13" font-weight="bold">B</text>
+                
+                <circle cx="280" cy="230" r="4" fill="#1a202c"/>
+                <text x="285" y="245" font-size="13" font-weight="bold">C</text>
+                
+                <circle cx="80" cy="200" r="4" fill="#1a202c"/>
+                <text x="60" y="205" font-size="13" font-weight="bold">D</text>
+                
+                <text x="190" y="270" font-size="12" fill="#4a5568" text-anchor="middle">AB + CD = BC + AD</text>
+            </svg>
+            <div class="caption">Рис. 3. Описанный четырехугольник с вписанной окружностью</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. По свойству описанного четырехугольника: суммы противоположных сторон равны</div>
+        <div class="step">2. AB + CD = BC + AD</div>
+        <div class="step">3. Подставляем известные значения: 11 + 15 = 13 + AD</div>
+        <div class="step">4. 26 = 13 + AD</div>
+        <div class="step">5. AD = 26 - 13 = 13</div>
+        
+        <div class="answer">Ответ: 13</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Касательные к окружности</h2>
+        <p><strong>Условие:</strong> Из точки A проведены две касательные к окружности с центром O. Угол между касательными равен 40°. Найдите угол между радиусами, проведенными в точки касания.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 300" width="400" height="300">
+                <!-- Окружность -->
+                <circle cx="200" cy="180" r="80" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <circle cx="200" cy="180" r="3" fill="#3182ce"/>
+                <text x="205" y="185" font-size="12" fill="#3182ce" font-weight="bold">O</text>
+                
+                <!-- Точка A -->
+                <circle cx="200" cy="40" r="4" fill="#e53e3e"/>
+                <text x="200" y="35" font-size="13" fill="#e53e3e" font-weight="bold" text-anchor="middle">A</text>
+                
+                <!-- Касательные -->
+                <line x1="200" y1="40" x2="130" y2="130" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="200" y1="40" x2="270" y2="130" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Точки касания -->
+                <circle cx="130" cy="130" r="4" fill="#1a202c"/>
+                <text x="115" y="125" font-size="12" font-weight="bold">B</text>
+                
+                <circle cx="270" cy="130" r="4" fill="#1a202c"/>
+                <text x="275" y="125" font-size="12" font-weight="bold">C</text>
+                
+                <!-- Радиусы -->
+                <line x1="200" y1="180" x2="130" y2="130" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                <line x1="200" y1="180" x2="270" y2="130" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                
+                <!-- Углы -->
+                <path d="M 185 70 Q 200 60 215 70" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="190" y="58" font-size="12" fill="#e53e3e" font-weight="bold">40°</text>
+                
+                <path d="M 185 165 Q 200 175 215 165" fill="none" stroke="#48bb78" stroke-width="2"/>
+                <text x="190" y="195" font-size="12" fill="#48bb78" font-weight="bold">?</text>
+                
+                <!-- Прямые углы -->
+                <rect x="135" y="125" width="8" height="8" fill="none" stroke="#1a202c" stroke-width="1" transform="rotate(38 139 129)"/>
+                <rect x="257" y="125" width="8" height="8" fill="none" stroke="#1a202c" stroke-width="1" transform="rotate(-38 261 129)"/>
+                
+                <text x="200" y="290" font-size="12" fill="#4a5568" text-anchor="middle">∠BOC = 180° - 40° = 140°</text>
+            </svg>
+            <div class="caption">Рис. 4. Касательные из одной точки к окружности</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Радиусы, проведенные в точки касания, перпендикулярны касательным</div>
+        <div class="step">2. Рассмотрим четырехугольник ABOC. В нем ∠ABO = ∠ACO = 90°</div>
+        <div class="step">3. Сумма углов четырехугольника: 360°</div>
+        <div class="step">4. ∠A + ∠BOC + 90° + 90° = 360°</div>
+        <div class="step">5. 40° + ∠BOC + 180° = 360°</div>
+        <div class="step">6. ∠BOC = 360° - 220° = 140°</div>
+        
+        <div class="answer">Ответ: 140°</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 4: Трапеция с вписанной окружностью</h2>
+        <p><strong>Условие:</strong> В равнобедренную трапецию вписана окружность. Боковая сторона равна 10, а меньшее основание равно 6. Найдите большее основание.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 250" width="400" height="250">
+                <!-- Трапеция -->
+                <polygon points="100,180 300,180 260,70 140,70" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Вписанная окружность -->
+                <circle cx="200" cy="125" r="45" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                
+                <!-- Подписи сторон -->
+                <text x="195" y="195" font-size="11" fill="#4a5568">6</text>
+                <text x="195" y="65" font-size="11" fill="#4a5568">6</text>
+                <text x="115" y="130" font-size="11" fill="#4a5568">10</text>
+                <text x="275" y="130" font-size="11" fill="#4a5568">10</text>
+                
+                <!-- Точки -->
+                <circle cx="100" cy="180" r="3" fill="#1a202c"/>
+                <text x="90" y="195" font-size="12" font-weight="bold">A</text>
+                
+                <circle cx="300" cy="180" r="3" fill="#1a202c"/>
+                <text x="305" y="195" font-size="12" font-weight="bold">B</text>
+                
+                <circle cx="260" cy="70" r="3" fill="#1a202c"/>
+                <text x="265" y="65" font-size="12" font-weight="bold">C</text>
+                
+                <circle cx="140" cy="70" r="3" fill="#1a202c"/>
+                <text x="125" y="65" font-size="12" font-weight="bold">D</text>
+                
+                <text x="200" y="240" font-size="12" fill="#4a5568" text-anchor="middle">AB + CD = BC + AD</text>
+            </svg>
+            <div class="caption">Рис. 5. Равнобедренная трапеция с вписанной окружностью</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. По свойству описанного четырехугольника: AB + CD = BC + AD</div>
+        <div class="step">2. В равнобедренной трапеции боковые стороны равны: AD = BC = 10</div>
+        <div class="step">3. Подставляем: 6 + CD = 10 + 10</div>
+        <div class="step">4. 6 + CD = 20</div>
+        <div class="step">5. CD = 20 - 6 = 14</div>
+        
+        <div class="answer">Ответ: 14</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Важные теоремы</h2>
+        
+        <div class="theorem">
+            <strong>Теорема о касательной и секущей:</strong><br>
+            Квадрат отрезка касательной равен произведению всего отрезка секущей на её внешнюю часть.<br>
+            AB² = AC × AD (где AB — касательная, ACD — секущая)
+        </div>
+        
+        <div class="theorem">
+            <strong>Теорема о пересекающихся хордах:</strong><br>
+            Произведение отрезков одной хорды равно произведению отрезков другой хорды.<br>
+            AE × EB = CE × ED
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 200" width="450" height="200">
+                <!-- Касательная и секущая -->
+                <circle cx="100" cy="100" r="70" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="20" cy="100" r="3" fill="#1a202c"/>
+                <text x="10" y="95" font-size="11" font-weight="bold">A</text>
+                <line x1="20" y1="100" x2="60" y2="45" stroke="#1a202c" stroke-width="2"/>
+                <circle cx="60" cy="45" r="3" fill="#1a202c"/>
+                <text x="65" y="40" font-size="11" font-weight="bold">B</text>
+                <line x1="20" y1="100" x2="150" y2="100" stroke="#1a202c" stroke-width="2"/>
+                <circle cx="150" cy="100" r="3" fill="#1a202c"/>
+                <text x="155" y="115" font-size="11" font-weight="bold">D</text>
+                <circle cx="90" cy="100" r="3" fill="#1a202c"/>
+                <text x="85" y="115" font-size="11" font-weight="bold">C</text>
+                <text x="85" y="30" font-size="10" fill="#4a5568">AB² = AC×AD</text>
+                
+                <!-- Пересекающиеся хорды -->
+                <circle cx="340" cy="100" r="70" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <line x1="280" y1="50" x2="380" y2="140" stroke="#1a202c" stroke-width="2"/>
+                <line x1="290" y1="140" x2="390" y2="60" stroke="#1a202c" stroke-width="2"/>
+                <circle cx="340" cy="100" r="3" fill="#1a202c"/>
+                <text x="345" y="95" font-size="11" font-weight="bold">E</text>
+                <text x="295" y="130" font-size="10" fill="#4a5568">AE×EB =</text>
+                <text x="295" y="143" font-size="10" fill="#4a5568">CE×ED</text>
+                
+                <text x="100" y="190" font-size="11" fill="#4a5568" text-anchor="middle">Касательная и секущая</text>
+                <text x="340" y="190" font-size="11" fill="#4a5568" text-anchor="middle">Хорды</text>
+            </svg>
+            <div class="caption">Рис. 6. Теоремы о касательной и хордах</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Запоминайте признаки вписанного и описанного четырехугольника — это частые задачи</li>
+            <li>Радиус, проведенный в точку касания, всегда перпендикулярен касательной</li>
+            <li>Отрезки касательных, проведенных из одной точки, равны</li>
+            <li>В задачах с трапецией часто используется свойство описанного четырехугольника</li>
+            <li>Делайте дополнительные построения: проводите радиусы, высоты, диагонали</li>
+        </ul>
+    </div>
+</body>
+</html>

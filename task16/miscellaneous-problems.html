@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разные задачи - Задание 16 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>📋 Разные задачи финансовой математики</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Различные типы задач</strong> по финансовой математике, не вошедшие в предыдущие категории.</p>
+    
+    <div class="property">
+        <strong>🔹 Типы задач:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Задачи на проценты и смеси</li>
+            <li>Задачи на сравнение доходов</li>
+            <li>Задачи на планирование бюджета</li>
+            <li>Задачи на оценку эффективности</li>
+        </ul>
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Цена товара сначала повысилась на 20%, затем снизилась на 20%. На сколько процентов изменилась первоначальная цена?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Обозначим первоначальную цену за P</p>
+        
+        <p style="margin: 10px 0;">2. После повышения на 20%:</p>
+        <div class="step"><strong>P₁ = P · 1.20</strong></div>
+        
+        <p style="margin: 10px 0;">3. После снижения на 20%:</p>
+        <div class="step"><strong>P₂ = P₁ · 0.80 = P · 1.20 · 0.80</strong></div>
+        <div class="step"><strong>P₂ = P · 0.96</strong></div>
+        
+        <p style="margin: 10px 0;">4. Изменение цены:</p>
+        <div class="step"><strong>ΔP = P₂ − P = 0.96P − P = −0.04P</strong></div>
+        <div class="step"><strong>Изменение: −4%</strong></div>
+        
+        <div class="answer">Ответ: цена снизилась на 4%</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Работнику предложили два варианта зарплаты: Вариант 1: 50 000 руб/мес с ежегодным повышением на 5%. Вариант 2: 45 000 руб/мес с ежегодным повышением на 10%. Какой вариант выгоднее за 3 года?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Рассчитаем доход за 3 года для варианта 1:</p>
+        <div class="step"><strong>1-й год: 50 000 · 12 = 600 000</strong></div>
+        <div class="step"><strong>2-й год: 50 000 · 1.05 · 12 = 630 000</strong></div>
+        <div class="step"><strong>3-й год: 50 000 · 1.05² · 12 = 661 500</strong></div>
+        <div class="step"><strong>Итого: 1 891 500</strong></div>
+        
+        <p style="margin: 10px 0;">2. Рассчитаем доход за 3 года для варианта 2:</p>
+        <div class="step"><strong>1-й год: 45 000 · 12 = 540 000</strong></div>
+        <div class="step"><strong>2-й год: 45 000 · 1.10 · 12 = 594 000</strong></div>
+        <div class="step"><strong>3-й год: 45 000 · 1.10² · 12 = 653 400</strong></div>
+        <div class="step"><strong>Итого: 1 787 400</strong></div>
+        
+        <p style="margin: 10px 0;">3. Сравниваем:</p>
+        <div class="step"><strong>1 891 500 > 1 787 400</strong></div>
+        
+        <div class="answer">Ответ: выгоднее вариант 1</div>
+    </div>
+</body>
+</html>

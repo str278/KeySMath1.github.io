@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свойства четырёхугольников - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>📐 Свойства четырёхугольников</h1>
+    
+    <div class="card">
+        <h2>📚 Основные виды и их свойства</h2>
+        <p>В задании 17 часто встречаются задачи на параллелограммы, трапеции, ромбы и прямоугольники. Знание их свойств позволяет быстро находить углы, длины отрезков и площади.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Параллелограмм:</strong><br>
+            • Противоположные стороны равны и параллельны.<br>
+            • Противоположные углы равны, соседние дают в сумме 180°.<br>
+            • Диагонали точкой пересечения делятся пополам.
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 Ромб:</strong><br>
+            • Все стороны равны.<br>
+            • Диагонали перпендикулярны и делят углы пополам.<br>
+            • Площадь = (диагональ1 × диагональ2) / 2.
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 Трапеция:</strong><br>
+            • Две стороны параллельны (основания), две другие — нет (боковые).<br>
+            • Средняя линия параллельна основаниям и равна их полусумме.<br>
+            • В равнобедренной трапеции углы при основании равны, диагонали равны.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 180" width="450" height="180">
+                <!-- Параллелограмм -->
+                <polygon points="80,140 200,140 260,60 140,60" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="80" y1="140" x2="260" y2="60" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <line x1="200" y1="140" x2="140" y2="60" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <circle cx="170" cy="100" r="3" fill="#e53e3e"/>
+                <text x="175" y="95" font-size="11" fill="#e53e3e" font-weight="bold">O</text>
+                <text x="150" y="170" font-size="11" fill="#4a5568">Параллелограмм</text>
+                
+                <!-- Трапеция -->
+                <polygon points="300,140 420,140 380,60 320,60" fill="rgba(245, 158, 11, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="310" y1="100" x2="410" y2="100" stroke="#48bb78" stroke-width="2.5"/>
+                <text x="355" y="95" font-size="11" fill="#48bb78" font-weight="bold">m</text>
+                <text x="355" y="170" font-size="11" fill="#4a5568">Трапеция</text>
+            </svg>
+            <div class="caption">Рис. 1. Диагонали параллелограмма делятся пополам, средняя линия трапеции параллельна основаниям</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Диагонали параллелограмма</h2>
+        <p><strong>Условие:</strong> В параллелограмме ABCD диагонали пересекаются в точке O. Отрезок AO равен 7, а отрезок BO равен 5. Найдите длины диагоналей.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 250" width="350" height="250">
+                <polygon points="60,200 280,200 320,80 100,80" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="60" y1="200" x2="320" y2="80" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <line x1="280" y1="200" x2="100" y2="80" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <circle cx="190" cy="140" r="4" fill="#e53e3e"/>
+                <text x="195" y="135" font-size="12" fill="#e53e3e" font-weight="bold">O</text>
+                
+                <text x="120" y="130" font-size="12" fill="#4a5568">7</text>
+                <text x="245" y="155" font-size="12" fill="#4a5568">5</text>
+                <text x="60" y="165" font-size="12" font-weight="bold">A</text>
+                <text x="285" y="195" font-size="12" font-weight="bold">B</text>
+                <text x="325" y="75" font-size="12" font-weight="bold">C</text>
+                <text x="90" y="75" font-size="12" font-weight="bold">D</text>
+            </svg>
+            <div class="caption">Рис. 2. Диагонали параллелограмма делятся точкой пересечения пополам</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Вспомним свойство параллелограмма: диагонали точкой пересечения делятся пополам.</div>
+        <div class="step">2. Значит, AO = OC = 7, а BO = OD = 5.</div>
+        <div class="step">3. Длина диагонали AC = AO + OC = 7 + 7 = 14.</div>
+        <div class="step">4. Длина диагонали BD = BO + OD = 5 + 5 = 10.</div>
+        
+        <div class="answer">Ответ: 14 и 10</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Средняя линия трапеции</h2>
+        <p><strong>Условие:</strong> В трапеции основания равны 12 и 20, а боковые стороны — 8 и 10. Найдите среднюю линию и периметр трапеции.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <polygon points="80,180 320,180 280,70 120,70" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="100" y1="125" x2="300" y2="125" stroke="#48bb78" stroke-width="3"/>
+                <text x="195" y="120" font-size="12" fill="#48bb78" font-weight="bold">m = ?</text>
+                
+                <text x="195" y="200" font-size="12" fill="#4a5568">20</text>
+                <text x="195" y="65" font-size="12" fill="#4a5568">12</text>
+                <text x="95" y="130" font-size="12" fill="#4a5568">8</text>
+                <text x="290" y="130" font-size="12" fill="#4a5568">10</text>
+            </svg>
+            <div class="caption">Рис. 3. Средняя линия трапеции соединяет середины боковых сторон</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Средняя линия трапеции параллельна основаниям и равна их полусумме.</div>
+        <div class="step">2. Формула: m = (a + b) / 2.</div>
+        <div class="step">3. Подставляем: m = (12 + 20) / 2 = 32 / 2 = 16.</div>
+        <div class="step">4. Периметр равен сумме всех сторон: P = 12 + 20 + 8 + 10 = 50.</div>
+        
+        <div class="answer">Ответ: 16; 50</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Равнобедренная трапеция (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> В равнобедренной трапеции ABCD большее основание AD равно 26, боковая сторона AB равна 10, а угол при основании равен 60°. Найдите меньшее основание BC.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 420 240" width="420" height="240">
+                <polygon points="60,200 360,200 300,80 120,80" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Высоты -->
+                <line x1="120" y1="80" x2="120" y2="200" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <line x1="300" y1="80" x2="300" y2="200" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <rect x="115" y="190" width="10" height="10" fill="none" stroke="#1a202c" stroke-width="1"/>
+                <rect x="295" y="190" width="10" height="10" fill="none" stroke="#1a202c" stroke-width="1"/>
+                
+                <!-- Угол -->
+                <path d="M 80 190 Q 95 180 105 195" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="85" y="175" font-size="12" fill="#e53e3e" font-weight="bold">60°</text>
+                
+                <!-- Подписи -->
+                <text x="210" y="220" font-size="12" fill="#4a5568" text-anchor="middle">AD = 26</text>
+                <text x="90" y="145" font-size="12" fill="#4a5568">AB = 10</text>
+                <text x="140" y="215" font-size="11" fill="#e53e3e">x</text>
+                <text x="305" y="215" font-size="11" fill="#e53e3e">x</text>
+                <text x="210" y="75" font-size="12" fill="#e53e3e" font-weight="bold" text-anchor="middle">BC = ?</text>
+                
+                <circle cx="60" cy="200" r="3" fill="#1a202c"/>
+                <circle cx="360" cy="200" r="3" fill="#1a202c"/>
+                <circle cx="300" cy="80" r="3" fill="#1a202c"/>
+                <circle cx="120" cy="80" r="3" fill="#1a202c"/>
+            </svg>
+            <div class="caption">Рис. 4. Равнобедренная трапеция с опущенными высотами</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Опустим высоты из вершин B и C на основание AD. Получим два равных прямоугольных треугольника по краям и прямоугольник в центре.</div>
+        <div class="step">2. В прямоугольном треугольнике с углом 60° второй острый угол равен 30°. Катет, лежащий против угла 30°, равен половине гипотенузы.</div>
+        <div class="step">3. Гипотенуза AB = 10. Значит, отрезок у основания (назовём его x) равен 10 / 2 = 5.</div>
+        <div class="step">4. Так как трапеция равнобедренная, второй отрезок у основания тоже равен 5.</div>
+        <div class="step">5. Меньшее основание BC равно разности большего основания и двух отрезков: BC = 26 - 5 - 5 = 16.</div>
+        
+        <div class="answer">Ответ: 16</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные формулы</h2>
+        
+        <div class="formula-box">
+            <strong>Площадь параллелограмма:</strong><br>
+            S = основание × высота<br>
+            S = a × b × sin(угла между ними)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Площадь трапеции:</strong><br>
+            S = (a + b) / 2 × h<br>
+            (средняя линия × высота)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Средняя линия трапеции:</strong><br>
+            m = (a + b) / 2
+        </div>
+        
+        <div class="formula-box">
+            <strong>Свойство диагоналей параллелограмма:</strong><br>
+            Сумма квадратов диагоналей равна сумме квадратов всех четырёх сторон:<br>
+            d1² + d2² = 2(a² + b²)
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Если в задаче про трапецию не дана высота, опускайте её из вершин меньшего основания. Это создаст прямоугольники и прямоугольные треугольники.</li>
+            <li>В равнобедренной трапеции углы при одном основании равны, а диагонали равны между собой.</li>
+            <li>Не путайте свойства ромба и прямоугольника: у ромба диагонали перпендикулярны, у прямоугольника — равны.</li>
+            <li>Средняя линия трапеции часто помогает связать основания, если нужно найти площадь или периметр.</li>
+            <li>Рисуйте дополнительные построения: диагонали, высоты, средние линии. Они превращают сложные фигуры в знакомые треугольники.</li>
+        </ul>
+    </div>
+</body>
+</html>

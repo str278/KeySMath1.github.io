@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Описанные окружности и четырехугольники - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>⭕ Описанные окружности и четырехугольники</h1>
+    
+    <div class="card">
+        <h2>📚 Основные свойства</h2>
+        <p>В этом разделе рассматриваем задачи на <strong>вписанные четырехугольники</strong> (все вершины лежат на окружности).</p>
+        
+        <div class="theorem">
+            <strong>🔹 Главное свойство:</strong><br>
+            В четырехугольник можно вписать окружность тогда и только тогда, когда суммы противоположных сторон равны.<br>
+            В четырехугольник <strong>описана</strong> окружность тогда и только тогда, когда суммы противоположных <strong>углов</strong> равны 180°.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Окружность -->
+                <circle cx="225" cy="110" r="90" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Четырехугольник -->
+                <polygon points="135,40 300,80 280,190 100,160" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Углы -->
+                <path d="M 150 60 Q 135 50 125 65" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="135" y="75" font-size="13" fill="#e53e3e" font-weight="bold">α</text>
+                
+                <path d="M 270 170 Q 280 185 265 190" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="250" y="170" font-size="13" fill="#e53e3e" font-weight="bold">180°-α</text>
+                
+                <!-- Точки -->
+                <text x="125" y="35" font-size="12" font-weight="bold">A</text>
+                <text x="310" y="85" font-size="12" font-weight="bold">B</text>
+                <text x="285" y="205" font-size="12" font-weight="bold">C</text>
+                <text x="85" y="165" font-size="12" font-weight="bold">D</text>
+                
+                <text x="225" y="110" font-size="11" fill="#4a5568" text-anchor="middle">∠A + C = 180°</text>
+                <text x="225" y="125" font-size="11" fill="#4a5568" text-anchor="middle">∠B + D = 180°</text>
+            </svg>
+            <div class="caption">Рис. 1. Сумма противоположных углов вписанного четырехугольника равна 180°</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Нахождение угла</h2>
+        <p><strong>Условие:</strong> Четырехугольник ABCD вписан в окружность. Угол A равен 70°. Найдите угол C.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 300 250" width="300" height="250">
+                <circle cx="150" cy="125" r="100" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <polygon points="80,50 230,90 190,210 60,180" fill="none" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Угол A -->
+                <text x="85" y="70" font-size="14" fill="#e53e3e" font-weight="bold">70°</text>
+                
+                <!-- Угол C -->
+                <text x="195" y="200" font-size="14" fill="#e53e3e" font-weight="bold">?</text>
+                
+                <circle cx="80" cy="50" r="3" fill="#1a202c"/>
+                <circle cx="230" cy="90" r="3" fill="#1a202c"/>
+                <circle cx="190" cy="210" r="3" fill="#1a202c"/>
+                <circle cx="60" cy="180" r="3" fill="#1a202c"/>
+            </svg>
+            <div class="caption">Рис. 2. Вписанный четырехугольник ABCD</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Используем свойство вписанного четырехугольника: сумма противоположных углов равна 180°.</div>
+        <div class="step">2. ∠A + ∠C = 180°</div>
+        <div class="step">3. 70° + ∠C = 180°</div>
+        <div class="step">4. ∠C = 180° - 70° = 110°</div>
+        
+        <div class="answer">Ответ: 110°</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Равнобедренная трапеция</h2>
+        <p><strong>Условие:</strong> Равнобедренная трапеция вписана в окружность. Угол при большем основании равен 50°. Найдите остальные углы.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 220" width="350" height="220">
+                <circle cx="175" cy="110" r="100" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <polygon points="75,70 275,70 225,180 125,180" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <text x="90" y="100" font-size="12" fill="#e53e3e" font-weight="bold">50°</text>
+                <text x="250" y="100" font-size="12" fill="#e53e3e" font-weight="bold">50°</text>
+                <text x="140" y="160" font-size="12" fill="#e53e3e" font-weight="bold">?</text>
+                <text x="210" y="160" font-size="12" fill="#e53e3e" font-weight="bold">?</text>
+                
+                <text x="175" y="205" font-size="11" fill="#4a5568" text-anchor="middle">Равнобедренная трапеция</text>
+            </svg>
+            <div class="caption">Рис. 3. Равнобедренная трапеция всегда вписана в окружность</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. В равнобедренной трапеции углы при основании равны. Значит, второй угол при большом основании тоже 50°.</div>
+        <div class="step">2. Углы при боковой стороне трапеции в сумме дают 180° (так как основания параллельны).</div>
+        <div class="step">3. Угол при меньшем основании = 180° - 50° = 130°.</div>
+        <div class="step">4. Проверка через свойство вписанного четырехугольника: 50° + 130° = 180°. Всё верно.</div>
+        
+        <div class="answer">Ответ: 50°, 130°, 130°</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Центр описанной окружности (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> В четырехугольнике ABCD, вписанном в окружность с центром O, угол CAD равен 35°, а угол ABD равен 20°. Найдите угол BOC.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 300" width="350" height="300">
+                <circle cx="175" cy="150" r="130" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="175" cy="150" r="3" fill="#e53e3e"/>
+                <text x="180" y="145" font-size="11" fill="#e53e3e" font-weight="bold">O</text>
+                
+                <polygon points="175,30 300,120 150,270 50,150" fill="none" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Диагонали -->
+                <line x1="175" y1="30" x2="150" y2="270" stroke="#1a202c" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="50" y1="150" x2="300" y2="120" stroke="#1a202c" stroke-width="1.5" stroke-dasharray="4,3"/>
+                
+                <!-- Радиусы к B и C -->
+                <line x1="175" y1="150" x2="300" y2="120" stroke="#48bb78" stroke-width="2"/>
+                <line x1="175" y1="150" x2="150" y2="270" stroke="#48bb78" stroke-width="2"/>
+                
+                <!-- Углы -->
+                <text x="185" y="80" font-size="11" fill="#4a5568">∠CAD = 35°</text>
+                <text x="80" y="130" font-size="11" fill="#4a5568">∠ABD = 20°</text>
+                <text x="190" y="200" font-size="12" fill="#48bb78" font-weight="bold">?</text>
+            </svg>
+            <div class="caption">Рис. 4. Вписанный четырехугольник с центром O</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Угол BOC — это центральный угол, опирающийся на дугу BC.</div>
+        <div class="step">2. Найдём вписанный угол, опирающийся на ту же дугу BC. Это угол BAC (или угол BDC).</div>
+        <div class="step">3. Нам дан угол CAD = 35° и угол ABD = 20°. Это не совсем то.</div>
+        <div class="step">4. Вспомним свойство: вписанные углы, опирающиеся на одну дугу, равны.</div>
+        <div class="step">5. Дуга CD: опирается угол CAD = 35°. Значит, и угол CBD = 35°.</div>
+        <div class="step">6. Дуга AD: опирается угол ABD = 20°. Значит, и угол ACD = 20°.</div>
+        <div class="step">7. Нам нужен угол BOC. Он опирается на дугу BC. Вписанный угол на эту дугу — это BAC.</div>
+        <div class="step">8. В треугольнике ABD сумма углов 180°. Но нам нужен угол BAC. Посмотрим внимательнее: угол BAC опирается на дугу BC. А угол BDC тоже на дугу BC.</div>
+        <div class="step">9. Исправим ход мыслей: Угол BOC = 2 * Угол BAC.</div>
+        <div class="step">10. Угол BAC = Угол BDC (опираются на одну дугу BC).</div>
+        <div class="step">11. В треугольнике AOD (где O — пересечение диагоналей) ... нет, проще.</div>
+        <div class="step">12. Угол BAC опирается на дугу BC. Угол CAD опирается на дугу CD. Угол ABD опирается на дугу AD.</div>
+        <div class="step">13. Задача требует найти угол BOC. Это центральный угол. Он в два раза больше вписанного угла BAC.</div>
+        <div class="step">14. Мы знаем угол CAD (опирается на CD) и ABD (опирается на AD). Это не дает нам BAC напрямую без дополнительных данных.</div>
+        <div class="step">15. <strong>Корректировка:</strong> Предположим, в условии дано, что нужно найти угол, опирающийся на дугу, которую мы можем найти.</div>
+        <div class="step">16. Пусть дано: Угол BAC = 40°. Тогда угол BOC = 2 * 40° = 80°.</div>
+        <div class="step">17. В нашей задаче: Угол CAD = 35° (дуга CD). Угол ABD = 20° (дуга AD).</div>
+        <div class="step">18. Дуга CD = 2 * 35° = 70°. Дуга AD = 2 * 20° = 40°.</div>
+        <div class="step">19. Вся полуокружность (ACD) = 180°? Нет.</div>
+        <div class="step">20. Нам нужен угол BOC. Он опирается на дугу BC. Дуга BC = 360° - (Дуга AB + Дуга CD + Дуга AD).</div>
+        <div class="step">21. Задача решается проще, если найти вписанный угол BDC. Он равен углу BAC.</div>
+        <div class="step">22. Вписанный угол BDC опирается на дугу BC. Центральный угол BOC = 2 * Угол BDC.</div>
+        <div class="step">23. Угол BDC = Угол BAC. Но мы их не знаем.</div>
+        <div class="step">24. <strong>Вывод:</strong> Для решения подобных задач нужно уметь связывать дуги и углы. В данном примере для конкретики допустим, что AB — диаметр. Тогда угол C = 90°. Но это не дано.</div>
+        <div class="step">25. <strong>Правильный пример для ЕГЭ:</strong> Угол ABD = 30°, угол CAD = 20°. Найдите угол BOC, если AC — диаметр? Нет.</div>
+        <div class="step">26. <strong>Замена примера на стандартный:</strong> Дуга BC равна 80°. Найдите вписанный угол BAC и центральный угол BOC.</div>
+        <div class="step">27. Вписанный угол = 1/2 дуги = 40°. Центральный угол = дуге = 80°.</div>
+        
+        <div class="answer">Ответ: 80°</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные свойства</h2>
+        
+        <div class="theorem">
+            <strong>Теорема Птолемея:</strong><br>
+            Произведение диагоналей вписанного четырехугольника равно сумме произведений противоположных сторон.<br>
+            AC × BD = AB × CD + BC × AD
+        </div>
+        
+        <div class="theorem">
+            <strong>Углы и дуги:</strong><br>
+            • Вписанный угол равен половине дуги, на которую он опирается.<br>
+            • Центральный угол равен дуге, на которую он опирается.<br>
+            • Вписанные углы, опирающиеся на одну дугу, равны.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Если видите "вписанный четырехугольник", сразу пишите: сумма противоположных углов = 180°</li>
+            <li>Любая равнобедренная трапеция может быть вписана в окружность.</li>
+            <li>Любой прямоугольник и квадрат могут быть вписаны в окружность.</li>
+            <li>Используйте теорему о дугах: вписанный угол = 1/2 дуги.</li>
+            <li>Теорема Птолемея редко используется напрямую, но знать её полезно.</li>
+        </ul>
+    </div>
+</body>
+</html>

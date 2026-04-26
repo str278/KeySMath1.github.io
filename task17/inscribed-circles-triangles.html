@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вписанные окружности и треугольники - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>⭕ Вписанные окружности и треугольники</h1>
+    
+    <div class="card">
+        <h2>📚 Основные свойства</h2>
+        <p>В этом разделе разбираем задачи, где <strong>окружность вписана в треугольник</strong> (касается всех трёх сторон).</p>
+        
+        <div class="theorem">
+            <strong>🔹 Центр вписанной окружности:</strong><br>
+            • Точка пересечения биссектрис углов треугольника.<br>
+            • Равноудалён от всех сторон треугольника (расстояние = радиусу r).
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 Отрезки касательных:</strong><br>
+            Отрезки, проведённые из одной вершины до точек касания, равны.<br>
+            Если треугольник ABC касается окружности в точках K (на AB), L (на BC), M (на AC), то:<br>
+            AK = AM, BK = BL, CL = CM.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Треугольник -->
+                <polygon points="100,180 250,50 380,180" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Вписанная окружность -->
+                <circle cx="240" cy="145" r="55" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                <circle cx="240" cy="145" r="3" fill="#3182ce"/>
+                <text x="245" y="140" font-size="11" fill="#3182ce" font-weight="bold">O</text>
+                
+                <!-- Точки касания -->
+                <circle cx="175" cy="115" r="3" fill="#e53e3e"/>
+                <circle cx="235" cy="85" r="3" fill="#e53e3e"/>
+                <circle cx="305" cy="145" r="3" fill="#e53e3e"/>
+                
+                <!-- Радиусы -->
+                <line x1="240" y1="145" x2="175" y2="115" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="240" y1="145" x2="235" y2="85" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="240" y1="145" x2="305" y2="145" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4,3"/>
+                
+                <!-- Подписи -->
+                <text x="140" y="195" font-size="12" font-weight="bold">A</text>
+                <text x="250" y="45" font-size="12" font-weight="bold">B</text>
+                <text x="385" y="195" font-size="12" font-weight="bold">C</text>
+                
+                <text x="155" y="105" font-size="10" fill="#4a5568">AK=AM</text>
+                <text x="245" y="75" font-size="10" fill="#4a5568">BK=BL</text>
+                <text x="315" y="135" font-size="10" fill="#4a5568">CL=CM</text>
+            </svg>
+            <div class="caption">Рис. 1. Свойство равных отрезков касательных из вершин треугольника</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Прямоугольный треугольник</h2>
+        <p><strong>Условие:</strong> В прямоугольный треугольник с катетами 6 и 8 вписана окружность. Найдите её радиус.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 250" width="350" height="250">
+                <!-- Прямоугольный треугольник -->
+                <polygon points="60,220 280,220 60,70" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <rect x="60" y="200" width="20" height="20" fill="none" stroke="#1a202c" stroke-width="1.5"/>
+                
+                <!-- Вписанная окружность -->
+                <circle cx="105" cy="175" r="35" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                <circle cx="105" cy="175" r="3" fill="#3182ce"/>
+                <text x="110" y="170" font-size="11" fill="#3182ce" font-weight="bold">O</text>
+                
+                <!-- Радиусы к катетам -->
+                <line x1="105" y1="175" x2="105" y2="220" stroke="#48bb78" stroke-width="2"/>
+                <line x1="105" y1="175" x2="60" y2="175" stroke="#48bb78" stroke-width="2"/>
+                <rect x="95" y="210" width="10" height="10" fill="none" stroke="#48bb78" stroke-width="1"/>
+                <rect x="50" y="165" width="10" height="10" fill="none" stroke="#48bb78" stroke-width="1"/>
+                
+                <!-- Подписи сторон -->
+                <text x="35" y="145" font-size="12" fill="#4a5568">6</text>
+                <text x="170" y="235" font-size="12" fill="#4a5568">8</text>
+                <text x="180" y="140" font-size="12" fill="#4a5568">10</text>
+                <text x="110" y="205" font-size="11" fill="#48bb78" font-weight="bold">r</text>
+                
+                <!-- Точки -->
+                <circle cx="60" cy="220" r="3" fill="#1a202c"/>
+                <circle cx="280" cy="220" r="3" fill="#1a202c"/>
+                <circle cx="60" cy="70" r="3" fill="#1a202c"/>
+            </svg>
+            <div class="caption">Рис. 2. Вписанная окружность в прямоугольный треугольник</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Найдём гипотенузу по теореме Пифагора: c = √(6² + 8²) = √(36 + 64) = 10.</div>
+        <div class="step">2. Для прямоугольного треугольника есть специальная формула радиуса: r = (a + b - c) / 2.</div>
+        <div class="step">3. Подставляем: r = (6 + 8 - 10) / 2 = 4 / 2 = 2.</div>
+        <div class="step">4. Проверка через площадь: S = (6×8)/2 = 24. Полупериметр p = (6+8+10)/2 = 12. r = S/p = 24/12 = 2.</div>
+        
+        <div class="answer">Ответ: 2</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Равнобедренный треугольник</h2>
+        <p><strong>Условие:</strong> В равнобедренный треугольник с основанием 12 и боковой стороной 10 вписана окружность. Найдите её радиус.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 260" width="400" height="260">
+                <!-- Равнобедренный треугольник -->
+                <polygon points="100,230 300,230 200,60" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Высота -->
+                <line x1="200" y1="60" x2="200" y2="230" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                <rect x="195" y="220" width="10" height="10" fill="none" stroke="#1a202c" stroke-width="1"/>
+                
+                <!-- Вписанная окружность -->
+                <circle cx="200" cy="180" r="45" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                <circle cx="200" cy="180" r="3" fill="#3182ce"/>
+                <text x="205" y="175" font-size="11" fill="#3182ce" font-weight="bold">O</text>
+                
+                <!-- Подписи -->
+                <text x="195" y="250" font-size="12" fill="#4a5568">12</text>
+                <text x="145" y="150" font-size="12" fill="#4a5568">10</text>
+                <text x="255" y="150" font-size="12" fill="#4a5568">10</text>
+                <text x="205" y="140" font-size="11" fill="#48bb78" font-weight="bold">h = 8</text>
+                <text x="210" y="200" font-size="11" fill="#48bb78" font-weight="bold">r</text>
+                
+                <text x="200" y="50" font-size="12" fill="#1a202c" font-weight="bold">A</text>
+                <text x="90" y="245" font-size="12" fill="#1a202c" font-weight="bold">B</text>
+                <text x="310" y="245" font-size="12" fill="#1a202c" font-weight="bold">C</text>
+            </svg>
+            <div class="caption">Рис. 3. Вписанная окружность в равнобедренный треугольник</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Проведём высоту к основанию. Она делит основание пополам: 12 / 2 = 6.</div>
+        <div class="step">2. По теореме Пифагора находим высоту: h = √(10² - 6²) = √(100 - 36) = √64 = 8.</div>
+        <div class="step">3. Площадь треугольника: S = (основание × высота) / 2 = (12 × 8) / 2 = 48.</div>
+        <div class="step">4. Полупериметр: p = (10 + 10 + 12) / 2 = 16.</div>
+        <div class="step">5. Радиус вписанной окружности: r = S / p = 48 / 16 = 3.</div>
+        
+        <div class="answer">Ответ: 3</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Задача с отрезками касательных (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> В треугольник ABC вписана окружность с центром O. Точки касания делят стороны на отрезки: AK = 4, BK = 6, CL = 5. Найдите периметр треугольника и радиус вписанной окружности.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 420 300" width="420" height="300">
+                <!-- Треугольник -->
+                <polygon points="80,260 230,60 360,200" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Вписанная окружность -->
+                <circle cx="225" cy="175" r="60" fill="none" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                
+                <!-- Точки касания -->
+                <circle cx="160" cy="155" r="3" fill="#e53e3e"/>
+                <circle cx="245" cy="110" r="3" fill="#e53e3e"/>
+                <circle cx="305" cy="205" r="3" fill="#e53e3e"/>
+                
+                <!-- Подписи отрезков -->
+                <text x="115" y="205" font-size="11" fill="#4a5568">4</text>
+                <text x="195" y="125" font-size="11" fill="#4a5568">6</text>
+                <text x="285" y="150" font-size="11" fill="#4a5568">6</text>
+                <text x="335" y="185" font-size="11" fill="#4a5568">5</text>
+                <text x="305" y="245" font-size="11" fill="#4a5568">5</text>
+                <text x="165" y="255" font-size="11" fill="#4a5568">4</text>
+                
+                <!-- Точки -->
+                <circle cx="80" cy="260" r="3" fill="#1a202c"/>
+                <text x="65" y="275" font-size="12" font-weight="bold">A</text>
+                
+                <circle cx="230" cy="60" r="3" fill="#1a202c"/>
+                <text x="230" y="55" font-size="12" font-weight="bold" text-anchor="middle">B</text>
+                
+                <circle cx="360" cy="200" r="3" fill="#1a202c"/>
+                <text x="370" y="205" font-size="12" font-weight="bold">C</text>
+            </svg>
+            <div class="caption">Рис. 4. Отрезки касательных из вершин треугольника</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Вспомним свойство: отрезки касательных из одной вершины равны. Значит, AM = AK = 4, BL = BK = 6, CM = CL = 5.</div>
+        <div class="step">2. Находим стороны треугольника: AB = 4 + 6 = 10, BC = 6 + 5 = 11, AC = 4 + 5 = 9.</div>
+        <div class="step">3. Периметр: P = 10 + 11 + 9 = 30. Полупериметр p = 15.</div>
+        <div class="step">4. Площадь по формуле Герона: S = √(15 × 5 × 4 × 6) = √1800 = 30√2.</div>
+        <div class="step">5. Радиус: r = S / p = 30√2 / 15 = 2√2.</div>
+        
+        <div class="answer">Ответ: 30; 2√2</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные формулы</h2>
+        
+        <div class="formula-box">
+            <strong>Универсальная формула радиуса:</strong><br>
+            r = S / p<br>
+            где S — площадь треугольника, p — полупериметр.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Для прямоугольного треугольника:</strong><br>
+            r = (a + b - c) / 2<br>
+            где a, b — катеты, c — гипотенуза.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Отрезки от вершин до точек касания:</strong><br>
+            AK = AM = p - a<br>
+            BK = BL = p - b<br>
+            CL = CM = p - c<br>
+            где a, b, c — стороны против вершин A, B, C.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Если в задаче даны отрезки касательных — сразу записывайте равенства отрезков из вершин.</li>
+            <li>В прямоугольном треугольнике используйте формулу r = (a+b-c)/2 — это быстрее, чем считать площадь.</li>
+            <li>Помните, что центр вписанной окружности лежит на пересечении биссектрис. Это помогает строить дополнительные углы.</li>
+            <li>Формула r = S/p работает для любого треугольника. Выучите её наизусть.</li>
+            <li>Не путайте вписанную окружность (касается сторон) и описанную (проходит через вершины).</li>
+        </ul>
+    </div>
+</body>
+</html>

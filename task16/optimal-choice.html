@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на оптимальный выбор - Задание 16 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>📊 Задачи на оптимальный выбор</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Задачи на оптимальный выбор</strong> — задачи, в которых требуется найти наилучшее (оптимальное) решение по заданному критерию (минимум затрат, максимум прибыли и т.д.).</p>
+    
+    <div class="property">
+        <strong>🔹 Типичные задачи:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li>Выбор наиболее выгодного тарифа</li>
+            <li>Оптимальное распределение ресурсов</li>
+            <li>Минимизация затрат или максимизация дохода</li>
+            <li>Выбор между различными вариантами инвестиций</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные методы</h2>
+    
+    <div class="formula">
+        <strong>1. Метод сравнения:</strong><br><br>
+        Рассчитать итоговые значения для каждого варианта и выбрать оптимальный
+    </div>
+    
+    <div class="formula">
+        <strong>2. Метод функции:</strong><br><br>
+        Составить функцию зависимости и найти её экстремум (минимум или максимум)
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Клиент хочет выбрать наиболее выгодный тариф мобильной связи. Тариф "Стандарт": 200 руб/мес + 1 руб/мин. Тариф "Премиум": 500 руб/мес + 0.5 руб/мин. При каком количестве минут тариф "Премиум" выгоднее?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Обозначим количество минут за x</p>
+        
+        <p style="margin: 10px 0;">2. Стоимость тарифа "Стандарт":</p>
+        <div class="step"><strong>C₁ = 200 + x</strong></div>
+        
+        <p style="margin: 10px 0;">3. Стоимость тарифа "Премиум":</p>
+        <div class="step"><strong>C₂ = 500 + 0.5x</strong></div>
+        
+        <p style="margin: 10px 0;">4. Найдём, когда C₂ < C₁:</p>
+        <div class="step"><strong>500 + 0.5x < 200 + x</strong></div>
+        <div class="step"><strong>300 < 0.5x</strong></div>
+        <div class="step"><strong>x > 600</strong></div>
+        
+        <div class="answer">Ответ: при более 600 минут в месяц</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Фирма может произвести товар двумя способами. Способ 1: постоянные затраты 100 000 руб, себестоимость 500 руб/шт. Способ 2: постоянные затраты 200 000 руб, себестоимость 300 руб/шт. При каком объёме производства способ 2 выгоднее?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Обозначим количество единиц товара за x</p>
+        
+        <p style="margin: 10px 0;">2. Затраты способом 1:</p>
+        <div class="step"><strong>Z₁ = 100 000 + 500x</strong></div>
+        
+        <p style="margin: 10px 0;">3. Затраты способом 2:</p>
+        <div class="step"><strong>Z₂ = 200 000 + 300x</strong></div>
+        
+        <p style="margin: 10px 0;">4. Найдём, когда Z₂ < Z₁:</p>
+        <div class="step"><strong>200 000 + 300x < 100 000 + 500x</strong></div>
+        <div class="step"><strong>100 000 < 200x</strong></div>
+        <div class="step"><strong>x > 500</strong></div>
+        
+        <div class="answer">Ответ: при производстве более 500 единиц</div>
+    </div>
+</body>
+</html>

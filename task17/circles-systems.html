@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Системы окружностей - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>⭕ Системы окружностей</h1>
+    
+    <div class="card">
+        <h2>📚 Основные понятия</h2>
+        <p>В этом разделе мы рассмотрим задачи, где <strong>несколько окружностей взаимодействуют друг с другом</strong>: касаются, пересекаются, имеют общие касательные или хорды.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Взаимное расположение двух окружностей:</strong><br>
+            • Окружности касаются внешним образом: d = R + r<br>
+            • Окружности касаются внутренним образом: d = R - r<br>
+            • Окружности пересекаются: |R - r| < d < R + r<br>
+            • Окружности не пересекаются: d > R + r или d < |R - r|<br>
+            где d — расстояние между центрами, R и r — радиусы (R ≥ r)
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 500 180" width="500" height="180">
+                <!-- Внешнее касание -->
+                <circle cx="80" cy="90" r="50" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="200" cy="90" r="30" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="80" cy="90" r="3" fill="#1a202c"/>
+                <circle cx="200" cy="90" r="3" fill="#1a202c"/>
+                <line x1="80" y1="90" x2="200" y2="90" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="130" y="85" font-size="11" fill="#e53e3e">d = R + r</text>
+                <text x="80" y="110" font-size="10" text-anchor="middle">O₁</text>
+                <text x="200" y="110" font-size="10" text-anchor="middle">O₂</text>
+                <text x="140" y="150" font-size="11" fill="#4a5568" text-anchor="middle">Внешнее касание</text>
+                
+                <!-- Внутреннее касание -->
+                <circle cx="350" cy="90" r="60" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="370" cy="90" r="30" fill="none" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="350" cy="90" r="3" fill="#1a202c"/>
+                <circle cx="370" cy="90" r="3" fill="#1a202c"/>
+                <line x1="350" y1="90" x2="370" y2="90" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="355" y="85" font-size="11" fill="#e53e3e">d = R - r</text>
+                <text x="350" y="110" font-size="10" text-anchor="middle">O₁</text>
+                <text x="370" y="110" font-size="10" text-anchor="middle">O₂</text>
+                <text x="360" y="150" font-size="11" fill="#4a5568" text-anchor="middle">Внутреннее касание</text>
+            </svg>
+            <div class="caption">Рис. 1. Внешнее и внутреннее касание окружностей</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🔧 Важные свойства</h2>
+        
+        <div class="theorem">
+            <strong>🔹 Общая касательная:</strong><br>
+            Если две окружности касаются, то общая касательная в точке касания перпендикулярна линии центров.
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 Радикальная ось:</strong><br>
+            Для двух пересекающихся окружностей радикальная ось — это прямая, проходящая через точки пересечения. Все точки на этой оси имеют равные степени относительно обеих окружностей.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Две пересекающиеся окружности -->
+                <circle cx="150" cy="110" r="80" fill="rgba(67, 97, 238, 0.1)" stroke="#3182ce" stroke-width="2"/>
+                <circle cx="270" cy="110" r="70" fill="rgba(245, 158, 11, 0.1)" stroke="#d69e2e" stroke-width="2"/>
+                
+                <!-- Центры -->
+                <circle cx="150" cy="110" r="3" fill="#1a202c"/>
+                <circle cx="270" cy="110" r="3" fill="#1a202c"/>
+                <text x="145" y="105" font-size="11" font-weight="bold">O₁</text>
+                <text x="275" y="105" font-size="11" font-weight="bold">O₂</text>
+                
+                <!-- Точки пересечения -->
+                <circle cx="210" cy="60" r="3" fill="#e53e3e"/>
+                <circle cx="210" cy="160" r="3" fill="#e53e3e"/>
+                <text x="215" y="55" font-size="11" fill="#e53e3e" font-weight="bold">A</text>
+                <text x="215" y="175" font-size="11" fill="#e53e3e" font-weight="bold">B</text>
+                
+                <!-- Радикальная ось -->
+                <line x1="210" y1="40" x2="210" y2="180" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="215" y="110" font-size="11" fill="#48bb78" font-weight="bold">Радикальная ось</text>
+                
+                <!-- Линия центров -->
+                <line x1="150" y1="110" x2="270" y2="110" stroke="#1a202c" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="200" y="125" font-size="10" fill="#4a5568">d</text>
+                
+                <text x="150" y="205" font-size="11" fill="#4a5568" text-anchor="middle">R₁ = 80</text>
+                <text x="270" y="205" font-size="11" fill="#4a5568" text-anchor="middle">R₂ = 70</text>
+            </svg>
+            <div class="caption">Рис. 2. Пересекающиеся окружности и радикальная ось</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Касающиеся окружности</h2>
+        <p><strong>Условие:</strong> Две окружности касаются внешним образом. Расстояние между их центрами равно 15 см. Радиус одной окружности в 2 раза больше радиуса другой. Найдите радиусы окружностей.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 180" width="400" height="180">
+                <!-- Большая окружность -->
+                <circle cx="120" cy="90" r="70" fill="rgba(67, 97, 238, 0.1)" stroke="#3182ce" stroke-width="2.5"/>
+                <!-- Маленькая окружность -->
+                <circle cx="260" cy="90" r="35" fill="rgba(245, 158, 11, 0.1)" stroke="#d69e2e" stroke-width="2.5"/>
+                
+                <!-- Центры -->
+                <circle cx="120" cy="90" r="4" fill="#1a202c"/>
+                <circle cx="260" cy="90" r="4" fill="#1a202c"/>
+                <text x="115" y="85" font-size="12" font-weight="bold">O₁</text>
+                <text x="265" y="85" font-size="12" font-weight="bold">O₂</text>
+                
+                <!-- Точка касания -->
+                <circle cx="190" cy="90" r="4" fill="#e53e3e"/>
+                <text x="195" y="85" font-size="11" fill="#e53e3e" font-weight="bold">K</text>
+                
+                <!-- Линия центров -->
+                <line x1="120" y1="90" x2="260" y2="90" stroke="#1a202c" stroke-width="2"/>
+                <text x="185" y="105" font-size="11" fill="#4a5568">d = 15</text>
+                
+                <!-- Радиусы -->
+                <line x1="120" y1="90" x2="190" y2="90" stroke="#48bb78" stroke-width="2" stroke-dasharray="4,3"/>
+                <line x1="260" y1="90" x2="190" y2="90" stroke="#48bb78" stroke-width="2" stroke-dasharray="4,3"/>
+                <text x="150" y="85" font-size="10" fill="#48bb78">R</text>
+                <text x="220" y="85" font-size="10" fill="#48bb78">r</text>
+                
+                <text x="200" y="160" font-size="12" fill="#4a5568" text-anchor="middle">R = 2r, d = R + r = 15</text>
+            </svg>
+            <div class="caption">Рис. 3. Две касающиеся окружности с радиусами R и r</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Обозначим радиусы: r — меньший, R — больший. По условию R = 2r</div>
+        <div class="step">2. При внешнем касании: d = R + r</div>
+        <div class="step">3. Подставляем: 15 = 2r + r = 3r</div>
+        <div class="step">4. Отсюда: r = 15 / 3 = 5 см</div>
+        <div class="step">5. Тогда R = 2r = 2 × 5 = 10 см</div>
+        
+        <div class="answer">Ответ: 5 см и 10 см</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Общая внешняя касательная</h2>
+        <p><strong>Условие:</strong> Две окружности радиусов 9 см и 4 см касаются внешним образом. Найдите длину отрезка общей внешней касательной между точками касания.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 250" width="450" height="250">
+                <!-- Окружности -->
+                <circle cx="100" cy="130" r="70" fill="rgba(67, 97, 238, 0.1)" stroke="#3182ce" stroke-width="2.5"/>
+                <circle cx="290" cy="130" r="31" fill="rgba(245, 158, 11, 0.1)" stroke="#d69e2e" stroke-width="2.5"/>
+                
+                <!-- Центры -->
+                <circle cx="100" cy="130" r="4" fill="#1a202c"/>
+                <circle cx="290" cy="130" r="4" fill="#1a202c"/>
+                <text x="95" y="125" font-size="12" font-weight="bold">O₁</text>
+                <text x="295" y="125" font-size="12" font-weight="bold">O₂</text>
+                
+                <!-- Внешняя касательная -->
+                <line x1="50" y1="70" x2="330" y2="102" stroke="#e53e3e" stroke-width="2.5"/>
+                
+                <!-- Точки касания -->
+                <circle cx="85" cy="72" r="3" fill="#e53e3e"/>
+                <circle cx="280" cy="99" r="3" fill="#e53e3e"/>
+                <text x="75" y="67" font-size="11" fill="#e53e3e" font-weight="bold">A</text>
+                <text x="285" y="94" font-size="11" fill="#e53e3e" font-weight="bold">B</text>
+                
+                <!-- Радиусы к точкам касания -->
+                <line x1="100" y1="130" x2="85" y2="72" stroke="#48bb78" stroke-width="2" stroke-dasharray="4,3"/>
+                <line x1="290" y1="130" x2="280" y2="99" stroke="#48bb78" stroke-width="2" stroke-dasharray="4,3"/>
+                
+                <!-- Перпендикуляры -->
+                <rect x="88" y="75" width="6" height="6" fill="none" stroke="#1a202c" stroke-width="1" transform="rotate(15 91 78)"/>
+                <rect x="282" y="102" width="6" height="6" fill="none" stroke="#1a202c" stroke-width="1" transform="rotate(10 285 105)"/>
+                
+                <!-- Подписи -->
+                <text x="100" y="145" font-size="11" fill="#4a5568" text-anchor="middle">R = 9</text>
+                <text x="290" y="145" font-size="11" fill="#4a5568" text-anchor="middle">r = 4</text>
+                <text x="180" y="80" font-size="12" fill="#e53e3e" font-weight="bold">AB = ?</text>
+                
+                <text x="200" y="235" font-size="11" fill="#4a5568" text-anchor="middle">AB² = d² - (R - r)²</text>
+            </svg>
+            <div class="caption">Рис. 4. Общая внешняя касательная к двум окружностям</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Расстояние между центрами: d = R + r = 9 + 4 = 13 см</div>
+        <div class="step">2. Проведём радиусы O₁A и O₂B к точкам касания. Они перпендикулярны касательной.</div>
+        <div class="step">3. Проведём O₂C || AB, где C лежит на O₁A. Получим прямоугольный треугольник O₁CO₂.</div>
+        <div class="step">4. В этом треугольнике: O₁C = R - r = 9 - 4 = 5 см, O₁O₂ = 13 см</div>
+        <div class="step">5. По теореме Пифагора: AB = O₂C = √(13² - 5²) = √(169 - 25) = √144 = 12 см</div>
+        
+        <div class="answer">Ответ: 12 см</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Пересекающиеся окружности (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Две окружности радиусов 10 см и 8 см пересекаются. Расстояние между их центрами равно 12 см. Найдите длину общей хорды.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 280" width="450" height="280">
+                <!-- Окружности -->
+                <circle cx="150" cy="140" r="100" fill="rgba(67, 97, 238, 0.08)" stroke="#3182ce" stroke-width="2.5"/>
+                <circle cx="270" cy="140" r="80" fill="rgba(245, 158, 11, 0.08)" stroke="#d69e2e" stroke-width="2.5"/>
+                
+                <!-- Центры -->
+                <circle cx="150" cy="140" r="4" fill="#1a202c"/>
+                <circle cx="270" cy="140" r="4" fill="#1a202c"/>
+                <text x="145" y="135" font-size="12" font-weight="bold">O₁</text>
+                <text x="275" y="135" font-size="12" font-weight="bold">O₂</text>
+                
+                <!-- Точки пересечения -->
+                <circle cx="210" cy="75" r="4" fill="#e53e3e"/>
+                <circle cx="210" cy="205" r="4" fill="#e53e3e"/>
+                <text x="215" y="70" font-size="12" fill="#e53e3e" font-weight="bold">A</text>
+                <text x="215" y="220" font-size="12" fill="#e53e3e" font-weight="bold">B</text>
+                
+                <!-- Общая хорда -->
+                <line x1="210" y1="75" x2="210" y2="205" stroke="#48bb78" stroke-width="3"/>
+                <text x="215" y="145" font-size="12" fill="#48bb78" font-weight="bold">AB</text>
+                
+                <!-- Линия центров -->
+                <line x1="150" y1="140" x2="270" y2="140" stroke="#1a202c" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="205" y="155" font-size="11" fill="#4a5568">d = 12</text>
+                
+                <!-- Радиусы -->
+                <line x1="150" y1="140" x2="210" y2="75" stroke="#3182ce" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="270" y1="140" x2="210" y2="75" stroke="#d69e2e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                
+                <text x="175" y="105" font-size="10" fill="#3182ce">R = 10</text>
+                <text x="235" y="105" font-size="10" fill="#d69e2e">r = 8</text>
+                
+                <text x="210" y="265" font-size="11" fill="#4a5568" text-anchor="middle">Длина хорды AB</text>
+            </svg>
+            <div class="caption">Рис. 5. Пересекающиеся окружности с общей хордой AB</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Пусть O₁ и O₂ — центры окружностей, AB — общая хорда.</div>
+        <div class="step">2. Линия центров O₁O₂ перпендикулярна хорде AB и делит её пополам.</div>
+        <div class="step">3. Обозначим точку пересечения O₁O₂ и AB как H. Тогда AH = HB.</div>
+        <div class="step">4. Пусть O₁H = x. Тогда O₂H = 12 - x.</div>
+        <div class="step">5. Из треугольника O₁AH: AH² = 10² - x² = 100 - x²</div>
+        <div class="step">6. Из треугольника O₂AH: AH² = 8² - (12-x)² = 64 - (144 - 24x + x²) = 64 - 144 + 24x - x²</div>
+        <div class="step">7. Приравниваем: 100 - x² = -80 + 24x - x²</div>
+        <div class="step">8. 100 = -80 + 24x ⟺ 180 = 24x ⟺ x = 7.5</div>
+        <div class="step">9. AH = √(100 - 7.5²) = √(100 - 56.25) = √43.75 ≈ 6.61</div>
+        <div class="step">10. AB = 2 × AH ≈ 2 × 6.61 ≈ 13.22 см</div>
+        
+        <div class="answer">Ответ: √175 ≈ 13.22 см</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные формулы</h2>
+        
+        <div class="formula-box">
+            <strong>Длина общей внешней касательной:</strong><br>
+            L = √(d² - (R - r)²)<br>
+            где d — расстояние между центрами, R и r — радиусы (R > r)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Длина общей внутренней касательной:</strong><br>
+            L = √(d² - (R + r)²)<br>
+            (существует, только если d > R + r)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Длина общей хорды:</strong><br>
+            AB = 2√(R² - x²)<br>
+            где x находится из уравнения: R² - x² = r² - (d-x)²
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда начинайте с чертежа — отмечайте центры, радиусы, точки касания</li>
+            <li>Помните: радиус, проведённый в точку касания, перпендикулярен касательной</li>
+            <li>Для касающихся окружностей: d = R + r (внешнее) или d = |R - r| (внутреннее)</li>
+            <li>Используйте теорему Пифагора для нахождения длин отрезков</li>
+            <li>Общая хорда перпендикулярна линии центров и делится ею пополам</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Треугольники и их свойства - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>📐 Треугольники и их свойства</h1>
+    
+    <div class="card">
+        <h2>📚 Основные элементы и линии</h2>
+        <p>В задании 17 важно уверенно работать с медианами, биссектрисами и высотами. Знание их свойств помогает находить площади, длины отрезков и углы.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Медиана:</strong><br>
+            • Соединяет вершину с серединой противоположной стороны.<br>
+            • Разделяет треугольник на два равновеликих (равных по площади) треугольника.<br>
+            • Точка пересечения медиан делит каждую медиану в отношении 2:1, считая от вершины.
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 Биссектриса:</strong><br>
+            • Делит угол пополам.<br>
+            • <strong>Свойство биссектрисы:</strong> Делит противоположную сторону на отрезки, пропорциональные прилежащим сторонам.<br>
+            Точка пересечения биссектрис — центр вписанной окружности.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Треугольник -->
+                <polygon points="100,180 250,50 380,180" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Медиана -->
+                <line x1="250" y1="50" x2="240" y2="180" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <circle cx="240" cy="180" r="3" fill="#e53e3e"/>
+                <text x="240" y="195" font-size="11" fill="#e53e3e" font-weight="bold">M (середина)</text>
+                
+                <!-- Биссектриса -->
+                <line x1="100" y1="180" x2="210" y2="110" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="160" y="155" font-size="11" fill="#3182ce" font-weight="bold">L</text>
+                
+                <!-- Высота -->
+                <line x1="380" y1="180" x2="380" y2="50" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                <rect x="375" y="170" width="10" height="10" fill="none" stroke="#48bb78" stroke-width="1"/>
+                
+                <text x="100" y="195" font-size="12" font-weight="bold">A</text>
+                <text x="250" y="40" font-size="12" font-weight="bold">B</text>
+                <text x="385" y="195" font-size="12" font-weight="bold">C</text>
+            </svg>
+            <div class="caption">Рис. 1. Медиана (красная), Биссектриса (синяя), Высота (зеленая)</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Свойство медианы и площадей</h2>
+        <p><strong>Условие:</strong> В треугольнике ABC медиана BM равна 12. На медиане выбрана точка K так, что BK : KM = 1 : 2. Найдите площадь треугольника ABK, если площадь треугольника ABC равна 90.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 250" width="400" height="250">
+                <polygon points="100,220 200,50 300,220" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="200" y1="50" x2="200" y2="220" stroke="#e53e3e" stroke-width="2"/>
+                <circle cx="200" cy="140" r="4" fill="#3182ce"/>
+                <text x="210" y="135" font-size="12" fill="#3182ce" font-weight="bold">K</text>
+                <text x="200" y="235" font-size="11" font-weight="bold">M</text>
+                <text x="90" y="235" font-size="12" font-weight="bold">A</text>
+                <text x="200" y="40" font-size="12" font-weight="bold">B</text>
+                <text x="310" y="235" font-size="12" font-weight="bold">C</text>
+                <text x="215" y="180" font-size="11" fill="#4a5568">1 часть</text>
+                <text x="215" y="90" font-size="11" fill="#4a5568">2 части</text>
+            </svg>
+            <div class="caption">Рис. 2. Медиана BM и точка K на ней</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Медиана делит треугольник на два равновеликих. Значит, площадь ABM = площадь BCM = S(ABC) / 2.</div>
+        <div class="step">2. S(ABM) = 90 / 2 = 45.</div>
+        <div class="step">3. Точка K делит медиану BM в отношении BK : KM = 1 : 2. Значит, BK составляет 1/3 от длины всей медианы BM.</div>
+        <div class="step">4. Треугольники ABK и ABM имеют общую высоту, опущенную из вершины A на прямую BM. Значит, их площади относятся как основания BK и BM.</div>
+        <div class="step">5. S(ABK) / S(ABM) = BK / BM = 1/3.</div>
+        <div class="step">6. S(ABK) = 45 / 3 = 15.</div>
+        
+        <div class="answer">Ответ: 15</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Свойство биссектрисы</h2>
+        <p><strong>Условие:</strong> В треугольнике ABC биссектриса AL делит сторону BC на отрезки BL = 4 и LC = 5. Найдите длину биссектрисы AL, если AB = 8.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 250" width="400" height="250">
+                <polygon points="100,220 200,60 320,220" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="200" y1="60" x2="170" y2="220" stroke="#3182ce" stroke-width="2.5"/>
+                <circle cx="170" cy="220" r="3" fill="#3182ce"/>
+                <text x="160" y="235" font-size="11" font-weight="bold">L</text>
+                <text x="90" y="235" font-size="12" font-weight="bold">B</text>
+                <text x="330" y="235" font-size="12" font-weight="bold">C</text>
+                <text x="200" y="50" font-size="12" font-weight="bold">A</text>
+                <text x="120" y="235" font-size="11" fill="#4a5568">4</text>
+                <text x="240" y="235" font-size="11" fill="#4a5568">5</text>
+                <text x="145" y="140" font-size="11" fill="#3182ce" font-weight="bold">AL = ?</text>
+                <text x="145" y="110" font-size="11" fill="#4a5568">8</text>
+            </svg>
+            <div class="caption">Рис. 3. Биссектриса AL делит сторону BC пропорционально сторонам AB и AC</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Используем свойство биссектрисы: BL / LC = AB / AC.</div>
+        <div class="step">2. Подставляем известные значения: 4 / 5 = 8 / AC.</div>
+        <div class="step">3. Находим AC: AC = (8 * 5) / 4 = 10.</div>
+        <div class="step">4. Теперь знаем все стороны: AB = 8, AC = 10, BC = 4 + 5 = 9.</div>
+        <div class="step">5. Длина биссектрисы вычисляется по формуле: L² = AB * AC - BL * LC.</div>
+        <div class="step">6. Подставляем: L² = 8 * 10 - 4 * 5 = 80 - 20 = 60.</div>
+        <div class="step">7. L = √60 = 2√15.</div>
+        
+        <div class="answer">Ответ: 2√15</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Подобие треугольников (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> В треугольнике ABC проведена высота BH. Известно, что AB = 13, BC = 15, AC = 14. Найдите высоту BH и длину отрезка AH.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 250" width="400" height="250">
+                <polygon points="80,220 200,60 320,220" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <line x1="200" y1="60" x2="135" y2="220" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <rect x="130" y="210" width="10" height="10" fill="none" stroke="#1a202c" stroke-width="1"/>
+                <text x="125" y="235" font-size="11" font-weight="bold">H</text>
+                <text x="70" y="235" font-size="12" font-weight="bold">A</text>
+                <text x="330" y="235" font-size="12" font-weight="bold">C</text>
+                <text x="200" y="50" font-size="12" font-weight="bold">B</text>
+                <text x="155" y="145" font-size="11" fill="#e53e3e" font-weight="bold">h</text>
+                <text x="100" y="145" font-size="11" fill="#4a5568">13</text>
+                <text x="260" y="145" font-size="11" fill="#4a5568">15</text>
+                <text x="200" y="235" font-size="11" fill="#4a5568" text-anchor="middle">14</text>
+            </svg>
+            <div class="caption">Рис. 4. Высота BH делит треугольник на два прямоугольных треугольника</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Обозначим AH = x. Тогда HC = 14 - x.</div>
+        <div class="step">2. В треугольнике ABH по теореме Пифагора: BH² = AB² - AH² = 13² - x².</div>
+        <div class="step">3. В треугольнике CBH по теореме Пифагора: BH² = BC² - HC² = 15² - (14 - x)².</div>
+        <div class="step">4. Приравниваем выражения для BH²: 169 - x² = 225 - (196 - 28x + x²).</div>
+        <div class="step">5. Раскрываем скобки: 169 - x² = 225 - 196 + 28x - x².</div>
+        <div class="step">6. Упрощаем: 169 = 29 + 28x ⟹ 140 = 28x ⟹ x = 5.</div>
+        <div class="step">7. Значит, AH = 5. Находим высоту: BH = √(13² - 5²) = √(169 - 25) = √144 = 12.</div>
+        
+        <div class="answer">Ответ: 12; 5</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные формулы</h2>
+        
+        <div class="formula-box">
+            <strong>Длина биссектрисы:</strong><br>
+            L_a² = b * c - m * n<br>
+            где b, c — прилежащие стороны, m, n — отрезки, на которые биссектриса делит третью сторону.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Длина медианы:</strong><br>
+            m_a² = (2b² + 2c² - a²) / 4<br>
+            где a — сторона, к которой проведена медиана.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Площадь через синус:</strong><br>
+            S = 0.5 * a * b * sin(C)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Теорема синусов:</strong><br>
+            a / sin(A) = b / sin(B) = c / sin(C) = 2R
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Если в задаче даны стороны треугольника, а нужно найти высоту или отрезок, используйте теорему Пифагора для двух прямоугольных треугольников, составляющих исходный.</li>
+            <li>Свойство биссектрисы (BL/LC = AB/AC) — один из самых частых инструментов в задаче 17.</li>
+            <li>Медиана делит площадь пополам. Это свойство помогает сводить сложные задачи о площадях к простым отношениям отрезков.</li>
+            <li>Не бойтесь вводить переменную (например, x) для неизвестного отрезка и составлять уравнение.</li>
+            <li>Запомните формулу для длины биссектрисы, она часто ускоряет решение.</li>
+        </ul>
+    </div>
+</body>
+</html>

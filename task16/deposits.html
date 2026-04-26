@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вклады - Задание 16 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>💰 Вклады</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Банковский вклад (депозит)</strong> — денежные средства, переданные вкладчиком банку на определённый срок под проценты.</p>
+    
+    <div class="property">
+        <strong>🔹 Основные виды вкладов:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Вклад с простыми процентами</strong> — проценты начисляются только на первоначальную сумму</li>
+            <li><strong>Вклад со сложными процентами</strong> — проценты начисляются на сумму с учётом ранее начисленных процентов (капитализация)</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Формула простых процентов:</strong><br><br>
+        $$ S = P \cdot (1 + n \cdot r) $$
+        <p style="margin-top: 10px;">где:<br>
+        S — итоговая сумма<br>
+        P — первоначальная сумма (вклад)<br>
+        n — срок вклада (лет)<br>
+        r — годовая процентная ставка (в долях)</p>
+    </div>
+    
+    <div class="formula">
+        <strong>2. Формула сложных процентов:</strong><br><br>
+        $$ S = P \cdot (1 + r)^n $$
+        <p style="margin-top: 10px;">где обозначения те же</p>
+    </div>
+    
+    <div class="formula">
+        <strong>3. При ежемесячной капитализации:</strong><br><br>
+        $$ S = P \cdot \left(1 + \frac{r}{12}\right)^{12n} $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Вкладчик положил в банк 100 000 рублей под 10% годовых с ежегодной капитализацией процентов. Какая сумма будет на счёте через 3 года?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Используем формулу сложных процентов:</p>
+        <div class="step"><strong>P = 100 000, r = 0.10, n = 3</strong></div>
+        
+        <p style="margin: 10px 0;">2. Подставляем в формулу:</p>
+        <div class="step"><strong>S = 100 000 · (1 + 0.10)³</strong></div>
+        <div class="step"><strong>S = 100 000 · 1.331 = 133 100</strong></div>
+        
+        <div class="answer">Ответ: 133 100 рублей</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> На какой срок нужно положить деньги под 8% годовых с простыми процентами, чтобы сумма увеличилась в 1.5 раза?</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. По условию S = 1.5P, r = 0.08</p>
+        
+        <p style="margin: 10px 0;">2. Используем формулу простых процентов:</p>
+        <div class="step"><strong>1.5P = P · (1 + 0.08n)</strong></div>
+        <div class="step"><strong>1.5 = 1 + 0.08n</strong></div>
+        <div class="step"><strong>0.5 = 0.08n</strong></div>
+        <div class="step"><strong>n = 6.25 лет</strong></div>
+        
+        <div class="answer">Ответ: 6.25 лет (6 лет и 3 месяца)</div>
+    </div>
+</html>

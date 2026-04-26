@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кредиты - Задание 16 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #1A2B4D; margin-top: 30px; }
+        .formula { background: #f0f7ff; padding: 20px; border-left: 5px solid #4361EE; border-radius: 8px; margin: 20px 0; }
+        .example { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; border: 2px solid #e0e0e0; }
+        .video-link { display: inline-block; background: #4361EE; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .video-link:hover { background: #3A56D4; }
+        .property { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .step { background: white; padding: 12px; border-radius: 6px; margin: 10px 0; margin-left: 20px; border-left: 3px solid #4361EE; }
+        .answer { font-size: 1.4rem; color: #27AE60; font-weight: bold; margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>💳 Кредиты</h1>
+    
+    <h2>📚 Теория</h2>
+    <p><strong>Кредит</strong> — денежные средства, предоставляемые банком заёмщику на определённый срок под проценты.</p>
+    
+    <div class="property">
+        <strong>🔹 Основные схемы погашения кредита:</strong>
+        <ul style="margin-top: 10px; padding-left: 25px;">
+            <li><strong>Дифференцированные платежи</strong> — основной долг выплачивается равными долями, проценты начисляются на остаток</li>
+            <li><strong>Аннуитетные платежи</strong> — равные ежемесячные платежи, включающие и основной долг, и проценты</li>
+        </ul>
+    </div>
+    
+    <h2>📐 Основные формулы</h2>
+    
+    <div class="formula">
+        <strong>1. Дифференцированные платежи:</strong><br><br>
+        Ежемесячный платёж = Основной долг / n + Остаток · r<br><br>
+        где n — количество месяцев, r — месячная ставка
+    </div>
+    
+    <div class="formula">
+        <strong>2. Аннуитетные платежи:</strong><br><br>
+        $$ A = P \cdot \frac{r(1+r)^n}{(1+r)^n - 1} $$
+        <p style="margin-top: 10px;">где:<br>
+        A — ежемесячный платёж<br>
+        P — сумма кредита<br>
+        r — месячная процентная ставка (в долях)<br>
+        n — количество месяцев</p>
+    </div>
+    
+    <div class="formula">
+        <strong>3. Общая выплата по кредиту:</strong><br><br>
+        $$ S_{общ} = A \cdot n $$
+    </div>
+    
+    <div class="formula">
+        <strong>4. Переплата по кредиту:</strong><br><br>
+        $$ Переплата = S_{общ} - P $$
+    </div>
+    
+    <h2>💡 Примеры решения (ЕГЭ)</h2>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 1:</strong> Кредит 1 000 000 рублей взят на 1 год под 12% годовых с ежемесячной капитализацией. Найдите ежемесячный аннуитетный платёж.</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Определим параметры:</p>
+        <div class="step"><strong>P = 1 000 000</strong></div>
+        <div class="step"><strong>r = 0.12/12 = 0.01 (месячная ставка)</strong></div>
+        <div class="step"><strong>n = 12 месяцев</strong></div>
+        
+        <p style="margin: 10px 0;">2. Используем формулу аннуитета:</p>
+        <div class="step"><strong>A = 1 000 000 · (0.01 · 1.01¹²) / (1.01¹² − 1)</strong></div>
+        <div class="step"><strong>A = 1 000 000 · (0.01 · 1.1268) / 0.1268</strong></div>
+        <div class="step"><strong>A ≈ 88 850 рублей</strong></div>
+        
+        <div class="answer">Ответ: ≈ 88 850 рублей</div>
+    </div>
+    
+    <div class="example">
+        <p style="margin-bottom: 15px; font-size: 1.15rem;"><strong>Пример 2:</strong> Кредит 600 000 рублей взят на 6 месяцев с дифференцированными платежами под 2% в месяц. Найдите общую сумму выплат.</p>
+        
+        <p style="margin: 15px 0;"><strong>Решение:</strong></p>
+        
+        <p style="margin: 10px 0;">1. Основной долг выплачивается равными частями:</p>
+        <div class="step"><strong>600 000 / 6 = 100 000 рублей/месяц</strong></div>
+        
+        <p style="margin: 10px 0;">2. Процентные платежи:</p>
+        <div class="step"><strong>1-й месяц: 600 000 · 0.02 = 12 000</strong></div>
+        <div class="step"><strong>2-й месяц: 500 000 · 0.02 = 10 000</strong></div>
+        <div class="step"><strong>3-й месяц: 400 000 · 0.02 = 8 000</strong></div>
+        <div class="step"><strong>4-й месяц: 300 000 · 0.02 = 6 000</strong></div>
+        <div class="step"><strong>5-й месяц: 200 000 · 0.02 = 4 000</strong></div>
+        <div class="step"><strong>6-й месяц: 100 000 · 0.02 = 2 000</strong></div>
+        
+        <p style="margin: 10px 0;">3. Общая сумма процентов:</p>
+        <div class="step"><strong>12 000 + 10 000 + 8 000 + 6 000 + 4 000 + 2 000 = 42 000</strong></div>
+        
+        <p style="margin: 10px 0;">4. Общая выплата:</p>
+        <div class="step"><strong>600 000 + 42 000 = 642 000</strong></div>
+        
+        <div class="answer">Ответ: 642 000 рублей</div>
+    </div>
+</body>
+</html>

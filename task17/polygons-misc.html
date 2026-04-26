@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разные задачи о многоугольниках - Задание 17 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1> Разные задачи о многоугольниках</h1>
+    
+    <div class="card">
+        <h2>📚 Основные свойства</h2>
+        <p>В этом разделе мы рассмотрим задачи, связанные с <strong>правильными многоугольниками</strong>, их диагоналями, углами и площадями.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Сумма углов выпуклого n-угольника:</strong><br>
+            S = 180° × (n - 2)<br>
+            Например, для шестиугольника (n=6): 180° × 4 = 720°.
+        </div>
+        
+        <div class="theorem">
+            <strong>🔹 Угол правильного n-угольника:</strong><br>
+            α = 180° × (n - 2) / n<br>
+            Например, для пятиугольника (n=5): 180° × 3 / 5 = 108°.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Правильный шестиугольник -->
+                <polygon points="120,60 200,30 280,60 280,140 200,170 120,140" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                <text x="105" y="55" font-size="12" font-weight="bold">120°</text>
+                <text x="200" y="25" font-size="12" font-weight="bold">120°</text>
+                <text x="285" y="55" font-size="12" font-weight="bold">120°</text>
+                <text x="200" y="190" font-size="12" font-weight="bold" text-anchor="middle">Шестиугольник</text>
+                
+                <!-- Пятиугольник -->
+                <polygon points="370,100 400,50 440,80 425,130 385,130" fill="rgba(245, 158, 11, 0.1)" stroke="#d69e2e" stroke-width="2.5"/>
+                <text x="355" y="105" font-size="11" font-weight="bold">108°</text>
+                <text x="370" y="150" font-size="11" fill="#4a5568" text-anchor="middle">Пятиугольник</text>
+            </svg>
+            <div class="caption">Рис. 1. Углы правильных многоугольников</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Угол в правильном многоугольнике</h2>
+        <p><strong>Условие:</strong> Найдите угол между двумя соседними сторонами правильного десятиугольника.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 300 250" width="300" height="250">
+                <!-- Десятиугольник (схематично) -->
+                <polygon points="150,30 200,50 240,90 250,140 220,190 180,220 120,220 80,190 50,140 60,90" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Угол -->
+                <path d="M 80 160 Q 90 140 110 150" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="95" y="145" font-size="14" fill="#e53e3e" font-weight="bold">?</text>
+                
+                <text x="150" y="240" font-size="12" fill="#4a5568" text-anchor="middle">n = 10</text>
+            </svg>
+            <div class="caption">Рис. 2. Правильный десятиугольник</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Используем формулу угла правильного n-угольника: α = 180° × (n - 2) / n.</div>
+        <div class="step">2. Подставляем n = 10: α = 180° × (10 - 2) / 10.</div>
+        <div class="step">3. Вычисляем: α = 180° × 8 / 10 = 1440° / 10 = 144°.</div>
+        
+        <div class="answer">Ответ: 144°</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Диагонали шестиугольника</h2>
+        <p><strong>Условие:</strong> В правильном шестиугольнике ABCDEF найдите угол ACF.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 300" width="350" height="300">
+                <!-- Шестиугольник -->
+                <polygon points="175,40 260,90 260,190 175,240 90,190 90,90" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2.5"/>
+                
+                <!-- Диагонали -->
+                <line x1="90" y1="90" x2="260" y2="190" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,3"/>
+                <line x1="90" y1="190" x2="260" y2="190" stroke="#e53e3e" stroke-width="2.5"/>
+                
+                <!-- Угол -->
+                <path d="M 110 180 Q 130 185 140 170" fill="none" stroke="#e53e3e" stroke-width="2"/>
+                <text x="120" y="170" font-size="14" fill="#e53e3e" font-weight="bold">?</text>
+                
+                <!-- Точки -->
+                <text x="80" y="85" font-size="12" font-weight="bold">A</text>
+                <text x="265" y="195" font-size="12" font-weight="bold">C</text>
+                <text x="175" y="255" font-size="12" font-weight="bold" text-anchor="middle">F</text>
+                
+                <text x="175" y="280" font-size="12" fill="#4a5568" text-anchor="middle">Правильный шестиугольник</text>
+            </svg>
+            <div class="caption">Рис. 3. Диагонали в правильном шестиугольнике</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. В правильном шестиугольнике все углы равны 120°. Угол BCD = 120°.</div>
+        <div class="step">2. Треугольник CBF — равнобедренный (CB = BF, так как это стороны шестиугольника). Угол B = 120°.</div>
+        <div class="step">3. Углы при основании равнобедренного треугольника равны: (180° - 120°) / 2 = 30°. Значит, угол BCF = 30°.</div>
+        <div class="step">4. Угол ACF = Угол BCD - Угол BCF - Угол DCA. Но проще рассмотреть треугольник ACF.</div>
+        <div class="step">5. Заметим, что AC и CF — большие диагонали? Нет, AC — малая диагональ, CF — большая (диаметр описанной окружности).</div>
+        <div class="step">6. Большая диагональ CF делит угол C пополам? Нет. Она делит шестиугольник на два симметричных четырехугольника.</div>
+        <div class="step">7. Треугольник ACF прямоугольный (угол CAF опирается на диаметр). Нет, это верно для окружности. Вершины лежат на окружности. CF — диаметр. Значит угол CAF = 90°.</div>
+        <div class="step">8. Нас просят угол ACF. В треугольнике ACF: угол CAF = 90°. Угол AFC опирается на дугу AC (одна сторона шестиугольника). Дуга = 60°. Вписанный угол = 30°.</div>
+        <div class="step">9. Тогда угол ACF = 180° - 90° - 30° = 60°.</div>
+        
+        <div class="answer">Ответ: 60°</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Отношение площадей (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите отношение площади правильного шестиугольника к площади квадрата, если сторона шестиугольника равна стороне квадрата.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Шестиугольник -->
+                <polygon points="100,50 150,30 200,50 200,100 150,120 100,100" fill="rgba(67, 97, 238, 0.1)" stroke="#1a202c" stroke-width="2"/>
+                <text x="150" y="150" font-size="12" fill="#4a5568" text-anchor="middle">S_6</text>
+                
+                <!-- Квадрат -->
+                <rect x="260" y="50" width="70" height="70" fill="rgba(245, 158, 11, 0.1)" stroke="#d69e2e" stroke-width="2"/>
+                <text x="295" y="150" font-size="12" fill="#4a5568" text-anchor="middle">S_4</text>
+                
+                <text x="200" y="180" font-size="12" fill="#4a5568" text-anchor="middle">a_6 = a_4</text>
+            </svg>
+            <div class="caption">Рис. 4. Сравнение площадей фигур с равными сторонами</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Пусть сторона равна a.</div>
+        <div class="step">2. Площадь квадрата: S_4 = a².</div>
+        <div class="step">3. Площадь правильного шестиугольника складывается из 6 равносторонних треугольников со стороной a.</div>
+        <div class="step">4. Площадь одного равностороннего треугольника: (√3 / 4) × a².</div>
+        <div class="step">5. Площадь шестиугольника: S_6 = 6 × (√3 / 4) × a² = (3√3 / 2) × a².</div>
+        <div class="step">6. Отношение S_6 / S_4 = [(3√3 / 2) × a²] / a² = 3√3 / 2.</div>
+        
+        <div class="answer">Ответ: 1.5√3</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные формулы</h2>
+        
+        <div class="formula-box">
+            <strong>Площадь правильного n-угольника через сторону a:</strong><br>
+            S = (n × a²) / (4 × tan(180°/n))
+        </div>
+        
+        <div class="formula-box">
+            <strong>Радиус описанной окружности (R):</strong><br>
+            R = a / (2 × sin(180°/n))
+        </div>
+        
+        <div class="formula-box">
+            <strong>Радиус вписанной окружности (r):</strong><br>
+            r = a / (2 × tan(180°/n))
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>В задачах на правильные многоугольники часто помогают разбиения на равносторонние треугольники (для шестиугольника) или прямоугольные треугольники.</li>
+            <li>Запомните: правильный шестиугольник состоит из 6 равносторонних треугольников. Это сильно упрощает вычисления.</li>
+            <li>Большая диагональ правильного 2n-угольника является диаметром описанной окружности.</li>
+            <li>Угол между соседними диагоналями, проведенными из одной вершины правильного n-угольника, равен 180°/n.</li>
+        </ul>
+    </div>
+</body>
+</html>
