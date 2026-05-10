@@ -1157,7 +1157,7 @@ function generateVariantTasks(tasks) {
 }
 
 async function loadThemeContent(taskNumber, themeSlug) {
-  const filePath = `task${taskNumber}/${themeSlug}.html`;
+  const filePath = `tasks/task${taskNumber}/${themeSlug}.html`;
   console.log('📂 Загрузка файла:', filePath); // <-- Добавлено
   
   try {
