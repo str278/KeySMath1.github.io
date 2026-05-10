@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уравнения с параметром - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🔢 Уравнения с параметром</h1>
+    
+    <div class="card">
+        <h2>📚 Основные подходы</h2>
+        <p>В задании 18 встречаются уравнения с параметром. Параметр — это буква, которая обозначает некоторое число. Наша задача — найти, при каких значениях параметра уравнение имеет нужное количество корней.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Основные методы:</strong><br>
+            • <strong>Аналитический:</strong> решаем уравнение алгебраически, исследуем дискриминант, ОДЗ.<br>
+            • <strong>Графический:</strong> строим графики функций, смотрим на точки пересечения.<br>
+            • <strong>Метод областей:</strong> для систем уравнений с параметром.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Оси координат -->
+                <line x1="50" y1="200" x2="430" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="70" y1="20" x2="70" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="435" y="205" font-size="12">x</text>
+                <text x="65" y="15" font-size="12">y</text>
+                
+                <!-- Парабола 1 (a > 0) -->
+                <path d="M 70 180 Q 150 60 230 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="235" y="100" font-size="12" fill="#3182ce">a > 0</text>
+                
+                <!-- Парабола 2 (a < 0) -->
+                <path d="M 270 40 Q 330 120 390 40" fill="none" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="320" y="35" font-size="12" fill="#e53e3e">a < 0</text>
+                
+                <!-- Прямая y = 0 -->
+                <line x1="50" y1="200" x2="430" y2="200" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="5,3"/>
+                
+                <text x="225" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Разные значения параметра a дают разное количество корней</text>
+            </svg>
+            <div class="caption">Рис. 1. Как параметр влияет на количество корней уравнения</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Квадратное уравнение с параметром</h2>
+        <p><strong>Условие:</strong> Найдите все значения параметра a, при которых уравнение ax² + 2x + 1 = 0 имеет два различных корня.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Оси -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">a</text>
+                <text x="195" y="15" font-size="12">D</text>
+                
+                <!-- Парабола D = 4 - 4a -->
+                <path d="M 40 100 Q 120 180 200 180 Q 280 180 360 100" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Точка a = 1 -->
+                <circle cx="200" cy="180" r="4" fill="#e53e3e"/>
+                <text x="205" y="175" font-size="11" fill="#e53e3e" font-weight="bold">a = 1</text>
+                
+                <!-- Область D > 0 -->
+                <text x="100" y="90" font-size="12" fill="#48bb78" font-weight="bold">D > 0</text>
+                <text x="280" y="90" font-size="12" fill="#e53e3e" font-weight="bold">D < 0</text>
+                
+                <text x="200" y="195" font-size="11" fill="#4a5568" text-anchor="middle">D = 4 - 4a</text>
+            </svg>
+            <div class="caption">Рис. 2. Дискриминант квадратного уравнения как функция от a</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Для квадратного уравнения ax² + bx + c = 0 дискриминант D = b² - 4ac.</div>
+        <div class="step">2. В нашем случае: a = a, b = 2, c = 1. Значит, D = 2² - 4·a·1 = 4 - 4a.</div>
+        <div class="step">3. Для двух различных корней нужно D > 0: 4 - 4a > 0.</div>
+        <div class="step">4. Решаем неравенство: 4 > 4a ⟹ a < 1.</div>
+        <div class="step">5. Но также нужно, чтобы уравнение было квадратным, то есть a ≠ 0.</div>
+        <div class="step">6. Ответ: a ∈ (-∞; 0) ∪ (0; 1).</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; 0) ∪ (0; 1)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Уравнение с модулем и параметром</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых уравнение |x - 2| = a имеет ровно один корень.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="195" y="15" font-size="12">y</text>
+                
+                <!-- График y = |x - 2| -->
+                <path d="M 40 180 L 200 20 L 360 180" fill="none" stroke="#3182ce" stroke-width="3"/>
+                
+                <!-- Прямая y = 0 (a = 0) -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,3"/>
+                <text x="320" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a = 0</text>
+                
+                <!-- Прямая y = 3 (a = 3) -->
+                <line x1="40" y1="110" x2="380" y2="110" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="320" y="105" font-size="11" fill="#48bb78" font-weight="bold">a = 3 (2 корня)</text>
+                
+                <!-- Точка минимума -->
+                <circle cx="200" cy="20" r="4" fill="#e53e3e"/>
+                <text x="205" y="15" font-size="11" font-weight="bold">(2; 0)</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">y = |x - 2|</text>
+            </svg>
+            <div class="caption">Рис. 3. График y = |x - 2| и прямые y = a</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Построим график функции y = |x - 2|. Это «галочка» с вершиной в точке (2; 0).</div>
+        <div class="step">2. Уравнение |x - 2| = a означает, что мы ищем точки пересечения графика с прямой y = a.</div>
+        <div class="step">3. Рассмотрим случаи:</div>
+        <div class="case-box">
+            <strong>Случай a < 0:</strong> Прямая y = a лежит ниже оси x. Пересечений нет. Корней: 0.
+        </div>
+        <div class="case-box">
+            <strong>Случай a = 0:</strong> Прямая y = 0 касается графика в вершине (2; 0). Корень: x = 2. Корней: 1. ✓
+        </div>
+        <div class="case-box">
+            <strong>Случай a > 0:</strong> Прямая y = a пересекает график в двух точках. Корней: 2.
+        </div>
+        <div class="step">4. Нам нужно ровно один корень. Это происходит только при a = 0.</div>
+        
+        <div class="answer">Ответ: a = 0</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Уравнение с параметром (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых уравнение x² - 2ax + a² - 1 = 0 имеет корни разных знаков.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Оси -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="180" stroke="#1a202c" stroke-width="2"/>
+                
+                <!-- Парабола при a = 2 -->
+                <path d="M 80 160 Q 140 40 200 160" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="205" y="100" font-size="11" fill="#3182ce">a = 2</text>
+                
+                <!-- Корни разных знаков -->
+                <circle cx="120" cy="180" r="4" fill="#e53e3e"/>
+                <circle cx="280" cy="180" r="4" fill="#e53e3e"/>
+                <text x="115" y="195" font-size="10" fill="#e53e3e">x₁ < 0</text>
+                <text x="275" y="195" font-size="10" fill="#e53e3e">x₂ > 0</text>
+                
+                <text x="200" y="195" font-size="11" fill="#4a5568" text-anchor="middle">Корни разных знаков</text>
+            </svg>
+            <div class="caption">Рис. 4. Парабола с корнями разных знаков</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Для квадратного уравнения ax² + bx + c = 0 корни разных знаков тогда и только тогда, когда их произведение отрицательно.</div>
+        <div class="step">2. По теореме Виета: x₁ · x₂ = c/a (где a — коэффициент при x², c — свободный член).</div>
+        <div class="step">3. В нашем уравнении: коэффициент при x² равен 1, свободный член равен a² - 1.</div>
+        <div class="step">4. Значит, x₁ · x₂ = a² - 1.</div>
+        <div class="step">5. Для корней разных знаков нужно: a² - 1 < 0.</div>
+        <div class="step">6. Решаем: a² < 1 ⟹ -1 < a < 1.</div>
+        <div class="step">7. Проверим дискриминант: D = (-2a)² - 4·1·(a² - 1) = 4a² - 4a² + 4 = 4 > 0 всегда.</div>
+        <div class="step">8. Значит, при всех a ∈ (-1; 1) уравнение имеет два корня разных знаков.</div>
+        
+        <div class="answer">Ответ: a ∈ (-1; 1)</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные факты</h2>
+        
+        <div class="formula-box">
+            <strong>Квадратное уравнение ax² + bx + c = 0:</strong><br>
+            • D > 0: два различных корня<br>
+            • D = 0: один корень (два равных)<br>
+            • D < 0: нет действительных корней<br>
+            • Корни разных знаков ⟺ c/a < 0<br>
+            • Оба корня положительны ⟺ D ≥ 0, -b/a > 0, c/a > 0
+        </div>
+        
+        <div class="formula-box">
+            <strong>Уравнение с модулем |x - a| = b:</strong><br>
+            • b < 0: нет решений<br>
+            • b = 0: одно решение x = a<br>
+            • b > 0: два решения x = a ± b
+        </div>
+        
+        <div class="formula-box">
+            <strong>Уравнение √f(x) = a:</strong><br>
+            • a < 0: нет решений<br>
+            • a ≥ 0: f(x) = a², при условии f(x) ≥ 0
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда проверяйте ОДЗ (область допустимых значений), особенно для уравнений с корнями и дробями.</li>
+            <li>Для квадратных уравнений с параметром исследуйте дискриминант и теорему Виета.</li>
+            <li>Графический метод часто проще аналитического — стройте графики!</li>
+            <li>Разбивайте задачу на случаи в зависимости от значения параметра.</li>
+            <li>Не забывайте проверять вырожденные случаи (когда коэффициент при x² равен 0).</li>
+            <li>Записывайте ответ в виде промежутков или объединения точек и промежутков.</li>
+        </ul>
+    </div>
+</body>
+</html>

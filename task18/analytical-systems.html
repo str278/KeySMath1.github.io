@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитическое решение систем - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🧩 Аналитическое решение систем</h1>
+    
+    <div class="card">
+        <h2>📚 Суть аналитического подхода</h2>
+        <p>Аналитическое решение систем с параметром — это алгебраическое сведение системы к одному уравнению или неравенству с последующим исследованием условий существования корней. Вместо построения графиков мы работаем напрямую с формулами, используя подстановку, сложение уравнений и теорему Виета.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Ключевые приёмы:</strong><br>
+            • <strong>Метод подстановки:</strong> выражаем одну переменную через другую и подставляем в оставшееся уравнение.<br>
+            • <strong>Теорема Виета для систем:</strong> сумма и произведение корней квадратного уравнения помогают найти параметр без явного вычисления корней.<br>
+            • <strong>Анализ вырожденных случаев:</strong> если коэффициент при старшей степени зависит от параметра, проверяем случай, когда он равен нулю.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 200" width="450" height="200">
+                <!-- Блок-схема аналитического решения -->
+                <rect x="50" y="20" width="140" height="50" fill="#ebf8ff" stroke="#3182ce" stroke-width="2" rx="8"/>
+                <text x="120" y="50" font-size="12" fill="#1a365d" font-weight="bold" text-anchor="middle">Система уравнений</text>
+                
+                <line x1="120" y1="70" x2="120" y2="90" stroke="#4a5568" stroke-width="2"/>
+                <polygon points="120,90 115,80 125,80" fill="#4a5568"/>
+                
+                <rect x="50" y="90" width="140" height="50" fill="#fefcbf" stroke="#d69e2e" stroke-width="2" rx="8"/>
+                <text x="120" y="120" font-size="12" fill="#744210" font-weight="bold" text-anchor="middle">Подстановка / Сложение</text>
+                
+                <line x1="120" y1="140" x2="120" y2="160" stroke="#4a5568" stroke-width="2"/>
+                <polygon points="120,160 115,150 125,150" fill="#4a5568"/>
+                
+                <rect x="50" y="160" width="140" height="50" fill="#c6f6d5" stroke="#48bb78" stroke-width="2" rx="8"/>
+                <text x="120" y="190" font-size="12" fill="#22543d" font-weight="bold" text-anchor="middle">Уравнение с параметром</text>
+                
+                <line x1="260" y1="100" x2="340" y2="100" stroke="#4a5568" stroke-width="2"/>
+                <polygon points="340,100 330,95 330,105" fill="#4a5568"/>
+                
+                <rect x="340" y="60" width="100" height="80" fill="#fff5f5" stroke="#fc8181" stroke-width="2" rx="8"/>
+                <text x="390" y="90" font-size="11" fill="#742a2a" font-weight="bold" text-anchor="middle">Исследование:</text>
+                <text x="390" y="110" font-size="10" fill="#4a5568" text-anchor="middle">• D ≥ 0</text>
+                <text x="390" y="125" font-size="10" fill="#4a5568" text-anchor="middle">• ОДЗ</text>
+                <text x="390" y="140" font-size="10" fill="#4a5568" text-anchor="middle">• Корни</text>
+            </svg>
+            <div class="caption">Рис. 1. Схема аналитического сведения системы к исследованию одного уравнения</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Система и теорема Виета</h2>
+        <p><strong>Условие:</strong> Найдите все значения параметра a, при которых система имеет ровно два решения:<br>
+        $$\begin{cases} x + y = a \\ xy = 1 \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="195" y="15" font-size="12">y</text>
+                
+                <!-- Гипербола xy=1 -->
+                <path d="M 220 40 Q 280 100 360 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <path d="M 180 160 Q 120 100 60 40" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="340" y="60" font-size="11" fill="#3182ce">xy = 1</text>
+                
+                <!-- Прямые x+y=a -->
+                <line x1="80" y1="180" x2="180" y2="80" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <line x1="220" y1="200" x2="320" y2="100" stroke="#48bb78" stroke-width="2" stroke-dasharray="5,3"/>
+                
+                <!-- Точки пересечения -->
+                <circle cx="130" cy="130" r="4" fill="#e53e3e"/>
+                <circle cx="270" cy="150" r="4" fill="#48bb78"/>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Сведение к квадратному уравнению t² - at + 1 = 0</text>
+            </svg>
+            <div class="caption">Рис. 2. Прямая пересекает гиперболу в двух точках при |a| > 2</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. По теореме Виета, x и y являются корнями квадратного уравнения t² - (x+y)t + xy = 0.</div>
+        <div class="step">2. Подставляем условия системы: t² - at + 1 = 0.</div>
+        <div class="step">3. Система имеет два решения (x,y) и (y,x), если квадратное уравнение имеет два различных действительных корня.</div>
+        <div class="step">4. Условие: D > 0. D = (-a)² - 4·1·1 = a² - 4.</div>
+        <div class="step">5. a² - 4 > 0 ⟹ a² > 4 ⟹ |a| > 2.</div>
+        <div class="step">6. Ответ: a ∈ (-∞; -2) ∪ (2; +∞).</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; -2) ∪ (2; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Подстановка и анализ ОДЗ</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых система имеет единственное решение:<br>
+        $$\begin{cases} y = x^2 - 2x \\ y + x = a \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="120" y1="20" x2="120" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="115" y="15" font-size="12">y</text>
+                
+                <!-- Парабола -->
+                <path d="M 60 180 Q 120 60 180 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="185" y="100" font-size="11" fill="#3182ce">y = x² - 2x</text>
+                
+                <!-- Прямая y = -x + a -->
+                <line x1="60" y1="160" x2="240" y2="40" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="245" y="50" font-size="11" fill="#e53e3e" font-weight="bold">y = -x + a</text>
+                
+                <!-- Точка касания -->
+                <circle cx="150" cy="75" r="4" fill="#48bb78"/>
+                <text x="155" y="70" font-size="11" fill="#48bb78" font-weight="bold">Единственное решение</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Подстановка даёт квадратное уравнение, D = 0</text>
+            </svg>
+            <div class="caption">Рис. 3. Касание параболы и прямой соответствует единственному решению</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Подставим y из первого уравнения во второе: (x² - 2x) + x = a.</div>
+        <div class="step">2. Упрощаем: x² - x - a = 0.</div>
+        <div class="step">3. Для единственного решения квадратного уравнения нужно D = 0.</div>
+        <div class="step">4. D = (-1)² - 4·1·(-a) = 1 + 4a.</div>
+        <div class="step">5. 1 + 4a = 0 ⟹ a = -0.25.</div>
+        <div class="step">6. Проверяем ОДЗ: ограничений нет, x может быть любым.</div>
+        <div class="step">7. При a = -0.25 уравнение имеет один корень x = 0.5, значит система имеет одно решение (0.5; -0.75).</div>
+        
+        <div class="answer">Ответ: a = -0.25</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Система с вырожденным случаем (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых система имеет бесконечно много решений:<br>
+        $$\begin{cases} ax + y = 2 \\ 4x + ay = 8 \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Оси -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <line x1="40" y1="20" x2="40" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">x</text>
+                <text x="35" y="15" font-size="12">y</text>
+                
+                <!-- Совпадающие прямые -->
+                <line x1="60" y1="160" x2="360" y2="40" stroke="#3182ce" stroke-width="4"/>
+                <text x="300" y="60" font-size="12" fill="#3182ce" font-weight="bold">ax + y = 2</text>
+                <text x="300" y="80" font-size="12" fill="#3182ce" font-weight="bold">4x + ay = 8</text>
+                
+                <!-- Бесконечно много точек -->
+                <circle cx="120" cy="132" r="3" fill="#e53e3e"/>
+                <circle cx="200" cy="100" r="3" fill="#e53e3e"/>
+                <circle cx="280" cy="68" r="3" fill="#e53e3e"/>
+                
+                <text x="200" y="195" font-size="11" fill="#4a5568" text-anchor="middle">Прямые совпадают при a = 2</text>
+            </svg>
+            <div class="caption">Рис. 4. Бесконечно много решений возникает при совпадении прямых</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Система линейных уравнений имеет бесконечно много решений, когда прямые совпадают.</div>
+        <div class="step">2. Условие совпадения: коэффициенты пропорциональны, включая свободные члены.</div>
+        <div class="step">3. Записываем пропорцию: a/4 = 1/a = 2/8.</div>
+        <div class="step">4. Из 1/a = 2/8 получаем: 1/a = 1/4 ⟹ a = 4.</div>
+        <div class="step">5. Проверяем первое отношение при a=4: 4/4 = 1. Всё сходится.</div>
+        <div class="step">6. Но есть нюанс: если a=0, система становится {y=2, 4x=8}, что даёт одно решение (2;2). Не подходит.</div>
+        <div class="step">7. Если a=-2, пропорция: -2/4 = -0.5, 1/(-2) = -0.5, но 2/8 = 0.25. Прямые параллельны, решений 0.</div>
+        <div class="step">8. Единственное значение: a = 2. (Проверка: 2x+y=2 и 4x+2y=8 ⟺ 2x+y=4. Ошибка в пропорции! Пересчитаем.)</div>
+        <div class="step">9. Верное условие: a/4 = 1/a = 2/8. Из 2/8=1/4. Значит a/4=1/4 ⟹ a=1. И 1/a=1/4 ⟹ a=4. Противоречие.</div>
+        <div class="step">10. Исправим логику: Прямые совпадают, если уравнения эквивалентны. Умножим первое на 2: 2ax + 2y = 4. Чтобы совпало со вторым, нужно 2a=4 и 2=a. Значит a=2.</div>
+        <div class="step">11. Проверка при a=2: {2x+y=2, 4x+2y=8} → {2x+y=2, 2x+y=4}. Параллельны! Решений нет.</div>
+        <div class="step">12. Значит, бесконечно много решений невозможно. Ответ: таких a нет.</div>
+        
+        <div class="answer">Ответ: таких a не существует</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные факты</h2>
+        
+        <div class="formula-box">
+            <strong>Линейная система {a₁x+b₁y=c₁, a₂x+b₂y=c₂}:</strong><br>
+            • Одно решение: a₁/a₂ ≠ b₁/b₂<br>
+            • Нет решений: a₁/a₂ = b₁/b₂ ≠ c₁/c₂ (параллельные прямые)<br>
+            • Бесконечно много: a₁/a₂ = b₁/b₂ = c₁/c₂ (совпадающие прямые)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Метод подстановки:</strong><br>
+            1. Выразить y через x из простого уравнения.<br>
+            2. Подставить в сложное уравнение.<br>
+            3. Исследовать полученное уравнение относительно x.<br>
+            4. Найденные x подставить обратно для нахождения y.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Теорема Виета для систем:</strong><br>
+            Если x и y — корни t² - pt + q = 0, то x+y=p, xy=q.<br>
+            Это позволяет находить параметр, не решая уравнение явно.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда начинайте с попытки выразить одну переменную через другую — это самый надёжный путь.</li>
+            <li>Проверяйте случай, когда коэффициент при старшей степени обращается в ноль (вырожденный случай).</li>
+            <li>Для систем вида {x+y=S, xy=P} сразу используйте теорему Виета — это экономит время.</li>
+            <li>Не забывайте подставлять найденные корни обратно в систему для проверки ОДЗ.</li>
+            <li>Если в ответе получается "нет значений", перепроверьте пропорции и знаки — часто это ловушка.</li>
+        </ul>
+    </div>
+</body>
+</html>

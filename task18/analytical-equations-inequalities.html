@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитическое решение уравнений и неравенств - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🧮 Аналитическое решение уравнений и неравенств</h1>
+    
+    <div class="card">
+        <h2>📚 Суть метода</h2>
+        <p>Аналитический метод решения задач с параметром — это алгебраическое преобразование уравнений и неравенств без построения графиков. Мы работаем непосредственно с формулами, используя дискриминант, теорему Виета и метод интервалов.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Ключевые инструменты:</strong><br>
+            • <strong>Дискриминант (D):</strong> определяет количество корней квадратного уравнения.<br>
+            • <strong>Теорема Виета:</strong> связывает корни и коэффициенты.<br>
+            • <strong>ОДЗ:</strong> ограничения на переменную (знаменатель ≠ 0, подкоренное выражение ≥ 0).
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 200" width="450" height="200">
+                <!-- Ось a -->
+                <line x1="50" y1="180" x2="430" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="435" y="185" font-size="12">a</text>
+                
+                <!-- Критические точки -->
+                <line x1="150" y1="175" x2="150" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="145" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a₁</text>
+                
+                <line x1="250" y1="175" x2="250" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="245" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a₂</text>
+                
+                <line x1="350" y1="175" x2="350" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="345" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a₃</text>
+                
+                <!-- Знаки -->
+                <text x="100" y="160" font-size="14" fill="#48bb78">+</text>
+                <text x="200" y="160" font-size="14" fill="#e53e3e">−</text>
+                <text x="300" y="160" font-size="14" fill="#48bb78">+</text>
+                <text x="390" y="160" font-size="14" fill="#e53e3e">−</text>
+                
+                <text x="240" y="30" font-size="12" fill="#1a365d" font-weight="bold" text-anchor="middle">Метод интервалов для параметра</text>
+            </svg>
+            <div class="caption">Рис. 1. Разбиение числовой прямой на интервалы по критическим точкам параметра</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Квадратное уравнение и Дискриминант</h2>
+        <p><strong>Условие:</strong> Найдите все значения параметра a, при которых уравнение ax² + 4x + 1 = 0 имеет два различных корня.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Оси -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">a</text>
+                <text x="195" y="15" font-size="12">D</text>
+                
+                <!-- Парабола D(a) = 16 - 4a -->
+                <path d="M 40 100 Q 120 180 200 180 Q 280 180 360 100" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Точка a = 4 -->
+                <circle cx="200" cy="180" r="4" fill="#e53e3e"/>
+                <text x="205" y="175" font-size="11" fill="#e53e3e" font-weight="bold">a = 4</text>
+                
+                <!-- Область D > 0 -->
+                <text x="100" y="90" font-size="12" fill="#48bb78" font-weight="bold">D > 0</text>
+                <text x="280" y="90" font-size="12" fill="#e53e3e" font-weight="bold">D < 0</text>
+                
+                <text x="200" y="195" font-size="11" fill="#4a5568" text-anchor="middle">D = 16 - 4a</text>
+            </svg>
+            <div class="caption">Рис. 2. Дискриминант квадратного уравнения как функция от a</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Для квадратного уравнения ax² + bx + c = 0 дискриминант D = b² - 4ac.</div>
+        <div class="step">2. В нашем случае: a = a, b = 4, c = 1. Значит, D = 4² - 4·a·1 = 16 - 4a.</div>
+        <div class="step">3. Для двух различных корней нужно D > 0: 16 - 4a > 0.</div>
+        <div class="step">4. Решаем неравенство: 16 > 4a ⟹ a < 4.</div>
+        <div class="step">5. Но также нужно, чтобы уравнение было квадратным, то есть a ≠ 0.</div>
+        <div class="step">6. Ответ: a ∈ (-∞; 0) ∪ (0; 4).</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; 0) ∪ (0; 4)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Уравнение с ОДЗ</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых уравнение √(x - a) = x - 2 имеет единственный корень.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="40" y1="20" x2="40" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="35" y="15" font-size="12">y</text>
+                
+                <!-- График y = √(x-a) -->
+                <path d="M 140 200 Q 180 160 220 120 T 360 40" fill="none" stroke="#3182ce" stroke-width="3"/>
+                <text x="320" y="60" font-size="12" fill="#3182ce">y = √(x-a)</text>
+                
+                <!-- Прямая y = x - 2 -->
+                <line x1="40" y1="180" x2="300" y2="20" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="260" y="40" font-size="11" fill="#e53e3e" font-weight="bold">y = x - 2</text>
+                
+                <!-- Точка касания -->
+                <circle cx="200" cy="140" r="4" fill="#48bb78"/>
+                <text x="205" y="135" font-size="11" fill="#48bb78" font-weight="bold">Касание</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Единственный корень — это точка касания или пересечения в области допустимых значений</text>
+            </svg>
+            <div class="caption">Рис. 3. График корня и прямой. Единственный корень при касании</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Возведем обе части в квадрат: x - a = (x - 2)².</div>
+        <div class="step">2. Раскроем скобки: x - a = x² - 4x + 4.</div>
+        <div class="step">3. Получим квадратное уравнение: x² - 5x + (4 + a) = 0.</div>
+        <div class="step">4. Для единственного корня исходного уравнения нужно, чтобы это квадратное уравнение имело единственный корень, удовлетворяющий ОДЗ.</div>
+        <div class="step">5. ОДЗ: x - a ≥ 0 и x - 2 ≥ 0 ⟹ x ≥ 2.</div>
+        <div class="step">6. Дискриминант D = (-5)² - 4·1·(4 + a) = 25 - 16 - 4a = 9 - 4a.</div>
+        <div class="step">7. При D = 0: 9 - 4a = 0 ⟹ a = 2.25. Корень x = 5/2 = 2.5. Проверяем ОДЗ: 2.5 ≥ 2 — верно.</div>
+        <div class="step">8. При D > 0 есть два корня. Нужно проверить, попадает ли только один из них в ОДЗ.</div>
+        <div class="step">9. Если a < 2.25, то D > 0. Корни: x = (5 ± √(9-4a))/2.</div>
+        <div class="step">10. Меньший корень x₁ должен быть < 2, а больший x₂ ≥ 2.</div>
+        <div class="step">11. Условие f(2) ≤ 0 для параболы y = x² - 5x + 4 + a: 4 - 10 + 4 + a ≤ 0 ⟹ a - 2 ≤ 0 ⟹ a ≤ 2.</div>
+        <div class="step">12. Итог: a = 2.25 или a ≤ 2.</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; 2] ∪ {2.25}</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Дробно-рациональное неравенство (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых неравенство (x - a)/(x² - 4) ≥ 0 имеет решение.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Ось x -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">x</text>
+                
+                <!-- Точки разрыва x=2, x=-2 -->
+                <circle cx="140" cy="180" r="3" fill="#e53e3e"/>
+                <text x="135" y="195" font-size="11" fill="#e53e3e">-2</text>
+                
+                <circle cx="260" cy="180" r="3" fill="#e53e3e"/>
+                <text x="255" y="195" font-size="11" fill="#e53e3e">2</text>
+                
+                <!-- Знаки функции -->
+                <text x="90" y="160" font-size="14" fill="#e53e3e">−</text>
+                <text x="200" y="160" font-size="14" fill="#48bb78">+</text>
+                <text x="320" y="160" font-size="14" fill="#e53e3e">−</text>
+                
+                <!-- Параметр a -->
+                <line x1="200" y1="175" x2="200" y2="185" stroke="#3182ce" stroke-width="2"/>
+                <text x="195" y="165" font-size="11" fill="#3182ce" font-weight="bold">a</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Метод интервалов: знаки меняются в точках -2, 2 и a</text>
+            </svg>
+            <div class="caption">Рис. 4. Расстановка знаков методом интервалов</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Найдем нули числителя и знаменателя. Числитель: x = a. Знаменатель: x = ±2.</div>
+        <div class="step">2. Эти точки разбивают числовую прямую на интервалы. Нам нужно, чтобы хотя бы на одном интервале функция была положительной (или равна нулю).</div>
+        <div class="step">3. Знаменатель x² - 4 положителен при |x| > 2 и отрицателен при |x| < 2.</div>
+        <div class="step">4. Рассмотрим случаи расположения точки a относительно -2 и 2.</div>
+        <div class="case-box">
+            <strong>Случай 1: a > 2.</strong><br>
+            На интервале (2; a) числитель отрицателен, знаменатель положителен. Дробь отрицательна.<br>
+            На интервале (a; +∞) числитель положителен, знаменатель положителен. Дробь положительна. Решение есть. ✓
+        </div>
+        <div class="case-box">
+            <strong>Случай 2: -2 < a < 2.</strong><br>
+            На интервале (a; 2) числитель положителен, знаменатель отрицателен. Дробь отрицательна.<br>
+            На интервале (2; +∞) числитель положителен, знаменатель положителен. Дробь положительна. Решение есть. ✓
+        </div>
+        <div class="case-box">
+            <strong>Случай 3: a < -2.</strong><br>
+            На интервале (-∞; -2) числитель отрицателен, знаменатель положителен. Дробь отрицательна.<br>
+            На интервале (-2; a) числитель отрицателен, знаменатель отрицателен. Дробь положительна. Решение есть. ✓
+        </div>
+        <div class="step">5. Получается, решение есть почти всегда. Но есть нюанс: если a = 2 или a = -2, то числитель обращается в ноль в точке разрыва, что недопустимо. Но неравенство нестрогое (≥ 0), значит x=a — корень. Если a=2, то x=2 не входит в ОДЗ. Значит a ≠ ±2.</div>
+        <div class="step">6. Однако, даже если a=2, на интервале (2; +∞) дробь положительна. Значит решение всё равно есть.</div>
+        <div class="step">7. Единственный случай, когда решения нет — это если дробь тождественно отрицательна. Но так как старшие коэффициенты положительны, на +∞ дробь всегда положительна.</div>
+        <div class="step">8. Вывод: решение существует при любом a.</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные факты</h2>
+        
+        <div class="formula-box">
+            <strong>Квадратное уравнение ax² + bx + c = 0:</strong><br>
+            • D > 0: два различных корня<br>
+            • D = 0: один корень (два равных)<br>
+            • D < 0: нет действительных корней
+        </div>
+        
+        <div class="formula-box">
+            <strong>Метод интервалов:</strong><br>
+            1. Найти нули числителя и знаменателя.<br>
+            2. Отметить их на числовой прямой (нуль знаменателя — выколотая точка).<br>
+            3. Определить знак функции на самом правом интервале.<br>
+            4. Двигаться влево, меняя знак при переходе через точку нечетной кратности.
+        </div>
+        
+        <div class="formula-box">
+            <strong>ОДЗ для корней:</strong><br>
+            √f(x) существует ⇔ f(x) ≥ 0<br>
+            1/√f(x) существует ⇔ f(x) > 0
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда начинайте с нахождения ОДЗ — это отсеет лишние корни.</li>
+            <li>При возведении в квадрат проверяйте знаки обеих частей уравнения.</li>
+            <li>Для квадратных уравнений с параметром не забывайте случай a = 0 (уравнение становится линейным).</li>
+            <li>Метод интервалов — мощный инструмент. Тренируйтесь правильно расставлять знаки.</li>
+            <li>Если в ответе получается объединение промежутков и точек, записывайте аккуратно.</li>
+        </ul>
+    </div>
+</body>
+</html>

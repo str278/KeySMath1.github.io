@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уравнения с параметром, содержащие радикалы | KeySMath</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1A2B4D;
+            border-bottom: 3px solid #4361EE;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4361EE;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .theory {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4361EE;
+            margin: 20px 0;
+        }
+        .example {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FFA500;
+            margin: 20px 0;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #e6ffe6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27AE60;
+            margin: 20px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B6B;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .step {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FFC107;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>🔍 Уравнения с параметром, содержащие радикалы</h1>
+
+        <div class="theory">
+            <h2>📚 Основные понятия</h2>
+            <p><strong>Иррациональное уравнение</strong> — это уравнение, содержащее переменную под знаком корня (радикала).</p>
+            
+            <div class="formula">
+                \sqrt{f(x)} = g(x)
+            </div>
+
+            <p><strong>Основные свойства арифметического квадратного корня:</strong></p>
+            <ul>
+                <li>√a определён только при a ≥ 0</li>
+                <li>√a ≥ 0 при всех допустимых a</li>
+                <li>(√a)² = a при a ≥ 0</li>
+                <li>√(a²) = |a|</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Методы решения иррациональных уравнений с параметром</h2>
+
+        <div class="example">
+            <div class="example-title">Метод 1: Возведение в квадрат</div>
+            <p><strong>Схема решения уравнения √f(x) = g(x):</strong></p>
+            <ol>
+                <li>Найти ОДЗ: f(x) ≥ 0 и g(x) ≥ 0</li>
+                <li>Возвести обе части в квадрат: f(x) = [g(x)]²</li>
+                <li>Решить полученное уравнение</li>
+                <li>Проверить найденные корни на соответствие ОДЗ</li>
+            </ol>
+
+            <div class="warning">
+                <strong>⚠️ Важно:</strong> При возведении в чётную степень могут появиться посторонние корни! Обязательна проверка.
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Метод 2: Замена переменной</div>
+            <p>Применяется, когда уравнение содержит несколько одинаковых радикалов или когда под корнем стоит сложное выражение.</p>
+            <div class="formula">
+                \text{Например: } \sqrt{f(x)} = t, \text{ где } t \geq 0
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Метод 3: Равенство одноимённых корней</div>
+            <div class="formula">
+                \sqrt{f(x)} = \sqrt{g(x)} \Leftrightarrow \begin{cases} f(x) = g(x) \\ f(x) \geq 0 \\ g(x) \geq 0 \end{cases}
+            </div>
+        </div>
+
+        <h2>📝 Примеры решения</h2>
+
+        <div class="example">
+            <div class="example-title">Пример 1. Найдите все значения параметра a, при которых уравнение имеет решения</div>
+            <div class="formula">
+                \sqrt{x - a} = 2 - x
+            </div>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+                
+                <div class="step">1. <strong>Найдём ОДЗ:</strong></div>
+                <div class="formula">
+                    \begin{cases} x - a \geq 0 \\ 2 - x \geq 0 \end{cases}
+                    \Leftrightarrow
+                    \begin{cases} x \geq a \\ x \leq 2 \end{cases}
+                    \Leftrightarrow a \leq x \leq 2
+                </div>
+                <p>Значит, при a > 2 решений нет.</p>
+
+                <div class="step">2. <strong>Возведём в квадрат (при a ≤ 2):</strong></div>
+                <div class="formula">
+                    x - a = (2 - x)²
+                </div>
+                <div class="formula">
+                    x - a = 4 - 4x + x²
+                </div>
+                <div class="formula">
+                    x² - 5x + (4 + a) = 0
+                </div>
+
+                <div class="step">3. <strong>Найдём дискриминант:</strong></div>
+                <div class="formula">
+                    D = 25 - 4(4 + a) = 25 - 16 - 4a = 9 - 4a
+                </div>
+
+                <div class="step">4. <strong>Рассмотрим случаи:</strong></div>
+                
+                <p><strong>а) D < 0 ⇔ 9 - 4a < 0 ⇔ a > 9/4:</strong> корней нет</p>
+
+                <p><strong>б) D = 0 ⇔ a = 9/4:</strong> один корень</p>
+                <div class="formula">
+                    x = \frac{5}{2} = 2.5
+                </div>
+                <p>Проверка ОДЗ: 2.5 ≤ 2 — не выполняется. Значит, при a = 9/4 решений нет.</p>
+
+                <p><strong>в) D > 0 ⇔ a < 9/4:</strong> два корня</p>
+                <div class="formula">
+                    x_{1,2} = \frac{5 \pm \sqrt{9 - 4a}}{2}
+                </div>
+
+                <div class="step">5. <strong>Проверка принадлежности корней промежутку [a; 2]:</strong></div>
+                
+                <p>Для x₁ = (5 + √(9-4a))/2:</p>
+                <div class="formula">
+                    \frac{5 + \sqrt{9-4a}}{2} \leq 2 \Leftrightarrow 5 + \sqrt{9-4a} \leq 4 \Leftrightarrow \sqrt{9-4a} \leq -1
+                </div>
+                <p>Невозможно, так как √(9-4a) ≥ 0</p>
+
+                <p>Для x₂ = (5 - √(9-4a))/2:</p>
+                <div class="formula">
+                    \frac{5 - \sqrt{9-4a}}{2} \leq 2 \Leftrightarrow 5 - \sqrt{9-4a} \leq 4 \Leftrightarrow \sqrt{9-4a} \geq 1
+                </div>
+                <div class="formula">
+                    9 - 4a \geq 1 \Leftrightarrow 4a \leq 8 \Leftrightarrow a \leq 2
+                </div>
+
+                <div class="step">6. <strong>Проверка условия x₂ ≥ a:</strong></div>
+                <div class="formula">
+                    \frac{5 - \sqrt{9-4a}}{2} \geq a
+                </div>
+                <div class="formula">
+                    5 - \sqrt{9-4a} \geq 2a
+                </div>
+                <div class="formula">
+                    5 - 2a \geq \sqrt{9-4a}
+                </div>
+                <p>При a ≤ 2: 5 - 2a ≥ 1 > 0, можно возводить в квадрат:</p>
+                <div class="formula">
+                    (5-2a)² \geq 9-4a
+                </div>
+                <div class="formula">
+                    25 - 20a + 4a² \geq 9 - 4a
+                </div>
+                <div class="formula">
+                    4a² - 16a + 16 \geq 0
+                </div>
+                <div class="formula">
+                    a² - 4a + 4 \geq 0
+                </div>
+                <div class="formula">
+                    (a-2)² \geq 0 \text{ — верно при всех } a
+                </div>
+
+                <p><strong>Ответ:</strong> при a ∈ (-∞; 2) уравнение имеет один корень x = (5 - √(9-4a))/2</p>
+                <p>при a ≥ 2 — решений нет</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 2. При каких a уравнение имеет ровно один корень?</div>
+            <div class="formula">
+                \sqrt{x^2 - 4x + 3} = a
+            </div>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>ОДЗ:</strong></div>
+                <div class="formula">
+                    a \geq 0
+                </div>
+                <div class="formula">
+                    x² - 4x + 3 \geq 0
+                </div>
+                <div class="formula">
+                    (x-1)(x-3) \geq 0
+                </div>
+                <p>x ∈ (-∞; 1] ∪ [3; +∞)</p>
+
+                <div class="step">2. <strong>Возведём в квадрат:</strong></div>
+                <div class="formula">
+                    x² - 4x + 3 = a²
+                </div>
+                <div class="formula">
+                    x² - 4x + (3 - a²) = 0
+                </div>
+
+                <div class="step">3. <strong>Дискриминант:</strong></div>
+                <div class="formula">
+                    D = 16 - 4(3-a²) = 16 - 12 + 4a² = 4 + 4a² = 4(1+a²) > 0 \text{ при всех } a
+                </div>
+
+                <div class="step">4. <strong>Корни:</strong></div>
+                <div class="formula">
+                    x_{1,2} = \frac{4 \pm 2\sqrt{1+a²}}{2} = 2 \pm \sqrt{1+a²}
+                </div>
+
+                <div class="step">5. <strong>Проверка принадлежности ОДЗ:</strong></div>
+                
+                <p>x₁ = 2 + √(1+a²):</p>
+                <div class="formula">
+                    2 + \sqrt{1+a²} \geq 3 \Leftrightarrow \sqrt{1+a²} \geq 1 \Leftrightarrow 1+a² \geq 1 \Leftrightarrow a² \geq 0
+                </div>
+                <p>Верно при всех a. Значит, x₁ ∈ [3; +∞) — всегда подходит.</p>
+
+                <p>x₂ = 2 - √(1+a²):</p>
+                <div class="formula">
+                    2 - \sqrt{1+a²} \leq 1 \Leftrightarrow \sqrt{1+a²} \geq 1 \Leftrightarrow a² \geq 0
+                </div>
+                <p>Верно при всех a. Значит, x₂ ∈ (-∞; 1] — всегда подходит.</p>
+
+                <div class="step">6. <strong>Когда будет ровно один корень?</strong></div>
+                <p>Когда x₁ = x₂:</p>
+                <div class="formula">
+                    2 + \sqrt{1+a²} = 2 - \sqrt{1+a²}
+                </div>
+                <div class="formula">
+                    2\sqrt{1+a²} = 0 \Leftrightarrow \sqrt{1+a²} = 0 \Leftrightarrow 1+a² = 0
+                </div>
+                <p>Невозможно при действительных a.</p>
+
+                <p><strong>Ответ:</strong> таких значений a не существует (при всех a ≥ 0 уравнение имеет два корня)</p>
+            </div>
+        </div>
+
+        <div class="important">
+            <strong>💡 Важные замечания:</strong><br>
+            • Всегда проверяйте ОДЗ перед возведением в степень<br>
+            • После возведения в квадрат обязательна проверка корней<br>
+            • При a < 0 уравнение √f(x) = a не имеет решений<br>
+            • Используйте графический метод для проверки количества корней
+        </div>
+
+        <h2>🔍 Типовые приёмы</h2>
+
+        <div class="example">
+            <div class="example-title">Приём 1: Уравнения вида √f(x) + √g(x) = h(x)</div>
+            <p><strong>Метод:</strong></p>
+            <ol>
+                <li>Найти ОДЗ: f(x) ≥ 0, g(x) ≥ 0, h(x) ≥ 0</li>
+                <li>Возвести в квадрат</li>
+                <li>Сгруппировать слагаемые с радикалами</li>
+                <li>Ещё раз возвести в квадрат (если нужно)</li>
+                <li>Проверить все найденные корни</li>
+            </ol>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Приём 2: Уравнения вида √f(x) = √g(x)</div>
+            <p><strong>Метод:</strong> сразу переходим к системе:</p>
+            <div class="formula">
+                \begin{cases} f(x) = g(x) \\ f(x) \geq 0 \text{ (или } g(x) \geq 0) \end{cases}
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Типичные ошибки:</strong><br>
+            • Забывают проверить неотрицательность правой части<br>
+            • Не проверяют корни после возведения в квадрат<br>
+            • Ошибки при нахождении ОДЗ<br>
+            • Теряют корни при сокращении<br>
+            • Не рассматривают все случаи для параметра
+        </div>
+
+        <div class="theory">
+            <h2>📋 Что важно помнить для ЕГЭ</h2>
+            <ul>
+                <li>Арифметический квадратный корень всегда неотрицателен</li>
+                <li>При возведении в чётную степень расширяется область определения</li>
+                <li>Проверка корней — обязательный этап!</li>
+                <li>Иногда удобнее использовать замену переменной</li>
+                <li>Графический метод помогает понять количество корней</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

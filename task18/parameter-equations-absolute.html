@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уравнения с параметром, содержащие модуль | KeySMath</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1A2B4D;
+            border-bottom: 3px solid #4361EE;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4361EE;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .theory {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4361EE;
+            margin: 20px 0;
+        }
+        .example {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FFA500;
+            margin: 20px 0;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #e6ffe6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27AE60;
+            margin: 20px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B6B;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .step {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>📐 Уравнения с параметром, содержащие модуль</h1>
+
+        <div class="theory">
+            <h2>📚 Основные понятия</h2>
+            <p><strong>Модуль числа</strong> |a| — это расстояние от точки a до начала координат на числовой прямой.</p>
+            
+            <div class="formula">
+                |a| = \begin{cases} a, & \text{если } a \geq 0 \\ -a, & \text{если } a < 0 \end{cases}
+            </div>
+
+            <p>При решении уравнений с параметром и модулем важно помнить:</p>
+            <ul>
+                <li>Модуль всегда неотрицателен: |f(x)| ≥ 0</li>
+                <li>|a| = |b| ⇔ a = b или a = -b</li>
+                <li>|f(x)| = a ⇔ система: f(x) = a или f(x) = -a (при a ≥ 0)</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Основные типы уравнений</h2>
+
+        <div class="example">
+            <div class="example-title">Тип 1: Уравнение вида |f(x)| = g(a)</div>
+            <p><strong>Схема решения:</strong></p>
+            <ol>
+                <li>Рассмотреть случай g(a) < 0 — решений нет</li>
+                <li>Рассмотреть случай g(a) ≥ 0 — решить совокупность:<br>
+                    f(x) = g(a) или f(x) = -g(a)</li>
+            </ol>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Тип 2: Уравнение вида |f(x)| = |g(x)|</div>
+            <p><strong>Схема решения:</strong></p>
+            <div class="formula">
+                |f(x)| = |g(x)| ⇔ f(x) = g(x) или f(x) = -g(x)
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Тип 3: Уравнение вида |f(x, a)| = g(x, a)</div>
+            <p><strong>Схема решения:</strong></p>
+            <div class="formula">
+                |f(x,a)| = g(x,a) ⇔ \begin{cases} g(x,a) \geq 0 \\ f(x,a) = g(x,a) \text{ или } f(x,a) = -g(x,a) \end{cases}
+            </div>
+        </div>
+
+        <h2>📝 Примеры решения</h2>
+
+        <div class="example">
+            <div class="example-title">Пример 1. Найдите все значения параметра a, при которых уравнение имеет решения</div>
+            <div class="formula">
+                |x - 2| = a - 1
+            </div>
+            
+            <div class="solution">
+                <strong>Решение:</strong>
+                <div class="step">1. Левая часть |x - 2| ≥ 0 при всех x</div>
+                <div class="step">2. Значит, правая часть тоже должна быть неотрицательной:</div>
+                <div class="formula">a - 1 ≥ 0 ⇔ a ≥ 1</div>
+                <div class="step">3. При a ≥ 1 уравнение равносильно совокупности:</div>
+                <div class="formula">
+                    \begin{cases} x - 2 = a - 1 \\ x - 2 = -(a - 1) \end{cases}
+                    ⇔
+                    \begin{cases} x = a + 1 \\ x = 3 - a \end{cases}
+                </div>
+                <p><strong>Ответ:</strong> при a ≥ 1 уравнение имеет два корня: x₁ = a + 1, x₂ = 3 - a</p>
+                <p>при a < 1 — корней нет</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 2. При каких a уравнение имеет ровно один корень?</div>
+            <div class="formula">
+                |x - a| + |x + a| = 2
+            </div>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+                <div class="step">1. Рассмотрим различные случаи расположения x относительно точек a и -a</div>
+                
+                <div class="step">2. <strong>Случай a = 0:</strong></div>
+                <div class="formula">|x| + |x| = 2 ⇔ 2|x| = 2 ⇔ |x| = 1 ⇔ x = ±1</div>
+                <p>Два корня — не подходит</p>
+
+                <div class="step">3. <strong>Случай a > 0:</strong> Критические точки: -a и a</p>
+                
+                <p>а) При x < -a: |x-a| = -(x-a), |x+a| = -(x+a)</p>
+                <div class="formula">-(x-a) - (x+a) = 2 ⇔ -2x = 2 ⇔ x = -1</div>
+                <p>Условие: -1 < -a ⇔ a < 1</p>
+
+                <p>б) При -a ≤ x ≤ a: |x-a| = -(x-a), |x+a| = x+a</p>
+                <div class="formula">-(x-a) + (x+a) = 2 ⇔ 2a = 2 ⇔ a = 1</div>
+                <p>При a = 1: любое x ∈ [-1; 1] — бесконечно много корней</p>
+
+                <p>в) При x > a: |x-a| = x-a, |x+a| = x+a</p>
+                <div class="formula">(x-a) + (x+a) = 2 ⇔ 2x = 2 ⇔ x = 1</div>
+                <p>Условие: 1 > a ⇔ a < 1</p>
+
+                <div class="step">4. <strong>Вывод:</strong> При 0 < a < 1 имеем два корня: x = -1 и x = 1</div>
+                <p>При a = 1 — бесконечно много корней</p>
+                <p>При a > 1 — корней нет</p>
+
+                <p><strong>Ответ:</strong> таких значений a не существует</p>
+            </div>
+        </div>
+
+        <div class="important">
+            <strong>💡 Важный приём:</strong><br>
+            При решении уравнений с модулем и параметром часто полезно:<br>
+            • Использовать геометрический смысл модуля (расстояние)<br>
+            • Строить графики функций y = |f(x, a)| и y = g(x, a)<br>
+            • Рассматривать различные случаи знака подмодульных выражений<br>
+            • Использовать метод интервалов
+        </div>
+
+        <h2>🔍 Метод интервалов для уравнений с модулем</h2>
+
+        <div class="example">
+            <div class="example-title">Алгоритм решения:</div>
+            <ol>
+                <li>Найти все точки, где подмодульные выражения равны нулю</li>
+                <li>Отметить эти точки на числовой прямой</li>
+                <li>Разбить прямую на интервалы</li>
+                <li>На каждом интервале раскрыть модули с соответствующим знаком</li>
+                <li>Решить уравнение на каждом интервале</li>
+                <li>Проверить принадлежность найденных корней интервалу</li>
+            </ol>
+        </div>
+
+        <div class="theory">
+            <h2>📋 Типовые задания ЕГЭ</h2>
+            <p>На экзамене часто встречаются задачи типа:</p>
+            <ul>
+                <li>«Найдите все a, при которых уравнение имеет ровно n корней»</li>
+                <li>«Найдите все a, при которых уравнение не имеет решений»</li>
+                <li>«Найдите все a, при которых уравнение имеет бесконечно много решений»</li>
+                <li>«Найдите все a, при которых корни удовлетворяют определённому условию»</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>⚠️ Типичные ошибки:</strong><br>
+            • Забывают проверить условие неотрицательности правой части<br>
+            • Не рассматривают все возможные случаи<br>
+            • Не проверяют принадлежность корней интервалам<br>
+            • Ошибки при раскрытии модуля со знаком «минус»
+        </div>
+    </div>
+</body>
+</html>

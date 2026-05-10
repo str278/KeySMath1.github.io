@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расположение корней квадратного трехчлена - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>📊 Расположение корней квадратного трехчлена</h1>
+    
+    <div class="card">
+        <h2>📚 Основные условия</h2>
+        <p>В задачах с параметром часто требуется найти значения параметра, при которых корни квадратного уравнения удовлетворяют определённым условиям расположения на числовой прямой.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Общие условия для квадратного уравнения ax² + bx + c = 0:</strong><br>
+            • D ≥ 0 (существование действительных корней)<br>
+            • x₀ = -b/(2a) — абсцисса вершины параболы<br>
+            • f(x₀) — значение функции в вершине
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Ось x -->
+                <line x1="50" y1="200" x2="430" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="435" y="205" font-size="12">x</text>
+                
+                <!-- Парабола -->
+                <path d="M 80 180 Q 160 40 240 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Корни -->
+                <circle cx="120" cy="200" r="4" fill="#e53e3e"/>
+                <circle cx="200" cy="200" r="4" fill="#e53e3e"/>
+                <text x="115" y="195" font-size="10" fill="#e53e3e">x₁</text>
+                <text x="205" y="195" font-size="10" fill="#e53e3e">x₂</text>
+                
+                <!-- Вершина -->
+                <circle cx="160" cy="40" r="4" fill="#48bb78"/>
+                <text x="165" y="35" font-size="11" fill="#48bb78" font-weight="bold">x₀</text>
+                <line x1="160" y1="40" x2="160" y2="200" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4,3"/>
+                
+                <!-- Точки на оси -->
+                <line x1="100" y1="195" x2="100" y2="205" stroke="#1a202c" stroke-width="2"/>
+                <line x1="220" y1="195" x2="220" y2="205" stroke="#1a202c" stroke-width="2"/>
+                <text x="95" y="215" font-size="11" font-weight="bold">α</text>
+                <text x="215" y="215" font-size="11" font-weight="bold">β</text>
+                
+                <text x="225" y="100" font-size="11" fill="#4a5568">Оба корня на (α; β)</text>
+            </svg>
+            <div class="caption">Рис. 1. Расположение корней квадратного трехчлена на числовой прямой</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Оба корня больше заданного числа</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых оба корня уравнения x² - 2ax + a² - 1 = 0 больше 2.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Ось x -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">x</text>
+                
+                <!-- Точка x = 2 -->
+                <line x1="140" y1="175" x2="140" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="135" y="195" font-size="11" fill="#e53e3e" font-weight="bold">2</text>
+                
+                <!-- Парабола -->
+                <path d="M 180 160 Q 240 40 300 160" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Корни -->
+                <circle cx="200" cy="180" r="4" fill="#e53e3e"/>
+                <circle cx="280" cy="180" r="4" fill="#e53e3e"/>
+                <text x="195" y="175" font-size="10" fill="#e53e3e">x₁</text>
+                <text x="285" y="175" font-size="10" fill="#e53e3e">x₂</text>
+                
+                <text x="200" y="30" font-size="11" fill="#4a5568" text-anchor="middle">x₁ > 2, x₂ > 2</text>
+            </svg>
+            <div class="caption">Рис. 2. Оба корня больше числа 2</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Для того чтобы оба корня были больше 2, должны выполняться три условия:</div>
+        <div class="step">2. Условие 1: D ≥ 0. D = (-2a)² - 4·1·(a² - 1) = 4a² - 4a² + 4 = 4 > 0. Всегда верно.</div>
+        <div class="step">3. Условие 2: Вершина параболы x₀ > 2. x₀ = -(-2a)/(2·1) = a. Значит, a > 2.</div>
+        <div class="step">4. Условие 3: f(2) > 0 (значение функции в точке x = 2 положительно).</div>
+        <div class="step">5. f(2) = 2² - 2a·2 + a² - 1 = 4 - 4a + a² - 1 = a² - 4a + 3.</div>
+        <div class="step">6. Решаем неравенство: a² - 4a + 3 > 0. Корни: a = 1 и a = 3.</div>
+        <div class="step">7. Методом интервалов: a ∈ (-∞; 1) ∪ (3; +∞).</div>
+        <div class="step">8. Пересекаем с условием a > 2: получаем a ∈ (3; +∞).</div>
+        
+        <div class="answer">Ответ: a ∈ (3; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Корни разных знаков</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых уравнение x² + (a-1)x - a = 0 имеет корни разных знаков.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Ось x -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">x</text>
+                
+                <!-- Точка x = 0 -->
+                <line x1="200" y1="175" x2="200" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="195" y="195" font-size="11" fill="#e53e3e" font-weight="bold">0</text>
+                
+                <!-- Парабола -->
+                <path d="M 80 160 Q 140 40 200 160 Q 260 280 320 160" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Корни -->
+                <circle cx="120" cy="180" r="4" fill="#e53e3e"/>
+                <circle cx="280" cy="180" r="4" fill="#e53e3e"/>
+                <text x="110" y="175" font-size="10" fill="#e53e3e">x₁ < 0</text>
+                <text x="285" y="175" font-size="10" fill="#e53e3e">x₂ > 0</text>
+                
+                <text x="200" y="30" font-size="11" fill="#4a5568" text-anchor="middle">Корни разных знаков</text>
+            </svg>
+            <div class="caption">Рис. 3. Корни квадратного уравнения разных знаков</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Для корней разных знаков необходимо и достаточно, чтобы их произведение было отрицательным.</div>
+        <div class="step">2. По теореме Виета: x₁ · x₂ = c/a = -a/1 = -a.</div>
+        <div class="step">3. Условие: x₁ · x₂ < 0 ⟹ -a < 0 ⟹ a > 0.</div>
+        <div class="step">4. Проверим дискриминант: D = (a-1)² - 4·1·(-a) = a² - 2a + 1 + 4a = a² + 2a + 1 = (a+1)² ≥ 0.</div>
+        <div class="step">5. Дискриминант всегда неотрицателен, значит, корни всегда существуют.</div>
+        <div class="step">6. Ответ: при всех a > 0 уравнение имеет корни разных знаков.</div>
+        
+        <div class="answer">Ответ: a ∈ (0; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Оба корня в заданном интервале (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых оба корня уравнения x² - 4x + a = 0 принадлежат интервалу (0; 3).</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Ось x -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                
+                <!-- Интервал (0; 3) -->
+                <line x1="140" y1="195" x2="140" y2="205" stroke="#e53e3e" stroke-width="2"/>
+                <line x1="280" y1="195" x2="280" y2="205" stroke="#e53e3e" stroke-width="2"/>
+                <text x="135" y="215" font-size="11" fill="#e53e3e" font-weight="bold">0</text>
+                <text x="275" y="215" font-size="11" fill="#e53e3e" font-weight="bold">3</text>
+                
+                <!-- Парабола -->
+                <path d="M 160 180 Q 200 40 240 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Корни -->
+                <circle cx="180" cy="200" r="4" fill="#e53e3e"/>
+                <circle cx="220" cy="200" r="4" fill="#e53e3e"/>
+                <text x="175" y="195" font-size="10" fill="#e53e3e">x₁</text>
+                <text x="225" y="195" font-size="10" fill="#e53e3e">x₂</text>
+                
+                <text x="200" y="30" font-size="11" fill="#4a5568" text-anchor="middle">0 < x₁ < x₂ < 3</text>
+            </svg>
+            <div class="caption">Рис. 4. Оба корня принадлежат интервалу (0; 3)</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Для того чтобы оба корня принадлежали интервалу (0; 3), должны выполняться условия:</div>
+        <div class="step">2. Условие 1: D ≥ 0. D = (-4)² - 4·1·a = 16 - 4a ≥ 0 ⟹ a ≤ 4.</div>
+        <div class="step">3. Условие 2: Вершина x₀ ∈ (0; 3). x₀ = -(-4)/(2·1) = 2. 0 < 2 < 3 — верно.</div>
+        <div class="step">4. Условие 3: f(0) > 0. f(0) = 0² - 4·0 + a = a > 0.</div>
+        <div class="step">5. Условие 4: f(3) > 0. f(3) = 3² - 4·3 + a = 9 - 12 + a = a - 3 > 0 ⟹ a > 3.</div>
+        <div class="step">6. Пересекаем все условия: a ≤ 4, a > 0, a > 3.</div>
+        <div class="step">7. Получаем: a ∈ (3; 4].</div>
+        
+        <div class="answer">Ответ: a ∈ (3; 4]</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Основные условия расположения корней</h2>
+        
+        <div class="formula-box">
+            <strong>Оба корня больше α:</strong><br>
+            1. D ≥ 0<br>
+            2. x₀ > α (вершина правее α)<br>
+            3. f(α) > 0 (функция положительна в точке α)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Оба корня меньше α:</strong><br>
+            1. D ≥ 0<br>
+            2. x₀ < α (вершина левее α)<br>
+            3. f(α) > 0 (функция положительна в точке α)
+        </div>
+        
+        <div class="formula-box">
+            <strong>Оба корня в интервале (α; β):</strong><br>
+            1. D ≥ 0<br>
+            2. α < x₀ < β (вершина внутри интервала)<br>
+            3. f(α) > 0 и f(β) > 0
+        </div>
+        
+        <div class="formula-box">
+            <strong>Корни разных знаков:</strong><br>
+            1. D > 0<br>
+            2. x₁ · x₂ < 0 ⟺ c/a < 0
+        </div>
+        
+        <div class="formula-box">
+            <strong>Один корень больше α, другой меньше α:</strong><br>
+            1. D > 0<br>
+            2. f(α) < 0 (функция отрицательна в точке α)
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда начинайте с условия D ≥ 0 (существование корней).</li>
+            <li>Запоминайте три основных условия: дискриминант, положение вершины, значение функции на границе.</li>
+            <li>Используйте теорему Виета для проверки знаков корней (произведение и сумма).</li>
+            <li>Рисуйте эскиз параболы — это помогает понять, какие условия нужны.</li>
+            <li>Не забывайте пересекать все полученные условия в конце решения.</li>
+            <li>Проверяйте граничные значения параметра — они часто входят в ответ.</li>
+        </ul>
+    </div>
+</body>
+</html>

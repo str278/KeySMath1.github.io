@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функции, зависящие от параметра | KeySMath</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1A2B4D;
+            border-bottom: 3px solid #4361EE;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4361EE;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .theory {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4361EE;
+            margin: 20px 0;
+        }
+        .example {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FFA500;
+            margin: 20px 0;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #e6ffe6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27AE60;
+            margin: 20px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B6B;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .step {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .graph-tip {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>📊 Функции, зависящие от параметра</h1>
+
+        <div class="theory">
+            <h2>📚 Основные понятия</h2>
+            <p><strong>Функция, зависящая от параметра</strong> — это функция вида y = f(x, a), где a — параметр.</p>
+            
+            <p>При изменении параметра a:</p>
+            <ul>
+                <li>Меняется вид графика функции</li>
+                <li>Меняются свойства функции (область определения, множество значений, монотонность)</li>
+                <li>Меняется количество корней уравнения f(x, a) = 0</li>
+            </ul>
+
+            <div class="formula">
+                \text{Например: } y = ax^2 + bx + c \text{ — семейство парабол, зависящее от } a
+            </div>
+        </div>
+
+        <h2>🎯 Типы задач с функциями от параметра</h2>
+
+        <div class="example">
+            <div class="example-title">Тип 1: Исследование количества корней</div>
+            <p><strong>Задача:</strong> Найти все значения параметра a, при которых уравнение f(x, a) = 0 имеет:</p>
+            <ul>
+                <li>Ровно n корней</li>
+                <li>Хотя бы один корень</li>
+                <li>Не имеет корней</li>
+                <li>Бесконечно много корней</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Тип 2: Исследование свойств функции</div>
+            <p><strong>Задача:</strong> Найти все значения параметра a, при которых функция:</p>
+            <ul>
+                <li>Возрастает/убывает на заданном промежутке</li>
+                <li>Имеет экстремумы</li>
+                <li>Принимает определённые значения</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Тип 3: Графические задачи</div>
+            <p><strong>Задача:</strong> Построить график функции y = f(x, a) и исследовать его поведение при различных a.</p>
+        </div>
+
+        <h2>📝 Примеры решения</h2>
+
+        <div class="example">
+            <div class="example-title">Пример 1. Квадратичная функция с параметром</div>
+            <p>Найдите все значения параметра a, при которых функция</p>
+            <div class="formula">
+                f(x) = ax² + 2x + 1
+            </div>
+            <p>имеет ровно один корень.</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Рассмотрим случай a = 0:</strong></div>
+                <div class="formula">
+                    f(x) = 2x + 1 = 0 \Leftrightarrow x = -\frac{1}{2}
+                </div>
+                <p>Один корень — подходит.</p>
+
+                <div class="step">2. <strong>Рассмотрим случай a ≠ 0 (квадратичная функция):</strong></div>
+                <p>Квадратное уравнение имеет ровно один корень, когда дискриминант равен нулю:</p>
+                <div class="formula">
+                    D = 4 - 4a = 0 \Leftrightarrow 4a = 4 \Leftrightarrow a = 1
+                </div>
+                <p>Проверка: при a = 1: x² + 2x + 1 = (x+1)² = 0 ⇔ x = -1 (один корень)</p>
+
+                <p><strong>Ответ:</strong> a = 0 или a = 1</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 2. Дробно-рациональная функция</div>
+            <p>Найдите все значения параметра a, при которых уравнение</p>
+            <div class="formula">
+                \frac{x - a}{x - 2} = 1
+            </div>
+            <p>имеет решения.</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>ОДЗ:</strong></div>
+                <div class="formula">
+                    x - 2 \neq 0 \Leftrightarrow x \neq 2
+                </div>
+
+                <div class="step">2. <strong>Решим уравнение:</strong></div>
+                <div class="formula">
+                    \frac{x - a}{x - 2} = 1
+                </div>
+                <div class="formula">
+                    x - a = x - 2
+                </div>
+                <div class="formula">
+                    -a = -2 \Leftrightarrow a = 2
+                </div>
+
+                <div class="step">3. <strong>Анализ:</strong></div>
+                <p>При a = 2 получаем тождество 0 = 0, но это не даёт конкретных x.</p>
+                <p>При a ≠ 2 уравнение не имеет решений (получаем противоречие).</p>
+
+                <p><strong>Ответ:</strong> таких значений a не существует</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 3. Показательная функция с параметром</div>
+            <p>Найдите все значения параметра a, при которых уравнение</p>
+            <div class="formula">
+                a \cdot 2^x = 4^x - 3
+            </div>
+            <p>имеет хотя бы один корень.</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Замена переменной:</strong></div>
+                <p>Пусть t = 2^x, где t > 0. Тогда 4^x = (2²)^x = 2^(2x) = t²</p>
+                <div class="formula">
+                    at = t² - 3
+                </div>
+                <div class="formula">
+                    t² - at - 3 = 0
+                </div>
+
+                <div class="step">2. <strong>Исследуем квадратное уравнение:</strong></div>
+                <div class="formula">
+                    D = a² + 12 > 0 \text{ при всех } a
+                </div>
+                <p>Значит, уравнение всегда имеет два различных корня:</p>
+                <div class="formula">
+                    t_{1,2} = \frac{a \pm \sqrt{a² + 12}}{2}
+                </div>
+
+                <div class="step">3. <strong>Условие t > 0:</strong></div>
+                <p>t₁ = (a + √(a²+12))/2:</p>
+                <div class="formula">
+                    a + \sqrt{a²+12} > 0 \Leftrightarrow \sqrt{a²+12} > -a
+                </div>
+                <p>При a ≥ 0: очевидно верно</p>
+                <p>При a < 0: √(a²+12) > |a| ⇔ a² + 12 > a² ⇔ 12 > 0 — верно</p>
+                <p>Значит, t₁ > 0 при всех a.</p>
+
+                <p><strong>Ответ:</strong> при всех a ∈ (-∞; +∞) уравнение имеет хотя бы один корень</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 4. Функция с модулем и параметром</div>
+            <p>Найдите все значения параметра a, при которых функция</p>
+            <div class="formula">
+                f(x) = |x - a| + |x + a|
+            </div>
+            <p>принимает наименьшее значение, равное 4.</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Геометрический смысл:</strong></div>
+                <p>|x - a| — расстояние от точки x до точки a</p>
+                <p>|x + a| = |x - (-a)| — расстояние от точки x до точки -a</p>
+                <p>f(x) — сумма расстояний от x до точек a и -a</p>
+
+                <div class="step">2. <strong>Рассмотрим случаи:</strong></div>
+                
+                <p><strong>Случай a = 0:</strong></p>
+                <div class="formula">
+                    f(x) = |x| + |x| = 2|x|
+                </div>
+                <p>Наименьшее значение: f(0) = 0 ≠ 4 — не подходит</p>
+
+                <p><strong>Случай a > 0:</strong> Критические точки: -a и a</p>
+                <ul>
+                    <li>При x < -a: f(x) = -(x-a) - (x+a) = -2x</li>
+                    <li>При -a ≤ x ≤ a: f(x) = -(x-a) + (x+a) = 2a</li>
+                    <li>При x > a: f(x) = (x-a) + (x+a) = 2x</li>
+                </ul>
+                <p>Наименьшее значение: f_min = 2a (на промежутке [-a; a])</p>
+                <div class="formula">
+                    2a = 4 \Leftrightarrow a = 2
+                </div>
+
+                <p><strong>Случай a < 0:</strong> Пусть a = -b, где b > 0</p>
+                <p>Получаем тот же случай, что и при a > 0: f_min = 2|a|</p>
+                <div class="formula">
+                    2|a| = 4 \Leftrightarrow |a| = 2 \Leftrightarrow a = \pm 2
+                </div>
+
+                <p><strong>Ответ:</strong> a = 2 или a = -2</p>
+            </div>
+        </div>
+
+        <div class="graph-tip">
+            <strong>💡 Графический метод:</strong><br>
+            Часто удобно строить графики функций y = f(x, a) при различных значениях параметра и анализировать их пересечение с прямой y = 0 или другими линиями.
+        </div>
+
+        <h2>🔍 Основные приёмы исследования</h2>
+
+        <div class="example">
+            <div class="example-title">Приём 1: Метод интервалов для параметра</div>
+            <ol>
+                <li>Найти критические значения параметра (где меняется поведение функции)</li>
+                <li>Разбить числовую прямую a на интервалы</li>
+                <li>Исследовать функцию на каждом интервале</li>
+            </ol>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Приём 2: Замена переменной</div>
+            <p>Применяется, когда функция содержит:</p>
+            <ul>
+                <li>Показательные выражения: t = a^x</li>
+                <li>Логарифмы: t = log_a(x)</li>
+                <li>Тригонометрические функции: t = sin(x) или t = cos(x)</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Приём 3: Использование свойств функций</div>
+            <ul>
+                <li><strong>Монотонность:</strong> если функция возрастает/убывает, то уравнение f(x) = c имеет не более одного корня</li>
+                <li><strong>Непрерывность:</strong> если функция непрерывна и меняет знак, то по теореме Больцано-Коши имеет корень</li>
+                <li><strong>Ограниченность:</strong> помогает найти множество значений функции</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>⚠️ Типичные ошибки:</strong><br>
+            • Не рассматривают все случаи для параметра<br>
+            • Забывают проверить ОДЗ<br>
+            • Не учитывают вырожденные случаи (коэффициент при старшей степени = 0)<br>
+            • Ошибки при исследовании знака дискриминанта<br>
+            • Не проверяют принадлежность корней области определения
+        </div>
+
+        <div class="theory">
+            <h2>📋 Что важно помнить для ЕГЭ</h2>
+            <ul>
+                <li>Всегда рассматривайте все возможные случаи для параметра</li>
+                <li>Используйте графическую интерпретацию для проверки</li>
+                <li>Проверяйте вырожденные случаи (коэффициенты = 0)</li>
+                <li>Замена переменной часто упрощает решение</li>
+                <li>Геометрический смысл модуля помогает в решении</li>
+                <li>Исследуйте поведение функции на границах интервалов</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

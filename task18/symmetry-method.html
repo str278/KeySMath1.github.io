@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Использование симметрий - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🔄 Использование симметрий</h1>
+    
+    <div class="card">
+        <h2>📚 Идея метода</h2>
+        <p>Метод симметрий позволяет упростить решение уравнений и неравенств с параметром, используя симметричные свойства функций. Если функция симметрична относительно какой-либо точки или прямой, это можно использовать для нахождения решений.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Основные виды симметрии:</strong><br>
+            • <strong>Чётность:</strong> f(-x) = f(x) — симметрия относительно оси y.<br>
+            • <strong>Нечётность:</strong> f(-x) = -f(x) — симметрия относительно начала координат.<br>
+            • <strong>Симметрия относительно точки:</strong> f(a+x) + f(a-x) = 2b (симметрия относительно точки (a; b)).<br>
+            • <strong>Периодичность:</strong> f(x+T) = f(x).
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Оси координат -->
+                <line x1="50" y1="200" x2="430" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="230" y1="20" x2="230" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="435" y="205" font-size="12">x</text>
+                <text x="225" y="15" font-size="12">y</text>
+                
+                <!-- Чётная функция (парабола) -->
+                <path d="M 80 180 Q 150 40 230 40 Q 310 40 380 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="300" y="80" font-size="12" fill="#3182ce">f(x) = x² (чётная)</text>
+                
+                <!-- Ось симметрии -->
+                <line x1="230" y1="20" x2="230" y2="200" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="235" y="100" font-size="11" fill="#e53e3e" font-weight="bold">x = 0</text>
+                
+                <text x="225" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Симметрия относительно оси y</text>
+            </svg>
+            <div class="caption">Рис. 1. Чётная функция симметрична относительно оси y</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Уравнение с чётной функцией</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых уравнение x⁴ - 2ax² + a² - 1 = 0 имеет ровно три различных корня.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="195" y="15" font-size="12">y</text>
+                
+                <!-- Функция x⁴ - 2x² -->
+                <path d="M 60 180 Q 100 100 140 140 Q 200 200 260 140 Q 300 100 340 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Прямая y = 1-a² -->
+                <line x1="60" y1="140" x2="340" y2="140" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="345" y="135" font-size="11" fill="#e53e3e">y = 1-a²</text>
+                
+                <!-- Корни -->
+                <circle cx="100" cy="180" r="4" fill="#e53e3e"/>
+                <circle cx="200" cy="180" r="4" fill="#e53e3e"/>
+                <circle cx="300" cy="180" r="4" fill="#e53e3e"/>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Чётная функция: если x₀ — корень, то -x₀ тоже корень</text>
+            </svg>
+            <div class="caption">Рис. 2. График чётной функции. Корни симметричны относительно оси y</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Заметим, что функция f(x) = x⁴ - 2ax² + a² - 1 чётная: f(-x) = f(x).</div>
+        <div class="step">2. Это значит, что если x₀ — корень, то -x₀ тоже корень. Корни идут парами ±x₀.</div>
+        <div class="step">3. Для того чтобы было ровно три корня, один из них должен быть x = 0 (он сам себе пара), а остальные два — пара ±x₀ (x₀ ≠ 0).</div>
+        <div class="step">4. Подставляем x = 0: 0⁴ - 2a·0² + a² - 1 = 0 ⟹ a² - 1 = 0 ⟹ a = ±1.</div>
+        <div class="step">5. Проверяем a = 1: x⁴ - 2x² + 1 - 1 = x⁴ - 2x² = x²(x² - 2) = 0.</div>
+        <div class="step">6. Корни: x = 0 (кратность 2), x = ±√2. Всего три различных корня: 0, √2, -√2. ✓</div>
+        <div class="step">7. Проверяем a = -1: x⁴ + 2x² + 1 - 1 = x⁴ + 2x² = x²(x² + 2) = 0.</div>
+        <div class="step">8. Корни: x = 0 (кратность 2). Других действительных корней нет. Только один корень. ✗</div>
+        
+        <div class="answer">Ответ: a = 1</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Симметрия относительно точки</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых уравнение (x - a)³ + (x - a) + 1 = 0 имеет ровно один корень.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="195" y="15" font-size="12">y</text>
+                
+                <!-- Кубическая функция -->
+                <path d="M 80 180 Q 140 140 170 110 Q 200 110 230 110 Q 260 110 290 80 Q 320 50 340 40" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Точка симметрии -->
+                <circle cx="200" cy="110" r="4" fill="#e53e3e"/>
+                <text x="205" y="105" font-size="11" fill="#e53e3e" font-weight="bold">(a; 1)</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Функция симметрична относительно точки (a; 1)</text>
+            </svg>
+            <div class="caption">Рис. 3. Кубическая функция симметрична относительно точки перегиба</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Сделаем замену t = x - a. Уравнение принимает вид: t³ + t + 1 = 0.</div>
+        <div class="step">2. Рассмотрим функцию f(t) = t³ + t + 1.</div>
+        <div class="step">3. Найдём производную: f'(t) = 3t² + 1.</div>
+        <div class="step">4. f'(t) > 0 при всех t (так как 3t² ≥ 0 и 1 > 0).</div>
+        <div class="step">5. Значит, функция f(t) строго возрастает на всей числовой прямой.</div>
+        <div class="step">6. Строго возрастающая функция может пересекать ось x только в одной точке.</div>
+        <div class="step">7. Проверяем пределы: при t → -∞, f(t) → -∞; при t → +∞, f(t) → +∞.</div>
+        <div class="step">8. По теореме о промежуточном значении, существует ровно один корень.</div>
+        <div class="step">9. Этот корень существует при любом a (так как замена t = x -a всегда возможна).</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Симметрия в системе (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых система имеет решение:<br>
+        $$\begin{cases} |x| + |y| = a \\ x^2 + y^2 = 4 \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 350 280" width="350" height="280">
+                <!-- Оси -->
+                <line x1="40" y1="260" x2="320" y2="260" stroke="#1a202c" stroke-width="2"/>
+                <line x1="170" y1="20" x2="170" y2="260" stroke="#1a202c" stroke-width="2"/>
+                
+                <!-- Окружность x² + y² = 4 -->
+                <circle cx="170" cy="140" r="80" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Ромб |x| + |y| = a (при a = 3) -->
+                <polygon points="170,60 230,140 170,220 110,140" fill="none" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,3"/>
+                
+                <!-- Точки пересечения -->
+                <circle cx="195" cy="115" r="3" fill="#e53e3e"/>
+                <circle cx="220" cy="140" r="3" fill="#e53e3e"/>
+                <circle cx="195" cy="165" r="3" fill="#e53e3e"/>
+                <circle cx="145" cy="165" r="3" fill="#e53e3e"/>
+                <circle cx="120" cy="140" r="3" fill="#e53e3e"/>
+                <circle cx="145" cy="115" r="3" fill="#e53e3e"/>
+                
+                <text x="170" y="275" font-size="11" fill="#4a5568" text-anchor="middle">Обе фигуры симметричны относительно начала координат</text>
+            </svg>
+            <div class="caption">Рис. 4. Ромб и окружность симметричны относительно начала координат</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Обе функции симметричны относительно начала координат (чётные по x и y).</div>
+        <div class="step">2 |x| + |y| = a — это ромб с вершинами (±a; 0), (0; ±a).</div>
+        <div class="step">3. x² + y² = 4 — окружность радиуса 2 с центром в начале координат.</div>
+        <div class="step">4. Система имеет решение, когда ромб и окружность пересекаются.</div>
+        <div class="step">5. Минимальное значение a: когда ромб касается окружности изнутри. Это происходит при a = 2 (ромб вписан в окружность).</div>
+        <div class="step">6. Максимальное значение: ромб может быть сколь угодно большим, но пересечение будет всегда при a ≥ 2.</div>
+        <div class="step">7. Проверяем a = 2: |x| + |y| = 2 и x² + y² = 4. В точках (±2; 0), (0; ±2) оба уравнения выполняются.</div>
+        <div class="step">8. При a < 2 ромб целиком внутри окружности, но не пересекает её (кроме случая a = 0, но тогда только (0; 0), что не лежит на окружности).</div>
+        
+        <div class="answer">Ответ: a ∈ [2; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Полезные факты</h2>
+        
+        <div class="formula-box">
+            <strong>Симметрия чётной функции:</strong><br>
+            Если f(x) чётная и x₀ — корень, то -x₀ тоже корень.<br>
+            Для нечётного количества корней один из них должен быть x = 0.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Симметрия относительно точки (a; b):</strong><br>
+            f(a+x) + f(a-x) = 2b<br>
+            Если функция симметрична относительно точки, это можно использовать для упрощения.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Монотонность:</strong><br>
+            Если функция строго возрастает (или убывает) на всей области определения, то уравнение f(x) = c имеет не более одного корня.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда проверяйте функцию на чётность/нечётность — это может сильно упростить задачу.</li>
+            <li>Если функция чётная, достаточно исследовать её на x ≥ 0, а потом отразить.</li>
+            <li>Используйте замену переменной для приведения функции к симметричному виду.</li>
+            <li>Монотонные функции имеют не более одного корня — это важный факт.</li>
+            <li>В системах уравнений ищите общую симметрию всех уравнений.</li>
+            <li>Графический метод часто помогает увидеть симметрию.</li>
+        </ul>
+    </div>
+</body>
+</html>

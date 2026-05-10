@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Неравенства с параметром - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🔢 Неравенства с параметром</h1>
+    
+    <div class="card">
+        <h2>📚 Особенности решения</h2>
+        <p>Неравенства с параметром требуют особого внимания к знакам и области допустимых значений. При умножении или делении на выражение с параметром нужно учитывать его знак.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Важные правила:</strong><br>
+            • При умножении неравенства на отрицательное число знак неравенства меняется на противоположный.<br>
+            • При возведении в чётную степень нужно проверять ОДЗ.<br>
+            • Метод интервалов — основной инструмент для решения неравенств с параметром.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 200" width="450" height="200">
+                <!-- Ось a -->
+                <line x1="50" y1="180" x2="430" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="435" y="185" font-size="12">a</text>
+                
+                <!-- Критические точки -->
+                <line x1="150" y1="175" x2="150" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="145" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a₁</text>
+                
+                <line x1="250" y1="175" x2="250" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="245" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a₂</text>
+                
+                <line x1="350" y1="175" x2="350" y2="185" stroke="#e53e3e" stroke-width="2"/>
+                <text x="345" y="195" font-size="11" fill="#e53e3e" font-weight="bold">a₃</text>
+                
+                <!-- Интервалы -->
+                <text x="100" y="160" font-size="11" fill="#4a5568">Интервал 1</text>
+                <text x="200" y="160" font-size="11" fill="#4a5568">Интервал 2</text>
+                <text x="300" y="160" font-size="11" fill="#4a5568">Интервал 3</text>
+                <text x="390" y="160" font-size="11" fill="#4a5568">Интервал 4</text>
+                
+                <text x="240" y="30" font-size="12" fill="#1a365d" font-weight="bold" text-anchor="middle">Метод интервалов для параметра</text>
+            </svg>
+            <div class="caption">Рис. 1. Разбиение числовой прямой на интервалы по критическим точкам параметра</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Линейное неравенство с параметром</h2>
+        <p><strong>Условие:</strong> Найдите все значения параметра a, при которых неравенство ax > 2 имеет решения.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 200" width="400" height="200">
+                <!-- Ось x -->
+                <line x1="40" y1="180" x2="380" y2="180" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="185" font-size="12">x</text>
+                
+                <!-- Случай a > 0 -->
+                <line x1="100" y1="180" x2="380" y2="180" stroke="#3182ce" stroke-width="3"/>
+                <circle cx="100" cy="180" r="4" fill="#3182ce"/>
+                <text x="95" y="175" font-size="10" fill="#3182ce">2/a</text>
+                <text x="200" y="170" font-size="11" fill="#3182ce" font-weight="bold">a > 0: x > 2/a</text>
+                
+                <!-- Случай a < 0 -->
+                <line x1="40" y1="140" x2="220" y2="140" stroke="#e53e3e" stroke-width="3"/>
+                <circle cx="220" cy="140" r="4" fill="#e53e3e"/>
+                <text x="225" y="135" font-size="10" fill="#e53e3e">2/a</text>
+                <text x="120" y="130" font-size="11" fill="#e53e3e" font-weight="bold">a < 0: x < 2/a</text>
+                
+                <text x="200" y="195" font-size="11" fill="#4a5568" text-anchor="middle">Решения зависят от знака параметра a</text>
+            </svg>
+            <div class="caption">Рис. 2. Решения неравенства ax > 2 при разных значениях a</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Рассмотрим случаи в зависимости от знака параметра a.</div>
+        <div class="case-box">
+            <strong>Случай a > 0:</strong> Делим на положительное число, знак не меняется: x > 2/a. Решения есть. ✓
+        </div>
+        <div class="case-box">
+            <strong>Случай a < 0:</strong> Делим на отрицательное число, знак меняется: x < 2/a. Решения есть. ✓
+        </div>
+        <div class="case-box">
+            <strong>Случай a = 0:</strong> Неравенство принимает вид 0·x > 2, то есть 0 > 2. Это неверно. Решений нет. ✗
+        </div>
+        <div class="step">2. Ответ: неравенство имеет решения при всех a ≠ 0.</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; 0) ∪ (0; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Квадратное неравенство с параметром</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых неравенство x² - 2ax + a² - 1 < 0 выполняется для всех x ∈ (0; 2).</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="40" y1="20" x2="40" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="35" y="15" font-size="12">y</text>
+                
+                <!-- Парабола -->
+                <path d="M 40 180 Q 140 40 240 180" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Интервал (0; 2) -->
+                <line x1="100" y1="200" x2="200" y2="200" stroke="#e53e3e" stroke-width="4"/>
+                <text x="100" y="215" font-size="11" fill="#e53e3e" font-weight="bold">0</text>
+                <text x="200" y="215" font-size="11" fill="#e53e3e" font-weight="bold">2</text>
+                
+                <!-- Корни -->
+                <circle cx="100" cy="180" r="4" fill="#e53e3e"/>
+                <circle cx="200" cy="180" r="4" fill="#e53e3e"/>
+                <text x="95" y="175" font-size="10" fill="#e53e3e">a-1</text>
+                <text x="205" y="175" font-size="10" fill="#e53e3e">a+1</text>
+                
+                <text x="200" y="30" font-size="11" fill="#4a5568" text-anchor="middle">f(x) < 0 на (0; 2)</text>
+            </svg>
+            <div class="caption">Рис. 3. Квадратичная функция должна быть отрицательна на интервале (0; 2)</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Преобразуем выражение: x² - 2ax + a² - 1 = (x - a)² - 1.</div>
+        <div class="step">2. Неравенство принимает вид: (x - a)² - 1 < 0, то есть (x - a)² < 1.</div>
+        <div class="step">3. Это равносильно: -1 < x - a < 1, откуда a - 1 < x < a + 1.</div>
+        <div class="step">4. Нам нужно, чтобы интервал (0; 2) содержался в интервале (a-1; a+1).</div>
+        <div class="step">5. Условия: a - 1 ≤ 0 и a + 1 ≥ 2.</div>
+        <div class="step">6. Из первого: a ≤ 1. Из второго: a ≥ 1.</div>
+        <div class="step">7. Значит, a = 1.</div>
+        <div class="step">8. Проверка: при a = 1 получаем (x - 1)² < 1, то есть 0 < x < 2. Интервал (0; 2) подходит.</div>
+        
+        <div class="answer">Ответ: a = 1</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Неравенство с модулем (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых неравенство |x - a| + |x + a| ≤ 4 имеет хотя бы одно решение.</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Ось x -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                
+                <!-- График y = |x-a| + |x+a| при a = 2 -->
+                <path d="M 40 180 L 140 80 L 260 80 L 360 180" fill="none" stroke="#3182ce" stroke-width="3"/>
+                
+                <!-- Прямая y = 4 -->
+                <line x1="40" y1="80" x2="380" y2="80" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="320" y="75" font-size="11" fill="#e53e3e" font-weight="bold">y = 4</text>
+                
+                <!-- Точки -->
+                <circle cx="140" cy="80" r="4" fill="#e53e3e"/>
+                <circle cx="260" cy="80" r="4" fill="#e53e3e"/>
+                <text x="135" y="75" font-size="10" fill="#e53e3e">-a</text>
+                <text x="265" y="75" font-size="10" fill="#e53e3e">a</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Минимум функции равен 2|a|</text>
+            </svg>
+            <div class="caption">Рис. 4. График функции f(x) = |x-a| + |x+a| имеет минимум в точке x = 0</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Рассмотрим функцию f(x) = |x - a| + |x + a|.</div>
+        <div class="step">2. Найдём минимум этой функции. При x = 0: f(0) = |-a| + |a| = 2|a|.</div>
+        <div class="step">3. При x → ±∞ функция неограниченно возрастает.</div>
+        <div class="step">4. Неравенство f(x) ≤ 4 имеет решения тогда и только тогда, когда минимум функции не превосходит 4.</div>
+        <div class="step">5. Условие: 2|a| ≤ 4.</div>
+        <div class="step">6. Решаем: |a| ≤ 2, то есть -2 ≤ a ≤ 2.</div>
+        <div class="step">7. При таких a неравенство имеет бесконечно много решений (целый отрезок).</div>
+        
+        <div class="answer">Ответ: a ∈ [-2; 2]</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Методы решения</h2>
+        
+        <div class="formula-box">
+            <strong>Метод интервалов:</strong><br>
+            1. Найти критические точки (где выражение равно 0 или не определено).<br>
+            2. Разбить числовую прямую на интервалы.<br>
+            3. Определить знак выражения на каждом интервале.<br>
+            4. Выбрать нужные интервалы в зависимости от знака неравенства.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Графический метод:</strong><br>
+            Построить график функции и найти, при каких значениях параметра график удовлетворяет условию неравенства.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Метод оценки:</strong><br>
+            Найти минимум или максимум функции и сравнить с правой частью неравенства.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Всегда разбирайте случаи для параметра (положительный, отрицательный, ноль).</li>
+            <li>При умножении/делении на выражение с параметром обязательно учитывайте его знак!</li>
+            <li>Используйте графическую интерпретацию — часто это проще аналитического решения.</li>
+            <li>Для квадратных неравенств исследуйте дискриминант и расположение корней.</li>
+            <li>Проверяйте граничные значения параметра — они часто дают важный ответ.</li>
+            <li>Записывайте ответ в виде промежутков или объединения точек и промежутков.</li>
+        </ul>
+    </div>
+</body>
+</html>

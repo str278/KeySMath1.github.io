@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Системы с параметром - Задание 18 ЕГЭ</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2d3748; max-width: 920px; margin: 0 auto; padding: 20px; background: #f8fafc; }
+        h1, h2, h3 { color: #1a365d; margin-top: 35px; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #4299e1; padding-bottom: 10px; }
+        p { margin-bottom: 14px; font-size: 1.05rem; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .formula-box { background: #ebf8ff; padding: 18px; border-left: 4px solid #3182ce; border-radius: 8px; margin: 20px 0; font-weight: 500; }
+        .step { background: #f7fafc; padding: 14px; border-radius: 8px; margin: 10px 0 10px 20px; border-left: 3px solid #4299e1; }
+        .answer { font-size: 1.3rem; color: #276749; font-weight: bold; margin: 25px 0; padding: 15px; background: #c6f6d5; border-radius: 8px; text-align: center; }
+        .diagram-container { text-align: center; margin: 25px 0; padding: 15px; background: white; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .diagram-container svg { max-width: 100%; height: auto; }
+        .caption { font-size: 0.95rem; color: #4a5568; margin-top: 8px; font-style: italic; }
+        ul { padding-left: 22px; margin-bottom: 14px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2b6cb0; }
+        .highlight { background: #fefcbf; padding: 2px 6px; border-radius: 4px; }
+        .theorem { background: #f0fff4; border-left: 4px solid #48bb78; padding: 18px; margin: 20px 0; border-radius: 8px; }
+        .case-box { background: #fffaf0; border: 2px solid #f6ad55; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🔢 Системы с параметром</h1>
+    
+    <div class="card">
+        <h2>📚 Особенности решения систем</h2>
+        <p>Системы уравнений с параметром требуют одновременного выполнения всех уравнений системы. Параметр влияет на количество решений и их существование.</p>
+        
+        <div class="theorem">
+            <strong>🔹 Основные методы:</strong><br>
+            • <strong>Графический:</strong> строим графики всех уравнений, ищем точки пересечения.<br>
+            • <strong>Аналитический:</strong> решаем систему алгебраически, исследуем условия совместности.<br>
+            • <strong>Метод областей:</strong> для систем неравенств строим области допустимых значений.
+        </div>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 450 220" width="450" height="220">
+                <!-- Оси координат -->
+                <line x1="50" y1="200" x2="430" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="70" y1="20" x2="70" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="435" y="205" font-size="12">x</text>
+                <text x="65" y="15" font-size="12">y</text>
+                
+                <!-- Окружность -->
+                <circle cx="200" cy="140" r="60" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="240" y="90" font-size="11" fill="#3182ce">x² + y² = R²</text>
+                
+                <!-- Прямая 1 -->
+                <line x1="80" y1="180" x2="320" y2="60" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="325" y="55" font-size="11" fill="#e53e3e">y = ax + b</text>
+                
+                <!-- Точки пересечения -->
+                <circle cx="150" cy="165" r="4" fill="#e53e3e"/>
+                <circle cx="250" cy="115" r="4" fill="#e53e3e"/>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Система: окружность и прямая</text>
+            </svg>
+            <div class="caption">Рис. 1. Графическое решение системы: точки пересечения — решения системы</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 1: Линейная система с параметром</h2>
+        <p><strong>Условие:</strong> Найдите все значения параметра a, при которых система имеет единственное решение:<br>
+        $$\begin{cases} ax + y = 3 \\ x + ay = 3 \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 220" width="400" height="220">
+                <!-- Оси -->
+                <line x1="40" y1="200" x2="380" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <line x1="40" y1="20" x2="40" y2="200" stroke="#1a202c" stroke-width="2"/>
+                <text x="385" y="205" font-size="12">x</text>
+                <text x="35" y="15" font-size="12">y</text>
+                
+                <!-- Прямая 1: x + y = 3 (a=1) -->
+                <line x1="40" y1="160" x2="200" y2="40" stroke="#3182ce" stroke-width="2.5"/>
+                <text x="205" y="50" font-size="11" fill="#3182ce">a = 1</text>
+                
+                <!-- Прямая 2: 2x + y = 3 (a=2) -->
+                <line x1="40" y1="180" x2="170" y2="40" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="175" y="50" font-size="11" fill="#e53e3e">a = 2</text>
+                
+                <!-- Точка пересечения -->
+                <circle cx="120" cy="120" r="4" fill="#48bb78"/>
+                <text x="125" y="115" font-size="11" fill="#48bb78" font-weight="bold">(1; 1)</text>
+                
+                <text x="200" y="215" font-size="11" fill="#4a5568" text-anchor="middle">Прямые пересекаются при a ≠ ±1</text>
+            </svg>
+            <div class="caption">Рис. 2. Две прямые пересекаются в одной точке при большинстве значений a</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Система имеет единственное решение, когда прямые пересекаются (не параллельны и не совпадают).</div>
+        <div class="step">2. Найдем определитель системы: Δ = a·a - 1·1 = a² - 1.</div>
+        <div class="step">3. Для единственного решения нужно Δ ≠ 0: a² - 1 ≠ 0.</div>
+        <div class="step">4. Решаем: a² ≠ 1 ⟹ a ≠ 1 и a ≠ -1.</div>
+        <div class="step">5. При a = 1: обе прямые совпадают (x + y = 3). Бесконечно много решений.</div>
+        <div class="step">6. При a = -1: прямые параллельны (-x + y = 3 и x - y = 3). Нет решений.</div>
+        <div class="step">7. Ответ: при всех a, кроме ±1.</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; -1) ∪ (-1; 1) ∪ (1; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 2: Система с окружностью и прямой</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых система имеет ровно два решения:<br>
+        $$\begin{cases} x^2 + y^2 = 4 \\ y = ax + 1 \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 250" width="400" height="250">
+                <!-- Оси -->
+                <line x1="40" y1="230" x2="380" y2="230" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="230" stroke="#1a202c" stroke-width="2"/>
+                
+                <!-- Окружность x² + y² = 4 -->
+                <circle cx="200" cy="130" r="90" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Прямая y = ax + 1 (два решения) -->
+                <line x1="60" y1="200" x2="340" y2="60" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="345" y="55" font-size="11" fill="#e53e3e">y = ax + 1</text>
+                
+                <!-- Точки пересечения -->
+                <circle cx="130" cy="175" r="4" fill="#e53e3e"/>
+                <circle cx="270" cy="85" r="4" fill="#e53e3e"/>
+                
+                <!-- Центр окружности -->
+                <circle cx="200" cy="130" r="3" fill="#3182ce"/>
+                <text x="205" y="125" font-size="10" fill="#3182ce">O(0; 0)</text>
+                
+                <text x="200" y="245" font-size="11" fill="#4a5568" text-anchor="middle">Прямая пересекает окружность в двух точках</text>
+            </svg>
+            <div class="caption">Рис. 3. Прямая пересекает окружность в двух точках</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. Подставляем y = ax + 1 в первое уравнение: x² + (ax + 1)² = 4.</div>
+        <div class="step">2. Раскрываем: x² + a²x² + 2ax + 1 = 4.</div>
+        <div class="step">3. Приводим: (1 + a²)x² + 2ax - 3 = 0.</div>
+        <div class="step">4. Это квадратное уравнение относительно x. Для двух решений нужно D > 0.</div>
+        <div class="step">5. D = (2a)² - 4(1 + a²)(-3) = 4a² + 12(1 + a²) = 4a² + 12 + 12a² = 16a² + 12.</div>
+        <div class="step">6. 16a² + 12 > 0 всегда верно при всех действительных a.</div>
+        <div class="step">7. Значит, система всегда имеет два решения при любом a.</div>
+        
+        <div class="answer">Ответ: a ∈ (-∞; +∞)</div>
+    </div>
+
+    <div class="card">
+        <h2>💡 Пример 3: Система с модулем (ЕГЭ)</h2>
+        <p><strong>Условие:</strong> Найдите все значения a, при которых система имеет ровно три решения:<br>
+        $$\begin{cases} |x| + |y| = 2 \\ y = ax \end{cases}$$</p>
+        
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 250" width="400" height="250">
+                <!-- Оси -->
+                <line x1="40" y1="230" x2="380" y2="230" stroke="#1a202c" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="230" stroke="#1a202c" stroke-width="2"/>
+                
+                <!-- Ромб |x| + |y| = 2 -->
+                <polygon points="200,50 290,140 200,230 110,140" fill="none" stroke="#3182ce" stroke-width="2.5"/>
+                
+                <!-- Прямая y = x (a=1) -->
+                <line x1="80" y1="210" x2="320" y2="70" stroke="#e53e3e" stroke-width="2.5"/>
+                <text x="325" y="65" font-size="11" fill="#e53e3e">y = ax</text>
+                
+                <!-- Точки пересечения -->
+                <circle cx="140" cy="170" r="4" fill="#e53e3e"/>
+                <circle cx="260" cy="90" r="4" fill="#e53e3e"/>
+                <circle cx="200" cy="130" r="4" fill="#e53e3e"/>
+                
+                <text x="200" y="245" font-size="11" fill="#4a5568" text-anchor="middle">При a = 1 система имеет 2 решения</text>
+            </svg>
+            <div class="caption">Рис. 4. График |x| + |y| = 2 — ромб с вершинами (±2; 0), (0; ±2)</div>
+        </div>
+
+        <p><strong>Решение:</strong></p>
+        <div class="step">1. График |x| + |y| = 2 — это ромб с вершинами в точках (2; 0), (-2; 0), (0; 2), (0; -2).</div>
+        <div class="step">2. Прямая y = ax проходит через начало координат (0; 0).</div>
+        <div class="step">3. Рассмотрим случаи:</div>
+        <div class="case-box">
+            <strong>Случай a = 0:</strong> Прямая y = 0 (ось x). Пересекает ромб в точках (2; 0) и (-2; 0). Решений: 2.
+        </div>
+        <div class="case-box">
+            <strong>Случай a > 0:</strong> Прямая проходит через I и III четверти. Пересекает ромб в 2 точках.
+        </div>
+        <div class="case-box">
+            <strong>Случай a < 0:</strong> Прямая проходит через II и IV четверти. Пересекает ромб в 2 точках.
+        </div>
+        <div class="step">4. Для трёх решений прямая должна проходить через вершину ромба и ещё две точки.</div>
+        <div class="step">5. Это невозможно, так как прямая через начало координат может пересечь ромб максимум в 2 точках.</div>
+        <div class="step">6. Пересчитаем: если прямая проходит через вершину (0; 2), то a не определено (вертикальная прямая).</div>
+        <div class="step">7. На самом деле, три решения возможны, когда прямая проходит через вершину ромба и ещё две точки на сторонах.</div>
+        <div class="step">8. Вершины: (2; 0), (-2; 0), (0; 2), (0; -2). Прямая y = ax проходит через (0; 0).</div>
+        <div class="step">9. Если a = 1: y = x. Пересекает в (1; 1) и (-1; -1). Решений: 2.</div>
+        <div class="step">10. Если a = -1: y = -x. Пересекает в (1; -1) и (-1; 1). Решений: 2.</div>
+        <div class="step">11. Три решения невозможны для данной системы.</div>
+        
+        <div class="answer">Ответ: таких a не существует</div>
+    </div>
+
+    <div class="card">
+        <h2>📝 Методы решения</h2>
+        
+        <div class="formula-box">
+            <strong>Графический метод:</strong><br>
+            1. Построить графики всех уравнений системы.<br>
+            2. Найти точки пересечения графиков.<br>
+            3. Исследовать, как меняется количество пересечений при изменении параметра.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Аналитический метод:</strong><br>
+            1. Выразить одну переменную через другую из одного уравнения.<br>
+            2. Подставить в другое уравнение.<br>
+            3. Исследовать полученное уравнение на количество корней.
+        </div>
+        
+        <div class="formula-box">
+            <strong>Метод областей (для неравенств):</strong><br>
+            1. Построить области, заданные каждым неравенством.<br>
+            2. Найти пересечение областей.<br>
+            3. Исследовать, при каких значениях параметра пересечение непусто.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Советы для ЕГЭ</h2>
+        <ul>
+            <li>Графический метод часто проще и нагляднее для систем с параметром.</li>
+            <li>Запоминайте стандартные графики: окружности, параболы, модули, гиперболы.</li>
+            <li>Для линейных систем используйте определитель: Δ ≠ 0 — единственное решение.</li>
+            <li>Проверяйте особые случаи: когда коэффициент при переменной равен нулю.</li>
+            <li>Для систем с окружностью и прямой исследуйте расстояние от центра до прямой.</li>
+            <li>Записывайте ответ в виде промежутков или объединения точек.</li>
+        </ul>
+    </div>
+</body>
+</html>
