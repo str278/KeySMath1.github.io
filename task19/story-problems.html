@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сюжетные задачи: кино, театр, мотки верёвки | KeySMath</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1A2B4D;
+            border-bottom: 3px solid #4361EE;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4361EE;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .theory {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4361EE;
+            margin: 20px 0;
+        }
+        .example {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FFA500;
+            margin: 20px 0;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #e6ffe6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27AE60;
+            margin: 20px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B6B;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .step {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .tip {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+            margin: 20px 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #4361EE;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-button:hover {
+            background: #3A56D4;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        
+        <h1>🎬 Сюжетные задачи: кино, театр, мотки верёвки</h1>
+
+        <div class="theory">
+            <h2>📚 Описание типа задач</h2>
+            <p>Это логические задачи, часто замаскированные под бытовые ситуации (кинотеатр, билеты, верёвки, узлы). Для их решения используются методы комбинаторики и логики:</p>
+            <ul>
+                <li><strong>Принцип Дирихле:</strong> Если n кроликов рассадить в k клеток, то хотя бы в одной клетке будет не меньше ⌈n/k⌉ кроликов.</li>
+                <li><strong>Метод инвариантов:</strong> Поиск величины, которая не меняется при определенных операциях.</li>
+                <li><strong>Оценка "худшего случая":</strong> Рассмотрение ситуации, максимально неблагоприятной для выполнения условия.</li>
+                <li><strong>Графы и связи:</strong> Представление объектов как вершин, а связей — как рёбер.</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Основные методы</h2>
+
+        <div class="example">
+            <div class="example-title">Метод 1: Принцип Дирихле (Кинотеатр)</div>
+            <p>Задачи про места в рядах, зрителей, билеты.</p>
+            <div class="formula">
+                Если мест M, а зрителей V > M, то некоторые места заняты более чем одним человеком (если допускать наложение) или заполнены все ряды.
+            </div>
+            <p>Чаще всего требуется доказать существование ряда с определенным количеством занятых мест.</p>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Метод 2: Инварианты (Верёвки и узлы)</div>
+            <p>При связывании верёвок или разрезании изменяется количество объектов, но некоторые свойства сохраняются.</p>
+            <p><strong>Пример:</strong> Чтобы соединить n веревок в одну, нужно сделать n−1 узел.</p>
+        </div>
+
+        <h2>📝 Примеры решения</h2>
+
+        <div class="example">
+            <div class="example-title">Пример 1. Кинотеатр (Принцип Дирихле)</div>
+            <p>В кинотеатре 10 рядов по 10 мест в каждом. Докажите, что если в зале сидит 51 человек, то найдётся ряд, в котором сидят не менее 6 человек.</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Предположим противное:</strong></div>
+                <p>Пусть в каждом ряду сидит <strong>не более 5</strong> человек.</p>
+
+                <div class="step">2. <strong>Оценим максимальное количество людей:</strong></div>
+                <p>Если в каждом из 10 рядов максимум 5 человек, то всего людей:</p>
+                <div class="formula">
+                    10 × 5 = 50
+                </div>
+
+                <div class="step">3. <strong>Противоречие:</strong></div>
+                <p>По условию в зале 51 человек. Но мы получили, что их не может быть больше 50.</p>
+                <p>Значит, наше предположение неверно.</p>
+
+                <p><strong>Вывод:</strong> Существует хотя бы один ряд, где сидят 6 или более человек.</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 2. Верёвки и узлы</div>
+            <p>У Маши есть 7 коротких веревок. Она хочет связать их в одну длинную веревку. Какое наименьшее количество узлов ей придется завязать?</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Логика соединения:</strong></div>
+                <p>Чтобы соединить 2 веревки, нужен 1 узел.</p>
+                <p>Чтобы соединить 3 веревки, нужно 2 узла (сначала соединяем две, потом третью к полученной).</p>
+
+                <div class="step">2. <strong>Общая формула:</strong></div>
+                <p>Для соединения n веревок в одну цепь требуется n − 1 узел.</p>
+                <div class="formula">
+                    7 − 1 = 6
+                </div>
+
+                <p><strong>Ответ:</strong> 6 узлов</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 3. Билеты в театр (Комбинаторика)</div>
+            <p>В театре 5 рядов по 5 мест. Билеты продаются так, что никакие два купленных билета не находятся в соседних местах (по горизонтали или вертикали). Какое наибольшее количество билетов можно купить?</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Раскраска доски:</strong></div>
+                <p>Представим зал как шахматную доску 5 × 5. Раскрасим клетки в черный и белый цвета.</p>
+                <p>Всего клеток 25. Черных — 13, Белых — 12 (или наоборот).</p>
+
+                <div class="step">2. <strong>Анализ соседей:</strong></div>
+                <p>Любые два соседних места имеют разный цвет. Значит, если мы выберем все места одного цвета (например, черного), то ни одно из них не будет соседним с другим выбранным.</p>
+
+                <div class="step">3. <strong>Максимум:</strong></div>
+                <p>Мы можем занять все 13 черных клеток. Соседей среди них нет.</p>
+                <p>Можно ли больше? Нет, так как каждая белая клетка граничит только с черными. Если мы добавим любую белую клетку, она будет соседом какой-то черной (если та занята). А если мы попробуем занять больше 13, нам придется взять хотя бы две соседние.</p>
+                
+                <p><strong>Ответ:</strong> 13 билетов</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-title">Пример 4. Инвариант (Числа на доске)</div>
+            <p>На доске написаны числа от 1 до 10. За один ход разрешается стереть любые два числа a и b и написать вместо них число a + b + ab. После 9 таких ходов останется одно число. Найдите его.</p>
+
+            <div class="solution">
+                <strong>Решение:</strong>
+
+                <div class="step">1. <strong>Преобразуем операцию:</strong></div>
+                <p>Заметим, что:</p>
+                <div class="formula">
+                    a + b + ab = (a + 1)(b + 1) − 1
+                </div>
+                <p>Добавим 1 к результату операции:</p>
+                <div class="formula">
+                    (a + b + ab) + 1 = (a + 1)(b + 1)
+                </div>
+
+                <div class="step">2. <strong>Инвариант:</strong></div>
+                <p>Если к каждому числу на доске прибавить 1, то операция "стереть a, b, записать a+b+ab" превращается в операцию "стереть a+1, b+1, записать (a+1)(b+1)".</p>
+                <p>То есть, произведение всех чисел на доске (увеличенных на 1) не меняется!</p>
+
+                <div class="step">3. <strong>Вычисление:</strong></div>
+                <p>Изначально числа: 1, 2, ..., 10.</p>
+                <p>Увеличенные на 1: 2, 3, ..., 11.</p>
+                <p>Произведение: P = 2 · 3 · ... · 11 = 11! / 1 = 39,916,800.</p>
+                <p>В конце останется одно число X. Ему соответствует X+1.</p>
+                <div class="formula">
+                    X + 1 = P ⇒ X = P − 1
+                </div>
+                <p>X = 11! − 1.</p>
+
+                <p><strong>Ответ:</strong> 11! − 1 (или 39,916,799)</p>
+            </div>
+        </div>
+
+        <div class="tip">
+            <strong>💡 Полезные приёмы:</strong><br>
+            • В задачах про "наибольшее/наименьшее" используйте оценку сверху/снизу.<br>
+            • Ищите инварианты (сумма, произведение, четность, остаток от деления).<br>
+            • Используйте раскраску (шахматный порядок) для задач про соседство.<br>
+            • Применяйте принцип Дирихле для доказательства существования.
+        </div>
+
+        <div class="important">
+            <strong>⚠️ Типичные ошибки:</strong><br>
+            • Не учитывают, что "соседние" могут быть и по вертикали, и по горизонтали.<br>
+            • Забывают проверить крайние случаи (например, пустые ряды).<br>
+            • Ошибаются в подсчете количества узлов (путают n и n−1).<br>
+            • Не находят правильный инвариант.
+        </div>
+
+        <div class="theory">
+            <h2>📋 Что важно помнить для ЕГЭ</h2>
+            <ul>
+                <li>Внимательно читайте условие: какие места считаются соседними?</li>
+                <li>В задачах на верёвки/узлы рисуйте схему для малого количества (n=3, 4).</li>
+                <li>Принцип Дирихле — мощный инструмент для доказательств ("докажите, что найдётся...").</li>
+                <li>Инварианты помогают найти ответ, не выполняя все действия.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
